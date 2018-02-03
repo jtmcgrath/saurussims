@@ -8,4 +8,10 @@ export default {
 		const offset = page * 20 - 20
 		client.blogPosts('saurussims', { tag, offset }, callback)
 	},
+
+	getPost: id => callback => {
+		client.blogPosts('saurussims', { id }, (err, { posts }) =>
+			callback(err, { post: posts[0] }),
+		)
+	},
 }

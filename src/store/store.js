@@ -1,26 +1,32 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { applyMiddleware, compose, combineReducers, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import { router5Middleware, router5Reducer } from 'redux-router5'
 
-import reducer from './reducer'
+import tumblr from './tumblr'
 
-let middleware = [thunkMiddleware]
-let createStoreArgs = [reducer]
+export default function configureStore(
+	router,
+	initialState = window.__INITIAL_STATE__ || {},
+) {
+	let middleware = [router5Middleware(router), thunkMiddleware]
 
-if (process.env.NODE_ENV !== 'production') {
-	const composeEnhancers =
-		window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+	if (process.env.NODE_ENV !== 'production') {
+		const composeEnhancers =
+			window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-	middleware = composeEnhancers(applyMiddleware(...middleware))
-} else {
-	middleware = applyMiddleware(...middleware)
+		middleware = composeEnhancers(applyMiddleware(...middleware))
+	} else {
+		middleware = applyMiddleware(...middleware)
+	}
+
+	const store = createStore(
+		combineReducers({
+			router: router5Reducer,
+			tumblr,
+		}),
+		initialState,
+		middleware,
+	)
+
+	return store
 }
-
-if (window.__INITIAL_STATE__) {
-	const initialState = window.__INITIAL_STATE__
-
-	createStoreArgs = [...createStoreArgs, initialState]
-}
-
-const store = createStore(...createStoreArgs, middleware)
-
-export default store

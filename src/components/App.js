@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import { createElement } from 'react'
 import { connect } from 'react-redux'
+import { routeNodeSelector } from 'redux-router5'
 
-import { requestPage } from 'store/actions'
+import routeComponents from 'views'
+import NotFound from 'components/NotFound'
 
-class App extends Component {
-	componentDidMount() {
-		this.props.requestPage(1)
-	}
+const App = ({ route }) => {
+	const segment = route ? route.name.split('.')[0] : undefined
 
-	render() {
-		return <p>Under construction!</p>
-	}
+	return createElement(routeComponents[segment] || NotFound)
 }
 
-export default connect(null, { requestPage })(App)
+export default connect(state => routeNodeSelector(''))(App)

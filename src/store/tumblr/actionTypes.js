@@ -1,3 +1,4 @@
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const RECEIVE_PAGE = 'RECEIVE_PAGE'
 export const REQUEST_PAGE = 'REQUEST_PAGE'
+export const REQUEST_POST = 'REQUEST_POST'
