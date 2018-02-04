@@ -3,6 +3,7 @@ import { RECEIVE_POSTS, RECEIVE_PAGE } from './actionTypes'
 const initialState = {
 	posts: {},
 	pages: {},
+	pageCounts: {},
 }
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +24,10 @@ const reducer = (state = initialState, action) => {
 				pages: {
 					...state.pages,
 					[`${action.tag}${action.page}`]: action.posts,
+				},
+				pageCounts: {
+					...state.pageCounts,
+					[action.tag || 'all']: action.pageCount,
 				},
 			}
 		}

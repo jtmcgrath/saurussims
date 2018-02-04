@@ -1,14 +1,16 @@
-import { createElement } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { routeNodeSelector } from 'redux-router5'
 
 import routeComponents from 'views'
-import NotFound from 'components/NotFound'
+import { Navigation, NotFound } from 'components'
 
 const App = ({ route }) => {
 	const segment = route ? route.name.split('.')[0] : undefined
 
-	return createElement(routeComponents[segment] || NotFound)
+	const Content = routeComponents[segment] || NotFound
+
+	return [<Navigation key="nav" />, <Content key="content" />]
 }
 
 export default connect(state => routeNodeSelector(''))(App)

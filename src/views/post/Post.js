@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { routeNodeSelector } from 'redux-router5'
 
-import DisplayPost from 'components/Post'
+import { Post as DisplayPost } from 'components'
 
 const Post = ({ route }) => <DisplayPost postId={route.params.postId} />
 

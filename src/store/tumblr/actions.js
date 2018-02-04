@@ -19,10 +19,11 @@ const receivePosts = posts => ({
 	posts,
 })
 
-const receivePage = (tag = '', page, posts) => ({
+const receivePage = (tag = '', page, pageCount, posts) => ({
 	type: RECEIVE_PAGE,
 	tag,
 	page,
+	pageCount,
 	posts,
 })
 
@@ -37,7 +38,8 @@ export const requestPost = (route, postId) => dispatch => {
 export const requestPage = (route, page, tag) => dispatch => {
 	dispatch({ type: REQUEST_PAGE, page, tag })
 
-	tumblr.getPosts(tag)(page)((err, { posts }) => {
+	tumblr.getPosts(tag)(page)((err, { posts, total_posts }) => {
+		const pageCount = Math.ceil(total_posts / 20)
 		const pageData = []
 		const postData = {}
 		posts.forEach(post => {
@@ -45,6 +47,6 @@ export const requestPage = (route, page, tag) => dispatch => {
 			postData[post.id] = post
 		})
 		dispatch(receivePosts(postData))
-		dispatch(receivePage(tag, page, pageData))
+		dispatch(receivePage(tag, page, pageCount, pageData))
 	})
 }

@@ -2,19 +2,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router5'
 
-import Post from 'components/Post'
+import { Post, Pagination } from 'components'
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, route }) => {
 	if (posts === undefined) {
 		return <p>Loading...</p>
 	}
 
 	return posts.length ? (
-		posts.map(postId => (
-			<Link key={postId} routeName="post" routeParams={{ postId }}>
-				<Post postId={postId} />
-			</Link>
-		))
+		<div>
+			{posts.map(postId => (
+				<Link key={postId} routeName="post" routeParams={{ postId }}>
+					<Post postId={postId} />
+				</Link>
+			))}
+			<Pagination />
+		</div>
 	) : (
 		<p>No posts found!</p>
 	)
