@@ -1,30 +1,46 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React, { Fragment, PureComponent } from 'react'
 import { Link } from 'react-router5'
 
 import { Post, Pagination } from 'components'
 
-const PostList = ({ posts, route }) => {
-	if (posts === undefined) {
-		return <p>Loading...</p>
-	}
+class PostList extends PureComponent {
+	render() {
+		const { posts } = this.props
 
-	return posts.length ? (
-		<div>
-			{posts.map(postId => (
-				<Link key={postId} routeName="post" routeParams={{ postId }}>
-					<Post postId={postId} />
-				</Link>
-			))}
-			<Pagination />
-		</div>
-	) : (
-		<p>No posts found!</p>
-	)
+		if (posts === undefined) {
+			return <p>Loading...</p>
+		}
+
+		return posts.length ? (
+			<Fragment>
+				<PostColumns {...this.props} />
+				<Pagination />
+			</Fragment>
+		) : (
+			<p>No posts found!</p>
+		)
+	}
 }
 
-const mapStateToProps = (store, ownProps) => ({
-	posts: store.tumblr.pages[`${ownProps.tagName || ''}${ownProps.pageId || 1}`],
-})
+const PostColumns = ({ columnCount, posts }) => {
+	if (!columnCount > 1) {
+		return <div>{posts.map(getPostElement)}</div>
+	}
 
-export default connect(mapStateToProps)(PostList)
+	const content = posts
+		.reduce((acc, postId, i) => {
+			acc[i % columnCount].push(getPostElement(postId))
+			return acc
+		}, Array.from(Array(columnCount), () => []))
+		.map((column, i) => <div key={i}>{column}</div>)
+
+	return <div className="masonry">{content}</div>
+}
+
+const getPostElement = postId => (
+	<Link key={postId} routeName="post" routeParams={{ postId }}>
+		<Post postId={postId} />
+	</Link>
+)
+
+export default PostList
