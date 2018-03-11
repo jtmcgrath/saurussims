@@ -1,8 +1,10 @@
-export { default as answer } from './Answer'
-export { default as audio } from './Audio'
-export { default as chat } from './Chat'
-export { default as link } from './Link'
-export { default as photo } from './Photo'
-export { default as quote } from './Quote'
-export { default as text } from './Text'
-export { default as video } from './Video'
+import * as answer from './answer'
+import * as audio from './audio'
+import * as chat from './chat'
+import * as link from './link'
+import * as photo from './photo'
+import * as quote from './quote'
+import * as text from './text'
+import * as video from './video'
+
+export { answer, audio, chat, link, photo, quote, text, video }

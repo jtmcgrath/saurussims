@@ -39,7 +39,7 @@ const PostColumns = ({ columnCount, posts }) => {
 
 const getPostElement = postId => (
 	<Link key={postId} routeName="post" routeParams={{ postId }}>
-		<Post postId={postId} />
+		<Post postId={postId} type="list" />
 	</Link>
 )
 
