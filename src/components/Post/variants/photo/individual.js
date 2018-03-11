@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router5'
+
+import { TagLink } from 'components'
 
 const Photo = ({ photos, timestamp, note_count, reblog, tags, ...props }) => (
 	<Fragment>
@@ -11,12 +12,7 @@ const Photo = ({ photos, timestamp, note_count, reblog, tags, ...props }) => (
 			{timestamp} {note_count}
 		</p>
 		{reblog && <div dangerouslySetInnerHTML={{ __html: reblog.tree_html }} />}
-		{tags &&
-			tags.map(tagName => (
-				<Link key={tagName} routeName="tag" routeParams={{ tagName }}>
-					#{tagName}
-				</Link>
-			))}
+		{tags && tags.map(tagName => <TagLink key={tagName} tag={tagName} />)}
 		<pre>{JSON.stringify({ component: 'Photo', ...props }, null, 2)}</pre>
 	</Fragment>
 )
