@@ -1,28 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router5'
+import withState from 'react-state-hoc'
+import { connect as connectStyles } from 'react-fela'
+import classNames from 'classnames'
 
-import { List } from 'components'
+import { Link, List } from 'components'
 
-const Navigation = props => (
-	<nav>
-		<List>
-			<a>Menu</a>
-			<Link routeName="ask">Ask</Link>
-			<a>Follow</a>
-			<a>Random</a>
-			<Link routeName="all">Home</Link>
-		</List>
-		<List>
-			<a>Downloads</a>
-			<Link routeName="tag" routeParams={{ tagName: 'lookbook' }}>
-				Lookbooks
-			</Link>
-			<a>Sims</a>
-			<Link routeName="tag" routeParams={{ tagName: 'wcif' }}>
-				WCIF
-			</Link>
-		</List>
+import styles from './Navigation.styles'
+
+const Navigation = ({ styles, ...props }) => (
+	<nav className={styles.nav}>
+		{window.config.navigation.map(({ key: listKey, items }) => (
+			<List
+				key={listKey}
+				className={classNames(styles.list, styles[listKey])}
+				itemClassName={styles.listItem}
+			>
+				{items.map(({ onClick, ...item }) => (
+					<Link
+						{...item}
+						className={styles.link}
+						onClick={onClick && (() => onClick({ ...props, ...item }))}
+					/>
+				))}
+			</List>
+		))}
 	</nav>
 )
 
-export default Navigation
+export default withState({ visible: false })(connectStyles(styles)(Navigation))

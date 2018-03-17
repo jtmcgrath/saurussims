@@ -12,6 +12,38 @@
 window.config = {
 	columnWidth: 300,
 	columnSpacing: 30,
+	navigation: [
+		{
+			key: 'main',
+			items: [
+				{
+					children: 'Menu',
+					onClick: ({ setState, visible }) => setState({ visible: !visible }),
+				},
+				{ children: 'Ask', routeName: 'ask' },
+				{ children: 'Follow' },
+				{ children: 'Random' },
+				{ children: 'Home', routeName: 'all' },
+			],
+		},
+		{
+			key: 'secondary',
+			items: [
+				{ children: 'Downloads' },
+				{
+					children: 'Lookbooks',
+					routeName: 'tag',
+					routeParams: { tagName: 'lookbook' },
+				},
+				{ children: 'Sims' },
+				{
+					children: 'WCIF',
+					routeName: 'tag',
+					routeParams: { tagName: 'wcif' },
+				},
+			],
+		},
+	],
 }
 </script>
 

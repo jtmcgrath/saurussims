@@ -2,20 +2,33 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router5'
+import { createRenderer } from 'fela'
+import { Provider as StyleProvider } from 'react-fela'
 
 import App from './components/App'
 import createRouter from './router'
 import configureStore from './store'
 
+const renderer = createRenderer()
+
+const globalStyles = {
+	padding: 0,
+	margin: 0,
+}
+
+renderer.renderStatic(globalStyles, 'html,body')
+
 const router = createRouter()
 const store = configureStore(router)
 
 const wrappedApp = (
-	<Provider store={store}>
-		<RouterProvider router={router}>
-			<App />
-		</RouterProvider>
-	</Provider>
+	<StyleProvider renderer={renderer}>
+		<Provider store={store}>
+			<RouterProvider router={router}>
+				<App />
+			</RouterProvider>
+		</Provider>
+	</StyleProvider>
 )
 
 router.start((err, state) => {
