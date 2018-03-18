@@ -8,15 +8,10 @@ import { Provider as StyleProvider } from 'react-fela'
 import App from './components/App'
 import createRouter from './router'
 import configureStore from './store'
+import globalStyles from './globalStyles'
 
 const renderer = createRenderer()
-
-const globalStyles = {
-	padding: 0,
-	margin: 0,
-}
-
-renderer.renderStatic(globalStyles, 'html,body')
+renderer.renderStatic(globalStyles)
 
 const router = createRouter()
 const store = configureStore(router)

@@ -1,7 +1,10 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Link } from 'react-router5'
+import { connect as connectStyles } from 'react-fela'
 
 import { Post, Pagination } from 'components'
+
+import styles from './PostList.styles'
 
 class PostList extends PureComponent {
 	render() {
@@ -22,25 +25,34 @@ class PostList extends PureComponent {
 	}
 }
 
-const PostColumns = ({ columnCount, posts }) => {
+const PostColumns = ({ columnCount, columnSpacing, posts, styles }) => {
 	if (!columnCount > 1) {
 		return <div>{posts.map(getPostElement)}</div>
 	}
 
 	const content = posts
 		.reduce((acc, postId, i) => {
-			acc[i % columnCount].push(getPostElement(postId))
+			acc[i % columnCount].push(getPostElement(postId, styles))
 			return acc
 		}, Array.from(Array(columnCount), () => []))
-		.map((column, i) => <div key={i}>{column}</div>)
+		.map((column, i) => (
+			<div key={i} className={styles.column}>
+				{column}
+			</div>
+		))
 
-	return <div className="masonry">{content}</div>
+	return <div className={styles.wrapper}>{content}</div>
 }
 
-const getPostElement = postId => (
-	<Link key={postId} routeName="post" routeParams={{ postId }}>
+const getPostElement = (postId, styles) => (
+	<Link
+		key={postId}
+		className={styles.listItem}
+		routeName="post"
+		routeParams={{ postId }}
+	>
 		<Post postId={postId} type="list" />
 	</Link>
 )
 
-export default PostList
+export default connectStyles(styles)(PostList)

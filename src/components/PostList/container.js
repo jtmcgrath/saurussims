@@ -29,7 +29,13 @@ class PostListContainer extends Component {
 	}
 
 	render() {
-		return <PostList {...this.props} {...this.state} />
+		return (
+			<PostList
+				{...this.props}
+				{...this.state}
+				columnSpacing={window.config.columnSpacing}
+			/>
+		)
 	}
 }
 

@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Photo = props => (
-	<pre>{JSON.stringify({ component: 'Photo', ...props }, null, 2)}</pre>
+const Photo = ({ photos }) => (
+	<Fragment>
+		{photos &&
+			photos.map(({ caption, original_size: { url } }, i) => (
+				<img key={i} src={url} alt={caption} />
+			))}
+	</Fragment>
 )
 
 export default Photo
