@@ -3,10 +3,11 @@ import thunkMiddleware from 'redux-thunk'
 import { router5Middleware, router5Reducer } from 'redux-router5'
 
 import tumblr from './tumblr'
+import viewport from './viewport'
 
 export default function configureStore(
 	router,
-	initialState = window.__INITIAL_STATE__ || {},
+	initialState = window.config.initialState || {},
 ) {
 	let middleware = [router5Middleware(router), thunkMiddleware]
 
@@ -23,6 +24,7 @@ export default function configureStore(
 		combineReducers({
 			router: router5Reducer,
 			tumblr,
+			viewport,
 		}),
 		initialState,
 		middleware,

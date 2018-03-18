@@ -19,8 +19,8 @@ Post.defaultProps = {
 	type: 'individual',
 }
 
-const mapStateToProps = (store, ownProps) => ({
-	post: store.tumblr.posts[ownProps.postId],
+const mapStateToProps = (state, props) => ({
+	post: state.tumblr.posts[props.postId],
 })
 
 export default connect(mapStateToProps)(Post)

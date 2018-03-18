@@ -1,0 +1,1 @@
+export const RESIZE_VIEWPORT = 'RESIZE_VIEWPORT'

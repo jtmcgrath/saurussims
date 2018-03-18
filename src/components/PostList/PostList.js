@@ -1,10 +1,7 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Link } from 'react-router5'
-import { connect as connectStyles } from 'react-fela'
 
 import { Post, Pagination } from 'components'
-
-import styles from './PostList.styles'
 
 class PostList extends PureComponent {
 	render() {
@@ -55,4 +52,4 @@ const getPostElement = (postId, styles) => (
 	</Link>
 )
 
-export default connectStyles(styles)(PostList)
+export default PostList

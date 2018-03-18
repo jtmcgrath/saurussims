@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
 
 import routeComponents from 'views'
 import { Navigation, NotFound } from 'components'
 
-const App = ({ route }) => {
+const App = ({ columnCount, columnSpacing, route }) => {
 	const segment = route ? route.name.split('.')[0] : undefined
 
 	const Content = routeComponents[segment] || NotFound
@@ -12,9 +11,11 @@ const App = ({ route }) => {
 	return (
 		<Fragment>
 			<Navigation />
-			<Content />
+			<div>
+				<Content />
+			</div>
 		</Fragment>
 	)
 }
 
-export default connect(state => state.router)(App)
+export default App

@@ -1,7 +1,7 @@
-import { requestPage, requestPost } from 'store/tumblr'
+import { requestPage, requestPost } from 'store'
 
-const requestPageFactory = name => (store, { pageId = 1, tagName = '' }) =>
-	!store.tumblr.pages[`${tagName}${pageId}`] &&
+const requestPageFactory = name => (state, { pageId = 1, tagName = '' }) =>
+	!state.tumblr.pages[`${tagName}${pageId}`] &&
 	requestPage(name, pageId, tagName)
 
 const routes = [
@@ -34,8 +34,8 @@ const routes = [
 	{
 		name: 'post',
 		path: '/post/:postId',
-		onActivate: (store, { postId }) =>
-			!store.tumblr.posts[postId] && requestPost('post', postId),
+		onActivate: (state, { postId }) =>
+			!state.tumblr.posts[postId] && requestPost('post', postId),
 	},
 	{ name: 'ask', path: '/ask' },
 	{ name: 'notFound', path: '/404' },
