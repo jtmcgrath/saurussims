@@ -27,10 +27,10 @@ export default {
 		background: 'white',
 		bottom: '100%',
 		height: visible ? 'calc(100vh - 44px)' : 0,
-    left: 0,
+		left: 0,
 		overflow: 'hidden',
 		position: 'absolute',
-    right: 0,
+		right: 0,
 		transition: '.4s ease all',
 	}),
 	link: () => ({
