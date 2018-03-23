@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const Photo = ({ photos }) => (
+const Photo = ({ photos, styles }) => (
 	<Fragment>
 		{photos &&
 			photos.map(({ caption, original_size: { url } }, i) => (

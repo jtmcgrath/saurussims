@@ -1,15 +1,10 @@
 import { padding } from 'polished'
 
 export default {
-	nav: ({ columnWidth }) => ({
-		flex: `0 0 ${columnWidth}px`,
+	nav: ({ columnSpacing }) => ({
+		paddingTop: `${columnSpacing}px`,
 	}),
-	content: ({ columnWidth }) => ({
-		bottom: 0,
-		position: 'fixed',
-		top: 0,
-		width: `${columnWidth}px`,
-	}),
+	content: () => ({}),
 	list: () => ({
 		lineHeight: '44px',
 		listStyle: 'none',
@@ -32,5 +27,8 @@ export default {
 		flex: '1 1 100%',
 		justifyContent: 'center',
 		textDecoration: 'none',
+	}),
+	hideOnDesktop: () => ({
+		display: 'none !important',
 	}),
 }

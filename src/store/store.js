@@ -22,9 +22,9 @@ export default function configureStore(
 
 	const store = createStore(
 		combineReducers({
+			columnCount: viewport,
 			router: router5Reducer,
 			tumblr,
-			viewport,
 		}),
 		initialState,
 		middleware,

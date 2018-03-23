@@ -7,19 +7,12 @@ const getColumnCount = (
 	width = window.config.columnWidth,
 ) => Math.floor(getClientWidth() / (width + spacing)) || 1
 
-const initialState = {
-	columnCount: getColumnCount(),
-	columnSpacing: window.config.columnSpacing,
-	columnWidth: window.config.columnWidth,
-}
+const initialState = getColumnCount()
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case RESIZE_VIEWPORT: {
-			return {
-				...state,
-				columnCount: getColumnCount(state.columnSpacing, state.columnWidth),
-			}
+			return getColumnCount()
 		}
 
 		default: {

@@ -4,10 +4,12 @@ import { connect } from 'react-redux'
 import { connect as connectStyles } from 'react-fela'
 
 import { compose } from 'utils/general'
+import { withConfig } from 'hocs'
+import { getColumnCount, isDesktop } from 'store'
 
-import Navigation from './Navigation'
-import desktopStyles from './Navigation.styles.desktop'
-import mobileStyles from './Navigation.styles.mobile'
+import Navigation from './component'
+import desktopStyles from './styles.desktop'
+import mobileStyles from './styles.mobile'
 
 const DesktopNavigation = connectStyles(desktopStyles)(Navigation)
 const MobileNavigation = connectStyles(mobileStyles)(Navigation)
@@ -15,12 +17,14 @@ const MobileNavigation = connectStyles(mobileStyles)(Navigation)
 const NavigationSwitch = ({ desktopLayout, ...props }) =>
 	createElement(desktopLayout ? DesktopNavigation : MobileNavigation, props)
 
-const mapStateToProps = (state, props) => ({
-	desktopLayout: state.viewport.columnCount > 2,
-	...state.viewport,
+const mapStateToProps = (store, props) => ({
+	columnCount: getColumnCount(store),
+	desktopLayout: isDesktop(store),
 	...props,
 })
 
-export default compose(connect(mapStateToProps), withState({ visible: false }))(
-	NavigationSwitch,
-)
+export default compose(
+	connect(mapStateToProps),
+	withState({ visible: false }),
+	withConfig('background', 'columnSpacing', 'navigation'),
+)(NavigationSwitch)

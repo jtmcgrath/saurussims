@@ -6,7 +6,7 @@ const client = tumblrJs.createClient(config.TUMBLR)
 export default {
 	getPosts: (_tag = '') => (page = 1) => callback => {
 		const offset = page * 20 - 20
-		const tag = _tag.replace('-', ' ')
+		const tag = _tag.replace(/-/g, ' ')
 		client.blogPosts('saurussims', { tag, offset }, callback)
 	},
 

@@ -1,11 +1,17 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import { List } from 'components'
 import { generateList, generateListAroundCenter } from 'utils/list'
 
 import createLink from './createLink'
 
-const Pagination = ({ pageId, linkProps, pageCount }) => {
+const Pagination = ({ linkProps: _linkProps, pageId, pageCount, styles }) => {
+	const linkProps = {
+		..._linkProps,
+		className: classNames(_linkProps.className, styles.item),
+	}
+
 	let config
 	if (pageCount < 10) {
 		config = {
@@ -31,15 +37,17 @@ const Pagination = ({ pageId, linkProps, pageCount }) => {
 	}
 
 	return (
-		<List>
-			{[
-				config.first,
-				config.prev,
-				...config.pages.map(pageId => createLink(linkProps, pageId)),
-				config.next,
-				config.last,
-			]}
-		</List>
+		<nav>
+			<List className={styles.wrapper}>
+				{[
+					config.first,
+					config.prev,
+					...config.pages.map(pageId => createLink(linkProps, pageId)),
+					config.next,
+					config.last,
+				]}
+			</List>
+		</nav>
 	)
 }
 

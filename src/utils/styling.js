@@ -4,3 +4,8 @@ export const borderRadius = (...args) => ({
 	borderBottomRightRadius: args[2] || args[0],
 	borderBottomLeftRadius: args[3] || args[1] || args[0],
 })
+
+export const link = {
+	display: 'inline-block',
+	marginRight: '4px',
+}

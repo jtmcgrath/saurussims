@@ -1,4 +1,5 @@
 export { default as App } from './App'
+export { default as Header } from './Header'
 export { default as Link } from './Link'
 export { default as List } from './List'
 export { default as Navigation } from './Navigation'

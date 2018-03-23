@@ -1,8 +1,8 @@
 import { padding } from 'polished'
 
 export default {
-	nav: ({ columnWidth }) => ({
-		background: 'white',
+	nav: ({ background, columnWidth }) => ({
+		background: 'rgba(255,255,255,.9)',
 		bottom: 0,
 		left: 0,
 		position: 'fixed',
@@ -24,7 +24,7 @@ export default {
 	}),
 	main: () => ({}),
 	secondary: ({ visible }) => ({
-		background: 'white',
+		background: 'rgba(255,255,255,.9)',
 		bottom: '100%',
 		height: visible ? 'calc(100vh - 44px)' : 0,
 		left: 0,

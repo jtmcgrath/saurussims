@@ -14,12 +14,18 @@ window.config = {
 		'linear-gradient(to bottom, #c6c6c6 0%, #c6c6c6 100%) repeat fixed 0% 0% transparent',
 	columnWidth: 300,
 	columnSpacing: 30,
+	account: {
+		avatar: 'https://78.media.tumblr.com/avatar_cbd9604ad10b_128.pnj',
+		username: 'SaurusSims',
+		description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
+	},
 	navigation: [
 		{
 			key: 'main',
 			items: [
 				{
 					children: 'Menu',
+					hideOnDesktop: true,
 					onClick: ({ setState, visible }) => setState({ visible: !visible }),
 				},
 				{ children: 'Ask', routeName: 'ask' },

@@ -1,4 +1,6 @@
 export default `
+  @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i|Amatic+SC');
+
   *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -16,19 +18,29 @@ export default `
     min-width: 320px;
   }
 
-  #root {
-    display: flex;
+  body,
+  p {
+    font-family: "Alegreya Sans", Helvetica, sans-serif;
+    font-size: 1.6rem;
   }
 
-  #root > div {
-    flex: 1 0 100%;
-    overflow-x: hidden;
+  ul,
+  p {
+    margin-bottom: 1em;
   }
 
-  @media (min-width: 320px) {
-    #root > div {
-      flex: 1 0 calc(100vw - ${window.config.columnWidth}px);
-    }
+  ul:last-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Amatic SC", Helvetica, sans-serif;
   }
 
   img {
@@ -36,7 +48,37 @@ export default `
     vertical-align: bottom;
   }
 
-  a {
+  a,
+  .hyperlink {
+    color: #919191;
     cursor: pointer;
+    text-decoration: underline;
+  }
+
+  a.active {
+    text-decoration: none;
+    opacity: .7;
+  }
+
+  li {
+    margin: 0 0 .5em 1em;
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  blockquote {
+    border-left: 2px solid #5e6661;
+    margin: 15px 0;
+    padding-left: 18px;
+  }
+
+  blockquote:last-child {
+    margin-bottom: 0;
   }
 `
