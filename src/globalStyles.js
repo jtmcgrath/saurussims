@@ -46,6 +46,11 @@ export default `
   img {
     max-width: 100%;
     vertical-align: bottom;
+    width: 100%;
+  }
+
+  img + img {
+    margin-top: ${window.config.itemPadding}px;
   }
 
   a,

@@ -26,11 +26,11 @@ export default {
 		flex: `0 0 ${columnWidth}px`,
 		overflow: 'hidden',
 	}),
-	listItem: ({ columnSpacing }) => ({
+	listItem: ({ columnSpacing, itemPadding }) => ({
 		background: 'white',
 		display: 'block',
 		overflow: 'hidden',
-		padding: '6px',
+		padding: `${itemPadding}px`,
 		...borderRadius('4px'),
 		...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
 	}),

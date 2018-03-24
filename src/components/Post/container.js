@@ -15,7 +15,7 @@ const mapStateToProps = (state, { postId }) => ({
 })
 
 export default compose(
-	withConfig('columnSpacing', 'columnWidth'),
+	withConfig('columnSpacing', 'columnWidth', 'itemPadding'),
 	connect(mapStateToProps),
 	connectStyles(styles),
 )(Post)

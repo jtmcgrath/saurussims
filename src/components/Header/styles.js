@@ -23,5 +23,6 @@ export default {
 	}),
 	avatar: ({ columnSpacing }) => ({
 		paddingBottom: `${columnSpacing / 2}px`,
+		width: '128px',
 	}),
 }
