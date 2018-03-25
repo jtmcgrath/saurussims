@@ -1,7 +1,5 @@
 import React from 'react'
 
-const Video = props => (
-	<pre>{JSON.stringify({ component: 'Video', ...props }, null, 2)}</pre>
-)
+const Video = props => <p>Video</p>
 
 export default Video

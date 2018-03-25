@@ -8,18 +8,11 @@ import { withConfig } from 'hocs'
 import { getColumnCount, isDesktop } from 'store'
 
 import Navigation from './component'
-import desktopStyles from './styles.desktop'
-import mobileStyles from './styles.mobile'
-
-const DesktopNavigation = connectStyles(desktopStyles)(Navigation)
-const MobileNavigation = connectStyles(mobileStyles)(Navigation)
-
-const NavigationSwitch = ({ desktopLayout, ...props }) =>
-	createElement(desktopLayout ? DesktopNavigation : MobileNavigation, props)
+import styles from './styles'
 
 const mapStateToProps = (store, props) => ({
 	columnCount: getColumnCount(store),
-	desktopLayout: isDesktop(store),
+	isDesktop: isDesktop(store),
 	...props,
 })
 
@@ -27,4 +20,5 @@ export default compose(
 	connect(mapStateToProps),
 	withState({ visible: false }),
 	withConfig('background', 'columnSpacing', 'navigation'),
-)(NavigationSwitch)
+	connectStyles(styles),
+)(Navigation)

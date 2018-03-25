@@ -1,7 +1,12 @@
 import React from 'react'
 
-const Answer = props => (
-	<pre>{JSON.stringify({ component: 'Answer', ...props }, null, 2)}</pre>
+const Answer = ({ asking_name, question, styles, ...props }) => (
+	<article>
+		<div className={styles.question}>
+			<span dangerouslySetInnerHTML={{ __html: question }} />
+			<span className={styles.attribution}>{asking_name}</span>
+		</div>
+	</article>
 )
 
 export default Answer

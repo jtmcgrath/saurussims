@@ -6,6 +6,7 @@ import * as customPages from './customPages'
 const routeComponents = {
 	all: All,
 	post: Post,
+	postWithoutSlug: Post,
 	tag: Tag,
 	...customPages,
 }

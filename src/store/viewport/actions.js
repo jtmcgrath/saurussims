@@ -1,5 +1,14 @@
 import { RESIZE_VIEWPORT } from './actionTypes'
 
-export const resizeViewport = () => ({
-	type: RESIZE_VIEWPORT,
-})
+let debounceTimer
+
+export const resizeViewport = () => dispatch => {
+	clearTimeout(debounceTimer)
+	debounceTimer = setTimeout(
+		() =>
+			dispatch({
+				type: RESIZE_VIEWPORT,
+			}),
+		200,
+	)
+}

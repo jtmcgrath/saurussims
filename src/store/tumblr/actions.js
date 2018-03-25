@@ -7,10 +7,12 @@ import {
 	REQUEST_POST,
 } from './actionTypes'
 
+import { transformPost } from './transformers'
+
 const receivePost = post => ({
 	type: RECEIVE_POSTS,
 	posts: {
-		[post.id]: post,
+		[post.id]: transformPost(post),
 	},
 })
 
@@ -43,8 +45,8 @@ export const requestPage = (route, page, tag) => dispatch => {
 		const pageData = []
 		const postData = {}
 		posts.forEach(post => {
-			pageData.push(post.id)
-			postData[post.id] = post
+			pageData.push({ postId: post.id, postSlug: post.slug || undefined })
+			postData[post.id] = transformPost(post)
 		})
 		dispatch(receivePosts(postData))
 		dispatch(receivePage(tag, page, pageCount, pageData))

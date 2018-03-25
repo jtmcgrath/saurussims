@@ -1,7 +1,5 @@
 import React from 'react'
 
-const Chat = props => (
-	<pre>{JSON.stringify({ component: 'Chat', ...props }, null, 2)}</pre>
-)
+const Chat = props => <p>Chat</p>
 
 export default Chat

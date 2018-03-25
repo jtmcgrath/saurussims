@@ -28,8 +28,8 @@ const PostColumns = ({ columnCount, columnSpacing, posts, styles }) => {
 	}
 
 	const content = posts
-		.reduce((acc, postId, i) => {
-			acc[i % columnCount].push(getPostElement(postId, styles))
+		.reduce((acc, post, i) => {
+			acc[i % columnCount].push(getPostElement(post, styles))
 			return acc
 		}, Array.from(Array(columnCount), () => []))
 		.map((column, i) => (
@@ -41,12 +41,12 @@ const PostColumns = ({ columnCount, columnSpacing, posts, styles }) => {
 	return <div className={styles.wrapper}>{content}</div>
 }
 
-const getPostElement = (postId, styles) => (
+const getPostElement = ({ postId, postSlug }, styles) => (
 	<Link
+		className={styles.link}
 		key={postId}
-		className={styles.listItem}
-		routeName="post"
-		routeParams={{ postId }}
+		routeName={postSlug ? 'post' : 'postWithoutSlug'}
+		routeParams={{ postId, postSlug }}
 	>
 		<Post postId={postId} type="list" />
 	</Link>

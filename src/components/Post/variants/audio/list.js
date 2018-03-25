@@ -1,7 +1,5 @@
 import React from 'react'
 
-const Audio = props => (
-	<pre>{JSON.stringify({ component: 'Audio', ...props }, null, 2)}</pre>
-)
+const Audio = props => <p>Audio</p>
 
 export default Audio

@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
-const Photo = ({ photos, styles }) => (
-	<Fragment>
+const Photo = ({ styles, photos }) => (
+	<article className={styles.listItem}>
 		{photos &&
-			photos.map(({ caption, original_size: { url } }, i) => (
-				<img key={i} src={url} alt={caption} />
+			photos.map(({ caption, thumbnail }, i) => (
+				<img key={thumbnail} src={thumbnail} alt={caption} />
 			))}
-	</Fragment>
+	</article>
 )
 
 export default Photo

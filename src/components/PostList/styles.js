@@ -1,12 +1,13 @@
-import { margin, padding } from 'polished'
-import { borderRadius } from 'utils/styling'
+import { padding } from 'polished'
+
+import { listItem } from 'utils/styling'
 
 export default {
 	wrapper: ({ columnSpacing }) => ({
 		alignItems: 'flex-start',
 		display: 'flex',
-		...padding(0, `${columnSpacing / 2}px`),
 		justifyContent: 'space-around',
+		...padding(0, `${columnSpacing / 2}px`),
 	}),
 	responsiveWrapper: ({ columnCount }) => ({
 		display: columnCount > 1 ? 'flex' : 'block !important',
@@ -26,12 +27,9 @@ export default {
 		flex: `0 0 ${columnWidth}px`,
 		overflow: 'hidden',
 	}),
-	listItem: ({ columnSpacing, itemPadding }) => ({
-		background: 'white',
+	listItem: listItem,
+	link: () => ({
 		display: 'block',
-		overflow: 'hidden',
-		padding: `${itemPadding}px`,
-		...borderRadius('4px'),
-		...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
+		textDecoration: 'none',
 	}),
 }

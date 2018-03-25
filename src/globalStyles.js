@@ -1,3 +1,5 @@
+const spacedItems = ['ul', 'p', 'figure', 'hr']
+
 export default `
   @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i|Amatic+SC');
 
@@ -24,13 +26,13 @@ export default `
     font-size: 1.6rem;
   }
 
-  ul,
-  p {
+  ${spacedItems.join(`,
+  `)} {
     margin-bottom: 1em;
   }
 
-  ul:last-child,
-  p:last-child {
+  ${spacedItems.join(`:last-child,
+  `)}:last-child {
     margin-bottom: 0;
   }
 

@@ -33,6 +33,12 @@ const routes = [
 	},
 	{
 		name: 'post',
+		path: '/post/:postId/:postSlug',
+		onActivate: (state, { postId }) =>
+			!state.tumblr.posts[postId] && requestPost('post', postId),
+	},
+	{
+		name: 'postWithoutSlug',
 		path: '/post/:postId',
 		onActivate: (state, { postId }) =>
 			!state.tumblr.posts[postId] && requestPost('post', postId),
