@@ -20,3 +20,11 @@ export const listItem = ({ columnSpacing, itemPadding, radius = 4 }) => ({
 	...borderRadius(`${radius}px`),
 	...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
 })
+
+export const invert = initial =>
+	({
+		bottom: 'top',
+		left: 'right',
+		right: 'left',
+		top: 'bottom',
+	}[initial])

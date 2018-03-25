@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react'
 const withLifecycle = config => BaseComponent => {
 	if (!config) return BaseComponent
 
-	class withLifecycle extends PureComponent {
+	class WithLifecycle extends PureComponent {
 		// Note: will extend with further lifecycle methods only when needed
 		componentDidMount() {
 			config.didMount(this.props)
@@ -20,9 +20,9 @@ const withLifecycle = config => BaseComponent => {
 
 	const baseName = BaseComponent.displayName || BaseComponent.name
 
-	withLifecycle.displayName = `withLifecycle(${baseName})`
+	WithLifecycle.displayName = `withLifecycle(${baseName})`
 
-	return withLifecycle
+	return WithLifecycle
 }
 
 export default withLifecycle

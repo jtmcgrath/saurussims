@@ -1,4 +1,3 @@
-import { createElement } from 'react'
 import withState from 'react-state-hoc'
 import { connect } from 'react-redux'
 import { connect as connectStyles } from 'react-fela'

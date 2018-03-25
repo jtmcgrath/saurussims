@@ -21,14 +21,14 @@ const withConfig = (...targets) => BaseComponent => {
 			}, {})
 		: { config }
 
-	const withConfig = props =>
+	const WithConfig = props =>
 		createElement(BaseComponent, { ...config, ...props })
 
 	const baseName = BaseComponent.displayName || BaseComponent.name
 
-	withConfig.displayName = `withConfig(${baseName})`
+	WithConfig.displayName = `withConfig(${baseName})`
 
-	return withConfig
+	return WithConfig
 }
 
 export default withConfig

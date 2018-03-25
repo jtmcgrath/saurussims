@@ -51,8 +51,21 @@ export default `
     width: 100%;
   }
 
-  img + img {
+  img + img,
+  article button + button {
     margin-top: ${window.config.itemPadding}px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    vertical-align: top;
+  }
+
+  button:focus {
+    outline: none;
   }
 
   a,
