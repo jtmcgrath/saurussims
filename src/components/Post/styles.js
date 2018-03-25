@@ -1,6 +1,7 @@
 import { padding } from 'polished'
 
-import { listItem } from 'utils/styling'
+import { listItem, invert } from 'utils/styling'
+import { capitalize } from 'utils/general'
 
 import commonStyles from '../PostList/styles'
 
@@ -11,20 +12,22 @@ const attributionPosition = {
 
 const radius = 20
 
-const speech = (props, position) => ({
-	...listItem({ ...props, radius }),
-	marginBottom: `calc(${props.columnSpacing}px + 1em)`,
-	overflow: 'visible !important',
-	position: 'relative',
+const speaker = (props, position) => ({
 	':after': {
 		borderTop: '5px solid white',
-		borderRight: `5px solid ${position === 'right' ? 'white' : 'transparent'}`,
 		borderBottom: '5px solid transparent',
-		borderLeft: `5px solid ${position === 'left' ? 'white' : 'transparent'}`,
 		content: '""',
 		display: 'block',
+		transform:
+			position === 'right'
+				? 'rotate(11deg) translate(0,-4px) scale(2)'
+				: 'rotate(-11deg) translate(0,-4px) scale(2)',
+		[`border${capitalize(position)}`]: '5px solid white',
+		[`border${capitalize(invert(position))}`]: '5px solid transparent',
 		[position]: `${
-			props.itemPadding * 2 > radius ? props.itemPadding * 2 : radius
+			props.itemPadding * 2 > radius
+				? props.itemPadding * 3
+				: radius + props.itemPadding
 		}px`,
 		...attributionPosition,
 	},
@@ -34,6 +37,15 @@ const speech = (props, position) => ({
 	'> a': {
 		[position]: `${props.itemPadding}px`,
 	},
+})
+
+const speech = (props, position) => ({
+	...listItem({ ...props, radius }),
+	...padding(`${radius}px !important`),
+	marginBottom: `calc(${props.columnSpacing}px + 1em)`,
+	overflow: 'visible !important',
+	position: 'relative',
+	...(position ? speaker(props, position) : {}),
 })
 
 export default {
@@ -73,4 +85,5 @@ export default {
 			display: 'none',
 		},
 	}),
+	text: props => speech(props),
 }

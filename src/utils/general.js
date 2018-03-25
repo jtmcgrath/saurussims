@@ -6,3 +6,6 @@ const getKey = (obj, keys) =>
 
 export const get = (obj, path) =>
 	obj === undefined || obj === null ? undefined : getKey(obj, path.split('.'))
+
+export const capitalize = string =>
+	string.charAt(0).toUpperCase() + string.slice(1)

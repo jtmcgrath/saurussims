@@ -13,7 +13,7 @@ const styles = {
 
 const TagLink = ({ styles, tag }) => {
 	const tagName = tag.replace(/ /g, '-')
-	const tagNameIsInvalid = /[?!'&]/.test(tagName)
+	const tagNameIsInvalid = /[^A-z0-9-]/.test(tagName)
 
 	return tagNameIsInvalid ? (
 		<span className={classNames('hyperlink', styles.link)}>#{tag}</span>

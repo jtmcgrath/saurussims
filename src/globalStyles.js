@@ -60,6 +60,8 @@ export default `
     background: transparent;
     border: none;
     cursor: pointer;
+    display: block;
+    line-height: 0;
     padding: 0;
     vertical-align: top;
   }

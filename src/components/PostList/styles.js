@@ -1,4 +1,4 @@
-import { padding } from 'polished'
+import { margin, padding } from 'polished'
 
 import { listItem } from 'utils/styling'
 
@@ -14,7 +14,7 @@ export default {
 	}),
 	column: ({ columnCount, columnSpacing, columnWidth }) => ({
 		flex: `0 1 calc(100% - ${columnSpacing}px)`,
-		overflowX: 'hidden',
+		overflow: 'hidden',
 		'@media (min-width: 320px)': {
 			flex: `0 1 calc(100vw / ${columnCount})`,
 		},
@@ -28,8 +28,13 @@ export default {
 		overflow: 'hidden',
 	}),
 	listItem: listItem,
-	link: () => ({
+	link: ({ columnSpacing }) => ({
 		display: 'block',
 		textDecoration: 'none',
+		...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
+		'>article': {
+			marginLeft: 0,
+			marginRight: 0,
+		},
 	}),
 }
