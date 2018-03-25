@@ -1,5 +1,7 @@
 import { padding } from 'polished'
 
+import { borderRadius } from 'utils/styling'
+
 export default {
 	header: () => ({}),
 	float: ({ columnWidth, isDesktop }) =>
@@ -22,7 +24,10 @@ export default {
 		},
 	}),
 	avatar: ({ columnSpacing }) => ({
-		paddingBottom: `${columnSpacing / 2}px`,
+		border: '2px solid white',
+		marginBottom: `${columnSpacing / 2}px`,
+		verticalAlign: 'bottom',
 		width: '128px',
+		...borderRadius('50%'),
 	}),
 }

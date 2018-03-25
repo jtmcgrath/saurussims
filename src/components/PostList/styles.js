@@ -36,5 +36,9 @@ export default {
 			marginLeft: 0,
 			marginRight: 0,
 		},
+		'>article>div': {
+			marginLeft: 0,
+			marginRight: 0,
+		},
 	}),
 }

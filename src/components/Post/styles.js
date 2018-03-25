@@ -81,7 +81,7 @@ export default {
 		'>figure': {
 			marginBottom: 0,
 		},
-		'>:not(figure)': {
+		'>:not(:first-child)': {
 			display: 'none',
 		},
 	}),

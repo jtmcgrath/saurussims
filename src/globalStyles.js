@@ -26,6 +26,12 @@ export default `
     font-size: 1.6rem;
   }
 
+  hr {
+    background: currentColor;
+    border: none;
+    height: 1px;
+  }
+
   ${spacedItems.join(`,
   `)} {
     margin-bottom: 1em;

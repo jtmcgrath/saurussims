@@ -3,21 +3,29 @@ import classNames from 'classnames'
 
 import { Sidebar } from 'components'
 
-const Answer = ({ answer, asking_name, question, styles, ...props }) => (
+const Attribution = ({ styles, to }) => (
+	<a href={`https://${to}.tumblr.com`} className={styles.attribution}>
+		{to}
+	</a>
+)
+
+const Answer = ({
+	answer,
+	asking_name,
+	blog_name,
+	question,
+	styles,
+	...props
+}) => (
 	<article className={classNames(styles.wrapper, styles.responsiveWrapper)}>
 		<div className={styles.wide}>
 			<div className={styles.question}>
 				<span dangerouslySetInnerHTML={{ __html: question }} />
-				<a
-					href={`https://${asking_name}.tumblr.com`}
-					className={styles.attribution}
-				>
-					{asking_name}
-				</a>
+				<Attribution to={asking_name} styles={styles} />
 			</div>
 			<div className={styles.answer}>
 				<span dangerouslySetInnerHTML={{ __html: answer }} />
-				<span className={styles.attribution}>Answerer</span>
+				<Attribution to={blog_name} styles={styles} />
 			</div>
 		</div>
 		<div className={styles.narrow}>
