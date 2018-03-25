@@ -17,7 +17,7 @@ const Gallery = ({ active, photos, setState, styles, ...props }) =>
 							onClick={() => setState({ active: active - 1 })}
 						/>
 					)}
-					<img className={styles.image} src={photos[active].original} />
+					<img className={styles.image} alt="" src={photos[active].original} />
 					{active < photos.length - 1 && (
 						<button
 							className={styles.next}

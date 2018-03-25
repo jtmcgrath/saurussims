@@ -65,4 +65,12 @@ export default {
 		lineHeight: `${columnSpacing + 20}px`,
 		...attributionPosition,
 	}),
+	wcif: () => ({
+		'>figure': {
+			marginBottom: 0,
+		},
+		'>:not(figure)': {
+			display: 'none',
+		},
+	}),
 }
