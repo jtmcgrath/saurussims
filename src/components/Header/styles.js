@@ -24,10 +24,8 @@ export default {
 		},
 	}),
 	avatar: ({ columnSpacing }) => ({
-		border: '2px solid white',
 		marginBottom: `${columnSpacing / 2}px`,
 		verticalAlign: 'bottom',
 		width: '128px',
-		...borderRadius('50%'),
 	}),
 }
