@@ -22,7 +22,7 @@ class PostList extends PureComponent {
 	}
 }
 
-const PostColumns = ({ columnCount, columnSpacing, posts, styles }) => {
+const PostColumns = ({ columnCount, posts, styles }) => {
 	if (!columnCount > 1) {
 		return <div>{posts.map(getPostElement)}</div>
 	}
