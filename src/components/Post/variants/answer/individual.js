@@ -3,11 +3,17 @@ import classNames from 'classnames'
 
 import { Sidebar } from 'components'
 
-const Attribution = ({ styles, to }) => (
-	<a href={`https://${to}.tumblr.com`} className={styles.attribution}>
-		{to}
-	</a>
-)
+const Attribution = ({ styles, to }) =>
+	to.toLowerCase() === 'anonymous' ? (
+		<span className={styles.attribution}>{to}</span>
+	) : (
+		<a
+			href={`https://${to.toLowerCase()}.tumblr.com`}
+			className={styles.attribution}
+		>
+			{to}
+		</a>
+	)
 
 const Answer = ({
 	answer,
