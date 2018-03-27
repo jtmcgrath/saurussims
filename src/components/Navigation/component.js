@@ -18,9 +18,7 @@ const Navigation = ({ isDesktop, navigation, styles, ...props }) => (
 								<Link
 									key={item.name}
 									{...item}
-									className={classNames(styles.link, {
-										[styles.hideOnDesktop]: hideOnDesktop,
-									})}
+									className={classNames(styles.link)}
 									onClick={
 										onClick
 											? () => onClick({ ...props, ...item })

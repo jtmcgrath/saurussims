@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Post, Pagination } from 'components'
+import { Pagination, Post, PostActions } from 'components'
 
 class PostList extends PureComponent {
 	render() {
@@ -40,17 +40,24 @@ const PostColumns = ({ columnCount, posts, styles }) => {
 	return <div className={styles.wrapper}>{content}</div>
 }
 
-const getPostElement = ({ postId, postSlug }, styles) => (
-	<Post
-		postId={postId}
-		linkProps={{
-			className: styles.link,
-			key: postId,
-			routeName: postSlug ? 'post' : 'postWithoutSlug',
-			routeParams: { postId, postSlug },
-		}}
-		type="list"
-	/>
-)
+const getPostElement = ({ postId, postSlug }, styles) => {
+	const linkProps = {
+		key: postId,
+		routeName: postSlug ? 'post' : 'postWithoutSlug',
+		routeParams: { postId, postSlug },
+	}
+
+	return (
+		<Post
+			postId={postId}
+			linkProps={{
+				...linkProps,
+				className: styles.link,
+			}}
+			postActions={<PostActions postId={postId} linkProps={linkProps} />}
+			type="list"
+		/>
+	)
+}
 
 export default PostList

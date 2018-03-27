@@ -33,4 +33,20 @@ export default {
 		display: 'block',
 		textDecoration: 'none',
 	}),
+	postActions: () => ({
+		position: 'relative',
+		'>.post-actions': {
+			bottom: 0,
+			display: 'flex',
+			left: 0,
+			height: 0,
+			overflow: 'hidden',
+			position: 'absolute',
+			right: 0,
+			transition: '.5s ease all',
+		},
+		':hover>.post-actions': {
+			height: '48px',
+		},
+	}),
 }

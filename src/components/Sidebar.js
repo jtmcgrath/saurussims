@@ -21,7 +21,8 @@ const Sidebar = ({
 		}
 	>
 		<p>
-			{moment.unix(timestamp).format('Do MMMM YYYY')}&nbsp;
+			{moment.unix(timestamp).format('Do MMMM YYYY')}
+			&nbsp;
 			{note_count && `♥ ${note_count}`}
 		</p>
 		{!caption &&
