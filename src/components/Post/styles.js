@@ -1,4 +1,4 @@
-import { padding } from 'polished'
+import { margin, padding } from 'polished'
 
 import { listItem, invert } from 'utils/styling'
 import { capitalize } from 'utils/general'
@@ -52,6 +52,8 @@ const speech = (props, position) => ({
 
 export default {
 	...commonStyles,
+	marginOnly: ({ columnSpacing }) =>
+		margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
 	extraPadded: () => ({
 		...padding('20px !important'),
 	}),

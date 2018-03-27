@@ -6,7 +6,7 @@ import { Sidebar } from 'components'
 const Text = ({ body, styles, ...props }) => (
 	<article className={classNames(styles.wrapper, styles.responsiveWrapper)}>
 		<div
-			className={classNames(styles.wide, styles.text)}
+			className={classNames(styles.wide, styles.text, styles.speechPadding)}
 			dangerouslySetInnerHTML={{ __html: body }}
 		/>
 		<div className={styles.narrow}>
