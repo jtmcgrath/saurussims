@@ -2,7 +2,7 @@ export default {
 	root: ({ isDesktop }) => ({
 		display: isDesktop ? 'flex' : 'block',
 		justifyContent: 'center',
-		paddingBottom: !isDesktop ? '44px' : null,
+		paddingBottom: !isDesktop ? '48px' : null,
 	}),
 	header: ({ columnWidth }) => ({
 		flex: `0 0 ${columnWidth}px`,

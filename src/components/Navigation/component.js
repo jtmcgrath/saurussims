@@ -1,9 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Link, List } from 'components'
+import { Icon, Link, List } from 'components'
 
-const Navigation = ({ navigation, styles, ...props }) => (
+const Navigation = ({ isDesktop, navigation, styles, ...props }) => (
 	<nav className={styles.nav}>
 		<div className={styles.content}>
 			{navigation.map(({ key: listKey, items }) => (
@@ -12,20 +12,28 @@ const Navigation = ({ navigation, styles, ...props }) => (
 					className={classNames(styles.list, styles[listKey])}
 					itemClassName={styles.listItem}
 				>
-					{items.map(({ onClick, hideOnDesktop, ...item }) => (
-						<Link
-							key={item.children}
-							{...item}
-							className={classNames(styles.link, {
-								[styles.hideOnDesktop]: hideOnDesktop,
-							})}
-							onClick={
-								onClick
-									? () => onClick({ ...props, ...item })
-									: () => props.setState({ visible: false })
-							}
-						/>
-					))}
+					{items.reduce((acc, { onClick, hideOnDesktop, ...item }) => {
+						if (!(hideOnDesktop && isDesktop)) {
+							acc.push(
+								<Link
+									key={item.name}
+									{...item}
+									className={classNames(styles.link, {
+										[styles.hideOnDesktop]: hideOnDesktop,
+									})}
+									onClick={
+										onClick
+											? () => onClick({ ...props, ...item })
+											: () => props.setState({ visible: false })
+									}
+								>
+									<Icon className={styles.linkIcon} icon={item.icon} />
+									<span className={styles.linkText}>{item.name}</span>
+								</Link>,
+							)
+						}
+						return acc
+					}, [])}
 				</List>
 			))}
 		</div>

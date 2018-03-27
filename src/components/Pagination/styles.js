@@ -8,7 +8,7 @@ export default {
 	}),
 	item: () => ({
 		display: 'flex',
-		lineHeight: '44px',
+		lineHeight: '48px',
 		...margin(0, '4px'),
 		...padding(0, '12px'),
 	}),
