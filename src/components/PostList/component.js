@@ -1,5 +1,4 @@
 import React, { Fragment, PureComponent } from 'react'
-import { Link } from 'react-router5'
 
 import { Post, Pagination } from 'components'
 
@@ -42,14 +41,16 @@ const PostColumns = ({ columnCount, posts, styles }) => {
 }
 
 const getPostElement = ({ postId, postSlug }, styles) => (
-	<Link
-		className={styles.link}
-		key={postId}
-		routeName={postSlug ? 'post' : 'postWithoutSlug'}
-		routeParams={{ postId, postSlug }}
-	>
-		<Post postId={postId} type="list" />
-	</Link>
+	<Post
+		postId={postId}
+		linkProps={{
+			className: styles.link,
+			key: postId,
+			routeName: postSlug ? 'post' : 'postWithoutSlug',
+			routeParams: { postId, postSlug },
+		}}
+		type="list"
+	/>
 )
 
 export default PostList

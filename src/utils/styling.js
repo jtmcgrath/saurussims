@@ -12,13 +12,16 @@ export const link = {
 	marginRight: '4px',
 }
 
-export const listItem = ({ columnSpacing, itemPadding, radius = 4 }) => ({
+export const listItem = ({ columnSpacing, radius = 4 }) => ({
 	background: 'white',
 	display: 'block',
 	overflow: 'hidden',
-	padding: `${itemPadding > radius / 2 ? itemPadding : radius / 2}px`,
 	...borderRadius(`${radius}px`),
 	...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
+})
+
+export const listItemPadding = ({ itemPadding, radius = 4 }) => ({
+	padding: `${itemPadding > radius / 2 ? itemPadding : radius / 2}px`,
 })
 
 export const invert = initial =>

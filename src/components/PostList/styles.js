@@ -1,6 +1,6 @@
 import { margin, padding } from 'polished'
 
-import { listItem } from 'utils/styling'
+import { listItem, listItemPadding } from 'utils/styling'
 
 export default {
 	wrapper: ({ columnSpacing }) => ({
@@ -28,17 +28,9 @@ export default {
 		overflow: 'hidden',
 	}),
 	listItem: listItem,
+	listItemPadding: listItemPadding,
 	link: ({ columnSpacing }) => ({
 		display: 'block',
 		textDecoration: 'none',
-		...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
-		'>article': {
-			marginLeft: 0,
-			marginRight: 0,
-		},
-		'>article>div': {
-			marginLeft: 0,
-			marginRight: 0,
-		},
 	}),
 }

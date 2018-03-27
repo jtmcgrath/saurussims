@@ -37,11 +37,13 @@ const speaker = (props, position) => ({
 	'> a': {
 		[position]: `${props.itemPadding}px`,
 	},
+	'> a > span': {
+		[position]: `${props.itemPadding}px`,
+	},
 })
 
 const speech = (props, position) => ({
 	...listItem({ ...props, radius }),
-	...padding(`${radius}px !important`),
 	marginBottom: `calc(${props.columnSpacing}px + 1em)`,
 	overflow: 'visible !important',
 	position: 'relative',
@@ -73,6 +75,7 @@ export default {
 	}),
 	answer: props => speech(props, 'left'),
 	question: props => speech(props, 'right'),
+	speechPadding: () => padding(`${radius}px !important`),
 	attribution: ({ columnSpacing }) => ({
 		lineHeight: `${columnSpacing + 20}px`,
 		...attributionPosition,
@@ -82,6 +85,12 @@ export default {
 			marginBottom: 0,
 		},
 		'>:not(:first-child)': {
+			display: 'none',
+		},
+		'>a>div>figure': {
+			marginBottom: 0,
+		},
+		'>a>div>:not(:first-child)': {
 			display: 'none',
 		},
 	}),

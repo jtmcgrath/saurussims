@@ -1,17 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router5'
 import classNames from 'classnames'
 
-const Answer = ({ answer, asking_name, question, styles, ...props }) =>
+const Answer = ({
+	answer,
+	asking_name,
+	linkProps,
+	question,
+	styles,
+	...props
+}) =>
 	props.tags.includes('WCIF') ? (
 		<article
-			className={classNames(styles.listItem, styles.wcif)}
-			dangerouslySetInnerHTML={{ __html: answer }}
-		/>
+			className={classNames(
+				styles.listItem,
+				styles.wcif,
+				styles.listItemPadding,
+			)}
+		>
+			<Link {...linkProps}>
+				<div dangerouslySetInnerHTML={{ __html: answer }} />
+			</Link>
+		</article>
 	) : (
 		<article>
 			<div className={styles.question}>
-				<span dangerouslySetInnerHTML={{ __html: question }} />
-				<span className={styles.attribution}>{asking_name}</span>
+				<Link
+					{...linkProps}
+					className={classNames(linkProps.className, styles.speechPadding)}
+				>
+					<span dangerouslySetInnerHTML={{ __html: question }} />
+					<span className={styles.attribution}>{asking_name}</span>
+				</Link>
 			</div>
 		</article>
 	)

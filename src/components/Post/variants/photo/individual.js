@@ -6,7 +6,13 @@ import { Gallery, Sidebar } from 'components'
 
 const Photo = ({ caption, notes, photos, setState, styles, ...props }) => (
 	<article className={classNames(styles.wrapper, styles.responsiveWrapper)}>
-		<div className={classNames(styles.wide, styles.listItem)}>
+		<div
+			className={classNames(
+				styles.wide,
+				styles.listItem,
+				styles.listItemPadding,
+			)}
+		>
 			{photos &&
 				photos.map(({ caption, original }, i) => (
 					<button key={original} onClick={() => setState({ active: i })}>

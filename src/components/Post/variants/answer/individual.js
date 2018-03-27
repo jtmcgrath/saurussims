@@ -25,11 +25,11 @@ const Answer = ({
 }) => (
 	<article className={classNames(styles.wrapper, styles.responsiveWrapper)}>
 		<div className={styles.wide}>
-			<div className={styles.question}>
+			<div className={classNames(styles.question, styles.speechPadding)}>
 				<span dangerouslySetInnerHTML={{ __html: question }} />
 				<Attribution to={asking_name} styles={styles} />
 			</div>
-			<div className={styles.answer}>
+			<div className={classNames(styles.answer, styles.speechPadding)}>
 				<span dangerouslySetInnerHTML={{ __html: answer }} />
 				<Attribution to={blog_name} styles={styles} />
 			</div>
