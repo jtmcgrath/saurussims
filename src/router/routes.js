@@ -44,6 +44,8 @@ const routes = [
 			!state.tumblr.posts[postId] && requestPost('post', postId),
 	},
 	{ name: 'ask', path: '/ask' },
+	{ name: 'downloads', path: '/downloads' },
+	{ name: 'sims', path: '/sims' },
 	{ name: 'notFound', path: '/404' },
 ]
 
