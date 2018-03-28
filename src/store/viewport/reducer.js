@@ -5,7 +5,11 @@ const getClientWidth = () => document.getElementById('root').clientWidth
 const getColumnCount = (
 	spacing = window.config.columnSpacing,
 	width = window.config.columnWidth,
-) => Math.floor(getClientWidth() / (width + spacing)) || 1
+	maxColumns = window.config.maxColumns,
+) => {
+	const count = Math.floor(getClientWidth() / (width + spacing)) || 1
+	return count > maxColumns ? maxColumns : count
+}
 
 const initialState = getColumnCount()
 
