@@ -13,12 +13,12 @@ export default {
 					position: 'fixed',
 					right: 0,
 				},
-	list: ({ isDesktop }) => ({
+	list: ({ columnSpacing, isDesktop }) => ({
 		display: 'flex',
 		lineHeight: '48px',
 		listStyle: 'none',
 		maxWidth: '400px',
-		...padding(0),
+		...padding(0, 0, isDesktop ? `${columnSpacing}px` : 0),
 		...margin(0, 'auto'),
 	}),
 	listItem: ({ isDesktop }) => ({

@@ -4,11 +4,12 @@ import { borderRadius } from 'utils/styling'
 
 export default {
 	header: () => ({}),
-	float: ({ columnWidth, isDesktop }) =>
+	float: ({ columnSpacing, columnWidth, isDesktop }) =>
 		isDesktop
 			? {
 					bottom: 0,
 					position: 'fixed',
+					paddingLeft: `${columnSpacing}px`,
 					top: 0,
 					width: `${columnWidth}px`,
 				}
