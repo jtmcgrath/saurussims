@@ -1,7 +1,5 @@
 import { padding } from 'polished'
 
-import { borderRadius } from 'utils/styling'
-
 export default {
 	header: () => ({}),
 	float: ({ columnSpacing, columnWidth, isDesktop }) =>

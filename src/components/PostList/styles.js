@@ -1,4 +1,4 @@
-import { margin, padding } from 'polished'
+import { padding } from 'polished'
 
 import { listItem, listItemPadding } from 'utils/styling'
 
