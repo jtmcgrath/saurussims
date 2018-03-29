@@ -15,7 +15,8 @@ const Downloads = ({ styles }) => (
 			</header>
 			<p>
 				<Link routeName="tag" routeParams={{ tagName: 'downloads' }}>
-					For now, please click here to view the downloads tag instead!
+					For now, please click here to view the <strong>downloads</strong> tag
+					instead!
 				</Link>
 			</p>
 		</div>
