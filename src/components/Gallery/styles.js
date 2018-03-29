@@ -46,7 +46,7 @@ export default {
 		zIndex: 3,
 	}),
 	image: ({ columnSpacing }) => ({
-		maxHeight: `calc(100vh - ${columnSpacing}px)`,
+		maxHeight: `calc(100vh - ${columnSpacing * 2}px)`,
 		width: 'auto !important',
 	}),
 	prev: () => button('left'),
