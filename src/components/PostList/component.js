@@ -1,13 +1,13 @@
 import React, { Fragment, PureComponent } from 'react'
 
-import { Pagination, Post, PostActions } from 'components'
+import { Loading, Pagination, Post, PostActions } from 'components'
 
 class PostList extends PureComponent {
 	render() {
 		const { posts } = this.props
 
 		if (posts === undefined) {
-			return <p>Loading...</p>
+			return <Loading />
 		}
 
 		return posts.length ? (

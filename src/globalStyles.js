@@ -109,4 +109,8 @@ export default `
   blockquote:last-child {
     margin-bottom: 0;
   }
+
+  @keyframes spin {
+    to {transform: rotate(360deg);}
+  }
 `

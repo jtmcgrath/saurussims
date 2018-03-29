@@ -1,10 +1,12 @@
 import React, { createElement } from 'react'
 
+import { Loading } from 'components'
+
 import * as variants from './variants'
 
 const Post = ({ post, type, ...props }) => {
 	if (post === undefined) {
-		return <p>Loading...</p>
+		return <Loading />
 	}
 
 	return post ? (
