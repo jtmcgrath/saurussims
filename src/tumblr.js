@@ -7,11 +7,11 @@ export default {
 	getPosts: (_tag = '') => (page = 1) => callback => {
 		const offset = page * 20 - 20
 		const tag = _tag.replace(/-/g, ' ')
-		client.blogPosts('saurussims', { tag, offset }, callback)
+		client.blogPosts(window.config.account.tumblr, { tag, offset }, callback)
 	},
 
 	getPost: id => callback => {
-		client.blogPosts('saurussims', { id }, (err, { posts }) =>
+		client.blogPosts(window.config.account.tumblr, { id }, (err, { posts }) =>
 			callback(err, { post: posts[0] }),
 		)
 	},
