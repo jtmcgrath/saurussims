@@ -43,20 +43,18 @@ const speaker = (props, position) => ({
 })
 
 const speech = (props, position) => ({
+	...(position ? speaker(props, position) : {}),
 	...listItem({ ...props, radius }),
 	marginBottom: `calc(${props.columnSpacing}px + 1em)`,
 	overflow: 'visible !important',
 	position: 'relative',
-	...(position ? speaker(props, position) : {}),
 })
 
 export default {
 	...commonStyles,
 	marginOnly: ({ columnSpacing }) =>
 		margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
-	extraPadded: () => ({
-		...padding('20px !important'),
-	}),
+	extraPadded: () => padding('20px !important'),
 	fixed: ({ columnSpacing, columnWidth, isDesktop }) =>
 		isDesktop
 			? {
@@ -79,8 +77,8 @@ export default {
 	question: props => speech(props, 'right'),
 	speechPadding: () => padding(`${radius}px !important`),
 	attribution: ({ columnSpacing }) => ({
-		lineHeight: `${columnSpacing + 20}px`,
 		...attributionPosition,
+		lineHeight: `${columnSpacing + 20}px`,
 	}),
 	wcif: () => ({
 		'>figure': {

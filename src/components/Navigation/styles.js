@@ -14,19 +14,19 @@ export default {
 					right: 0,
 				},
 	list: ({ columnSpacing, isDesktop }) => ({
+		...margin(0, 'auto'),
+		...padding(0, 0, isDesktop ? `${columnSpacing}px` : 0),
 		display: 'flex',
 		lineHeight: '48px',
 		listStyle: 'none',
 		maxWidth: '400px',
-		...padding(0, 0, isDesktop ? `${columnSpacing}px` : 0),
-		...margin(0, 'auto'),
 	}),
 	listItem: ({ isDesktop }) => ({
+		...padding(0, isDesktop ? '2px' : '12px'),
 		alignItems: 'center',
 		display: 'flex',
 		flex: '0 1 25%',
 		justifyContent: 'center',
-		...padding(0, isDesktop ? '2px' : '12px'),
 	}),
 	main: ({ isDesktop }) => ({
 		flexDirection: isDesktop ? 'row-reverse' : 'row',
@@ -62,14 +62,14 @@ export default {
 		textDecoration: 'none',
 	}),
 	linkIcon: () => ({
-		display: 'block',
 		...margin('4px', 'auto'),
+		display: 'block',
 	}),
 	linkText: () => ({
+		...margin('4px'),
 		display: 'block',
 		fontSize: '12px',
 		lineHeight: '12px',
-		...margin('4px'),
 	}),
 	hideOnDesktop: ({ isDesktop }) => ({
 		display: isDesktop ? 'none !important' : null,

@@ -23,6 +23,6 @@ export default compose(
 		willUnmount: ({ resizeViewport }) =>
 			window.removeEventListener('resize', resizeViewport),
 	}),
-	withConfig('columnWidth', 'columnSpacing', 'navigation'),
+	withConfig('columnSpacing', 'columnWidth', 'navigation'),
 	connectStyles(styles),
 )(App)

@@ -9,10 +9,10 @@ import Header from './component'
 export default compose(
 	withConfig(
 		'account.avatar',
-		'account.username',
 		'account.description',
-		'columnWidth',
+		'account.username',
 		'columnSpacing',
+		'columnWidth',
 	),
 	connectStyles(styles),
 )(Header)

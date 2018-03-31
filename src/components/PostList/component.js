@@ -2,23 +2,19 @@ import React, { Fragment, PureComponent } from 'react'
 
 import { Loading, Pagination, Post, PostActions } from 'components'
 
-class PostList extends PureComponent {
-	render() {
-		const { posts } = this.props
-
-		if (posts === undefined) {
-			return <Loading />
-		}
-
-		return posts.length ? (
-			<Fragment>
-				<PostColumns {...this.props} />
-				<Pagination />
-			</Fragment>
-		) : (
-			<p>No posts found!</p>
-		)
+const PostList = props => {
+	if (props.posts === undefined) {
+		return <Loading />
 	}
+
+	return props.posts.length ? (
+		<Fragment>
+			<PostColumns {...props} />
+			<Pagination />
+		</Fragment>
+	) : (
+		<p>No posts found!</p>
+	)
 }
 
 const PostColumns = ({ columnCount, posts, styles }) => {

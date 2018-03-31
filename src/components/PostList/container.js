@@ -12,14 +12,14 @@ const mapStateToProps = (state, props) => {
 	const isDesktop = getIsDesktop(state)
 
 	return {
-		posts: getPage(state, `${props.tagName || ''}${props.pageId || 1}`),
 		columnCount: isDesktop ? getColumnCount(state) - 1 : getColumnCount(state),
+		posts: getPage(state, `${props.tagName || ''}${props.pageId || 1}`),
 		isDesktop,
 	}
 }
 
 export default compose(
-	withConfig('columnWidth', 'columnSpacing', 'itemPadding'),
+	withConfig('columnSpacing', 'columnWidth', 'itemPadding'),
 	connect(mapStateToProps),
 	connectStyles(styles),
 )(PostList)

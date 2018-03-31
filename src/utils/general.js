@@ -1,5 +1,5 @@
 export const compose = (...args) => first =>
-	args.reverse().reduce((prev, func) => func(prev), first)
+	args.reduceRight((prev, func) => func(prev), first)
 
 const getKey = (obj, keys) =>
 	obj && keys.length ? getKey(obj[keys[0]], keys.slice(1)) : obj

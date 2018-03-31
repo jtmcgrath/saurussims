@@ -6,6 +6,7 @@ const createLink = (linkProps, pageId, content) => {
 	const routeName = targetIsPage
 		? linkProps.routeName
 		: linkProps.routeName.replace('.page', '')
+
 	return createElement(Link, {
 		key: content || pageId,
 		...linkProps,

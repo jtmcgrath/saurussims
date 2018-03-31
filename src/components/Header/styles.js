@@ -13,11 +13,11 @@ export default {
 				}
 			: {},
 	content: ({ columnSpacing }) => ({
+		...padding(`${columnSpacing}px`, `${columnSpacing / 2}px`, 0),
 		display: 'block',
 		textAlign: 'center',
 		textDecoration: 'none',
 		width: '100%',
-		...padding(`${columnSpacing}px`, `${columnSpacing / 2}px`, 0),
 		'&.active': {
 			opacity: 1,
 		},

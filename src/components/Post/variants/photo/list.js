@@ -1,13 +1,9 @@
-import React from 'react'
+import { createElement } from 'react'
 
 import Cutout from './cutout/list'
 import Standard from './standard/list'
 
 const Photo = props =>
-	props.tags.includes('cutout') ? (
-		<Cutout {...props} />
-	) : (
-		<Standard {...props} />
-	)
+	createElement(props.tags.includes('cutout') ? Cutout : Standard, props)
 
 export default Photo

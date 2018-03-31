@@ -13,11 +13,11 @@ export const link = {
 }
 
 export const listItem = ({ columnSpacing, radius = 4 }) => ({
+	...borderRadius(`${radius}px`),
+	...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
 	background: 'white',
 	display: 'block',
 	overflow: 'hidden',
-	...borderRadius(`${radius}px`),
-	...margin(`${columnSpacing}px`, `${columnSpacing / 2}px`),
 })
 
 export const listItemPadding = ({ itemPadding, radius = 4 }) => ({

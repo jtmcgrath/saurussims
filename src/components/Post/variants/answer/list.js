@@ -1,9 +1,9 @@
-import React from 'react'
+import { createElement } from 'react'
 
 import Standard from './standard/list'
 import Wcif from './wcif/list'
 
 const Answer = props =>
-	props.tags.includes('WCIF') ? <Wcif {...props} /> : <Standard {...props} />
+	createElement(props.tags.includes('WCIF') ? Wcif : Standard, props)
 
 export default Answer

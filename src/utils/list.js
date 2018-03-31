@@ -4,7 +4,7 @@ export const generateList = (start, end) => {
 	return Array.from(Array(Math.abs(high - low) + 1), (e, i) => i + low)
 }
 
-export const generateListAroundCenter = (current, total, maxLength = 9) => {
+export const generateListAroundCenter = (current, total, maxLength) => {
 	const center = parseInt(current, 10)
 	const pages = [center]
 

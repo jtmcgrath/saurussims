@@ -29,17 +29,17 @@ const label = ({ columnSpacing }, position) => ({
 
 export default {
 	root: ({ columnSpacing }) => ({
+		...overlay,
 		alignItems: 'center',
 		display: 'flex',
 		justifyContent: 'center',
 		padding: `${columnSpacing / 2}px`,
-		...overlay,
 	}),
 	shadow: () => ({
+		...overlay,
 		background: 'rgba(0,0,0,0.5)',
 		height: '100%',
 		width: '100%',
-		...overlay,
 	}),
 	content: () => ({
 		position: 'relative',

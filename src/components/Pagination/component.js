@@ -6,14 +6,14 @@ import { generateList, generateListAroundCenter } from 'utils/list'
 
 import createLink from './createLink'
 
-const Pagination = ({ linkProps: _linkProps, pageId, pageCount, styles }) => {
+const Pagination = ({ linkProps: lp, maxItems, pageId, pageCount, styles }) => {
 	const linkProps = {
-		..._linkProps,
-		className: classNames(_linkProps.className, styles.item),
+		...lp,
+		className: classNames(lp.className, styles.item),
 	}
 
 	let config
-	if (pageCount < 10) {
+	if (pageCount < maxItems + 1) {
 		config = {
 			pages: generateList(1, pageCount),
 			next: null,
@@ -22,7 +22,7 @@ const Pagination = ({ linkProps: _linkProps, pageId, pageCount, styles }) => {
 			last: null,
 		}
 	} else {
-		const pages = generateListAroundCenter(pageId, pageCount)
+		const pages = generateListAroundCenter(pageId, pageCount, maxItems)
 
 		config = {
 			pages: pages,
@@ -53,6 +53,7 @@ const Pagination = ({ linkProps: _linkProps, pageId, pageCount, styles }) => {
 
 Pagination.defaultProps = {
 	pageId: 1,
+	maxItems: 9,
 }
 
 export default Pagination

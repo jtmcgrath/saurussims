@@ -4,10 +4,10 @@ import { listItem, listItemPadding } from 'utils/styling'
 
 export default {
 	wrapper: ({ columnSpacing }) => ({
+		...padding(0, `${columnSpacing / 2}px`),
 		alignItems: 'flex-start',
 		display: 'flex',
 		justifyContent: 'space-around',
-		...padding(0, `${columnSpacing / 2}px`),
 	}),
 	responsiveWrapper: ({ columnCount }) => ({
 		display: columnCount > 1 ? 'flex' : 'block !important',

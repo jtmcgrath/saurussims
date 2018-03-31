@@ -3,7 +3,7 @@ import { connect as connectStyles } from 'react-fela'
 
 import { compose } from 'utils/general'
 import { withConfig } from 'hocs'
-import { getPost, getColumnCount, isDesktop } from 'store'
+import { getColumnCount, getPost, isDesktop } from 'store'
 
 import Post from './component'
 import styles from './styles'

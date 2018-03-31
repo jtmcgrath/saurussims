@@ -8,16 +8,12 @@ const withConfig = (...targets) => BaseComponent => {
 	config = targets
 		? targets.reduce((acc, curr) => {
 				const paths = curr.split('.')
+				const key = paths.length > 1 ? paths[paths.length - 1] : curr
 
-				return paths.length > 1
-					? {
-							...acc,
-							[paths[paths.length - 1]]: get(config, curr),
-						}
-					: {
-							...acc,
-							[curr]: get(config, curr),
-						}
+				return {
+					...acc,
+					[key]: get(config, curr),
+				}
 			}, {})
 		: { config }
 

@@ -2,8 +2,24 @@ import React from 'react'
 
 import { Modal } from 'components'
 
-const Gallery = ({ active, photos, setState, styles, ...props }) =>
-	(active || active === 0) && (
+const Gallery = ({ active, photos, setState, styles, ...props }) => {
+	if (!(active || active === 0)) return null
+
+	const previous = active > 0 && (
+		<button
+			className={styles.prev}
+			onClick={() => setState({ active: active - 1 })}
+		/>
+	)
+
+	const next = active < photos.length - 1 && (
+		<button
+			className={styles.next}
+			onClick={() => setState({ active: active + 1 })}
+		/>
+	)
+
+	return (
 		<Modal>
 			<div className={styles.root}>
 				<button
@@ -11,19 +27,9 @@ const Gallery = ({ active, photos, setState, styles, ...props }) =>
 					onClick={() => setState({ active: null })}
 				/>
 				<div className={styles.content}>
-					{active > 0 && (
-						<button
-							className={styles.prev}
-							onClick={() => setState({ active: active - 1 })}
-						/>
-					)}
+					{previous}
 					<img className={styles.image} alt="" src={photos[active].original} />
-					{active < photos.length - 1 && (
-						<button
-							className={styles.next}
-							onClick={() => setState({ active: active + 1 })}
-						/>
-					)}
+					{next}
 					<div className={styles.close}>X</div>
 					<div className={styles.count}>
 						{active + 1} of {photos.length}
@@ -32,5 +38,6 @@ const Gallery = ({ active, photos, setState, styles, ...props }) =>
 			</div>
 		</Modal>
 	)
+}
 
 export default Gallery
