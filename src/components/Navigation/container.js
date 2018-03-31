@@ -10,7 +10,6 @@ import Navigation from './component'
 import styles from './styles'
 
 const mapStateToProps = (store, props) => ({
-	...props,
 	columnCount: getColumnCount(store),
 	isDesktop: isDesktop(store),
 })

@@ -9,7 +9,6 @@ import App from './component'
 import styles from './styles'
 
 const mapStateToProps = (store, props) => ({
-	...props,
 	...getRouter(store),
 	columnCount: getColumnCount(store),
 	isDesktop: isDesktop(store),
