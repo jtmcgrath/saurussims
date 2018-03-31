@@ -5,20 +5,20 @@ import { Page } from 'components'
 import { compose } from 'utils/general'
 import { withConfig } from 'hocs'
 
-const Ask = ({ styles, tumblr }) => (
+const Ask = ({ styles, username }) => (
 	<Page>
 		<h1>Ask Away!</h1>
 		<iframe
 			className={styles.iframe}
 			frameborder="0"
 			scrolling="no"
-			src={`https://www.tumblr.com/ask_form/${tumblr}.tumblr.com`}
+			src={`https://www.tumblr.com/ask_form/${username}.tumblr.com`}
 		/>
 	</Page>
 )
 
 export default compose(
-	withConfig('account.tumblr'),
+	withConfig('account.username'),
 	connectStyles({
 		iframe: () => ({
 			height: '327px',

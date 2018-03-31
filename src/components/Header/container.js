@@ -10,7 +10,7 @@ export default compose(
 	withConfig(
 		'account.avatar',
 		'account.description',
-		'account.username',
+		'account.title',
 		'columnSpacing',
 		'columnWidth',
 	),

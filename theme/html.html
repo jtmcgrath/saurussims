@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <title>React App</title>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name="theme-color" content="#000000">
+<link rel="shortcut icon" href="[ insert favicon here ]">
+<title>{Title}</title>
 
 <script type="text/javascript">
 window.config = {
@@ -16,10 +16,10 @@ window.config = {
 	maxColumns: 4,
 	itemPadding: 6,
 	account: {
-		username: 'saurussims',
-		avatar: 'https://78.media.tumblr.com/avatar_a2e13eb8c83a_128.png',
-		title: 'SaurusSims',
-		description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
+		username: 'saurussims' || '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1],
+		avatar: '{PortraitURL-128}',
+		title: '{Title}',
+		description: '{Description}',
 	},
 	navigation: [
 		{
@@ -59,13 +59,10 @@ window.config = {
 	],
 }
 </script>
-
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <div id="modal"></div>
-  </body>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="modal"></div>
+  <script type="text/javascript" src="[ insert script bundle here ]"></script>
+</body>
 </html>
