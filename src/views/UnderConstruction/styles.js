@@ -8,7 +8,7 @@ export default {
 	}),
 	content: ({ columnSpacing, itemPadding }) => ({
 		...listItem({ columnSpacing }),
-		...listItemPadding({ itemPAdding: itemPadding * 2 }),
+		...listItemPadding({ itemPadding: itemPadding * 2 }),
 		display: 'inline-block',
 		textAlign: 'center',
 	}),
