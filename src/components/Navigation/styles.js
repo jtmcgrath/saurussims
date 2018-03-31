@@ -17,6 +17,7 @@ export default {
 		...margin(0, 'auto'),
 		...padding(0, 0, isDesktop ? `${columnSpacing}px` : 0),
 		display: 'flex',
+		justifyContent: 'center',
 		lineHeight: '48px',
 		listStyle: 'none',
 		maxWidth: '400px',
