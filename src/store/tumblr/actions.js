@@ -1,4 +1,9 @@
-import { RECEIVE_POSTS, RECEIVE_PAGE } from './actionTypes'
+import {
+	RECEIVE_LIKE_STATES,
+	RECEIVE_POSTS,
+	RECEIVE_PAGE,
+	RECEIVE_USER_STATUS,
+} from './actionTypes'
 import { transformPost } from './transformers'
 
 export const receivePost = post => ({
@@ -19,4 +24,14 @@ export const receivePage = (tag = '', page, pageCount, posts) => ({
 	page,
 	pageCount,
 	posts,
+})
+
+export const receiveUserStatus = status => ({
+	type: RECEIVE_USER_STATUS,
+	status,
+})
+
+export const receiveLikeStates = states => ({
+	type: RECEIVE_LIKE_STATES,
+	states,
 })

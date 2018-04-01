@@ -5,9 +5,11 @@ import { RouterProvider } from 'react-router5'
 import { createRenderer } from 'fela'
 import { Provider as StyleProvider } from 'react-fela'
 
-import App from './components/App'
-import createRouter from './router'
-import configureStore from './store'
+import { App } from 'components'
+import createRouter from 'router'
+import configureStore from 'store'
+import { init } from 'tumblr'
+
 import globalStyles from './globalStyles'
 
 const renderer = createRenderer()
@@ -15,6 +17,8 @@ renderer.renderStatic(globalStyles)
 
 const router = createRouter()
 const store = configureStore(router)
+
+init()
 
 const wrappedApp = (
 	<StyleProvider renderer={renderer}>

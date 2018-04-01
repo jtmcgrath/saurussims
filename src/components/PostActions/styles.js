@@ -12,6 +12,7 @@ export default {
 	}),
 	item: () => margin(0, '8px'),
 	link: () => ({
+		color: '#919191',
 		cursor: 'pointer',
 		display: 'block',
 		flex: '1 1 100%',
@@ -23,11 +24,19 @@ export default {
 		display: 'block',
 		lineHeight: '24px',
 	}),
+	heartIcon: ({ liked }) => ({
+		fill: liked && '#919191',
+	}),
 	linkText: () => ({
 		...margin('4px'),
 		display: 'block',
 		fontSize: '12px',
 		lineHeight: '12px',
+	}),
+	iframe: () => ({
+		height: '1px',
+		position: 'absolute',
+		width: '1px',
 	}),
 	separator: () => ({
 		display: 'block',

@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { Fragment } from 'react'
 
 import { Loading, Pagination, Post, PostActions } from 'components'
 
