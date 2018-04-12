@@ -1,4 +1,15 @@
-const spacedItems = ['ul', 'p', 'figure', 'hr']
+const spacedItems = [
+	'article h1',
+	'article h2',
+	'article h3',
+	'article h4',
+	'article h5',
+	'article h6',
+	'ul',
+	'p',
+	'figure',
+	'hr',
+]
 
 export default `
   @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i|Amatic+SC');
