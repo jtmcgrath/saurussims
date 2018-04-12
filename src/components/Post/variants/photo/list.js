@@ -4,6 +4,9 @@ import Cutout from './cutout/list'
 import Standard from './standard/list'
 
 const Photo = props =>
-	createElement(props.tags.includes('cutout') ? Cutout : Standard, props)
+	createElement(
+		props.tags.some(tag => tag.toLowerCase() === 'cutout') ? Cutout : Standard,
+		props,
+	)
 
 export default Photo
