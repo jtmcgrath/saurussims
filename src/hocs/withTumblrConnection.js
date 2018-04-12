@@ -2,16 +2,13 @@ import { connect } from 'react-redux'
 
 import { compose } from 'utils/general'
 import { withLifecycle } from 'hocs'
-import { receiveUserStatus, receiveLikeStates } from 'store'
+import { receiveUserStatus } from 'store'
 
 const withTumblrConnection = BaseComponent =>
 	compose(
-		connect(null, { receiveUserStatus, receiveLikeStates }),
+		connect(null, { receiveUserStatus }),
 		withLifecycle({
-			willMount: ({
-				receiveUserStatus: dispatchUserStatus,
-				receiveLikeStates: dispatchLikeStates,
-			}) => {
+			willMount: ({ receiveUserStatus: dispatchUserStatus }) => {
 				window.addEventListener('message', ({ data }) => {
 					if (!data || typeof data !== 'string') return
 
@@ -22,10 +19,6 @@ const withTumblrConnection = BaseComponent =>
 
 					if (method === 'user_logged_in') {
 						dispatchUserStatus(args === 'Yes')
-					}
-
-					if (method === 'tumblr-like-requests:likeButton:updateLikeStates') {
-						dispatchLikeStates(args[0])
 					}
 				})
 			},

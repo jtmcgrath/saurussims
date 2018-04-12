@@ -14,7 +14,6 @@ const Link = ({ children, icon, styles, ...props }) => (
 
 const PostActions = ({
 	isLoggedIn,
-	liked,
 	linkProps,
 	postId,
 	reblog_key,
@@ -34,7 +33,6 @@ const PostActions = ({
 		</Link>
 		{isLoggedIn ? (
 			<Like
-				liked={liked}
 				postId={postId}
 				reblog_key={reblog_key}
 				styles={styles}
