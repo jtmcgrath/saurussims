@@ -16,16 +16,17 @@ export default {
 		cursor: 'pointer',
 		display: 'block',
 		flex: '1 1 100%',
+		position: 'relative',
 		textAlign: 'center',
 		textDecoration: 'none',
+		'>.like_button.liked + svg': {
+			fill: '#919191',
+		},
 	}),
 	linkIcon: () => ({
 		...margin('4px', 'auto'),
 		display: 'block',
 		lineHeight: '24px',
-	}),
-	heartIcon: ({ liked }) => ({
-		fill: liked && '#919191',
 	}),
 	linkText: () => ({
 		...margin('4px'),
@@ -34,9 +35,16 @@ export default {
 		lineHeight: '12px',
 	}),
 	iframe: () => ({
-		height: '1px',
+		bottom: 0,
+		cursor: 'pointer',
+		height: '100%',
+		left: 0,
+		opacity: 0,
 		position: 'absolute',
-		width: '1px',
+		right: 0,
+		top: 0,
+		width: '100%',
+		zIndex: 2,
 	}),
 	separator: () => ({
 		display: 'block',

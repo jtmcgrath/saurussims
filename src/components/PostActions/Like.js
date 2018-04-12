@@ -1,60 +1,46 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import classNames from 'classnames'
 
 import { Icon } from 'components'
-// import { createLikeFrame } from 'tumblr'
 
-class Like extends Component {
-	componentDidMount() {
-		// createLikeFrame(this.iframe, this.props.postId).then(() => {
-		// 	// this.iframe.contentWindow.postMessage(
-		// 	// 	// 'tumblr-like-requests:likeButton:iframeLoaded',
-		// 	// 	'test',
-		// 	// 	'*',
-		// 	// )
-		// })
-	}
+const getIcon = ({ styles }) =>
+	renderToStaticMarkup(<Icon icon="Heart" className={styles.linkIcon} />)
 
-	handleClick = () => {
-		window.postMessage(
-			`{"method":"tumblr-like-requests:likeButton:toggleLike","args":[{"postId":"${
-				this.props.postId
-			}","like":${!this.props.liked},"rootId":""}]}`,
-			'*',
-		)
-	}
+const getURL = ({ postId, reblog_key, username }) =>
+	'https://assets.tumblr.com/assets/html/like_iframe.html?_v=fc298e85f978b8662a643fe0a6b8c638#name=' +
+	username +
+	'&post_id=' +
+	postId +
+	'&color=black&rk=' +
+	reblog_key
 
-	render() {
-		const { postId, styles, username } = this.props
+const getHTML = ({ postId, reblog_key, styles, username }) => `
+  <div
+    class="like_button"
+    data-post-id="${postId}"
+    data-blog-name="${username}"
+    id="like_button_${postId}"
+  >
+     <iframe
+       id="like_iframe_${postId}"
+       src="${getURL({ postId, reblog_key, username })}"
+       scrolling="no"
+       frameborder="0"
+       class="like_toggle ${styles.iframe}"
+       allowtransparency="true"
+       name="like_iframe_${postId}"
+     ></iframe>
+  </div>
+  ${getIcon({ styles })}
+  <span class="${styles.linkText}">Like</span>
+`
 
-		return (
-			<button
-				className={classNames('like_button', styles.link)}
-				onClick={this.handleClick}
-				data-js-like={postId}
-				data-post-id={postId}
-				data-blog-name={username}
-				id={`like_button_${postId}`}
-			>
-				{/* <iframe
-					className={classNames('like_toggle', styles.iframe)}
-					frameBorder="0"
-					id={`like_iframe_${postId}`}
-					name={`like_iframe_${postId}`}
-					ref={ref => {
-						this.iframe = ref
-					}}
-					scrolling="no"
-					title={`like_iframe_${postId}`}
-				/> */}
-				<Icon
-					className={classNames(styles.linkIcon, styles.heartIcon)}
-					icon="Heart"
-				/>
-				<span className={styles.linkText}>Like</span>
-			</button>
-		)
-	}
-}
+const Like = props => (
+	<div
+		className={classNames(props.styles.link)}
+		dangerouslySetInnerHTML={{ __html: getHTML(props) }}
+	/>
+)
 
 export default Like

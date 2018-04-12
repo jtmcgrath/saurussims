@@ -33,7 +33,13 @@ const PostActions = ({
 			Reblog
 		</Link>
 		{isLoggedIn ? (
-			<Like liked={liked} postId={postId} styles={styles} username={username} />
+			<Like
+				liked={liked}
+				postId={postId}
+				reblog_key={reblog_key}
+				styles={styles}
+				username={username}
+			/>
 		) : (
 			<Link
 				href={`https://www.tumblr.com/login?redirect_to=${encodeURIComponent(

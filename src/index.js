@@ -8,7 +8,6 @@ import { Provider as StyleProvider } from 'react-fela'
 import { App } from 'components'
 import createRouter from 'router'
 import configureStore from 'store'
-import { init } from 'tumblr'
 
 import globalStyles from './globalStyles'
 
@@ -17,8 +16,6 @@ renderer.renderStatic(globalStyles)
 
 const router = createRouter()
 const store = configureStore(router)
-
-init()
 
 const wrappedApp = (
 	<StyleProvider renderer={renderer}>
