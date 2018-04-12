@@ -2,19 +2,20 @@ import { connect } from 'react-redux'
 import { connect as connectStyles } from 'react-fela'
 
 import { compose } from 'utils/general'
-import { getPost } from 'store'
+import { getLikeStatus, getReblogKey, getUserLoggedIn } from 'store'
+import { withConfig } from 'hocs'
 
 import PostActions from './component'
 import styles from './styles'
 
-const mapStateToProps = (state, props) => {
-	const post = getPost(state, props.postId)
+const mapStateToProps = (state, props) => ({
+	reblog_key: getReblogKey(state, props.postId),
+	isLoggedIn: getUserLoggedIn(state),
+	liked: getLikeStatus(state, props.postId),
+})
 
-	return {
-		reblog_key: post.reblog_key,
-	}
-}
-
-export default compose(connect(mapStateToProps), connectStyles(styles))(
-	PostActions,
-)
+export default compose(
+	withConfig('account.username'),
+	connect(mapStateToProps),
+	connectStyles(styles),
+)(PostActions)
