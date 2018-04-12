@@ -95,4 +95,7 @@ export default {
 		},
 	}),
 	text: props => speech(props),
+	paddingBottom: () => ({
+		paddingBottom: '1em',
+	}),
 }

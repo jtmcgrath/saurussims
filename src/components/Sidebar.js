@@ -6,6 +6,7 @@ import { TagLink } from 'components'
 
 const Sidebar = ({
 	caption,
+	children,
 	className,
 	note_count,
 	reblog,
@@ -37,6 +38,7 @@ const Sidebar = ({
 				&nbsp;
 				{note_count && `♥ ${note_count}`}
 			</p>
+			{children}
 			{reblogElement}
 			{tagElements}
 		</div>
