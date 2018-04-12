@@ -1,9 +1,4 @@
-import {
-	RECEIVE_LIKE_STATES,
-	RECEIVE_POSTS,
-	RECEIVE_PAGE,
-	RECEIVE_USER_STATUS,
-} from './actionTypes'
+import { RECEIVE_POSTS, RECEIVE_PAGE, RECEIVE_USER_STATUS } from './actionTypes'
 
 const initialState = {
 	posts: {},

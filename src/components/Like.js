@@ -15,7 +15,7 @@ const getURL = ({ postId, reblog_key, username }) =>
 	'&color=black&rk=' +
 	reblog_key
 
-const getHTML = ({ postId, reblog_key, styles, username }) => `
+const getHTML = ({ children, postId, reblog_key, styles, username }) => `
   <div
     class="like_button"
     data-post-id="${postId}"
@@ -33,7 +33,7 @@ const getHTML = ({ postId, reblog_key, styles, username }) => `
      ></iframe>
   </div>
   ${getIcon({ styles })}
-  <span class="${styles.linkText}">Like</span>
+  <span class="${styles.linkText}">${children}</span>
 `
 
 const Like = props => (

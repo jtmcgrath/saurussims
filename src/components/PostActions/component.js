@@ -1,9 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Icon, Link as BaseLink, List } from 'components'
-
-import Like from './Like'
+import { Icon, Like, Link as BaseLink, List } from 'components'
 
 const Link = ({ children, icon, styles, ...props }) => (
 	<BaseLink className={styles.link} {...props}>
@@ -37,7 +35,9 @@ const PostActions = ({
 				reblog_key={reblog_key}
 				styles={styles}
 				username={username}
-			/>
+			>
+				Like
+			</Like>
 		) : (
 			<Link
 				href={`https://www.tumblr.com/login?redirect_to=${encodeURIComponent(

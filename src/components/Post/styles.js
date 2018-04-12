@@ -98,4 +98,33 @@ export default {
 	paddingBottom: () => ({
 		paddingBottom: '1em',
 	}),
+
+	// Styles for the like button
+	link: () => ({
+		cursor: 'pointer',
+		display: 'inline-block',
+		flex: '1 1 100%',
+		position: 'relative',
+		textAlign: 'center',
+		textDecoration: 'none',
+		'>.like_button.liked + svg': {
+			fill: '#919191',
+		},
+	}),
+	linkIcon: () => ({
+		height: '12px',
+	}),
+	iframe: () => ({
+		bottom: 0,
+		cursor: 'pointer',
+		height: '100%',
+		left: 0,
+		opacity: 0,
+		position: 'absolute',
+		right: 0,
+		top: 0,
+		width: '100%',
+		zIndex: 2,
+	}),
+	// End styles for the like button
 }

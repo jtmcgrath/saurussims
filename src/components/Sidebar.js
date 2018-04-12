@@ -2,17 +2,21 @@ import React from 'react'
 import classNames from 'classnames'
 import moment from 'moment'
 
-import { TagLink } from 'components'
+import { Like, TagLink } from 'components'
+import { withConfig } from 'hocs'
 
 const Sidebar = ({
 	caption,
 	children,
 	className,
 	note_count,
+	postId,
 	reblog,
+	reblog_key,
 	styles,
 	tags,
 	timestamp,
+	username,
 }) => {
 	const reblogElement = !caption &&
 		reblog &&
@@ -36,7 +40,16 @@ const Sidebar = ({
 			<p>
 				{moment.unix(timestamp).format('Do MMMM YYYY')}
 				&nbsp;
-				{note_count && `♥ ${note_count}`}
+				{note_count && (
+					<Like
+						postId={postId}
+						reblog_key={reblog_key}
+						styles={styles}
+						username={username}
+					>
+						{note_count}
+					</Like>
+				)}
 			</p>
 			{children}
 			{reblogElement}
@@ -45,4 +58,4 @@ const Sidebar = ({
 	)
 }
 
-export default Sidebar
+export default withConfig('username')(Sidebar)
