@@ -4,6 +4,17 @@ import classNames from 'classnames'
 
 import { Icon } from 'components'
 
+let debounceTimer
+
+const loadLikes = () => {
+	clearTimeout(debounceTimer)
+	debounceTimer = setTimeout(() => {
+		const likeButtons = document.getElementsByClassName('like_button')
+		const likeIds = Array.from(likeButtons).map(({ dataset }) => dataset.postId)
+		window.Tumblr && window.Tumblr.LikeButton.get_status_by_post_ids(likeIds)
+	}, 200)
+}
+
 const getIcon = ({ styles }) =>
 	renderToStaticMarkup(<Icon icon="Heart" className={styles.linkIcon} />)
 
@@ -36,11 +47,14 @@ const getHTML = ({ children, postId, reblog_key, styles, username }) => `
   <span class="${styles.linkText}">${children}</span>
 `
 
-const Like = props => (
-	<div
-		className={classNames(props.styles.link)}
-		dangerouslySetInnerHTML={{ __html: getHTML(props) }}
-	/>
-)
+const Like = props => {
+	loadLikes()
+	return (
+		<div
+			className={classNames(props.styles.link)}
+			dangerouslySetInnerHTML={{ __html: getHTML(props) }}
+		/>
+	)
+}
 
 export default Like

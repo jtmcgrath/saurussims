@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { compose } from 'utils/general'
 import { withLifecycle } from 'hocs'
 import { receiveUserStatus } from 'store'
-import { loadLikes } from 'tumblr'
 
 const withTumblrConnection = BaseComponent =>
 	compose(
@@ -20,10 +19,6 @@ const withTumblrConnection = BaseComponent =>
 
 					if (method === 'user_logged_in') {
 						dispatchUserStatus(args === 'Yes')
-					}
-
-					if (method === 'like_iframe_load') {
-						loadLikes()
 					}
 				})
 			},
