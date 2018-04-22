@@ -1,14 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Icon, Like, Link as BaseLink, List } from 'components'
-
-const Link = ({ children, icon, styles, ...props }) => (
-	<BaseLink className={styles.link} {...props}>
-		<Icon className={styles.linkIcon} icon={icon} />
-		<span className={styles.linkText}>{children}</span>
-	</BaseLink>
-)
+import { IconLink, Like, List } from 'components'
 
 const PostActions = ({
 	isLoggedIn,
@@ -22,13 +15,13 @@ const PostActions = ({
 		className={classNames('post-actions', styles.postActions)}
 		itemClassName={styles.item}
 	>
-		<Link
+		<IconLink
 			href={`https://www.tumblr.com/reblog/${postId}/${reblog_key}`}
 			icon="Reblog"
 			styles={styles}
 		>
 			Reblog
-		</Link>
+		</IconLink>
 		{isLoggedIn ? (
 			<Like
 				postId={postId}
@@ -39,7 +32,7 @@ const PostActions = ({
 				Like
 			</Like>
 		) : (
-			<Link
+			<IconLink
 				href={`https://www.tumblr.com/login?redirect_to=${encodeURIComponent(
 					window.location,
 				)}`}
@@ -47,11 +40,11 @@ const PostActions = ({
 				styles={styles}
 			>
 				Like
-			</Link>
+			</IconLink>
 		)}
-		<Link icon="Arrow" styles={styles} {...linkProps}>
+		<IconLink icon="Arrow" styles={styles} {...linkProps}>
 			View
-		</Link>
+		</IconLink>
 	</List>
 )
 

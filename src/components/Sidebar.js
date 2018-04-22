@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import moment from 'moment'
 
-import { Like, TagLink } from 'components'
+import { IconLink, Like, TagLink } from 'components'
 import { withConfig } from 'hocs'
 
 const Sidebar = ({
@@ -48,6 +48,14 @@ const Sidebar = ({
 				>
 					{note_count}
 				</Like>
+				&nbsp;
+				<IconLink
+					href={`https://www.tumblr.com/reblog/${postId}/${reblog_key}`}
+					icon="Reblog"
+					styles={styles}
+				>
+					Reblog
+				</IconLink>
 			</p>
 			{children}
 			{reblogElement}
