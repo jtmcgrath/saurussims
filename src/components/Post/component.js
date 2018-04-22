@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 
-import { Loading } from 'components'
+import { Loading, NotFound } from 'components'
 
 import * as variants from './variants'
 
@@ -12,7 +12,7 @@ const Post = ({ post, type, ...props }) => {
 	return post ? (
 		createElement(variants[post.type][type], { ...post, ...props })
 	) : (
-		<p>Post not found!</p>
+		<NotFound title="Post not found!" />
 	)
 }
 
