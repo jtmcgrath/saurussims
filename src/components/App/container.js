@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { connect as connectStyles } from 'react-fela'
 
 import { compose } from 'utils/general'
-import { withConfig, withLifecycle, withTumblrConnection } from 'hocs'
+import { withConfig, withEventListener, withTumblrConnection } from 'hocs'
 import { getColumnCount, getRouter, isDesktop, resizeViewport } from 'store'
 
 import App from './component'
@@ -17,12 +17,7 @@ const mapStateToProps = (store, props) => ({
 export default compose(
 	withTumblrConnection,
 	connect(mapStateToProps, { resizeViewport }),
-	withLifecycle({
-		didMount: ({ resizeViewport }) =>
-			window.addEventListener('resize', resizeViewport),
-		willUnmount: ({ resizeViewport }) =>
-			window.removeEventListener('resize', resizeViewport),
-	}),
+	withEventListener('resize', 'resizeViewport'),
 	withConfig('columnSpacing', 'columnWidth', 'navigation'),
 	connectStyles(styles),
 )(App)
