@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Loading, Pagination, Post, PostActions } from 'components'
+import { Loading, Pagination, Page, Post, PostActions } from 'components'
 
 const PostList = props => {
 	if (props.posts === undefined) {
@@ -13,7 +13,21 @@ const PostList = props => {
 			<Pagination />
 		</Fragment>
 	) : (
-		<p>No posts found!</p>
+		<Page>
+			{({ styles }) => (
+				<Fragment>
+					<header className={styles.header}>
+						<h1>No Posts Found!</h1>
+					</header>
+					<p>
+						<Link routeName="all">
+							There doesn't seem to be anything here! Click your back button to
+							go back a page, or click here to return to home.
+						</Link>
+					</p>
+				</Fragment>
+			)}
+		</Page>
 	)
 }
 
