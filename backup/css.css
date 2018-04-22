@@ -1,0 +1,168 @@
+html, p {
+    font-family: "Alegreya Sans", Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .blog-title {
+    font-family: "Amatic SC", Helvetica, sans-serif;
+}
+
+.header-image.cover {
+    background: #79bcd1 !important;
+    background-image: none !important;
+}
+
+.header-image-wrapper, .header-image.cover {
+    height: 120px;
+}
+
+.blog-description {
+    font-size: 30px;
+    margin-top: -20px;
+    display: block;
+}
+
+/* Menu Icons */
+a[data-hint="Home"] {
+    background-color: #a77dc2 !important;
+}
+
+a[data-hint="Home"] i::before {
+    content: "\f015";
+}
+
+a[data-hint="Ask away"] {
+    background-color: #ffd775 !important;
+}
+
+a[data-hint="Downloads"] {
+    background-color: #78bcd9 !important;
+}
+
+a[data-hint="Downloads"] i::before {
+    content: "\f063";
+}
+
+a[data-hint="Random"] {
+    background-color: #f7c3d2 !important;
+}
+
+a[data-hint="Archive"] {
+    background-color: rgb(165, 218, 119) !important;
+}
+
+a[data-hint="Buy Me a Coffee?"] {
+    background-color: #59c79f !important;
+}
+
+a[data-hint*="McNally/Richardson"] {
+    background-color: #f0af66 !important;
+}
+a[data-hint*="mcnallyrichardson"]::after {
+    content: "McNally/Richardson";
+}
+a[data-hint*="mcnallyrichardson"] i::before {
+    content: "\f03e";
+}
+
+a[data-hint="WCIF"] {
+    background-color: #5692bc !important;
+}
+a[data-hint="WCIF"]::after {
+    content: "Where Can I Find...";
+}
+a[data-hint="WCIF"] i::before {
+    content: "\f002";
+}
+
+a[data-hint="Lookbook"] {
+    background-color: #7998bc !important;
+}
+a[data-hint="Lookbook"]::after {
+    content: "Lookbooks";
+}
+a[data-hint="Lookbook"] i::before {
+    content: "\f290";
+}
+
+.perma figure {
+    margin-bottom: 6px;
+}
+.installtheme {
+    display: none !important;
+}
+
+:not(.perma_post) > .legacy .photoset-row:last-child {
+    height: 0px !important;
+    margin-top: -5px;
+}
+
+.legacy-navigation {
+	display: flex;
+	font-size: 0;
+  left: 0;
+  margin: -16px 16px;
+	justify-content: center;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 100%;
+}
+
+.legacy-navigation a,
+.legacy-navigation span {
+	flex: 1 1 50%;
+	font-size: 30px;
+  border-radius: 4px;
+  background: #fff;
+  margin: 0 8px;
+  padding: 0 20px;
+}
+
+.legacy-navigation span {
+	cursor: default;
+  opacity: .2;
+}
+
+.legacy-navigation :first-child {
+	margin-left: 0;
+}
+
+.legacy-navigation :last-child {
+	margin-right: 0;
+}
+
+:not(.perma_post) > * > * > .answer-post-wrap {
+  margin: 0;
+  padding: 0;
+}
+
+:not(.perma_post) > * > * > .answer-post-wrap > * {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+:not(.perma_post) > * > * > .answer-post-wrap figure {
+  display: block;
+  margin: -8px;
+}
+
+#reverse-order {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+#reverse-order a {
+  background: #fff;
+  border-radius: 3px;
+  color: #79bcd9;
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 2;
+}
+#reverse-order a:hover {
+  background: #ebf5f9;
+}
+
+.photoset-row {
+    height: auto !important;
+}
