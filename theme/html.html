@@ -16,7 +16,7 @@ window.config = {
 	maxColumns: 4,
 	itemPadding: 6,
 	account: {
-		username: 'saurussims' || '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1],
+		username: '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1],
 		avatar: '{PortraitURL-128}',
 		title: '{Title}',
 		description: '{Description}',
@@ -35,8 +35,9 @@ window.config = {
 				{
 					name: 'Follow',
 					icon: 'Heart',
-					href: `https://www.tumblr.com/follow/${'saurussims' ||
-						'{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]}`,
+					href: `https://www.tumblr.com/follow/${
+						'{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]
+					}`,
 				},
 				// { name: 'Random', icon: 'Random', href: '/random' },
 				{ name: 'Home', icon: 'Home', routeName: 'all' },
