@@ -40,16 +40,14 @@ const Sidebar = ({
 			<p>
 				{moment.unix(timestamp).format('Do MMMM YYYY')}
 				&nbsp;
-				{note_count && (
-					<Like
-						postId={postId}
-						reblog_key={reblog_key}
-						styles={styles}
-						username={username}
-					>
-						{note_count}
-					</Like>
-				)}
+				<Like
+					postId={postId}
+					reblog_key={reblog_key}
+					styles={styles}
+					username={username}
+				>
+					{note_count}
+				</Like>
 			</p>
 			{children}
 			{reblogElement}
