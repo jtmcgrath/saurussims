@@ -1,9 +1,9 @@
 import { requestPage, requestPost } from 'store'
 
-const createPageRequest = name => (state, { pageId = 1, tagName = '' }) =>
+const createPageRequest = name => ({ pageId = 1, tagName = '' }) =>
 	requestPage(name, pageId, tagName)
 
-const createPostRequest = (state, { postId }) => requestPost('post', postId)
+const createPostRequest = ({ postId }) => requestPost('post', postId)
 
 const routes = [
 	{
