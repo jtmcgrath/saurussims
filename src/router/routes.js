@@ -3,7 +3,8 @@ import { requestPage, requestPost } from 'store'
 const createPageRequest = name => ({ pageId = 1, tagName = '' }) =>
 	requestPage(name, pageId, tagName)
 
-const createPostRequest = ({ postId }) => requestPost('post', postId)
+const requestPostIfNeeded = ({ postId }, state) =>
+	!state.tumblr.posts[postId] && requestPost('post', postId)
 
 const routes = [
 	{
@@ -35,12 +36,12 @@ const routes = [
 	{
 		name: 'post',
 		path: '/post/:postId/:postSlug',
-		onActivate: createPostRequest,
+		onActivate: requestPostIfNeeded,
 	},
 	{
 		name: 'postWithoutSlug',
 		path: '/post/:postId',
-		onActivate: createPostRequest,
+		onActivate: requestPostIfNeeded,
 	},
 	{ name: 'ask', path: '/ask' },
 	{ name: 'downloads', path: '/downloads' },

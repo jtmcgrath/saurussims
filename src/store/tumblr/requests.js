@@ -19,8 +19,6 @@ const timeoutExists = key => {
 }
 
 export const requestPost = (route, postId) => dispatch => {
-	if (timeoutExists(`post/${postId}`)) return
-
 	dispatch({ type: REQUEST_POST, postId })
 
 	api.getPost(postId).then(({ post }) => {
