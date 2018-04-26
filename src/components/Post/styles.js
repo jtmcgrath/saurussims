@@ -98,6 +98,14 @@ export default {
 	paddingBottom: () => ({
 		paddingBottom: '1em',
 	}),
+	cutout: () => ({
+		'>.post-actions': {
+			left: '50%',
+			right: 'auto',
+			transform: 'translateX(-50%)',
+			borderRadius: '6px',
+		},
+	}),
 
 	// Styles for the like button
 	link: () => ({
