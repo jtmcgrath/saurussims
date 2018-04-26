@@ -1,28 +1,27 @@
 import { requestPage, requestPost } from 'store'
 
-const requestPageIfNeeded = name => (state, { pageId = 1, tagName = '' }) =>
-	!state.tumblr.pages[`${tagName}${pageId}`] &&
+const createPageRequest = name => ({ pageId = 1, tagName = '' }) =>
 	requestPage(name, pageId, tagName)
 
-const requestPostIfNeeded = (state, { postId }) =>
+const requestPostIfNeeded = ({ postId }, state) =>
 	!state.tumblr.posts[postId] && requestPost('post', postId)
 
 const routes = [
 	{
 		name: 'all',
 		path: '/',
-		onActivate: requestPageIfNeeded('all'),
+		onActivate: createPageRequest('all'),
 	},
 	{ name: 'all.index', path: 'page/1', forwardTo: 'all' },
 	{
 		name: 'all.page',
 		path: 'page/:pageId',
-		onActivate: requestPageIfNeeded('all.page'),
+		onActivate: createPageRequest('all.page'),
 	},
 	{
 		name: 'tag',
 		path: '/tagged/:tagName',
-		onActivate: requestPageIfNeeded('tag'),
+		onActivate: createPageRequest('tag'),
 	},
 	{
 		name: 'tag.index',
@@ -32,7 +31,7 @@ const routes = [
 	{
 		name: 'tag.page',
 		path: '/page/:pageId',
-		onActivate: requestPageIfNeeded('tag.page'),
+		onActivate: createPageRequest('tag.page'),
 	},
 	{
 		name: 'post',
