@@ -1,3 +1,3 @@
 # Saurus Sims ReactJs-based Tumblr Theme!
 
-![View Preview](preview.jpg?raw=true)
+<img src="https://raw.githubusercontent.com/jtmcgrath/saurussims/master/preview.png" />
