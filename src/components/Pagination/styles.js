@@ -1,8 +1,12 @@
 import { margin, padding } from 'polished'
 
 export default {
+	nav: () => ({
+		display: 'flex',
+		overflowX: 'auto',
+	}),
 	wrapper: ({ columnSpacing }) => ({
-		...margin(0, `${columnSpacing}px`, `${columnSpacing}px`),
+		...margin(0, 'auto', `${columnSpacing}px`),
 		display: 'flex',
 		justifyContent: 'center',
 	}),

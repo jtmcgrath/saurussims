@@ -9,3 +9,6 @@ export const get = (obj, path) =>
 
 export const capitalize = string =>
 	string.charAt(0).toUpperCase() + string.slice(1)
+
+export const deepEquals = (obj1, obj2) =>
+	JSON.stringify(obj1) === JSON.stringify(obj2)

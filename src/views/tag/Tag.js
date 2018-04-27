@@ -5,7 +5,11 @@ import { getRouter } from 'store'
 import { PostList } from 'components'
 
 const Tag = ({ route }) => (
-	<PostList tagName={route.params.tagName} pageId={route.params.pageId} />
+	<PostList
+		key={route.path}
+		tagName={route.params.tagName}
+		pageId={route.params.pageId}
+	/>
 )
 
 export default connect(getRouter)(Tag)

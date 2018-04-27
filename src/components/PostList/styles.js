@@ -1,6 +1,6 @@
 import { padding } from 'polished'
 
-import { listItem, listItemPadding } from 'utils/styling'
+import { borderRadius, listItem, listItemPadding } from 'utils/styling'
 
 export default {
 	wrapper: ({ columnSpacing }) => ({
@@ -48,5 +48,18 @@ export default {
 		':hover>.post-actions': {
 			height: '48px',
 		},
+	}),
+	refresh: ({ isDesktop }) => ({
+		...borderRadius('16px'),
+		...padding(0, '12px', 0, '4px'),
+		alignItems: 'center',
+		background: 'rgba(255,255,255,.9)',
+		bottom: isDesktop ? '12px' : '60px',
+		display: 'flex',
+		right: '12px',
+		lineHeight: '32px',
+		position: 'fixed',
+		textDecoration: 'none',
+		zIndex: 5,
 	}),
 }
