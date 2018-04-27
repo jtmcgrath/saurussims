@@ -46,7 +46,7 @@ const Sidebar = ({
 					styles={styles}
 					username={username}
 				>
-					{note_count}
+					{note_count || ''}
 				</Like>
 				&nbsp;
 				<IconLink
