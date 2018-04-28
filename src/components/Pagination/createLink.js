@@ -9,6 +9,7 @@ const createLink = (linkProps, pageId, content) => {
 
 	return createElement(Link, {
 		key: content || pageId,
+		activeStrict: true,
 		...linkProps,
 		routeName,
 		routeParams: {

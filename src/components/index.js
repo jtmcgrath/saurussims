@@ -1,4 +1,6 @@
 export { default as App } from './App'
+export { default as Download } from './Download'
+export { default as DownloadList } from './DownloadList'
 export { default as Gallery } from './Gallery'
 export { default as Header } from './Header'
 export { default as Icon } from './Icon'

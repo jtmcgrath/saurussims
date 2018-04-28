@@ -7,10 +7,17 @@ export const transformAssets = assets =>
 		{},
 	)
 
-export const transformDownload = assets => download => ({
-	...download.fields,
-	image: assets[download.fields.image.sys.id],
-})
+export const transformDownload = assets => download => {
+	const [_, postId, postSlug] =
+		download.fields.link.match(/http.*.tumblr.com\/post\/(\d*)\/?(.*)?/) || []
+
+	return {
+		...download.fields,
+		postId,
+		postSlug,
+		image: assets[download.fields.image.sys.id],
+	}
+}
 
 export const transformDownloads = (downloads, assets) =>
 	downloads.map(transformDownload(assets))

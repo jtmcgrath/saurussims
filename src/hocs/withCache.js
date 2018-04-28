@@ -1,7 +1,34 @@
+import React from 'react'
 import withState from 'react-state-hoc'
+import { connect } from 'react-redux'
+import { connect as connectStyles } from 'react-fela'
+import { padding } from 'polished'
 
+import { Icon } from 'components'
+import { borderRadius } from 'utils/styling'
 import { capitalize, compose, deepEquals } from 'utils/general'
 import { withLifecycle } from 'hocs'
+import { isDesktop } from 'store'
+
+const mapStateToProps = state => ({
+	isDesktop: isDesktop(state),
+})
+
+const styles = {
+	refresh: ({ isDesktop }) => ({
+		...borderRadius('16px'),
+		...padding(0, '12px', 0, '4px'),
+		alignItems: 'center',
+		background: 'rgba(255,255,255,.9)',
+		bottom: isDesktop ? '12px' : '60px',
+		display: 'flex',
+		right: '12px',
+		lineHeight: '32px',
+		position: 'fixed',
+		textDecoration: 'none',
+		zIndex: 5,
+	}),
+}
 
 const reduceProps = (props, values) =>
 	props.reduce(
@@ -16,25 +43,34 @@ const withCache = (...props) => BaseComponent => {
 	if (!props.length) return BaseComponent
 
 	const WithCache = compose(
+		connect(mapStateToProps),
+		connectStyles(styles),
 		withState(values => reduceProps(props, values)),
 		withLifecycle({
-			inConstructor: ({ setState, ...values }) => {
+			inConstructor: ({ setState, styles, ...values }) => {
 				setState(reduceProps(props, values))
 
+				const refresh = () =>
+					setState({
+						// Reset all chosen props to null and showRefresh
+						// to false
+						...props.reduce(
+							(acc, prop) => ({
+								...acc,
+								[`cached${capitalize(prop)}`]: null,
+							}),
+							{},
+						),
+						showRefresh: false,
+					})
+
 				return {
-					refresh: () =>
-						setState({
-							// Reset all chosen props to null and showRefresh
-							// to false
-							...props.reduce(
-								(acc, prop) => ({
-									...acc,
-									[`cached${capitalize(prop)}`]: null,
-								}),
-								{},
-							),
-							showRefresh: false,
-						}),
+					refresh: (
+						<a onClick={refresh} className={styles.refresh}>
+							<Icon icon="Reblog" height="16" />
+							&nbsp; New content found!
+						</a>
+					),
 				}
 			},
 			didUpdate: ({ setState, ...nextProps }, prevProps) => {

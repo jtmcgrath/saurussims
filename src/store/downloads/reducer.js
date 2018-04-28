@@ -1,6 +1,6 @@
 import { RECEIVE_DOWNLOADS } from './actionTypes'
 
-const reducer = (state = [], action) => {
+const reducer = (state = null, action) => {
 	switch (action.type) {
 		case RECEIVE_DOWNLOADS: {
 			return action.downloads
