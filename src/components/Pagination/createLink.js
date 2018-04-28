@@ -15,7 +15,7 @@ const createLink = (linkProps, pageId, content) => {
 			...(linkProps.routeParams.tagName
 				? { tagName: linkProps.routeParams.tagName }
 				: {}),
-			pageId: pageId || 1,
+			...(pageId === 1 ? {} : { pageId: pageId || 1 }),
 		},
 		children: content || pageId,
 	})

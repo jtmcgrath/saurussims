@@ -9,8 +9,8 @@ const onRouteActivateMiddleware = routes => (router, dependencies) => (
 
 	if (routeSegment && routeSegment.onActivate) {
 		const action = routeSegment.onActivate(
-			dependencies.store.getState(),
 			toState.params,
+			dependencies.store.getState(),
 		)
 
 		if (action) {

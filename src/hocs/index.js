@@ -1,3 +1,4 @@
+export { default as withCache } from './withCache'
 export { default as withConfig } from './withConfig'
 export { default as withEventListener } from './withEventListener'
 export { default as withLifecycle } from './withLifecycle'
