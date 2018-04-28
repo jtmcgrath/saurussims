@@ -1,28 +1,16 @@
 import React, { Fragment } from 'react'
 
-import {
-	Icon,
-	Loading,
-	NotFound,
-	Pagination,
-	Post,
-	PostActions,
-} from 'components'
+import { Loading, NotFound, Pagination, Post, PostActions } from 'components'
 
-const PostList = props => {
-	if (props.cachedPosts === undefined || props.cachedPosts === null) {
+const PostList = ({ cachedPosts: posts, showRefresh, refresh, ...props }) => {
+	if (posts === undefined || posts === null) {
 		return <Loading />
 	}
 
-	return props.cachedPosts.length ? (
+	return posts.length ? (
 		<Fragment>
-			{props.showRefresh ? (
-				<a onClick={props.refresh} className={props.styles.refresh}>
-					<Icon icon="Reblog" height="16" />
-					&nbsp; New content found!
-				</a>
-			) : null}
-			<PostColumns {...props} posts={props.cachedPosts} />
+			{showRefresh ? refresh : null}
+			<PostColumns {...props} posts={posts} />
 			<Pagination />
 		</Fragment>
 	) : (

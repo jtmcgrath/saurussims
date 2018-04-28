@@ -2,6 +2,7 @@ import { applyMiddleware, compose, combineReducers, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { router5Middleware, router5Reducer } from 'redux-router5'
 
+import downloads from './downloads'
 import tumblr from './tumblr'
 import viewport from './viewport'
 
@@ -24,6 +25,7 @@ export default function configureStore(
 		combineReducers({
 			columnCount: viewport,
 			router: router5Reducer,
+			downloads,
 			tumblr,
 		}),
 		initialState,

@@ -1,4 +1,4 @@
-import { requestPage, requestPost } from 'store'
+import { requestDownloads, requestPage, requestPost } from 'store'
 
 const createPageRequest = name => ({ pageId = 1, tagName = '' }) =>
 	requestPage(name, pageId, tagName)
@@ -44,7 +44,7 @@ const routes = [
 		onActivate: requestPostIfNeeded,
 	},
 	{ name: 'ask', path: '/ask' },
-	{ name: 'downloads', path: '/downloads' },
+	{ name: 'downloads', path: '/downloads', onActivate: requestDownloads },
 	{ name: 'sims', path: '/sims' },
 	{ name: 'notFound', path: '/404' },
 ]
