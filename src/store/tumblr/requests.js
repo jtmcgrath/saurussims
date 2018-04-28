@@ -1,22 +1,9 @@
 import api from 'api'
+import timeoutExists from 'utils/timeouts'
 
 import { receivePage, receivePost, receivePosts } from './actions'
 import { REQUEST_PAGE, REQUEST_POST } from './actionTypes'
 import { transformPost } from './transformers'
-
-const timeouts = {}
-
-const timeoutExists = key => {
-	if (timeouts[key]) return true
-
-	timeouts[key] = true
-
-	setTimeout(() => {
-		timeouts[key] = false
-	}, 5 * 60 * 1000)
-
-	return false
-}
 
 export const requestPost = (route, postId) => dispatch => {
 	dispatch({ type: REQUEST_POST, postId })
