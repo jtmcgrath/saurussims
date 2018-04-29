@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router5'
 import classNames from 'classnames'
 
-const Download = ({ className, image, name, styles, tagName }) => (
+const Sim = ({ className, image, name, styles, tagName }) => (
 	<Link
 		className={classNames(className, styles.link)}
 		routeName="tag"
@@ -13,4 +13,4 @@ const Download = ({ className, image, name, styles, tagName }) => (
 	</Link>
 )
 
-export default Download
+export default Sim
