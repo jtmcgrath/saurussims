@@ -14,7 +14,7 @@ const mapStateToProps = (state, props) => {
 
 	return {
 		columnCount: isDesktop ? columnCount - 1 : columnCount,
-		downloads: getDownloads(state),
+		downloads: getDownloads(props.contentType)(state),
 		isDesktop,
 	}
 }

@@ -19,5 +19,23 @@ export const transformDownload = assets => download => {
 	}
 }
 
-export const transformDownloads = (downloads, assets) =>
-	downloads.map(transformDownload(assets))
+export const transformSim = assets => sim => ({
+	...sim.fields,
+	image: assets[sim.fields.image.sys.id],
+})
+
+export const transformDownloads = (contentType, downloads, assets) => {
+	switch (contentType) {
+		case 'download': {
+			return downloads.map(transformDownload(assets))
+		}
+
+		case 'sim': {
+			return downloads.map(transformSim(assets))
+		}
+
+		default: {
+			return downloads
+		}
+	}
+}
