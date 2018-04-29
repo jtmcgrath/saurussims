@@ -44,8 +44,12 @@ const routes = [
 		onActivate: requestPostIfNeeded,
 	},
 	{ name: 'ask', path: '/ask' },
-	{ name: 'downloads', path: '/downloads', onActivate: requestDownloads },
-	{ name: 'sims', path: '/sims' },
+	{
+		name: 'downloads',
+		path: '/downloads',
+		onActivate: () => requestDownloads('download'),
+	},
+	{ name: 'sims', path: '/sims', onActivate: () => requestDownloads('sim') },
 	{ name: 'notFound', path: '/404' },
 ]
 
