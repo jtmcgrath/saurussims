@@ -11,6 +11,6 @@ export default {
 	}),
 	content: ({ columnCount, columnWidth }) => ({
 		flex: columnCount > 1 ? `1 0 calc(100vw - ${columnWidth}px)` : '1 0 100%',
-		maxWidth: columnCount > 4 ? `${columnWidth * 3}px` : '100%',
+		maxWidth: columnCount > 4 ? '100%' : `${columnWidth * 3}px`,
 	}),
 }
