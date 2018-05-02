@@ -48,9 +48,20 @@ const routes = [
 		name: 'downloads',
 		path: '/downloads',
 		onActivate: () => requestDownloads('download'),
+		showTerms: true,
 	},
-	{ name: 'sims', path: '/sims', onActivate: () => requestDownloads('sim') },
+	{
+		name: 'sims',
+		path: '/sims',
+		onActivate: () => requestDownloads('sim'),
+		showTerms: true,
+	},
 	{ name: 'notFound', path: '/404' },
 ]
+
+export const map = routes.reduce((acc, curr) => ({
+	...acc,
+	[curr.name]: curr
+}), {})
 
 export default routes

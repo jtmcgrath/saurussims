@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import moment from 'moment'
 
-import { IconLink, Like, TagLink } from 'components'
+import { IconLink, Like, TagLink, Terms } from 'components'
 import { withConfig } from 'hocs'
 
 const Sidebar = ({
@@ -28,6 +28,8 @@ const Sidebar = ({
 		tags.length > 0 && (
 			<p>{tags.map(tagName => <TagLink key={tagName} tag={tagName} />)}</p>
 		)
+
+	const showTerms = tags.some(tag => tag.toLowerCase() === 'downloads')
 
 	return (
 		<div
@@ -60,6 +62,7 @@ const Sidebar = ({
 			{children}
 			{reblogElement}
 			{tagElements}
+			{showTerms && <Terms />}
 		</div>
 	)
 }
