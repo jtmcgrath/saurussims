@@ -14,7 +14,7 @@ const Standard = ({ caption, photos, setState, styles, ...props }) => {
 
 	const captionElement = caption && (
 		<div
-			className={classNames(styles.extraPadded)}
+			className={styles.extraPadded}
 			dangerouslySetInnerHTML={{ __html: caption }}
 		/>
 	)

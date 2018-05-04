@@ -6,7 +6,7 @@ import { Gallery, Sidebar } from 'components'
 const Cutout = ({ caption, photos, setState, styles, ...props }) => {
 	const captionElement = caption && (
 		<div
-			className={classNames(styles.paddingBottom)}
+			className={styles.paddingBottom}
 			dangerouslySetInnerHTML={{ __html: caption }}
 		/>
 	)

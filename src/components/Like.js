@@ -1,6 +1,5 @@
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import classNames from 'classnames'
 
 import { Icon } from 'components'
 
@@ -51,7 +50,7 @@ const Like = props => {
 	loadLikes()
 	return (
 		<div
-			className={classNames(props.styles.link)}
+			className={props.styles.link}
 			dangerouslySetInnerHTML={{ __html: getHTML(props) }}
 		/>
 	)
