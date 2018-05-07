@@ -9,7 +9,7 @@ import * as content from './content'
 
 const Terms = ({ styles, terms }) => (
 	<div className={styles.terms}>
-		{createElement(content[terms]) || ''}
+		{createElement(content[terms] || 'div')}
 	</div>
 )
 
