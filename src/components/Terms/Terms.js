@@ -1,20 +1,15 @@
-import React, { Fragment } from 'react'
+import React, { createElement, Fragment } from 'react'
 import { connect as connectStyles } from 'react-fela'
 import { margin } from 'polished'
 
 import { compose } from 'utils/general'
 import { withConfig } from 'hocs'
 
-const Terms = ({ styles }) => (
+import * as content from './content'
+
+const Terms = ({ styles, terms }) => (
 	<div className={styles.terms}>
-		<p>
-			<strong>TOU</strong>
-		</p>
-		<p>
-			Feel free to recolour and you can even include the meshes, but please give
-			credit and link back to this post ♥
-		</p>
-		<p>Don’t claim as your own, it’s rude!</p>
+		{createElement(content[terms]) || ''}
 	</div>
 )
 

@@ -8,8 +8,8 @@ const Header = ({
 	avatar,
 	className,
 	description,
-	showTerms,
 	styles,
+	terms,
 	title,
 }) => (
 	<header className={classNames(className, styles.header)}>
@@ -20,7 +20,7 @@ const Header = ({
 				{description && <h4>{description}</h4>}
 			</Link>
 			<Navigation />
-			{showTerms && <Terms center />}
+			{terms && <Terms terms={terms} center />}
 		</div>
 	</header>
 )

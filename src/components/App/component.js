@@ -14,7 +14,7 @@ const App = ({ isDesktop, route, styles }) => {
 			<Header
 				className={styles.header}
 				isDesktop={isDesktop}
-				showTerms={isDesktop && map[route.name].showTerms}
+				terms={isDesktop && map[route.name].terms}
 			/>
 			<div className={styles.content}>
 				<Content />
