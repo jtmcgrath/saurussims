@@ -48,13 +48,13 @@ const routes = [
 		name: 'downloads',
 		path: '/downloads',
 		onActivate: () => requestDownloads('download'),
-		showTerms: true,
+		terms: 'downloads',
 	},
 	{
 		name: 'sims',
 		path: '/sims',
 		onActivate: () => requestDownloads('sim'),
-		showTerms: true,
+		terms: 'sims',
 	},
 	{ name: 'notFound', path: '/404' },
 ]
