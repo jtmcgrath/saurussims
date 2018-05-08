@@ -1,17 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import { Gallery, Sidebar } from 'components'
+import { Gallery, PhotosetLayout, Sidebar } from 'components'
 
-const Standard = ({ caption, photos, setState, styles, ...props }) => {
-	const photoElements =
-		photos &&
-		photos.map(({ caption, original }, i) => (
-			<button key={original} onClick={() => setState({ active: i })}>
-				<img src={original} alt={caption} />
-			</button>
-		))
-
+const Standard = ({
+	caption,
+	photos,
+	photoset_layout,
+	setState,
+	styles,
+	...props
+}) => {
 	const captionElement = caption && (
 		<div
 			className={styles.extraPadded}
@@ -28,7 +27,11 @@ const Standard = ({ caption, photos, setState, styles, ...props }) => {
 					styles.wide,
 				)}
 			>
-				{photoElements}
+				<PhotosetLayout
+					layout={photoset_layout}
+					onClick={({ index }) => () => setState({ active: index })}
+					photos={photos}
+				/>
 				{captionElement}
 			</div>
 			<div className={styles.narrow}>

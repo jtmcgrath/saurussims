@@ -2,13 +2,16 @@ import React from 'react'
 import { Link } from 'react-router5'
 import classNames from 'classnames'
 
-const Standard = ({ columnCount, linkProps, styles, postActions, photos, tags }) => {
-	const photoElements =
-		photos &&
-		photos.map(({ caption, thumbnail }, i) => (
-			<img key={thumbnail} src={thumbnail} alt={caption} />
-		))
+import { PhotosetLayout } from 'components'
 
+const Standard = ({
+	columnCount,
+	linkProps,
+	photos,
+	photoset_layout,
+	postActions,
+	styles,
+}) => {
 	const ConditionalLink = columnCount > 1 ? Link : 'div'
 
 	return (
@@ -17,7 +20,7 @@ const Standard = ({ columnCount, linkProps, styles, postActions, photos, tags })
 				{...linkProps}
 				className={classNames(linkProps.className, styles.listItemPadding)}
 			>
-				{photoElements}
+				<PhotosetLayout layout={photoset_layout} photos={photos} />
 			</ConditionalLink>
 			{postActions}
 		</article>
