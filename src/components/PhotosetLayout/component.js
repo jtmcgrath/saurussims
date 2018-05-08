@@ -1,7 +1,16 @@
 import React from 'react'
 
+import Photoset from './Photoset'
+
 const PhotosetLayout = ({ layout, onClick, photos, styles }) => {
-	if (!layout || !photos) return null
+	if (!photos) return null
+
+	if (!layout) return (
+		<Photoset
+			onClick={onClick}
+			photos={photos}
+		/>
+	)
 
 	return layout.split('').reduce(
 		(acc, quantity) => {
@@ -10,15 +19,12 @@ const PhotosetLayout = ({ layout, onClick, photos, styles }) => {
 
 			acc.elements.push(
 				<div key={`${start}-${end}`} className={styles.row}>
-					{photos.slice(start, end).map(({ caption, original }, index) => (
-						<button
-							key={original}
-							onClick={onClick({ caption, index: index + start, original })}
-							className={styles.button}
-						>
-							<img src={original} alt={caption} />
-						</button>
-					))}
+					<Photoset
+						baseIndex={start}
+						className={styles.button}
+						onClick={onClick}
+						photos={photos.slice(start, end)}
+					/>
 				</div>,
 			)
 			acc.start = end
