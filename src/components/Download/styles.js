@@ -1,19 +1,26 @@
-import { margin, position } from 'polished'
+import { margin, padding, position } from 'polished'
 
 import { borderRadius } from 'utils/styling'
 
 export default {
-	link: ({ columnSpacing, isDesktop, itemPadding }) => ({
-		...borderRadius('50%'),
+	wrapper: ({ columnSpacing }) => ({
 		...margin(`${columnSpacing / 2}px`),
-		border: `${itemPadding}px solid white`,
 		display: 'inline-block',
+		position: 'relative',
+		':hover > a > h1, :hover > .download': {
+			opacity: 1,
+		},
+	}),
+	link: ({ isDesktop, itemPadding }) => ({
+		...borderRadius('50%'),
+		border: `${itemPadding}px solid white`,
+		display: 'block',
 		overflow: 'hidden',
 		position: 'relative',
 		width: isDesktop ? '187px' : '150px',
 		'@media (max-width: 392px)': {
-			width: 'calc(50% - 30px)'
-		}
+			width: 'calc(50% - 30px)',
+		},
 	}),
 	image: () => ({
 		verticalAlign: 'top',
@@ -31,5 +38,15 @@ export default {
 		':hover': {
 			opacity: 1,
 		},
+	}),
+	download: () => ({
+		...padding(0, '22px'),
+		bottom: 0,
+		left: '50%',
+		lineHeight: '44px',
+		opacity: 0,
+		position: 'absolute',
+		transform: 'translateX(-50%)',
+		transition: 'opacity .4s ease',
 	}),
 }
