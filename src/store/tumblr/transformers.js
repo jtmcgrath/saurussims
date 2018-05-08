@@ -13,5 +13,9 @@ export const transformPost = post => {
 		}),
 	)
 
-	return { ...post, photos }
+	return {
+		...post,
+		photos,
+		isCutout: post.tags.some(tag => tag.toLowerCase() === 'cutout'),
+	}
 }
