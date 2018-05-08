@@ -11,7 +11,7 @@ const Downloads = () => (
 			sim becomes available for download you can do so through this page.
 		</p>
 		<p>
-			This page is a WIP - I'm working on adding a filtering system!
+			This page is a WIP - I&apos;m working on adding a filtering system!
 		</p>
 	</Fragment>
 )
