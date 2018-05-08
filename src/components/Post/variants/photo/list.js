@@ -1,12 +1,38 @@
-import { createElement } from 'react'
+import React from 'react'
+import { Link } from 'react-router5'
+import classNames from 'classnames'
 
-import Cutout from './cutout/list'
-import Standard from './standard/list'
+import { PhotosetLayout } from 'components'
 
-const Photo = props =>
-	createElement(
-		props.tags.some(tag => tag.toLowerCase() === 'cutout') ? Cutout : Standard,
-		props,
+const Standard = ({
+	columnCount,
+	isCutout,
+	linkProps,
+	photos,
+	photoset_layout,
+	postActions,
+	styles,
+}) => {
+	const ConditionalLink = columnCount > 1 ? Link : 'div'
+
+	return (
+		<article
+			className={classNames(
+				styles.postActions,
+				isCutout
+					? classNames(styles.cutout, styles.marginOnly)
+					: styles.listItem,
+			)}
+		>
+			<ConditionalLink
+				{...linkProps}
+				className={classNames(linkProps.className, styles.listItemPadding)}
+			>
+				<PhotosetLayout layout={photoset_layout} photos={photos} />
+			</ConditionalLink>
+			{postActions}
+		</article>
 	)
+}
 
-export default Photo
+export default Standard
