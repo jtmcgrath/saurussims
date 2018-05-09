@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import withState from 'react-state-hoc'
 
 import { Gallery, PhotosetLayout, Sidebar } from 'components'
 
@@ -45,4 +46,4 @@ const Standard = ({
 	)
 }
 
-export default Standard
+export default withState({ active: null })(Standard)
