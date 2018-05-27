@@ -1,7 +1,5 @@
 import { padding } from 'polished'
 
-import { borderRadius } from 'utils/styling'
-
 export default {
 	wrapper: ({ columnCount, columnSpacing, isDesktop }) => ({
 		...padding(`${columnSpacing / 2}px`),

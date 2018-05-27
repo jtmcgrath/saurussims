@@ -1,6 +1,6 @@
-import React, { createElement, Fragment } from 'react'
+import React from 'react'
 
-import { Download, Icon, Loading, NotFound } from 'components'
+import { Download, Loading, NotFound } from 'components'
 
 const DownloadList = ({
 	cachedDownloads: downloads,

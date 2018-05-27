@@ -8,7 +8,7 @@ export const transformAssets = assets =>
 	)
 
 export const transformDownload = assets => download => {
-	const [_, postId, postSlug] =
+	const [, postId, postSlug] =
 		download.fields.link.match(/http.*.tumblr.com\/post\/(\d*)\/?(.*)?/) || []
 
 	return {

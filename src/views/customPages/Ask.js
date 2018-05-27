@@ -11,6 +11,7 @@ const Ask = ({ styles, username }) => (
 		<iframe
 			className={styles.iframe}
 			frameborder="0"
+			title="ask-away"
 			scrolling="no"
 			src={`https://www.tumblr.com/ask_form/${username}.tumblr.com`}
 		/>
