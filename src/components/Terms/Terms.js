@@ -1,4 +1,4 @@
-import React, { createElement, Fragment } from 'react'
+import React, { createElement } from 'react'
 import { connect as connectStyles } from 'react-fela'
 import { margin } from 'polished'
 

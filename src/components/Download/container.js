@@ -4,7 +4,7 @@ import { connect as connectStyles } from 'react-fela'
 
 import { compose } from 'utils/general'
 import { withConfig } from 'hocs'
-import { getColumnCount, getPost, isDesktop } from 'store'
+import { getColumnCount, isDesktop } from 'store'
 
 import * as variants from './variants'
 import styles from './styles'
