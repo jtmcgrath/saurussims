@@ -12,7 +12,7 @@ export default function configureStore(
 ) {
 	let middleware = [router5Middleware(router), thunkMiddleware]
 
-	if (process.env.NODE_ENV !== 'production' || true) {
+	if (process.env.NODE_ENV !== 'production') {
 		const composeEnhancers =
 			window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
