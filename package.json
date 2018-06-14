@@ -19,7 +19,7 @@
     "redux-router5": "^6.0.0",
     "redux-thunk": "^2.2.0",
     "router5": "^6.2.2",
-    "tumblr.js": "^1.1.1"
+    "tumblr.js": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
