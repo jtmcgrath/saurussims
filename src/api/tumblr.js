@@ -11,10 +11,11 @@ const getUrl = (query = {}) =>
 
 export default {
 	getPosts: (_tag = '', page = 1) => {
-		const offset = page * 20 - 20
+		const limit = window.config.itemsPerPage
+		const offset = page * limit - limit
 		const tag = _tag.replace(/-/g, ' ')
 
-		return fetch(getUrl({ offset, tag }))
+		return fetch(getUrl({ limit, offset, tag }))
 			.then(response => response.json())
 			.then(({ response }) => response)
 			.then(({ posts, total_posts }) => ({ posts, total_posts }))
