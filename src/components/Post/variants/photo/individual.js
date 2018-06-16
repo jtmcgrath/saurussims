@@ -1,13 +1,49 @@
-import { createElement } from 'react'
+import React from 'react'
+import classNames from 'classnames'
 import withState from 'react-state-hoc'
 
-import Cutout from './cutout/individual'
-import Standard from './standard/individual'
+import { Gallery, PhotosetLayout, Sidebar } from 'components'
 
-const Photo = props =>
-	createElement(
-		props.tags.some(tag => tag.toLowerCase() === 'cutout') ? Cutout : Standard,
-		props,
+const Standard = ({
+	caption,
+	isCutout,
+	photos,
+	photoset_layout,
+	setState,
+	styles,
+	...props
+}) => {
+	const captionElement = caption && (
+		<div
+			className={isCutout ? styles.paddingBottom : styles.extraPadded}
+			dangerouslySetInnerHTML={{ __html: caption }}
+		/>
 	)
 
-export default withState({ active: null })(Photo)
+	return (
+		<article className={classNames(styles.responsiveWrapper, styles.wrapper)}>
+			<div
+				className={classNames(
+					{ [styles.listItem]: !isCutout },
+					styles.listItemPadding,
+					styles.wide,
+				)}
+			>
+				<PhotosetLayout
+					layout={photoset_layout}
+					onClick={({ index }) => () => setState({ active: index })}
+					photos={photos}
+				/>
+				{!isCutout && captionElement}
+			</div>
+			<div className={styles.narrow}>
+				<Sidebar {...props} caption={caption} styles={styles}>
+					{isCutout && captionElement}
+				</Sidebar>
+			</div>
+			<Gallery photos={photos} setState={setState} {...props} />
+		</article>
+	)
+}
+
+export default withState({ active: null })(Standard)

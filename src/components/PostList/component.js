@@ -2,14 +2,15 @@ import React, { Fragment } from 'react'
 
 import { Loading, NotFound, Pagination, Post, PostActions } from 'components'
 
-const PostList = props => {
-	if (props.posts === undefined) {
+const PostList = ({ cachedPosts: posts, showRefresh, refresh, ...props }) => {
+	if (posts === undefined || posts === null) {
 		return <Loading />
 	}
 
-	return props.posts.length ? (
+	return posts.length ? (
 		<Fragment>
-			<PostColumns {...props} />
+			{showRefresh ? refresh : null}
+			<PostColumns {...props} posts={posts} />
 			<Pagination />
 		</Fragment>
 	) : (

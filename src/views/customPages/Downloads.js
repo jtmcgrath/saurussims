@@ -12,7 +12,7 @@ const Downloads = () => (
 				</header>
 				<p>
 					<Link routeName="tag" routeParams={{ tagName: 'downloads' }}>
-						For now, please click here to view the <strong>downloads</strong>{' '}
+						For now, please click here to view the <strong>downloads</strong>&nbsp;
 						tag instead!
 					</Link>
 				</p>

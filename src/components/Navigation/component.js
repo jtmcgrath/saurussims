@@ -12,7 +12,7 @@ const reduceItems = (isDesktop, props, styles) => (
 			<Link
 				key={item.name}
 				{...item}
-				className={classNames(styles.link)}
+				className={styles.link}
 				onClick={
 					onClick
 						? () => onClick({ ...props, ...item })

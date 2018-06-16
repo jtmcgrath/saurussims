@@ -6,9 +6,10 @@ export default {
 		justifyContent: 'center',
 		width: '100%',
 	}),
-	content: ({ columnSpacing, itemPadding }) => ({
+	content: ({ columnSpacing, itemPadding, maxWidth }) => ({
 		...listItem({ columnSpacing }),
 		...listItemPadding({ itemPadding: itemPadding * 2 }),
+		...(maxWidth ? { maxWidth } : {}),
 		display: 'inline-block',
 		textAlign: 'center',
 	}),

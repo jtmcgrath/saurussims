@@ -1,3 +1,4 @@
+export * from './downloads'
 export * from './tumblr'
 export * from './viewport'
 export * from './selectors'

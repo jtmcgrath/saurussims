@@ -37,7 +37,7 @@ const Pagination = ({ linkProps: lp, maxItems, pageId, pageCount, styles }) => {
 	}
 
 	return (
-		<nav>
+		<nav className={styles.nav}>
 			<List className={styles.wrapper}>
 				{[
 					config.first,
