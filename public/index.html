@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <title>React App</title>
 
-<script type="text/javascript">
-window.config = {
-	background:
-		'linear-gradient(to bottom, #c6c6c6 0%, #c6c6c6 100%) repeat fixed 0% 0% transparent',
-	columnWidth: 300,
-	columnSpacing: 30,
-	maxColumns: 4,
-	itemPadding: 6,
-	itemsPerPage: 18,
-	account: {
-		username: 'saurussims',
-		avatar: 'https://78.media.tumblr.com/avatar_a2e13eb8c83a_128.png',
-		title: 'SaurusSims',
-		description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
-	},
-	navigation: [
-		{
-			key: 'main',
-			items: [
-				{
-					name: 'Menu',
-					icon: 'Menu',
-					hideOnDesktop: true,
-					onClick: ({ setState, visible }) => setState({ visible: !visible }),
-				},
-				{ name: 'Ask', icon: 'Message', routeName: 'ask' },
-				{
-					name: 'Follow',
-					icon: 'Heart',
-					href: 'https://www.tumblr.com/follow/saurussims',
-				},
-				// { name: 'Random', icon: 'Random', href: '/random' },
-				{ name: 'Home', icon: 'Home', routeName: 'all' },
-			],
-		},
-		{
-			key: 'secondary',
-			items: [
-				{ name: 'Downloads', icon: 'Download', routeName: 'downloads' },
-				{
-					name: 'Lookbooks',
-					icon: 'Lookbook',
-					routeName: 'tag',
-					routeParams: { tagName: 'lookbook' },
-				},
-				{ name: 'Sims', icon: 'Sim', routeName: 'sims' },
-				{
-					name: 'WCIF',
-					icon: 'Search',
-					routeName: 'tag',
-					routeParams: { tagName: 'wcif' },
-				},
-			],
-		},
-	],
-}
-</script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+	<title>Saurus Sims</title>
 
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <div id="modal"></div>
-  </body>
+	<script type="text/javascript">
+		var pages = {
+			ask: { name: 'Ask', icon: 'Message', routeName: 'ask' },
+			downloads: { name: 'Downloads', icon: 'Download', routeName: 'downloads' },
+			follow: {
+				name: 'Follow',
+				icon: 'Heart',
+				href: `https://www.tumblr.com/follow/${
+					'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1]
+				}`,
+			},
+			home: { name: 'Home', icon: 'Home', routeName: 'all' },
+			lookbooks: {
+				name: 'Lookbooks',
+				icon: 'Lookbook',
+				routeName: 'tag',
+				routeParams: { tagName: 'lookbook' },
+			},
+			menu: {
+				name: 'Menu',
+				icon: 'Menu',
+				hideOnDesktop: true,
+				onClick: function ({ setState, visible }) {
+					return setState({ visible: !visible })
+				},
+			},
+			random: { name: 'Random', icon: 'Random', href: '/random' },
+			sims: { name: 'Sims', icon: 'Sim', routeName: 'sims' },
+			wcif: {
+				name: 'WCIF',
+				icon: 'Search',
+				routeName: 'tag',
+				routeParams: { tagName: 'wcif' },
+			}
+		}
+
+		function getMenuItems(setting, fallback) {
+			return (setting || fallback).split(',').reduce(function (items, page) {
+				var item = pages[page.trim()]
+
+				return item ? items.concat([item]) : items
+			}, [])
+		}
+
+		function fallBackToNumber(setting, fallback) {
+			return parseInt(setting, 10) || fallback
+		}
+
+		window.config = {
+			background:
+				'linear-gradient(to bottom, #c6c6c6 0%, #c6c6c6 100%) repeat fixed 0% 0% transparent',
+			columnWidth: fallBackToNumber('{text:Column Width}', 300),
+			columnSpacing: fallBackToNumber('{text:Column Spacing}', 30),
+			maxColumns: fallBackToNumber('{text:Max Columns}', 4),
+			itemPadding: fallBackToNumber('{text:Item Padding}', 6),
+			itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
+			account: {
+				username: 'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1],
+				avatar: 'https://78.media.tumblr.com/avatar_a2e13eb8c83a_128.png',
+				title: 'SaurusSims',
+				description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
+			},
+			navigation: [
+				{
+					key: 'main',
+					items: getMenuItems(/* '{text:Main Menu}' */ undefined, 'menu, ask, follow, home'),
+				},
+				{
+					key: 'secondary',
+					items: getMenuItems(/* '{text:Secondary Menu}' */ undefined, 'downloads, lookbooks, sims, wcif'),
+				},
+			],
+		}
+	</script>
+</head>
+
+<body>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+	<div id="root"></div>
+	<div id="modal"></div>
+</body>
+
 </html>

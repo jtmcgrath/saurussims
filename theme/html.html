@@ -1,77 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name="theme-color" content="#000000">
-<meta name="color:Background Gradient Top" content="#c6c6c6"/>
-<meta name="color:Background Gradient Bottom" content="#c6c6c6"/>
-<link rel="shortcut icon" href="[ insert favicon here ]">
-<title>{Title}</title>
 
-<script type="text/javascript">
-window.config = {
-	background:
-		'linear-gradient(to bottom, {color:Background Gradient Top} 0%, {color:Background Gradient Bottom} 100%) repeat fixed 0% 0% transparent',
-	columnWidth: 300,
-	columnSpacing: 30,
-	maxColumns: 4,
-	itemPadding: 6,
-	itemsPerPage: 18,
-	account: {
-		username: '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1],
-		avatar: '{PortraitURL-128}',
-		title: '{Title}',
-		description: '{Description}',
-	},
-	navigation: [
-		{
-			key: 'main',
-			items: [
-				{
-					name: 'Menu',
-					icon: 'Menu',
-					hideOnDesktop: true,
-					onClick: ({ setState, visible }) => setState({ visible: !visible }),
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<meta name="color:Background Gradient Top" content="#c6c6c6" />
+	<meta name="color:Background Gradient Bottom" content="#c6c6c6" />
+	<meta name="text:Column Width" content="300" />
+	<meta name="text:Column Spacing" content="30" />
+	<meta name="text:Max Columns" content="4" />
+	<meta name="text:Item Padding" content="6" />
+	<meta name="text:Items Per Page" content="18" />
+	<meta name="text:Main Menu" content="menu, ask, follow, home" />
+	<meta name="text:Secondary Menu" content="downloads, lookbooks, sims, wcif" />
+	<meta name="text:Items Per Page" content="18" />
+	<link rel="shortcut icon" href="[ insert favicon here ]">
+	<title>{Title}</title>
+
+	<script type="text/javascript">
+		var username = '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]
+
+		var pages = {
+			ask: { name: 'Ask', icon: 'Message', routeName: 'ask' },
+			downloads: { name: 'Downloads', icon: 'Download', routeName: 'downloads' },
+			follow: {
+				name: 'Follow',
+				icon: 'Heart',
+				href: `https://www.tumblr.com/follow/${username}`,
+			},
+			home: { name: 'Home', icon: 'Home', routeName: 'all' },
+			lookbooks: {
+				name: 'Lookbooks',
+				icon: 'Lookbook',
+				routeName: 'tag',
+				routeParams: { tagName: 'lookbook' },
+			},
+			menu: {
+				name: 'Menu',
+				icon: 'Menu',
+				hideOnDesktop: true,
+				onClick: function ({ setState, visible }) {
+					return setState({ visible: !visible })
 				},
-				{ name: 'Ask', icon: 'Message', routeName: 'ask' },
+			},
+			random: { name: 'Random', icon: 'Random', href: '/random' },
+			sims: { name: 'Sims', icon: 'Sim', routeName: 'sims' },
+			wcif: {
+				name: 'WCIF',
+				icon: 'Search',
+				routeName: 'tag',
+				routeParams: { tagName: 'wcif' },
+			}
+		}
+
+		function getMenuItems(setting, fallback) {
+			return (setting || fallback).split(',').reduce(function (items, page) {
+				var item = pages[page.trim()]
+
+				return item ? items.concat([item]) : items
+			}, [])
+		}
+
+		function fallBackToNumber(setting, fallback) {
+			return parseInt(setting, 10) || fallback
+		}
+
+		window.config = {
+			background:
+				'linear-gradient(to bottom, {color:Background Gradient Top} 0%, {color:Background Gradient Bottom} 100%) repeat fixed 0% 0% transparent',
+			columnWidth: fallBackToNumber('{text:Column Width}', 300),
+			columnSpacing: fallBackToNumber('{text:Column Spacing}', 30),
+			maxColumns: fallBackToNumber('{text:Max Columns}', 4),
+			itemPadding: fallBackToNumber('{text:Item Padding}', 6),
+			itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
+			account: {
+				username: username,
+				avatar: '{PortraitURL-128}',
+				title: '{Title}',
+				description: '{Description}',
+			},
+			navigation: [
 				{
-					name: 'Follow',
-					icon: 'Heart',
-					href: `https://www.tumblr.com/follow/${
-						'{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]
-					}`,
+					key: 'main',
+					items: getMenuItems('{text:Main Menu}', 'menu, ask, follow, home'),
 				},
-				// { name: 'Random', icon: 'Random', href: '/random' },
-				{ name: 'Home', icon: 'Home', routeName: 'all' },
+				{
+					key: 'secondary',
+					items: getMenuItems('{text:Secondary Menu}', 'downloads, lookbooks, sims, wcif'),
+				},
 			],
-		},
-		{
-			key: 'secondary',
-			items: [
-				{ name: 'Downloads', icon: 'Download', routeName: 'downloads' },
-				{
-					name: 'Lookbooks',
-					icon: 'Lookbook',
-					routeName: 'tag',
-					routeParams: { tagName: 'lookbook' },
-				},
-				{ name: 'Sims', icon: 'Sim', routeName: 'sims' },
-				{
-					name: 'WCIF',
-					icon: 'Search',
-					routeName: 'tag',
-					routeParams: { tagName: 'wcif' },
-				},
-			],
-		},
-	],
-}
-</script>
+		}
+	</script>
 </head>
+
 <body>
-  <div id="root"></div>
-  <div id="modal"></div>
-  <script type="text/javascript" src="[ insert script bundle here ]"></script>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+	<div id="root"></div>
+	<div id="modal"></div>
+	<script type="text/javascript" src="[ insert script bundle here ]"></script>
 </body>
+
 </html>
