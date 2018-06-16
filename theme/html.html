@@ -19,15 +19,13 @@
 	<title>{Title}</title>
 
 	<script type="text/javascript">
-		var username = '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]
-
 		var pages = {
 			ask: { name: 'Ask', icon: 'Message', routeName: 'ask' },
 			downloads: { name: 'Downloads', icon: 'Download', routeName: 'downloads' },
 			follow: {
 				name: 'Follow',
 				icon: 'Heart',
-				href: `https://www.tumblr.com/follow/${username}`,
+				href: `https://www.tumblr.com/follow/${'{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1]}`,
 			},
 			home: { name: 'Home', icon: 'Home', routeName: 'all' },
 			lookbooks: {
@@ -75,7 +73,7 @@
 			itemPadding: fallBackToNumber('{text:Item Padding}', 6),
 			itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
 			account: {
-				username: username,
+				username: '{BlogURL}'.match(/https:\/\/(.*).tumblr/)[1],
 				avatar: '{PortraitURL-128}',
 				title: '{Title}',
 				description: '{Description}',
