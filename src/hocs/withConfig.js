@@ -1,11 +1,10 @@
-import { createElement } from 'react'
+import { contextToProps } from 'react-zap'
+import Config from 'context/config'
 
 import { get } from 'utils/general'
 
-const withConfig = (...targets) => BaseComponent => {
-	let config = window.config || {}
-
-	config = targets
+const mergeToProps = targets => (props, config) =>
+	targets
 		? targets.reduce((acc, curr) => {
 				const paths = curr.split('.')
 				const key = paths.length > 1 ? paths[paths.length - 1] : curr
@@ -14,17 +13,10 @@ const withConfig = (...targets) => BaseComponent => {
 					...acc,
 					[key]: get(config, curr),
 				}
-			}, {})
-		: { config }
+		  }, props)
+		: { ...props, config }
 
-	const WithConfig = props =>
-		createElement(BaseComponent, { ...config, ...props })
-
-	const baseName = BaseComponent.displayName || BaseComponent.name
-
-	WithConfig.displayName = `withConfig(${baseName})`
-
-	return WithConfig
-}
+const withConfig = (...targets) =>
+	contextToProps(Config.Consumer, mergeToProps(targets))
 
 export default withConfig

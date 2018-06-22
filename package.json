@@ -15,6 +15,7 @@
     "react-router5": "^6.0.1",
     "react-scripts": "^1.1.4",
     "react-state-hoc": "^2.0.0",
+    "react-zap": "~2.0.0",
     "redux": "^4.0.0",
     "redux-router5": "^6.0.0",
     "redux-thunk": "^2.2.0",
