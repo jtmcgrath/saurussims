@@ -5740,6 +5740,10 @@ react-state-hoc@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-state-hoc/-/react-state-hoc-2.0.0.tgz#a09921f4e0c93f4d514d880c5adb7971d4d5218c"
 
+react-zap@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-zap/-/react-zap-2.1.0.tgz#22ceb356168f72e5d75e063345731968e23f1d60"
+
 react@^16.4.0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
