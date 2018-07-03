@@ -29,7 +29,7 @@ const Sidebar = ({
 			<p>{tags.map(tagName => <TagLink key={tagName} tag={tagName} />)}</p>
 		)
 
-	const showTerms = tags.some(tag => tag.toLowerCase() === 'downloads')
+	const terms = tags.some(tag => tag.toLowerCase() === 'downloads')
 
 	return (
 		<div
@@ -62,7 +62,7 @@ const Sidebar = ({
 			{children}
 			{reblogElement}
 			{tagElements}
-			{showTerms && <Terms />}
+			{terms && <Terms terms="downloads" />}
 		</div>
 	)
 }
