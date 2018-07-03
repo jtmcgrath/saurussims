@@ -11,13 +11,18 @@ export default {
 			opacity: 1,
 		},
 	}),
-	link: ({ isDesktop, itemPadding }) => ({
+	link: ({ contentType, isDesktop, itemPadding }) => ({
 		...borderRadius('50%'),
 		border: `${itemPadding}px solid white`,
 		display: 'block',
 		overflow: 'hidden',
 		position: 'relative',
-		width: isDesktop ? '187px' : '150px',
+		width:
+			contentType === 'download'
+				? '260px'
+				: isDesktop
+					? '187px'
+					: '150px',
 		'@media (max-width: 392px)': {
 			width: 'calc(50% - 30px)',
 		},

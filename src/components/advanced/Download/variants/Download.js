@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const Download = ({ className, image, postId, postSlug, styles, title }) => (
 	<Link
-		className={classNames(className, styles.link)}
+		className={classNames(className, styles.link, styles.wrapper)}
 		routeName={postSlug ? 'post' : 'postWithoutSlug'}
 		routeParams={{ postId, postSlug }}
 	>
