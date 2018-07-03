@@ -3,17 +3,17 @@ import { margin, position } from 'polished'
 import { borderRadius } from 'utils/styling'
 
 export default {
-	link: ({ columnSpacing, isDesktop, itemPadding }) => ({
+	link: ({ contentType, columnSpacing, isDesktop, itemPadding }) => ({
 		...borderRadius('50%'),
 		...margin(`${columnSpacing / 2}px`),
 		border: `${itemPadding}px solid white`,
 		display: 'inline-block',
 		overflow: 'hidden',
 		position: 'relative',
-		width: isDesktop ? '187px' : '150px',
+		width: contentType === 'download' ? '260px' : isDesktop ? '187px' : '150px',
 		'@media (max-width: 392px)': {
-			width: 'calc(50% - 30px)'
-		}
+			width: 'calc(50% - 30px)',
+		},
 	}),
 	image: () => ({
 		verticalAlign: 'top',
