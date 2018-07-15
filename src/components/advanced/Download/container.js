@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
 })
 
 export default compose(
-	withConfig('columnSpacing', 'columnWidth', 'itemPadding'),
+	withConfig('account.avatar', 'columnSpacing', 'columnWidth', 'itemPadding'),
 	connect(mapStateToProps),
 	connectStyles(styles),
 )(GetVariant)
