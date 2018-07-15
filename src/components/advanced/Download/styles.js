@@ -27,22 +27,34 @@ export default {
 			width: 'calc(50% - 30px)',
 		},
 	}),
-	image: () => ({
+	image: ({ image }) => ({
+		...(image ? {} : { opacity: 0 }),
 		verticalAlign: 'top',
 	}),
-	title: () => ({
+	title: ({ image }) => ({
 		...position('absolute', 0),
+		...padding('20px'),
 		alignItems: 'center',
-		background: 'rgba(255,255,255,.9)',
 		display: 'flex',
 		justifyContent: 'center',
 		lineHeight: 1,
-		opacity: 0,
 		textAlign: 'center',
-		transition: 'opacity .4s ease',
-		':hover': {
-			opacity: 1,
-		},
+		transition: 'all .4s ease',
+		...(image
+			? {
+					background: 'rgba(255,255,255,.9)',
+					opacity: 0,
+					':hover': {
+						opacity: 1,
+					},
+			  }
+			: {
+					color: 'white',
+					':hover': {
+						background: 'rgba(255,255,255,.9)',
+						color: '#919191',
+					},
+			  }),
 	}),
 	download: () => ({
 		...padding(0, '22px'),

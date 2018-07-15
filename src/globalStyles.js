@@ -29,6 +29,7 @@ export default `
     background: ${window.config.background || 'white'};
     font-size: 62.5%;
     min-width: 320px;
+    overflow-y: scroll;
   }
 
   body,
