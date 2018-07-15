@@ -16,17 +16,20 @@ const Notice = ({ setState, styles }) => (
 	<div className={styles.confirm} onClick={() => setState({ clicked: true })}>
 		<h1>Ask Away!</h1>
 		<ul className={styles.list}>
-			<li>I don't take requests for CC, sorry!</li>
-			<li>If you have a specific lookbook you would like to see, feel free to leave a suggestion.</li>
+			<li>I don&apos;t take requests for CC, sorry!</li>
 			<li>
-				I'm WCIF friendly, but please search through my &nbsp;
+				If you have a specific lookbook you would like to see, feel free
+				to leave a suggestion.
+			</li>
+			<li>
+				I&apos;m WCIF friendly, but please search through my &nbsp;
 				{
 					<Link routeName="tag" routeParams={{ tagName: 'wcif' }}>
 						#WCIF
 					</Link>
 				}
-				&nbsp; posts before asking. I won't answer WCIFs which have already
-				been answered!
+				&nbsp; posts before asking. I won&apos;t answer WCIFs which have
+				already been answered!
 			</li>
 		</ul>
 	</div>
@@ -46,7 +49,7 @@ const Form = ({ styles, username }) => (
 )
 
 const Ask = props => {
-	const { clicked, itemPadding, styles } = props
+	const { clicked } = props
 
 	return (
 		<Page maxWidth={iframeSize.width}>
