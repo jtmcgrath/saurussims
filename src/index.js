@@ -8,6 +8,7 @@ import { Provider as StyleProvider } from 'react-fela'
 import { App } from 'components'
 import createRouter from 'router'
 import configureStore from 'store'
+import Config from 'context/config'
 
 import globalStyles from './globalStyles'
 
@@ -18,13 +19,15 @@ const router = createRouter()
 const store = configureStore(router)
 
 const wrappedApp = (
-	<StyleProvider renderer={renderer}>
-		<Provider store={store}>
-			<RouterProvider router={router}>
-				<App />
-			</RouterProvider>
-		</Provider>
-	</StyleProvider>
+	<Config.Provider value={window.config}>
+		<StyleProvider renderer={renderer}>
+			<Provider store={store}>
+				<RouterProvider router={router}>
+					<App />
+				</RouterProvider>
+			</Provider>
+		</StyleProvider>
+	</Config.Provider>
 )
 
 router.start((err, state) => {

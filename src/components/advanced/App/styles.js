@@ -2,6 +2,7 @@ export default {
 	root: ({ isDesktop }) => ({
 		display: isDesktop ? 'flex' : 'block',
 		justifyContent: 'center',
+		overflow: 'hidden',
 		paddingBottom: !isDesktop ? '48px' : null,
 	}),
 	header: ({ columnWidth }) => ({

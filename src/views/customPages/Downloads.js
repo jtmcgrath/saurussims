@@ -1,24 +1,18 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
-import { Link, Page } from 'components'
+import { DownloadList, Page } from 'components'
 
 const Downloads = () => (
-	<Page>
-		{({ styles }) => (
-			<Fragment>
-				<header className={styles.header}>
-					<h1>Downloads</h1>
-					<h3>Under construction</h3>
-				</header>
-				<p>
-					<Link routeName="tag" routeParams={{ tagName: 'downloads' }}>
-						For now, please click here to view the <strong>downloads</strong>&nbsp;
-						tag instead!
-					</Link>
-				</p>
-			</Fragment>
-		)}
-	</Page>
+	<div>
+		<Page maxWidth="320px">
+			<h1>Downloads</h1>
+			<p>
+				I&apos;m still putting this section together, but for now you
+				can at least browse through all the downloads!
+			</p>
+		</Page>
+		<DownloadList contentType="download" />
+	</div>
 )
 
 export default Downloads

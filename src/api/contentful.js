@@ -11,7 +11,7 @@ const getUrl = (path, query = {}) =>
 
 export default {
 	getEntries: content_type =>
-		fetch(getUrl('entries', { content_type })).then(response =>
-			response.json(),
+		fetch(getUrl('entries', { content_type, order: '-fields.order' })).then(
+			response => response.json()
 		),
 }

@@ -11,33 +11,50 @@ export default {
 			opacity: 1,
 		},
 	}),
-	link: ({ isDesktop, itemPadding }) => ({
+	link: ({ contentType, isDesktop, itemPadding }) => ({
 		...borderRadius('50%'),
 		border: `${itemPadding}px solid white`,
 		display: 'block',
 		overflow: 'hidden',
 		position: 'relative',
-		width: isDesktop ? '187px' : '150px',
+		width:
+			contentType === 'download'
+				? '260px'
+				: isDesktop
+					? '187px'
+					: '150px',
 		'@media (max-width: 392px)': {
 			width: 'calc(50% - 30px)',
 		},
 	}),
-	image: () => ({
+	image: ({ image }) => ({
+		...(image ? {} : { opacity: 0 }),
 		verticalAlign: 'top',
 	}),
-	title: () => ({
+	title: ({ image }) => ({
 		...position('absolute', 0),
+		...padding('20px'),
 		alignItems: 'center',
-		background: 'rgba(255,255,255,.9)',
 		display: 'flex',
 		justifyContent: 'center',
 		lineHeight: 1,
-		opacity: 0,
 		textAlign: 'center',
-		transition: 'opacity .4s ease',
-		':hover': {
-			opacity: 1,
-		},
+		transition: 'all .4s ease',
+		...(image
+			? {
+					background: 'rgba(255,255,255,.9)',
+					opacity: 0,
+					':hover': {
+						opacity: 1,
+					},
+			  }
+			: {
+					color: 'white',
+					':hover': {
+						background: 'rgba(255,255,255,.9)',
+						color: '#919191',
+					},
+			  }),
 	}),
 	download: () => ({
 		...padding(0, '22px'),
