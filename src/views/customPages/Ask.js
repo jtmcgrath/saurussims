@@ -9,22 +9,26 @@ import { withConfig } from 'hocs'
 
 const iframeSize = {
 	height: 327,
-	width: 335
+	width: 335,
 }
 
 const Notice = ({ setState, styles }) => (
 	<div className={styles.confirm} onClick={() => setState({ clicked: true })}>
 		<h1>Ask Away!</h1>
-		<p>- No requests</p>
-		<p>
-			- Search through &nbsp;
-			{
-				<Link routeName="tag" routeParams={{ tagName: 'wcif' }}>
-					#WCIF
-				</Link>
-			}
-			&nbsp; before asking
-		</p>
+		<ul className={styles.list}>
+			<li>I don't take requests for CC, sorry!</li>
+			<li>If you have a specific lookbook you would like to see, feel free to leave a suggestion.</li>
+			<li>
+				I'm WCIF friendly, but please search through my &nbsp;
+				{
+					<Link routeName="tag" routeParams={{ tagName: 'wcif' }}>
+						#WCIF
+					</Link>
+				}
+				&nbsp; posts before asking. I won't answer WCIFs which have already
+				been answered!
+			</li>
+		</ul>
 	</div>
 )
 
@@ -56,13 +60,17 @@ export default compose(
 	withState({ clicked: false }),
 	connectStyles({
 		confirm: ({ clicked }) => ({
-			cursor: clicked ? 'default' : 'pointer'
+			cursor: clicked ? 'default' : 'pointer',
 		}),
 		iframe: () => ({
 			height: `${iframeSize.height}px`,
 			marginTop: '1em',
 			verticalAlign: 'top',
-			width: `${iframeSize.width}px`
-		})
+			width: `${iframeSize.width}px`,
+		}),
+		list: () => ({
+			marginTop: '10px',
+			textAlign: 'left',
+		}),
 	})
 )(Ask)
