@@ -32,6 +32,11 @@ const Notice = ({ setState, styles }) => (
 				already been answered!
 			</li>
 		</ul>
+		<p>
+			<Button>
+				Ask a question
+			</Button>
+		</p>
 	</div>
 )
 
