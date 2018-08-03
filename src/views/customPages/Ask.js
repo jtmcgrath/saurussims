@@ -3,7 +3,7 @@ import { connect as connectStyles } from 'react-fela'
 import withState from 'react-state-hoc'
 import { Link } from 'react-router5'
 
-import { Page } from 'components'
+import { Button, Page } from 'components'
 import { compose } from 'utils/general'
 import { withConfig } from 'hocs'
 
