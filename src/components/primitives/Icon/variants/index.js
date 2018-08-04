@@ -1,6 +1,7 @@
 export { default as Arrow } from './Arrow'
 export { default as Book } from './Book'
 export { default as Download } from './Download'
+export { default as Gift } from './Gift'
 export { default as Heart } from './Heart'
 export { default as Home } from './Home'
 export { default as Lookbook } from './Lookbook'
