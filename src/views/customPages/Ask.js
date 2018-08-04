@@ -33,9 +33,7 @@ const Notice = ({ setState, styles }) => (
 			</li>
 		</ul>
 		<p>
-			<Button>
-				Ask a question
-			</Button>
+			<Button>Ask a question</Button>
 		</p>
 	</div>
 )

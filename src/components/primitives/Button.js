@@ -11,12 +11,12 @@ const style = () => ({
 	...padding(0, '10px'),
 	backgroundColor: '#919191',
 	borderRadius: '4px',
-    color: 'white',
-    fontSize: '22px',
-    lineHeight: '32px',
-    ':hover': {
-        backgroundColor: '#616161',
-    }
+	color: 'white',
+	fontSize: '22px',
+	lineHeight: '32px',
+	':hover': {
+		backgroundColor: '#616161',
+	},
 })
 
 export default createComponent(style, Button)
