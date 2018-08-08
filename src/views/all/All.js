@@ -3,13 +3,18 @@ import { connect } from 'react-redux'
 
 import { getRouter } from 'store'
 import { PostList } from 'components'
+import { compose } from 'utils/general'
+import { withConfig } from 'hocs'
 
-const All = ({ route }) => (
+const All = ({ hideOnHomepage, route }) => (
 	<PostList
 		key={route.path}
 		pageId={route.params.pageId}
-		filters={['reblogs', 'tumblr games']}
+		hideTags={hideOnHomepage}
 	/>
 )
 
-export default connect(getRouter)(All)
+export default compose(
+	connect(getRouter),
+	withConfig('hideOnHomepage'),
+)(All)
