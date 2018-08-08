@@ -23,7 +23,11 @@ export const requestPage = (route, page, tag) => dispatch => {
 		const pageData = []
 		const postData = {}
 		posts.forEach(post => {
-			pageData.push({ postId: post.id, postSlug: post.slug || undefined })
+			pageData.push({
+				postId: post.id,
+				postSlug: post.slug,
+				tags: post.tags,
+			})
 			postData[post.id] = transformPost(post)
 		})
 		dispatch(receivePosts(postData))

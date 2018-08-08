@@ -5,7 +5,11 @@ import { getRouter } from 'store'
 import { PostList } from 'components'
 
 const All = ({ route }) => (
-	<PostList key={route.path} pageId={route.params.pageId} />
+	<PostList
+		key={route.path}
+		pageId={route.params.pageId}
+		filters={['reblogs', 'tumblr games']}
+	/>
 )
 
 export default connect(getRouter)(All)
