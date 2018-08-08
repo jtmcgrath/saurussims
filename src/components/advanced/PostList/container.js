@@ -8,16 +8,16 @@ import { getColumnCount, getPage, isDesktop as getIsDesktop } from 'store'
 import PostList from './component'
 import styles from './styles'
 
-const mapStateToProps = (state, { filters, pageId = 1, tagName = '' }) => {
+const mapStateToProps = (state, { hideTags, pageId = 1, tagName = '' }) => {
 	const isDesktop = getIsDesktop(state)
 	const columnCount = getColumnCount(state)
 	const allPosts = getPage(state, `${tagName}${pageId}`)
 	const filteredPosts =
-		allPosts && filters
+		allPosts && hideTags
 			? allPosts.filter(
 					({ tags }) =>
 						!tags.some(tag =>
-							filters.some(filter => filter === tag)
+							hideTags.some(filter => filter === tag)
 						)
 			  )
 			: allPosts
