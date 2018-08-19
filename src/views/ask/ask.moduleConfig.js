@@ -1,6 +1,8 @@
+import Test from 'shared/test'
+
 const askConfig = {
 	routeComponents: {
-		ask: () => null,
+		ask: Test,
 	},
 	routes: [
 		{

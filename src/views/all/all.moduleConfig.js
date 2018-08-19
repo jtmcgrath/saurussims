@@ -1,6 +1,8 @@
+import Test from 'shared/test'
+
 const allConfig = {
 	routeComponents: {
-		all: () => null,
+		all: Test,
 	},
 	routes: [
 		{

@@ -1,7 +1,9 @@
+import Test from 'shared/test'
+
 const notFoundConfig = {
 	defaultRoute: 'notFound',
 	routeComponents: {
-		notFound: () => null,
+		notFound: Test,
 	},
 	routes: [
 		{

@@ -1,6 +1,8 @@
+import Test from 'shared/test'
+
 const postConfig = {
     routeComponents: {
-        post: () => null,
+        post: Test,
     },
     routes: [
         {

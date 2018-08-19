@@ -1,6 +1,8 @@
+import Test from 'shared/test'
+
 const tagConfig = {
 	routeComponents: {
-		tag: () => null,
+		tag: Test,
 	},
 	routes: [
 		{

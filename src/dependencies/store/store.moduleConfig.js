@@ -1,8 +1,8 @@
-const store = console.log
+import { configureStore } from './store'
 
 const storeConfig = {
 	dependencies: {
-		store,
+		store: config => configureStore(config),
 	},
 }
 

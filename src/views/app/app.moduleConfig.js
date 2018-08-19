@@ -1,4 +1,4 @@
-const App = () => null
+import App from './components/App'
 
 const appConfig = {
 	appComponent: App,

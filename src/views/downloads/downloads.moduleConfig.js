@@ -1,6 +1,8 @@
+import Test from 'shared/test'
+
 const downloadsConfig = {
 	routeComponents: {
-		downloads: () => null,
+		downloads: Test,
 	},
 	routes: [
 		{
