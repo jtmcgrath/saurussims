@@ -1,8 +1,8 @@
-const api = console.log
+import { configureApi } from './api'
 
 const apiConfig = {
 	dependencies: {
-		api,
+		api: config => configureApi(config),
 	},
 }
 

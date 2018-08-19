@@ -58,33 +58,32 @@
 		}
 
 		window.config = {
-			background:
-				'linear-gradient(to bottom, #c6c6c6 0%, #c6c6c6 100%) repeat fixed 0% 0% transparent',
-			columnWidth: fallBackToNumber('{text:Column Width}', 300),
-			columnSpacing: fallBackToNumber('{text:Column Spacing}', 30),
-			maxColumns: fallBackToNumber('{text:Max Columns}', 4),
-			itemPadding: fallBackToNumber('{text:Item Padding}', 6),
-			itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
-			account: {
-				username: 'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1],
-				avatar: {
-					image: 'https://78.media.tumblr.com/avatar_038ea7d68c46_128.pnj',
-					size: '200px',
+			tumblr: {
+				background:
+					'linear-gradient(to bottom, #c6c6c6 0%, #c6c6c6 100%) repeat fixed 0% 0% transparent',
+				columnWidth: fallBackToNumber('{text:Column Width}', 300),
+				columnSpacing: fallBackToNumber('{text:Column Spacing}', 30),
+				maxColumns: fallBackToNumber('{text:Max Columns}', 4),
+				itemPadding: fallBackToNumber('{text:Item Padding}', 6),
+				itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
+				account: {
+					username: 'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1],
+					avatar: 'https://78.media.tumblr.com/avatar_a2e13eb8c83a_128.png',
+					title: 'SaurusSims',
+					description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
 				},
-				title: 'SaurusSims',
-				description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
-			},
-			hideOnHomepage: 'reblogs, tumblr games'.split(',').map(tag => tag.trim()),
-			navigation: [
-				{
-					key: 'main',
-					items: getMenuItems(/* '{text:Main Menu}' */ undefined, 'menu, gift, ask, follow, home'),
-				},
-				{
-					key: 'secondary',
-					items: getMenuItems(/* '{text:Secondary Menu}' */ undefined, 'downloads, lookbooks, sims, wcif'),
-				},
-			],
+				hideOnHomepage: 'reblogs, tumblr games'.split(',').map(tag => tag.trim()),
+				navigation: [
+					{
+						key: 'main',
+						items: getMenuItems(/* '{text:Main Menu}' */ undefined, 'menu, gift, ask, follow, home'),
+					},
+					{
+						key: 'secondary',
+						items: getMenuItems(/* '{text:Secondary Menu}' */ undefined, 'downloads, lookbooks, sims, wcif'),
+					},
+				],
+			}
 		}
 	</script>
 </head>
