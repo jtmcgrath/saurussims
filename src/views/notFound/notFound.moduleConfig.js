@@ -1,9 +1,9 @@
-import Test from 'shared/test'
+import PrintProps from 'shared/printProps'
 
 const notFoundConfig = {
 	defaultRoute: 'notFound',
 	routeComponents: {
-		notFound: Test,
+		notFound: PrintProps,
 	},
 	routes: [
 		{

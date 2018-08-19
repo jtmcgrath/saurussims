@@ -19,9 +19,7 @@ const App = ({ dependencies, routeComponents, tumblr }) => (
 					{({ route }) => (
 						<Layout>
 							{createElement(
-								routeComponents[getRootNode(route.name)] ||
-									null,
-								route
+								routeComponents[getRootNode(route.name)] || null
 							)}
 						</Layout>
 					)}

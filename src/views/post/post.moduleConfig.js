@@ -1,8 +1,8 @@
-import Test from 'shared/test'
+import PrintProps from 'shared/printProps'
 
 const postConfig = {
     routeComponents: {
-        post: Test,
+        post: PrintProps,
     },
     routes: [
         {

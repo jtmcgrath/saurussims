@@ -1,8 +1,8 @@
-import Test from 'shared/test'
+import PrintProps from 'shared/printProps'
 
 const downloadsConfig = {
 	routeComponents: {
-		downloads: Test,
+		downloads: PrintProps,
 	},
 	routes: [
 		{

@@ -1,8 +1,8 @@
-import Test from 'shared/test'
+import PrintProps from 'shared/printProps'
 
 const tagConfig = {
 	routeComponents: {
-		tag: Test,
+		tag: PrintProps,
 	},
 	routes: [
 		{
