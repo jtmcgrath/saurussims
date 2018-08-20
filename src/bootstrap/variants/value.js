@@ -1,4 +1,4 @@
-const value = name => config => acc => {
+const value = ({ name }) => config => acc => {
 	if (config[name]) {
 		if (acc[name]) {
 			throw new Error(

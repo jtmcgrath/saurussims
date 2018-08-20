@@ -1,9 +1,7 @@
 import { compose } from 'shared/utils'
-import buildPipeline from './buildPipeline'
+import configPipeline from './configPipeline'
 
-const addConfig = configOutline => (acc, config) =>
-	compose(...buildPipeline(configOutline).map(builder => builder(config)))(
-		acc
-	)
+const addConfig = (acc, config) =>
+	compose(...configPipeline.map(field => field(config)))(acc)
 
 export default addConfig

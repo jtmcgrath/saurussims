@@ -1,4 +1,4 @@
-const array = (name, settings = {}) => config => acc => {
+const array = ({ name, preventDuplicates } = {}) => config => acc => {
 	if (config[name]) {
 		if (!Array.isArray(config[name])) {
 			throw new Error(
@@ -9,10 +9,7 @@ const array = (name, settings = {}) => config => acc => {
 		}
 
 		const values = config[name].reduce((all, value) => {
-			if (
-				settings.preventDuplicates &&
-				all.some(settings.preventDuplicates(value))
-			) {
+			if (preventDuplicates && all.some(preventDuplicates(value))) {
 				throw new Error(
 					`Error trying to add ${name}:${JSON.stringify(
 						value

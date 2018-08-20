@@ -1,6 +1,6 @@
 import { isObject } from 'shared/utils'
 
-const object = name => config => acc => {
+const object = ({ name }) => config => acc => {
 	if (config[name]) {
 		if (!isObject(config[name])) {
 			throw new Error(`Error trying to add ${name}: expected an object.`)

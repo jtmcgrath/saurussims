@@ -2,7 +2,7 @@ import array from './array'
 
 describe('bootstrap/builders/array', () => {
 	let result, acc, customGetResult
-	const getResult = array('content')
+	const getResult = array({ name: 'content' })
 	const foo = 'foo'
 	const bar = 'bar'
 	const baz = 'baz'
@@ -48,7 +48,8 @@ describe('bootstrap/builders/array', () => {
 
 			describe('if a preventDuplicates function is defined', () => {
 				it('should throw an error', () => {
-					customGetResult = array('content', {
+					customGetResult = array({
+						name: 'content',
 						preventDuplicates: x => y => x === y,
 					})
 
@@ -62,7 +63,8 @@ describe('bootstrap/builders/array', () => {
 						})
 					).toThrow()
 
-					customGetResult = array('content', {
+					customGetResult = array({
+						name: 'content',
 						preventDuplicates: x => y => x.name === y.name,
 					})
 

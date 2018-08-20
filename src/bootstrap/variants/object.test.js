@@ -2,7 +2,7 @@ import object from './object'
 
 describe('bootstrap/builders/object', () => {
 	let result, acc
-	const getResult = object('content')
+	const getResult = object({ name: 'content'})
 	const foo = 'foo'
 	const bar = 'bar'
 	const baz = 'baz'

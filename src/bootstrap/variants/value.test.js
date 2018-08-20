@@ -3,7 +3,7 @@ import value from './value'
 describe('bootstrap/builders/value', () => {
 	let result, acc
 	const fn = () => {}
-	const getResult = value('content')
+	const getResult = value({ name: 'content' })
 
 	describe('when the config contains the specified name', () => {
 		it('should add the value into the accumulator', () => {
