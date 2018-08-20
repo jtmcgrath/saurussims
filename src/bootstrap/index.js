@@ -1,7 +1,7 @@
 import addConfig from './addConfig'
 import configOutline from './configOutline'
 
-const req = require.context('../', true, /\.moduleConfig\.js/)
+const req = require.context('../', true, /\.moduleConfig\.js$/)
 const configs = req.keys().map(req)
 
 export default (initialConfig = {}) => {
