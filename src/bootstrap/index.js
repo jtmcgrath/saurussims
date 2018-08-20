@@ -1,5 +1,5 @@
 import addConfig from './addConfig'
-import configPipeline from './configPipeline'
+import { configSections } from './bootstrapConfig'
 
 const req = require.context('../', true, /\.moduleConfig\.js$/)
 const configs = req.keys().map(req)
@@ -9,10 +9,10 @@ export default (initialConfig = {}) => {
 		.map(moduleConfig => moduleConfig.default)
 		.reduce(addConfig, initialConfig)
 
-	configPipeline.forEach(({ name, required }) => {
+	configSections.forEach(({ name, required }) => {
 		if (required && !finalConfig[name]) {
 			throw new Error(
-				`Error building config: required field ${name} missing.`
+				`Error building config: required field '${name}' missing.`
 			)
 		}
 	})

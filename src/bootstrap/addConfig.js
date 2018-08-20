@@ -1,7 +1,7 @@
 import { compose } from 'shared/utils'
-import configPipeline from './configPipeline'
+import { configPipeline } from './bootstrapConfig'
 
 const addConfig = (acc, config) =>
-	compose(...configPipeline.map(field => field(config)))(acc)
+	compose(...configPipeline.map(configSection => configSection(config)))(acc)
 
 export default addConfig

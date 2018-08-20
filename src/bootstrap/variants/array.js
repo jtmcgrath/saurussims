@@ -11,7 +11,7 @@ const array = ({ name, preventDuplicates } = {}) => config => acc => {
 		const values = config[name].reduce((all, value) => {
 			if (preventDuplicates && all.some(preventDuplicates(value))) {
 				throw new Error(
-					`Error trying to add ${name}:${JSON.stringify(
+					`Error trying to add ${name}.${JSON.stringify(
 						value
 					)}: duplicate value detected.`
 				)
