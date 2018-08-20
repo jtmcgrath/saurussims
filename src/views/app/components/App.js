@@ -13,7 +13,7 @@ injectGlobalStyles()
 
 const App = ({ dependencies, routeComponents, tumblr }) => (
 	<GlobalContext.Provider value={{ tumblr, ...dependencies }}>
-		<ThemeProvider theme={createTheme(dependencies)}>
+		<ThemeProvider theme={createTheme(tumblr)}>
 			<RouteProvider router={dependencies.router}>
 				<RouteNode nodeName="">
 					{({ route }) => (

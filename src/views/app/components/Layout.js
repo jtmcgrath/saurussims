@@ -1,5 +1,14 @@
 import React from 'react'
 
-const Layout = ({ children }) => <div>{children}</div>
+import Content from './Content'
+import Header from './Header'
+import Main from './Layout.styles'
+
+const Layout = ({ children }) => (
+	<Main>
+		<Header className="header" />
+		<Content className="content">{children}</Content>
+	</Main>
+)
 
 export default Layout

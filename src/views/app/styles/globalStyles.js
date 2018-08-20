@@ -18,9 +18,13 @@ const injectGlobalStyles = () => injectGlobal`
     body,
     button,
     input {
-        font-family: Ubuntu, Helvetica, Arial, sans-serif;
+        font-family: "Alegreya Sans", Helvetica, sans-serif;
         font-size: 1.6rem;
         outline: none;
+    }
+
+    h1, h2, h3, h4, h5, h6, button {
+        font-family: "Amatic SC", Helvetica, sans-serif;
     }
 `
 

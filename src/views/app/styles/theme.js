@@ -1,5 +1,3 @@
-const createTheme = () => ({
-	test: 'test',
-})
+const createTheme = tumblr => tumblr
 
 export default createTheme
