@@ -7,7 +7,7 @@ export const configureStore = () => {
 	const enhancers = [refractEnhancer()]
 
 	const composedEnhancers =
-		process.env.NODE_ENV !== 'production'
+		process.env.NODE_ENV === 'production'
 			? compose(...enhancers)
 			: composeWithDevTools(...enhancers)
 
