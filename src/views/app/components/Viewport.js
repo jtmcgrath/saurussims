@@ -10,7 +10,7 @@ const transform = i => i
 const Viewport = ({ children, viewport }) => children(transform(viewport))
 
 export default compose(
-	withState({ viewport: {} }),
+	withState({ viewport: null }),
 	withLocalEffects(
 		({
 			columnSpacing,

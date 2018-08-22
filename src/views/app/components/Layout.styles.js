@@ -4,8 +4,17 @@ const calculateColumns = ({ columnSpacing, columnWidth }, columns) =>
 	(columnSpacing + columnWidth) * columns - columnSpacing
 
 export default styled.main`
-	margin: 0 auto;
-    max-width: ${props =>
+	${props =>
+		props.theme.isDesktop
+			? `
+		display: flex;
+
+		.header {
+			width: ${props => props.theme.columnWidth}px;
+		}
+	`
+			: ''} margin: 0 auto;
+	max-width: ${props =>
 		calculateColumns(props.theme, props.theme.maxColumns)}px;
 
 	html:not(&) {
@@ -16,14 +25,4 @@ export default styled.main`
 			margin-top: ${window.config.itemPadding}px;
 		}
 	}
-
-	@media (min-width: ${props =>
-		calculateColumns(props.theme, props.theme.maxColumns - 1)}px) {
-            display: flex;
-
-            .header {
-                width: ${props => props.theme.columnWidth}px;
-            }
-        }
-});
 `
