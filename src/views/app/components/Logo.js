@@ -6,7 +6,7 @@ import LogoElem from './Logo.styles'
 
 const Logo = ({ tumblr, ...props }) => (
 	<LogoElem {...props}>
-		<img src={tumblr.account.avatar} alt={tumblr.account.title} />
+		<img src={tumblr.account.avatar.image} alt={tumblr.account.title} />
 		<h1>{tumblr.account.title}</h1>
 		<h4>{tumblr.account.description}</h4>
 	</LogoElem>

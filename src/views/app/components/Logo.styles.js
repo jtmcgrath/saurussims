@@ -4,5 +4,9 @@ export default styled.a`
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-    text-align: center;
+	text-align: center;
+
+	img {
+		width: ${props => props.theme.account.avatar.size};
+	}
 `
