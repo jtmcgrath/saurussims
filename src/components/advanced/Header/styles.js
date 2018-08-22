@@ -10,7 +10,7 @@ export default {
 					paddingLeft: `${columnSpacing}px`,
 					top: 0,
 					width: `${columnWidth}px`,
-				}
+			  }
 			: {},
 	content: ({ columnSpacing }) => ({
 		...padding(`${columnSpacing}px`, `${columnSpacing / 2}px`, 0),
@@ -22,9 +22,9 @@ export default {
 			opacity: 1,
 		},
 	}),
-	avatar: ({ columnSpacing }) => ({
+	avatar: ({ avatar, columnSpacing }) => ({
 		marginBottom: `${columnSpacing / 2}px`,
 		verticalAlign: 'bottom',
-		width: '128px',
+		width: avatar.size,
 	}),
 }

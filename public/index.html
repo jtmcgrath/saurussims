@@ -17,7 +17,7 @@
 				icon: 'Heart',
 				href: `https://www.tumblr.com/follow/${
 					'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1]
-				}`,
+					}`,
 			},
 			home: { name: 'Home', icon: 'Home', routeName: 'all' },
 			gift: { name: 'Gift', icon: 'Gift', href: 'https://ko-fi.com/saurus' },
@@ -67,7 +67,10 @@
 			itemsPerPage: fallBackToNumber('{text:Items Per Page}', 18),
 			account: {
 				username: 'https://saurussims.tumblr.com'.match(/https:\/\/(.*).tumblr/)[1],
-				avatar: 'https://78.media.tumblr.com/avatar_a2e13eb8c83a_128.png',
+				avatar: {
+					image: 'https://78.media.tumblr.com/avatar_038ea7d68c46_128.pnj',
+					size: '200px',
+				},
 				title: 'SaurusSims',
 				description: 'MMCC/Sims/Edits/Lookbooks/WCIF friendly - send through asks!',
 			},
