@@ -6,6 +6,7 @@ import GlobalContext from 'shared/context'
 import { getRootNode } from 'shared/utils'
 
 import Layout from './Layout'
+import Viewport from './Viewport'
 import injectGlobalStyles from '../styles/globalStyles'
 import createTheme from '../styles/theme'
 
@@ -13,19 +14,25 @@ injectGlobalStyles()
 
 const App = ({ dependencies, routeComponents, tumblr }) => (
 	<GlobalContext.Provider value={{ tumblr, ...dependencies }}>
-		<ThemeProvider theme={createTheme(tumblr)}>
-			<RouteProvider router={dependencies.router}>
-				<RouteNode nodeName="">
-					{({ route }) => (
-						<Layout>
-							{createElement(
-								routeComponents[getRootNode(route.name)] || null
+		<Viewport {...tumblr}>
+			{viewport => (
+				<ThemeProvider theme={createTheme(tumblr, viewport)}>
+					<RouteProvider router={dependencies.router}>
+						<RouteNode nodeName="">
+							{({ route }) => (
+								<Layout>
+									{createElement(
+										routeComponents[
+											getRootNode(route.name)
+										] || null
+									)}
+								</Layout>
 							)}
-						</Layout>
-					)}
-				</RouteNode>
-			</RouteProvider>
-		</ThemeProvider>
+						</RouteNode>
+					</RouteProvider>
+				</ThemeProvider>
+			)}
+		</Viewport>
 	</GlobalContext.Provider>
 )
 
