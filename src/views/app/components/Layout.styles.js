@@ -10,6 +10,11 @@ export default styled.main`
 
 	html:not(&) {
 		background: ${props => props.theme.background};
+
+		img + img,
+		article button + button {
+			margin-top: ${window.config.itemPadding}px;
+		}
 	}
 
 	@media (min-width: ${props =>
