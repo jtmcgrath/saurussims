@@ -4,12 +4,12 @@ import { withContext } from 'shared/context'
 
 import LogoElem from './Logo.styles'
 
-const Logo = ({ tumblr, ...props }) => (
+const Logo = ({ account, ...props }) => (
 	<LogoElem {...props}>
-		<img src={tumblr.account.avatar.image} alt={tumblr.account.title} />
-		<h1>{tumblr.account.title}</h1>
-		<h4>{tumblr.account.description}</h4>
+		<img src={account.avatar.image} alt={account.title} />
+		<h1>{account.title}</h1>
+		<h4>{account.description}</h4>
 	</LogoElem>
 )
 
-export default withContext(Logo)
+export default withContext('tumblr.account')(Logo)
