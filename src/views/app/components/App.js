@@ -3,7 +3,7 @@ import { RouteNode, RouteProvider } from 'react-router5'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalContext from 'shared/context'
-import { getRootNode } from 'shared/utils'
+import { getRootNode, keep } from 'shared/utils'
 
 import Layout from './Layout'
 import Viewport from './Viewport'
@@ -12,12 +12,14 @@ import createTheme from '../styles/theme'
 
 injectGlobalStyles()
 
+const keepColumnProps = keep('columnSpacing', 'columnWidth', 'maxColumns')
+
 const App = ({ dependencies, routeComponents, tumblr }) => (
 	<GlobalContext.Provider value={{ tumblr, ...dependencies }}>
-		<Viewport {...tumblr}>
-			{viewport => (
-				<ThemeProvider theme={createTheme(tumblr, viewport)}>
-					<RouteProvider router={dependencies.router}>
+		<RouteProvider router={dependencies.router}>
+			<Viewport {...keepColumnProps(tumblr)}>
+				{viewport => (
+					<ThemeProvider theme={createTheme(tumblr, viewport)}>
 						<RouteNode nodeName="">
 							{({ route }) => (
 								<Layout>
@@ -29,10 +31,10 @@ const App = ({ dependencies, routeComponents, tumblr }) => (
 								</Layout>
 							)}
 						</RouteNode>
-					</RouteProvider>
-				</ThemeProvider>
-			)}
-		</Viewport>
+					</ThemeProvider>
+				)}
+			</Viewport>
+		</RouteProvider>
 	</GlobalContext.Provider>
 )
 

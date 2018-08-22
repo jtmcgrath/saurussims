@@ -11,3 +11,8 @@ const getKey = (obj, keys) =>
 
 export const get = (obj, path) =>
 	obj === undefined || obj === null ? undefined : getKey(obj, path.split('.'))
+
+export const keep = (...keys) => obj =>
+	Object.entries(obj)
+		.filter(([key]) => keys.includes(key))
+		.reduce((acc, [key, val]) => Object.assign(acc, { [key]: val }), {})
