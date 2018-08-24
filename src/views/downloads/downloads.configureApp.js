@@ -1,15 +1,15 @@
 import PrintProps from 'shared/printProps'
 
-const downloadsConfig = {
-	routeComponents: {
+const downloadsConfig = app => {
+	app.addRouteComponents({
 		downloads: PrintProps,
-	},
-	routes: [
+	})
+	app.addRoutes([
 		{
 			name: 'downloads',
 			path: '/downloads',
 		},
-	],
+	])
 }
 
 export default downloadsConfig

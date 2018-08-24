@@ -1,10 +1,10 @@
 import PrintProps from 'shared/printProps'
 
-const allConfig = {
-	routeComponents: {
+const allConfig = app => {
+	app.addRouteComponents({
 		all: PrintProps,
-	},
-	routes: [
+	})
+	app.addRoutes([
 		{
 			name: 'all',
 			path: '/',
@@ -16,7 +16,7 @@ const allConfig = {
 				},
 			],
 		},
-	],
+	])
 }
 
 export default allConfig

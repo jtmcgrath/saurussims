@@ -1,10 +1,10 @@
 import PrintProps from 'shared/printProps'
 
-const tagConfig = {
-	routeComponents: {
+const tagConfig = app => {
+	app.addRouteComponents({
 		tag: PrintProps,
-	},
-	routes: [
+	})
+	app.addRoutes([
 		{
 			name: 'tag',
 			path: '/tagged/:tagName',
@@ -16,7 +16,7 @@ const tagConfig = {
 				},
 			],
 		},
-	],
+	])
 }
 
 export default tagConfig
