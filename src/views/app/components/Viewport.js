@@ -2,7 +2,7 @@ import { withState } from 'react-state-hoc'
 import { fromEvent, merge } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { withLocalEffects } from 'shared/effects'
+import { withEffects } from 'refract-rxjs'
 import { compose } from 'shared/utils'
 
 const transform = i => i
@@ -11,7 +11,7 @@ const Viewport = ({ children, viewport }) => children(transform(viewport))
 
 export default compose(
 	withState({ viewport: null }),
-	withLocalEffects(
+	withEffects(
 		({
 			columnSpacing,
 			columnWidth,
