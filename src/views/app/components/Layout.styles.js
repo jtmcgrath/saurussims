@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const calculateColumns = ({ columnSpacing, columnWidth }, columns) =>
 	(columnSpacing + columnWidth) * columns - columnSpacing
 
-export default styled.main`
+export default styled.div`
 	${props =>
 		props.theme.isDesktop
 			? `
