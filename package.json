@@ -10,7 +10,7 @@
     "react-redux": "^5.0.7",
     "react-router5": "^6.0.1",
     "react-scripts": "^1.1.4",
-    "react-state-hoc": "^2.0.0",
+    "react-state-hoc": "3",
     "react-zap": "~2.1.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "~2.13.5",
@@ -19,6 +19,7 @@
     "refract-rxjs": "~1.0.0-8",
     "router5": "^6.2.2",
     "rxjs": "~6.2.2",
+    "rxjs-compat": "~6.2.2",
     "styled-components": "~3.4.2",
     "styled-reset": "~1.3.6",
     "tumblr.js": "^2.0.0"
