@@ -1,5 +1,8 @@
-import React from 'react'
+import styled from 'styled-components'
 
-const Splash = () => <p>loading...</p>
+import { Loading } from 'shared/components'
 
-export default Splash
+export default styled(Loading)`
+    margin: 50vh 0;
+    transform: translateY(-50%)
+`
