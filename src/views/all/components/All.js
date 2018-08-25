@@ -9,12 +9,11 @@ import { compose } from 'shared/utils'
 const All = ({ hideOnHomepage, route }) => (
 	<PostList
 		key={route.path}
-		pageId={route.params.pageId}
+		route={route}
 		hideTags={hideOnHomepage}
 	/>
 )
-
 export default compose(
 	withContext('hideOnHomepage'),
-	connect(createRouteNodeSelector('all'))
+	connect(createRouteNodeSelector('all')),
 )(All)

@@ -1,9 +1,15 @@
 import React, { Fragment } from 'react'
 
-import { Loading, NotFound, Pagination, Post, PostActions } from 'shared/components'
+import {
+	Loading,
+	NotFound,
+	Pagination,
+	Post,
+	PostActions,
+} from 'shared/components'
 
-const PostList = ({ cachedPosts: posts, showRefresh, refresh, ...props }) => {
-	if (posts === undefined || posts === null) {
+const PostList = ({ loading, posts, refresh, showRefresh, ...props }) => {
+	if (loading || posts === undefined || posts === null) {
 		return <Loading />
 	}
 
