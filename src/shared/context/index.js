@@ -4,7 +4,7 @@ import { contextToProps, propsToContext } from 'react-zap'
 import { get } from 'shared/utils'
 
 const mergeToProps = targets => (props, context) =>
-	targets
+	targets.length
 		? targets.reduce((acc, curr) => {
 				const paths = curr.split('.')
 				const key = paths.length > 1 ? paths[paths.length - 1] : curr
