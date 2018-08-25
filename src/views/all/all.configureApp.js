@@ -1,8 +1,8 @@
-import PrintProps from 'shared/printProps'
+import All from './components/All'
 
 const allConfig = app => {
 	app.addRouteComponents({
-		all: PrintProps,
+		all: All,
 	})
 	app.addRoutes([
 		{

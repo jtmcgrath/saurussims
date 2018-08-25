@@ -13,9 +13,12 @@ export default styled.div`
 			width: ${props => props.theme.columnWidth}px;
 		}
 	`
-			: ''} margin: 0 auto;
+			: ''}
+
+	margin: 0 auto;
 	max-width: ${props =>
 		calculateColumns(props.theme, props.theme.maxColumns)}px;
+	min-height: 100vh;
 
 	html:not(&) {
 		background: ${props => props.theme.background};

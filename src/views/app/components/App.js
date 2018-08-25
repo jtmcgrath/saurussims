@@ -1,4 +1,5 @@
 import React, { createElement } from 'react'
+import { Provider as ReduxProvider } from 'react-redux'
 import { RouteNode, RouteProvider } from 'react-router5'
 import { ThemeProvider } from 'styled-components'
 
@@ -16,33 +17,37 @@ injectGlobalStyles()
 const keepColumnProps = keep('columnSpacing', 'columnWidth', 'maxColumns')
 
 const App = ({ dependencies, routeComponents, tumblr }) => (
-	<RouteProvider router={dependencies.router}>
-		<Viewport {...keepColumnProps(tumblr)}>
-			{viewport =>
-				viewport ? (
-					<GlobalContext.Provider
-						value={{ tumblr, ...dependencies, ...viewport }}
-					>
-						<ThemeProvider theme={createTheme(tumblr, viewport)}>
-							<RouteNode nodeName="">
-								{({ route }) => (
-									<Layout>
-										{createElement(
-											routeComponents[
-												getRootNode(route.name)
-											] || null
-										)}
-									</Layout>
-								)}
-							</RouteNode>
-						</ThemeProvider>
-					</GlobalContext.Provider>
-				) : (
-					<Splash />
-				)
-			}
-		</Viewport>
-	</RouteProvider>
+	<ReduxProvider store={dependencies.store}>
+		<RouteProvider router={dependencies.router}>
+			<Viewport {...keepColumnProps(tumblr)}>
+				{viewport =>
+					viewport ? (
+						<GlobalContext.Provider
+							value={{ tumblr, ...dependencies, ...viewport }}
+						>
+							<ThemeProvider
+								theme={createTheme(tumblr, viewport)}
+							>
+								<RouteNode nodeName="">
+									{({ route }) => (
+										<Layout>
+											{createElement(
+												routeComponents[
+													getRootNode(route.name)
+												] || null
+											)}
+										</Layout>
+									)}
+								</RouteNode>
+							</ThemeProvider>
+						</GlobalContext.Provider>
+					) : (
+						<Splash />
+					)
+				}
+			</Viewport>
+		</RouteProvider>
+	</ReduxProvider>
 )
 
 export default App
