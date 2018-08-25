@@ -1,3 +1,9 @@
+export const DISPATCH = 'DISPATCH'
+export const toDispatch = payload => ({
+	type: DISPATCH,
+	payload,
+})
+
 export const LOCAL_CALLBACK = 'LOCAL_CALLBACK'
 export const toLocalCallback = propToCall => payload => ({
 	type: LOCAL_CALLBACK,
