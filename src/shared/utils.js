@@ -16,3 +16,8 @@ export const keep = (...keys) => obj =>
 	Object.entries(obj)
 		.filter(([key]) => keys.includes(key))
 		.reduce((acc, [key, val]) => Object.assign(acc, { [key]: val }), {})
+
+export const sortBy = (prop, dir = 'asc') => (
+	{ [prop]: x = 0 },
+	{ [prop]: y = 0 }
+) => (dir === 'asc' ? x - y : y - x)

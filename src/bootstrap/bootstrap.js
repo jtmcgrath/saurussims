@@ -1,24 +1,21 @@
-const bootstrap = (createApp, configs) => (initialConfig = {}) => {
+import { sortBy } from 'shared/utils'
+
+const req = require.context('./', true, /\.postProcess\.js$/)
+const process = req.keys().map(req)
+
+const bootstrap = postProcess => (createApp, configs) => (
+	initialConfig = {}
+) => {
 	const app = createApp(initialConfig)
 
 	configs.forEach(configureApp => configureApp.default(app))
 
-	const { dependencies, ...finalConfig } = app.getConfig()
-
-    const dependencyNames = Object.keys(dependencies)
-
-	return Promise.all(
-		dependencyNames.map(name => dependencies[name](finalConfig))
-	).then(results => ({
-		...finalConfig,
-		dependencies: dependencyNames.reduce(
-			(all, name, i) => ({
-				...all,
-				[name]: results[i],
-			}),
-			{}
-        ),
-	}))
+	return postProcess
+		.sort(sortBy('sortOrder'))
+		.reduce(
+			async (acc, processConfig) => await processConfig.default(acc),
+			app.getConfig()
+		)
 }
 
-export default bootstrap
+export default bootstrap(process)
