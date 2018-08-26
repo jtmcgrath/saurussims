@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { withState } from 'react-state-hoc'
-import { filter, map, tap, flatMap, takeUntil } from 'rxjs/operators'
-import { empty, merge } from 'rxjs'
+import { filter, map, flatMap, takeUntil } from 'rxjs/operators'
+import { merge } from 'rxjs'
 
 import { getPage } from 'dependencies/store'
 import { withCache } from 'shared/components/hocs'
