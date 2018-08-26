@@ -1,5 +1,4 @@
 import { combineReducers, compose, createStore } from 'redux'
-import { router5Reducer } from 'redux-router5'
 import { refractEnhancer } from 'refract-redux-rxjs'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -15,7 +14,6 @@ export const configureStore = () => {
 
 	return createStore(
 		combineReducers({
-			router: router5Reducer,
 			tumblr,
 		}),
 		{},
