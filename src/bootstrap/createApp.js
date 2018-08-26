@@ -1,6 +1,20 @@
 import { get } from 'shared/utils'
 
-import * as allCallbacks from './configureApp'
+import * as callbacks from './configureApp'
+
+const empty = {
+	dependencies: {},
+	routeComponents: {},
+	routes: [],
+}
+
+const required = [
+	'appComponent',
+	'defaultRoute',
+	'dependencies',
+	'routeComponents',
+	'routes',
+]
 
 export const createApp = (
 	configCallbacks = {},
@@ -41,18 +55,4 @@ export const createApp = (
 	}
 }
 
-export default createApp(
-	allCallbacks,
-	{
-		dependencies: {},
-		routeComponents: {},
-		routes: [],
-	},
-	[
-		'appComponent',
-		'defaultRoute',
-		'dependencies',
-		'routeComponents',
-		'routes',
-	]
-)
+export default createApp(callbacks, empty, required)
