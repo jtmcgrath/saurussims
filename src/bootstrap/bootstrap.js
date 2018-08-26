@@ -1,21 +1,21 @@
 import { sortBy } from 'shared/utils'
 
-const req = require.context('./', true, /\.postProcess\.js$/)
-const process = req.keys().map(req)
-
-const bootstrap = postProcess => (createApp, configs) => (
+const bootstrap = (createApp, configs, postProcess = []) => (
 	initialConfig = {}
 ) => {
 	const app = createApp(initialConfig)
 
 	configs.forEach(configureApp => configureApp.default(app))
 
-	return postProcess
-		.sort(sortBy('sortOrder'))
-		.reduce(
-			async (acc, processConfig) => await processConfig.default(acc),
-			app.getConfig()
-		)
+	return postProcess.length
+		? postProcess
+				.sort(sortBy('sortOrder'))
+				.reduce(
+					async (acc, processConfig) =>
+						await processConfig.default(acc),
+					app.getConfig()
+				)
+		: Promise.resolve(app.getConfig())
 }
 
-export default bootstrap(process)
+export default bootstrap

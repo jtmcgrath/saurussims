@@ -1,5 +1,13 @@
 import bootstrap from './bootstrap'
 
+import postProcessDependencies from './configureApp/dependencies.postProcess.js'
+
+const postProcess = [{ default: postProcessDependencies }]
+
+jest.mock('./requireContexts', () => ({
+	context: () => [],
+}))
+
 describe('bootstrap', () => {
 	let app
 	let dependencies
@@ -32,29 +40,31 @@ describe('bootstrap', () => {
 		expect(bar.default).toHaveBeenCalledWith(app)
 	})
 
-	it('should call each dependency with the returned config data', () => {
-		bootstrap(() => app, [foo, bar])()
+	describe('when a post-process is defined', () => {
+		it('should post-process the app', () => {
+			bootstrap(() => app, [foo, bar], postProcess)()
 
-		expect(dependencies.foo).toHaveBeenCalledTimes(1)
-		expect(dependencies.foo).toHaveBeenCalledWith({
-			foo: 'fooConfig',
-			bar: 'barConfig',
+			expect(dependencies.foo).toHaveBeenCalledTimes(1)
+			expect(dependencies.foo).toHaveBeenCalledWith({
+				foo: 'fooConfig',
+				bar: 'barConfig',
+			})
+
+			expect(dependencies.bar).toHaveBeenCalledTimes(1)
+			expect(dependencies.bar).toHaveBeenCalledWith({
+				foo: 'fooConfig',
+				bar: 'barConfig',
+			})
 		})
 
-		expect(dependencies.bar).toHaveBeenCalledTimes(1)
-		expect(dependencies.bar).toHaveBeenCalledWith({
-			foo: 'fooConfig',
-			bar: 'barConfig',
-		})
-	})
+		it('should await the promise and return the resolved value', () => {
+			const result = bootstrap(() => app, [foo, bar], postProcess)()
 
-	it('should merge the resolved dependencies into the config', () => {
-		const result = bootstrap(() => app, [foo, bar])()
-
-		expect(result).resolves.toEqual({
-			bar: 'barConfig',
-			foo: 'fooConfig',
-			dependencies: { bar: 'barDependency', foo: 'fooDependency' },
+			expect(result).resolves.toEqual({
+				bar: 'barConfig',
+				foo: 'fooConfig',
+				dependencies: { bar: 'barDependency', foo: 'fooDependency' },
+			})
 		})
 	})
 })

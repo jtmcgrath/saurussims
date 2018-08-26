@@ -1,7 +1,5 @@
 import bootstrap from './bootstrap'
 import createApp from './createApp'
+import { configs, process } from './requireContexts'
 
-const req = require.context('../', true, /\.configureApp\.js$/)
-const configs = req.keys().map(req)
-
-export default bootstrap(createApp, configs)
+export default bootstrap(createApp, configs, process)
