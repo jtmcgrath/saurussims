@@ -14,15 +14,13 @@
     "react-zap": "~2.1.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "~2.13.5",
-    "redux-router5": "~6.0.3",
-    "refract-redux-rxjs": "~1.0.0-6",
-    "refract-rxjs": "~1.0.0-8",
+    "refract-redux-rxjs": "~1.0.0-7",
+    "refract-rxjs": "~1.0.0-9",
     "router5": "^6.2.2",
     "rxjs": "~6.2.2",
     "rxjs-compat": "~6.2.2",
     "styled-components": "~3.4.2",
-    "styled-reset": "~1.3.6",
-    "tumblr.js": "^2.0.0"
+    "styled-reset": "~1.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
