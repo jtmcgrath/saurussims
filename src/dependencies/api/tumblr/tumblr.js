@@ -3,20 +3,19 @@ import { map } from 'rxjs/operators'
 import { receivePage, receivePost, receivePosts } from 'dependencies/store'
 import { toDispatch } from 'shared/effects'
 
-import { createQuery, fromUrl, trackRequests } from '../utils'
+import {
+	createQuery,
+	createTransformers,
+	fromUrl,
+	trackRequests,
+} from '../utils'
 
-import * as createTransformers from './transformers'
+import * as sourceTransformers from './transformers'
 
 const { checkRequest, logRequest } = trackRequests()
 
 export default function createTumblrApi({ tumblr }) {
-	const transformers = Object.entries(createTransformers).reduce(
-		(acc, [key, callback]) => ({
-			...acc,
-			[key]: callback(tumblr),
-		}),
-		{}
-	)
+	const transformers = createTransformers(sourceTransformers, tumblr)
 
 	const getUrl = (query = {}) =>
 		`https://api.tumblr.com/v2/blog/${
@@ -83,7 +82,6 @@ export default function createTumblrApi({ tumblr }) {
 			logRequest('getPost', id)
 
 			return fromUrl(getUrl({ id })).pipe(
-				map(response => response.json()),
 				map(({ response }) => response.posts[0]),
 				map(post => transformers.transformPost(post)),
 				map(receivePost),

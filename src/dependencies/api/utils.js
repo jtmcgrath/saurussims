@@ -7,6 +7,15 @@ export const createQuery = obj =>
 		'?'
 	)
 
+export const createTransformers = (transformers, ...args) =>
+	Object.entries(transformers).reduce(
+		(acc, [key, callback]) => ({
+			...acc,
+			[key]: callback(...args),
+		}),
+		{}
+	)
+
 export const fromUrl = url =>
 	fromPromise(fetch(url).then(response => response.json()))
 
