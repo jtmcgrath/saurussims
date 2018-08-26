@@ -50,6 +50,7 @@ export default function createTumblrApi({ tumblr }) {
 					)
 					const pageData = []
 					const postData = {}
+
 					posts.forEach(post => {
 						pageData.push({
 							postId: post.id,
@@ -62,20 +63,18 @@ export default function createTumblrApi({ tumblr }) {
 					})
 
 					return {
-						page,
 						pageCount,
 						pageData,
-						posts: postData,
-						tag,
+						postData,
 					}
 				}),
-				map(({ page, pageCount, pageData, posts, tag }) => [
-					receivePosts(posts),
+				map(({ pageCount, pageData, postData }) => [
 					receivePage(tag, page, pageCount, pageData),
+					receivePosts(postData),
 				]),
-				map(([receivePosts, receivePage]) => [
-					toDispatch(receivePosts),
-					toDispatch(receivePage),
+				map(([pageAction, postsAction]) => [
+					toDispatch(pageAction),
+					toDispatch(postsAction),
 				])
 			)
 		},
