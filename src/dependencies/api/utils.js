@@ -14,24 +14,13 @@ export const trackRequests = () => {
 	const lastFetched = {}
 
 	return {
-		checkRequest: (endpoint, ...args) => {
-			console.log('request checked', endpoint, args.toString(), {
-				...lastFetched,
-			})
-			return (
-				lastFetched[endpoint] && lastFetched[endpoint][args.toString()]
-			)
-		},
-
+		checkRequest: (endpoint, ...args) =>
+			lastFetched[endpoint] && lastFetched[endpoint][args.toString()],
 		logRequest: (endpoint, ...args) => {
 			if (!lastFetched[endpoint]) {
 				lastFetched[endpoint] = {}
-				console.log('adding endpoint', endpoint, lastFetched[endpoint])
 			}
 			lastFetched[endpoint][args.toString()] = Date.now()
-			console.log('request logged', endpoint, args.toString(), {
-				...lastFetched,
-			})
 		},
 	}
 }
