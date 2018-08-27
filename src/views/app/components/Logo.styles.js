@@ -4,7 +4,7 @@ import { padding } from 'polished'
 export default styled.a`
 	${props =>
 		padding(
-			`${props.theme.columnSpacing}px`,
+			`${props.theme.columnSpacing / 2}px`,
 			`${props.theme.columnSpacing / 2}px`,
 			0
 		)}

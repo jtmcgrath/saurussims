@@ -51,14 +51,15 @@ export default function createTumblrApi({ tumblr }) {
 					const postData = {}
 
 					posts.forEach(post => {
+						postData[post.id] = transformers.transformPost(post)
 						pageData.push({
 							postId: post.id,
 							postSlug: post.slug,
 							tags: post.tags,
 							image:
-								post.photos && post.photos[0].original_size.url,
+								post.photos &&
+								postData[post.id].photos[0].thumbnail,
 						})
-						postData[post.id] = transformers.transformPost(post)
 					})
 
 					return {

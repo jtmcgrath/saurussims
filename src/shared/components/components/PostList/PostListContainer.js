@@ -32,7 +32,9 @@ const mapStateToProps = (
 	}
 }
 
-const aperture = ({ api, imageCache }) => component => {
+const aperture = ({ context }) => component => {
+	const { api, imageCache } = context
+
 	const awaitImages = posts =>
 		imageCache
 			.loadImages(posts.map(post => post.image).filter(Boolean))

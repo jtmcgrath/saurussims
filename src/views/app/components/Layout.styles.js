@@ -19,6 +19,7 @@ export default styled.div`
 	max-width: ${props =>
 		calculateColumns(props.theme, props.theme.maxColumns)}px;
 	min-height: 100vh;
+	padding: ${props => props.theme.columnSpacing / 2}px;
 
 	html:not(&) {
 		background: ${props => props.theme.background};

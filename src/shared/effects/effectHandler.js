@@ -1,16 +1,16 @@
 import { DISPATCH, LOCAL_CALLBACK, ROUTER } from './effectTypes'
 
 const handlers = {
-	[DISPATCH]: ({ store }) => payload => {
+	[DISPATCH]: ({ context: { store } }) => payload => {
 		store.dispatch(payload)
 	},
 	[LOCAL_CALLBACK]: props => ({ payload, propToCall }) => {
 		props[propToCall](payload)
 	},
-	[ROUTER]: ({ router }) => ({ name, params, options }) => {
+	[ROUTER]: ({ context: { router } }) => ({ name, params, options }) => {
 		router.navigate(name, params, options)
 	},
-	log: () => console.log
+	log: () => console.log,
 }
 
 const handleEffect = props => {

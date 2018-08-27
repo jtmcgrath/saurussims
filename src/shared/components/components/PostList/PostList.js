@@ -8,6 +8,8 @@ import {
 	PostActions,
 } from 'shared/components'
 
+import Wrapper from './PostList.styles'
+
 const PostList = ({ loading, posts, refresh, showRefresh, ...props }) => {
 	if (loading || posts === undefined || posts === null) {
 		return <Loading />
@@ -26,7 +28,7 @@ const PostList = ({ loading, posts, refresh, showRefresh, ...props }) => {
 
 const PostColumns = ({ columnCount, posts }) => {
 	if (!columnCount > 1) {
-		return <div>{posts.map(getPostElement)}</div>
+		return <Wrapper>{posts.map(getPostElement)}</Wrapper>
 	}
 
 	const content = posts
@@ -34,9 +36,13 @@ const PostColumns = ({ columnCount, posts }) => {
 			acc[i % columnCount].push(getPostElement(post))
 			return acc
 		}, Array.from(Array(columnCount), () => []))
-		.map((column, i) => <div key={i}>{column}</div>)
+		.map((column, i) => (
+			<div className="column" key={i}>
+				{column}
+			</div>
+		))
 
-	return <div>{content}</div>
+	return <Wrapper>{content}</Wrapper>
 }
 
 const getPostElement = ({ postId, postSlug }) => {

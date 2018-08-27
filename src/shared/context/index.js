@@ -22,4 +22,10 @@ export const withContext = (...targets) =>
 	contextToProps(GlobalContext.Consumer, mergeToProps(targets))
 export const toContext = propsToContext(GlobalContext.Provider)
 
+export const withNamespacedContext = (...targets) =>
+	contextToProps(GlobalContext.Consumer, (props, context) => ({
+		...props,
+		context: mergeToProps(targets)(props, context),
+	}))
+
 export default GlobalContext

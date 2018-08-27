@@ -52,6 +52,11 @@ const injectGlobalStyles = () => injectGlobal`
         height: 1px;
     }
 
+    img {
+        max-width: 100%;
+        vertical-align: bottom;
+    }
+
     ${spacedItems.join(`,
     `)} {
         margin-bottom: 1em;
