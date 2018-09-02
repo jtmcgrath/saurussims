@@ -27,14 +27,12 @@ const mapStateToProps = (
 			: allPosts
 
 	return {
-		columnCount: isDesktop ? columnCount - 1 : columnCount,
+		postColumnCount: isDesktop ? columnCount - 1 : columnCount,
 		posts: filteredPosts,
 	}
 }
 
-const aperture = ({ context }) => component => {
-	const { api, imageCache } = context
-
+const aperture = ({ api, imageCache }) => component => {
 	const awaitImages = posts =>
 		imageCache
 			.loadImages(posts.map(post => post.image).filter(Boolean))

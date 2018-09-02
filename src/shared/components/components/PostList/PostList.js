@@ -26,16 +26,16 @@ const PostList = ({ loading, posts, refresh, showRefresh, ...props }) => {
 	)
 }
 
-const PostColumns = ({ columnCount, posts }) => {
-	if (!columnCount > 1) {
+const PostColumns = ({ postColumnCount, posts }) => {
+	if (!postColumnCount > 1) {
 		return <Wrapper>{posts.map(getPostElement)}</Wrapper>
 	}
 
 	const content = posts
 		.reduce((acc, post, i) => {
-			acc[i % columnCount].push(getPostElement(post))
+			acc[i % postColumnCount].push(getPostElement(post))
 			return acc
-		}, Array.from(Array(columnCount), () => []))
+		}, Array.from(Array(postColumnCount), () => []))
 		.map((column, i) => (
 			<div className="column" key={i}>
 				{column}
