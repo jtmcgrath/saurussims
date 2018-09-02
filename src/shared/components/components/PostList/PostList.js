@@ -1,12 +1,8 @@
 import React, { Fragment } from 'react'
 
-import {
-	Loading,
-	NotFound,
-	Pagination,
-	Post,
-	PostActions,
-} from 'shared/components'
+import { Loading, NotFound, Pagination } from 'shared/components'
+
+import Post from './Post'
 
 import Wrapper from './PostList.styles'
 
@@ -52,14 +48,7 @@ const getPostElement = ({ postId, postSlug }) => {
 		routeParams: { postId, postSlug },
 	}
 
-	return (
-		<Post
-			postId={postId}
-			linkProps={linkProps}
-			postActions={<PostActions postId={postId} linkProps={linkProps} />}
-			type="list"
-		/>
-	)
+	return <Post postId={postId} linkProps={linkProps} type="list" />
 }
 
 export default PostList

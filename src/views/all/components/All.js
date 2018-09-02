@@ -8,7 +8,8 @@ import { compose } from 'shared/utils'
 const All = ({ hideOnHomepage, route }) => (
 	<PostList key={route.path} route={route} hideTags={hideOnHomepage} />
 )
+
 export default compose(
 	routeNode('all'),
-	withContext('hideOnHomepage')
+	withContext('tumblr.hideOnHomepage')
 )(All)

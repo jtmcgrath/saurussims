@@ -7,7 +7,7 @@ const postConfig = app => {
 	app.addRoutes([
 		{
 			name: 'post',
-			path: '/post/:postId/:postSLug',
+			path: '/post/:postId/:postSlug',
 		},
 		{
 			name: 'postWithoutSlug',

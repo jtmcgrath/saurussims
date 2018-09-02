@@ -22,7 +22,9 @@ const mapStateToProps = (
 		allPosts && hideTags
 			? allPosts.filter(
 					({ tags }) =>
-						!tags.some(tag => hideTags(filter => filter === tag))
+						!tags.some(tag =>
+							hideTags.some(filter => filter === tag)
+						)
 			  )
 			: allPosts
 
