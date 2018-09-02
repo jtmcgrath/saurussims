@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { margin } from 'polished'
 
+import { margin } from 'shared/utils'
 import { Link } from 'shared/components'
 
 export default styled(Link)`

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { padding } from 'polished'
+
+import { padding } from 'shared/utils'
 
 const activeMobileMenu = props =>
 	props.visible &&
@@ -43,21 +44,19 @@ const responsiveMenu = props =>
 	}
 
 	${activeMobileMenu(props)}
-` : `
-	padding: ${ props.theme.columnSpacing }px ${ props.theme.columnSpacing / 2 }px 0;
+`
+		: `
+	padding: ${props.theme.columnSpacing}px ${props.theme.columnSpacing / 2}px 0;
 
 	.main {
 		flex-direction: row-reverse;
 	}
 `
 
-export default styled.menu`
+export default styled.menu(
+	props => `
 	.menu-item {
-		${props =>
-			padding(
-				0,
-				props.theme.isDesktop ? '2px' : '12px'
-			)}
+		${padding(0, props.theme.isDesktop ? '2px' : '12px')}
 
 		align-items: center;
 		display: flex;
@@ -71,5 +70,6 @@ export default styled.menu`
 		transition: height 0.2s ease;
 	}
 
-	${responsiveMenu};
+	${responsiveMenu(props)};
 `
+)

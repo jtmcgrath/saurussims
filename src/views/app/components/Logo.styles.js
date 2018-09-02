@@ -1,13 +1,10 @@
 import styled from 'styled-components'
-import { padding } from 'polished'
 
-export default styled.a`
-	${props =>
-		padding(
-			`${props.theme.columnSpacing / 2}px`,
-			`${props.theme.columnSpacing / 2}px`,
-			0
-		)}
+import { padding } from 'shared/utils'
+
+export default styled.a(
+	({ theme }) => `
+	${padding(`${theme.columnSpacing / 2}px`, `${theme.columnSpacing / 2}px`, 0)}
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -16,12 +13,13 @@ export default styled.a`
 	text-decoration: none;
 
 	img {
-		margin-bottom: ${props => props.theme.columnSpacing / 2}px;
+		margin-bottom: ${theme.columnSpacing / 2}px;
 		vertical-align: bottom;
-		width: ${props => props.theme.account.avatar.size};
+		width: ${theme.account.avatar.size};
 	}
 
 	h4 {
 		line-height: 1.3;
 	}
 `
+)

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-export default styled.div`
+export default styled.div(
+	({ theme }) => `
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: ${props => props.theme.columnSpacing * 5}px 0;
+	margin: ${theme.columnSpacing * 5}px 0;
 	overflow: visible;
 	width: 100%;
 
@@ -16,10 +17,11 @@ export default styled.div`
 		content: '';
 		display: block;
 		height: 10vw;
-		max-height: ${props => props.theme.columnSpacing * 6}px;
-		max-width: ${props => props.theme.columnSpacing * 6}px;
-		min-height: ${props => props.theme.columnSpacing}px;
-		min-width: ${props => props.theme.columnSpacing}px;
+		max-height: ${theme.columnSpacing * 6}px;
+		max-width: ${theme.columnSpacing * 6}px;
+		min-height: ${theme.columnSpacing}px;
+		min-width: ${theme.columnSpacing}px;
 		width: 10vw;
 	}
 `
+)

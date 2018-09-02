@@ -3,26 +3,27 @@ import styled from 'styled-components'
 const calculateColumns = ({ columnSpacing, columnWidth }, columns) =>
 	(columnSpacing + columnWidth) * columns - columnSpacing
 
-export default styled.div`
-	${props =>
-		props.theme.isDesktop
+export default styled.div(
+	({ theme }) => `
+	${
+		theme.isDesktop
 			? `
 		display: flex;
 
 		.header {
-			width: ${props => props.theme.columnWidth}px;
+			width: ${theme.columnWidth}px;
 		}
 	`
-			: ''}
+			: ''
+	}
 
 	margin: 0 auto;
-	max-width: ${props =>
-		calculateColumns(props.theme, props.theme.maxColumns)}px;
+	max-width: ${calculateColumns(theme, theme.maxColumns)}px;
 	min-height: 100vh;
-	padding: ${props => props.theme.columnSpacing / 2}px;
+	padding: ${theme.columnSpacing / 2}px;
 
 	html:not(&) {
-		background: ${props => props.theme.background};
+		background: ${theme.background};
 
 		img + img,
 		article button + button {
@@ -30,3 +31,4 @@ export default styled.div`
 		}
 	}
 `
+)

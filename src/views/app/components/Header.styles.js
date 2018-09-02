@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
-export default styled.header`
+export default styled.header(
+	({ theme }) => `
     position: relative;
     z-index: 2;
 
-    ${props => props.theme.isDesktop && `
-        flex: 0 0 ${props.theme.columnWidth}px;
+    ${theme.isDesktop &&
+		`
+        flex: 0 0 ${theme.columnWidth}px;
         max-height: 100vh;
         position: sticky;
         top: 0;
     `}
 `
+)
