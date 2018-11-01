@@ -14,10 +14,11 @@ export const transformDownload = assets => download => {
 		download.fields.link.match(/http.*.tumblr.com\/post\/(\d*)\/?(.*)?/) ||
 		[]
 
+	const linkData = postId ? { postId, postSlug } : { link: download.fields.link }
+
 	return {
 		...download.fields,
-		postId,
-		postSlug,
+		...linkData,
 		image: assets[get(download, 'fields.image.sys.id')],
 	}
 }
