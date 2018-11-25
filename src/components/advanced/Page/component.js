@@ -1,7 +1,8 @@
 import React from 'react'
+import classNames from 'classnames'
 
-const Page = ({ children, styles, ...props }) => (
-	<div className={styles.wrapper}>
+const Page = ({ className, children, styles, ...props }) => (
+	<div className={classNames(className, styles.wrapper)}>
 		<div className={styles.content}>
 			{typeof children === 'function'
 				? children({ styles, ...props })
