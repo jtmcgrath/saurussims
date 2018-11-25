@@ -6,23 +6,33 @@ const Download = ({
 	avatar,
 	className,
 	image,
+	link,
 	postId,
 	postSlug,
 	styles,
 	title,
-}) => (
-	<Link
-		className={classNames(className, styles.link, styles.wrapper)}
-		routeName={postSlug ? 'post' : 'postWithoutSlug'}
-		routeParams={{ postId, postSlug }}
-	>
-		<img
-			className={styles.image}
-			src={image ? image : avatar}
-			alt={title}
-		/>
-		<h1 className={styles.title}>{title}</h1>
-	</Link>
-)
+}) => {
+	const Element = link ? 'a' : Link
+	const props = link ? {
+		href: link,
+	} : {
+		routeName: postSlug? 'post' : 'postWithoutSlug',
+		routeParams: { postId, postSlug }
+	}
+
+	return (
+		<Element
+			className={classNames(className, styles.link, styles.wrapper)}
+			{...props}
+		>
+			<img
+				className={styles.image}
+				src={image ? image : avatar}
+				alt={title}
+			/>
+			<h1 className={styles.title}>{title}</h1>
+		</Element>
+	)
+}
 
 export default Download
