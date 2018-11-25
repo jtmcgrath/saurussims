@@ -27,8 +27,8 @@ const LoadingError = ({ columnWidth, styles }) => (
 			<em>anyone</em> from seeing it.
 		</p>
 		<p>
-			I'm working on a new version of the theme which won't have this
-			problem - until that's ready, please bookmark the page and try again
+			I&apos;m working on a new version of the theme which won&apos;t have this
+			problem - until that&apos;s ready, please bookmark the page and try again
 			later!
 		</p>
 	</Page>
