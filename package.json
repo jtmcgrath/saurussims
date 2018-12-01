@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@types/enzyme": "~3.1.15",
+    "@types/enzyme-adapter-react-16": "~1.0.3",
+    "enzyme": "~3.7.0",
+    "enzyme-adapter-react-16": "~1.7.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts-ts": "3.1.0",
