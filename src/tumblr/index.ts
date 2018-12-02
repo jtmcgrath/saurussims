@@ -1,6 +1,7 @@
 import * as Appearance from './appearance'
+import * as Navigation from './navigation'
 
-export { Appearance }
+export { Appearance, Navigation }
 
 export { default as Avatar } from './basic/Avatar'
 export { default as BlogURL } from './basic/BlogURL'
