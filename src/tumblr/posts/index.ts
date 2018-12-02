@@ -10,6 +10,7 @@ import * as Panorama from './panorama'
 import * as Photo from './photo'
 import * as Photoset from './photoset'
 import * as Quote from './quote'
+import * as Sources from './sources'
 import * as Tags from './tags'
 import * as Text from './text'
 import * as Video from './video'
@@ -25,6 +26,7 @@ export {
 	Photo,
 	Photoset,
 	Quote,
+	Sources,
 	Tags,
 	Text,
 	Video,
