@@ -1,5 +1,6 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
+import * as Audio from './audio'
 import * as Chat from './chat'
 import * as Link from './link'
 import * as Panorama from './panorama'
@@ -8,7 +9,7 @@ import * as Photoset from './photoset'
 import * as Quote from './quote'
 import * as Text from './text'
 
-export { Chat, Link, Panorama, Photo, Photoset, Quote, Text }
+export { Audio, Chat, Link, Panorama, Photo, Photoset, Quote, Text }
 
 export const IfAnswer = renderBlock('Answer')
 export const IfAudio = renderBlock('Audio')
