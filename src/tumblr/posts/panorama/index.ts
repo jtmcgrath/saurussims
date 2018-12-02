@@ -1,6 +1,6 @@
 import { renderString } from '~/tumblr/helpers'
 
-export * from './Photo'
+export * from '../photo'
 
 export const Link = {
     OpenTag: renderString('LinkOpenTag'),

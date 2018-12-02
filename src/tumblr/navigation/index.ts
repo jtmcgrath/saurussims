@@ -9,11 +9,8 @@ export const IfPreviousPage = renderBlock('PreviousPage')
 export const IfSubmissionsEnabled = renderBlock('SubmissionsEnabled')
 
 export const AskLabel = renderString('AskLabel')
-export const CurrentPageNumber = renderString(
-	'CurrentPageNumber',
-	() => '{CurrentPage}'
-)
-export const NextPageURL = renderString('NextPageURL', () => '{NextPage}')
+export const CurrentPage = renderString('CurrentPage')
+export const NextPageURL = renderString('NextPage')
 export const PageNumber = renderString('PageNumber')
 export const SubmitLabel = renderString('SubmitLabel')
 export const TotalPages = renderString('TotalPages')

@@ -1,10 +1,11 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
-import * as Panorama from './Panorama'
-import * as Photo from './Photo'
-import * as Text from './Text'
+import * as Panorama from './panorama'
+import * as Photo from './photo'
+import * as Photoset from './photoset'
+import * as Text from './text'
 
-export { Panorama, Photo, Text }
+export { Panorama, Photo, Photoset, Text }
 
 export const IfAnswer = renderBlock('Answer')
 export const IfAudio = renderBlock('Audio')
@@ -28,5 +29,5 @@ export const PostType = renderString('PostType')
 export const ShortURL = renderString('ShortURL')
 export const TagsAsClasses = renderString('TagsAsClasses')
 
-export { default as Post } from './Post'
-export { default as Posts } from './Posts'
+export { default as IfPost } from './IfPost'
+export { default as IfPosts } from './IfPosts'
