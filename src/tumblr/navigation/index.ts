@@ -1,3 +1,5 @@
+export { URL } from '~/tumblr/shared'
+
 export { default as AskEnabled } from './AskEnabled'
 export { default as AskLabel } from './AskLabel'
 export { default as CurrentPage } from './CurrentPage'
@@ -12,4 +14,3 @@ export { default as PreviousPage } from './PreviousPage'
 export { default as SubmissionsEnabled } from './SubmissionsEnabled'
 export { default as SubmitLabel } from './SubmitLabel'
 export { default as TotalPages } from './TotalPages'
-export { default as URL } from './URL'
