@@ -1,6 +1,3 @@
-import { renderString } from '~/tumblr/helpers'
+import { renderBlock } from '~/tumblr/helpers'
 
-export default renderString(
-	'PostSummary',
-	() => '{block:PostSummary}{PostSummary}{/block:PostSummary}'
-)
+export default renderBlock('PostSummary')
