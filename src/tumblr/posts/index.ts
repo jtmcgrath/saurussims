@@ -11,6 +11,7 @@ import * as Photo from './photo'
 import * as Photoset from './photoset'
 import * as Quote from './quote'
 import * as Sources from './sources'
+import * as Submissions from './submissions'
 import * as Tags from './tags'
 import * as Text from './text'
 import * as Video from './video'
@@ -27,6 +28,7 @@ export {
 	Photoset,
 	Quote,
 	Sources,
+	Submissions,
 	Tags,
 	Text,
 	Video,
