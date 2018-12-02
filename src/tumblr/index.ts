@@ -1,3 +1,7 @@
+import * as Appearance from './appearance'
+
+export { Appearance }
+
 export { default as Avatar } from './basic/Avatar'
 export { default as BlogURL } from './basic/BlogURL'
 export { default as CopyrightYears } from './basic/CopyrightYears'
