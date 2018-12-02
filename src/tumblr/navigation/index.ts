@@ -14,5 +14,5 @@ export const SubmitLabel = renderString('SubmitLabel')
 export const TotalPages = renderString('TotalPages')
 export const URL = renderString('URL')
 
-export { default as JumpPagination } from './JumpPagination'
+export { default as IfJumpPagination } from './IfJumpPagination'
 export { default as Page } from './Page'

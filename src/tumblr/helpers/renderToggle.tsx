@@ -11,7 +11,7 @@ const renderPropsToString = (obj: {}) =>
 		''
 	)
 
-const renderBlockComponent = <Props extends {}>(displayName: string) => {
+const renderToggleComponent = <Props extends {}>(displayName: string) => {
 	const Component: React.SFC<Props & ToggleProps> = props => {
 		const blockName =
 			props.is === 'visible' ? `Show${displayName}` : `Hide${displayName}`
@@ -34,4 +34,4 @@ const renderBlockComponent = <Props extends {}>(displayName: string) => {
 	return Component
 }
 
-export default renderBlockComponent
+export default renderToggleComponent

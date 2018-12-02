@@ -17,5 +17,5 @@ export const Root = {
 	URL: renderString('ReblogRootURL'),
 }
 
-export const From = renderBlock('RebloggedFrom')
-export const NotReblog = renderBlock('NotReblog')
+export const IfReblog = renderBlock('RebloggedFrom')
+export const IfNotReblog = renderBlock('NotReblog')
