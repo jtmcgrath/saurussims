@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { Avatar } from '~/tumblr'
+import { Avatar, PermalinkPage } from '~/tumblr'
 
 const App = (props: {}) => (
 	<div>
-		<Avatar />
-		<Avatar size="30" />
-		<pre>{JSON.stringify(props, null, 2)}</pre>
+		<PermalinkPage>
+			<Avatar />
+			<Avatar size="30" />
+			<pre>{JSON.stringify(props, null, 2)}</pre>
+		</PermalinkPage>
 	</div>
 )
 

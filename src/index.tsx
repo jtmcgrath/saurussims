@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import pretty from 'pretty'
+import App from './App'
+import './index.css'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+const app = renderToString(<App />)
+
+const root = document.getElementById('root') as HTMLElement
+
+root.textContent = pretty(app, { ocd: true })

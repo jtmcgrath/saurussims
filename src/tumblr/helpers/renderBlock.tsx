@@ -10,9 +10,13 @@ const renderPropsToString = (obj: {}) =>
 const renderBlockComponent = <Props extends {}>(displayName: string) => {
 	const Component: React.SFC<Props> = props => (
 		<>
-			{`{block:${displayName}${renderPropsToString(props)}}`}
+			{`
+			{block:${displayName}${renderPropsToString(props)}}
+			`}
 			{props.children}
-			{`{/block:${displayName}}`}
+			{`
+			{/block:${displayName}}
+			`}
 		</>
 	)
 
