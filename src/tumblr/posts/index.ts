@@ -1,8 +1,9 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
+import * as Photo from './Photo'
 import * as Text from './Text'
 
-export { Text }
+export { Photo, Text }
 
 export const IfAnswer = renderBlock('Answer')
 export const IfAudio = renderBlock('Audio')
