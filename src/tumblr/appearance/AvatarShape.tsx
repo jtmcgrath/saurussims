@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('AvatarShape', () => '{AvatarShape}')
+export default renderString('AvatarShape')

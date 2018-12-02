@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('PageNumber', () => '{PageNumber}')
+export default renderString('PageNumber')

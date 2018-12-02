@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('RSS', () => '{RSS}')
+export default renderString('RSS')

@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('NextPage', () => '{SubmitLabel}')
+export default renderString('SubmitLabel')

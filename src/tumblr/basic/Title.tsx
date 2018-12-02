@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('Title', () => '{Title}')
+export default renderString('Title')

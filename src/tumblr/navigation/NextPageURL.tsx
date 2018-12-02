@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('NextPage', () => '{NextPage}')
+export default renderString('NextPage')

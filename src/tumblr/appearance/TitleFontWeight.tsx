@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('TitleFontWeight', () => '{TitleFontWeight}')
+export default renderString('TitleFontWeight')

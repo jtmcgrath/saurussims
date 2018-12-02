@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('CopyrightYears', () => '{CopyrightYears}')
+export default renderString('CopyrightYears')

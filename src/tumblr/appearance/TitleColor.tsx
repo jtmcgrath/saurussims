@@ -1,3 +1,3 @@
 import { renderString } from '~/tumblr/helpers'
 
-export default renderString('TitleColor', () => '{TitleColor}')
+export default renderString('TitleColor')
