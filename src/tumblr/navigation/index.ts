@@ -9,11 +9,10 @@ export const IfPreviousPage = renderBlock('PreviousPage')
 export const IfSubmissionsEnabled = renderBlock('SubmissionsEnabled')
 
 export const AskLabel = renderString('AskLabel')
-export const CurrentPage = renderString('CurrentPage')
-export const NextPageURL = renderString('NextPage')
 export const PageNumber = renderString('PageNumber')
 export const SubmitLabel = renderString('SubmitLabel')
 export const TotalPages = renderString('TotalPages')
 export const URL = renderString('URL')
 
 export { default as JumpPagination } from './JumpPagination'
+export { default as Page } from './Page'

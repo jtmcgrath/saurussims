@@ -16,10 +16,8 @@ export const Artist = renderString('Artist')
 export const AudioPlayer = renderString('AudioPlayer')
 export const Caption = renderString('Caption')
 export const ExternalAudioURL = renderString('ExternalAudioURL')
-export const FormattedPlayCount = renderString('FormattedPlayCount')
-export const PlayCount = renderString('PlayCount')
-export const PlayCountWithLabel = renderString('PlayCountWithLabel')
 export const RawAudioURL = renderString('RawAudioURL')
 export const TrackName = renderString('TrackName')
 
 export { default as AudioEmbed } from './AudioEmbed'
+export { default as PlayCount } from './PlayCount'
