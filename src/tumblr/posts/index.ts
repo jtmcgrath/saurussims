@@ -5,6 +5,7 @@ import * as Audio from './audio'
 import * as Chat from './chat'
 import * as Dates from './dates'
 import * as Link from './link'
+import * as Notes from './notes'
 import * as Panorama from './panorama'
 import * as Photo from './photo'
 import * as Photoset from './photoset'
@@ -18,6 +19,7 @@ export {
 	Chat,
 	Dates,
 	Link,
+	Notes,
 	Panorama,
 	Photo,
 	Photoset,
