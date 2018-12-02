@@ -20,7 +20,7 @@ export const Link = {
 	URL: renderString('LinkURL'),
 }
 
-type PhotoSizes = '100' | '250' | '400' | '500' | 'HighRes'
+type PhotoSizes = '100' | '250' | '400' | '500' | 'HighRes' | 'Panorama'
 export const Photo = {
 	Alt: renderString('PhotoAlt'),
 	Height: renderString<{ width: PhotoSizes }>(
