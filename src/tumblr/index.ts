@@ -3,8 +3,9 @@ import * as Tumblr from './basic'
 import * as Navigation from './navigation'
 import * as Pages from './pages'
 import * as Posts from './posts'
+import * as Reblogs from './reblogs'
 
-export { Appearance, Navigation, Pages, Posts, Tumblr }
+export { Appearance, Navigation, Pages, Posts, Reblogs, Tumblr }
 
 export const Avatar = Tumblr.Avatar
 export const BlogURL = Tumblr.BlogURL
