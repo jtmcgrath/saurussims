@@ -3,6 +3,7 @@ import { renderBlock, renderString } from '~/tumblr/helpers'
 import * as Answer from './answer'
 import * as Audio from './audio'
 import * as Chat from './chat'
+import * as Dates from './dates'
 import * as Link from './link'
 import * as Panorama from './panorama'
 import * as Photo from './photo'
@@ -15,6 +16,7 @@ export {
 	Answer,
 	Audio,
 	Chat,
+	Dates,
 	Link,
 	Panorama,
 	Photo,
