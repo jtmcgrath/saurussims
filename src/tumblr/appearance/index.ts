@@ -1,15 +1,18 @@
-export { default as AccentColor } from './AccentColor'
-export { default as AvatarShape } from './AccentColor'
-export { default as BackgroundColor } from './BackgroundColor'
-export { default as HeaderImage } from './HeaderImage'
-export { default as HideAvatar } from './HideAvatar'
-export { default as HideDescription } from './HideDescription'
-export { default as HideHeaderImage } from './HideHeaderImage'
-export { default as HideTitle } from './HideTitle'
-export { default as ShowAvatar } from './ShowAvatar'
-export { default as ShowDescription } from './ShowDescription'
-export { default as ShowHeaderImage } from './ShowHeaderImage'
-export { default as ShowTitle } from './ShowTitle'
-export { default as TitleColor } from './TitleColor'
-export { default as TitleFont } from './TitleFont'
-export { default as TitleFontWeight } from './TitleFontWeight'
+import { renderBlock, renderString } from '~/tumblr/helpers'
+
+export const HideAvatar = renderBlock('HideAvatar')
+export const HideDescription = renderBlock('HideDescription')
+export const HideHeaderImage = renderBlock('HideHeaderImage')
+export const HideTitle = renderBlock('HideTitle')
+export const ShowAvatar = renderBlock('ShowAvatar')
+export const ShowDescription = renderBlock('ShowDescription')
+export const ShowHeaderImage = renderBlock('ShowHeaderImage')
+export const ShowTitle = renderBlock('ShowTitle')
+
+export const AccentColor = renderString('AccentColor')
+export const AvatarShape = renderString('AvatarShape')
+export const BackgroundColor = renderString('BackgroundColor')
+export const HeaderImage = renderString('HeaderImage')
+export const TitleColor = renderString('TitleColor')
+export const TitleFont = renderString('TitleFont')
+export const TitleFontWeight = renderString('TitleFontWeight')

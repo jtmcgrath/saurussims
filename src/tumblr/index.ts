@@ -1,23 +1,24 @@
 import * as Appearance from './appearance'
+import * as Tumblr from './basic'
 import * as Navigation from './navigation'
 import * as Pages from './pages'
 import * as Posts from './posts'
 
-export { Appearance, Navigation, Pages, Posts }
+export { Appearance, Navigation, Pages, Posts, Tumblr }
 
-export { default as Avatar } from './basic/Avatar'
-export { default as BlogURL } from './basic/BlogURL'
-export { default as CopyrightYears } from './basic/CopyrightYears'
-export { default as CustomCSS } from './basic/CustomCSS'
-export { default as Description } from './basic/Description'
-export { default as FaviconURL } from './basic/FaviconURL'
-export { default as HomePage } from './basic/HomePage'
-export { default as IndexPage } from './basic/IndexPage'
-export { default as MetaDescription } from './basic/MetaDescription'
-export { default as PermalinkPage } from './basic/PermalinkPage'
-export { default as PostSummary } from './basic/PostSummary'
-export { default as PostSummaryText } from './basic/PostSummaryText'
-export { default as PostTitle } from './basic/PostTitle'
-export { default as PostTitleText } from './basic/PostTitleText'
-export { default as RSS } from './basic/RSS'
-export { default as Title } from './basic/Title'
+export const Avatar = Tumblr.Avatar
+export const BlogURL = Tumblr.BlogURL
+export const CopyrightYears = Tumblr.CopyrightYears
+export const CustomCSS = Tumblr.CustomCSS
+export const Description = Tumblr.Description
+export const FaviconURL = Tumblr.FaviconURL
+export const HomePage = Tumblr.HomePage
+export const IndexPage = Tumblr.IndexPage
+export const MetaDescription = Tumblr.MetaDescription
+export const PermalinkPage = Tumblr.PermalinkPage
+export const PostSummary = Tumblr.PostSummary
+export const PostSummaryText = Tumblr.PostSummaryText
+export const PostTitle = Tumblr.PostTitle
+export const PostTitleText = Tumblr.PostTitleText
+export const RSS = Tumblr.RSS
+export const Title = Tumblr.Title

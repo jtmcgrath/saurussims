@@ -1,4 +1,4 @@
-export { Label, URL } from '~/tumblr/shared'
+import { renderBlock } from '~/tumblr/helpers'
 
-export { default as HasPages } from './HasPages'
-export { default as Pages } from './Pages'
+export const HasPages = renderBlock('HasPages')
+export const Pages = renderBlock('Pages')

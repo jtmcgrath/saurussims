@@ -1,16 +1,22 @@
-export { URL } from '~/tumblr/shared'
+import { renderBlock, renderString } from '~/tumblr/helpers'
 
-export { default as AskEnabled } from './AskEnabled'
-export { default as AskLabel } from './AskLabel'
-export { default as CurrentPage } from './CurrentPage'
-export { default as CurrentPageNumber } from './CurrentPageNumber'
-export { default as JumpPage } from './JumpPage'
+export const AskEnabled = renderBlock('AskEnabled')
+export const CurrentPage = renderBlock('CurrentPage')
+export const JumpPage = renderBlock('JumpPage')
+export const NextPage = renderBlock('NextPage')
+export const Pagination = renderBlock('Pagination')
+export const PreviousPage = renderBlock('PreviousPage')
+export const SubmissionsEnabled = renderBlock('SubmissionsEnabled')
+
+export const AskLabel = renderString('AskLabel')
+export const CurrentPageNumber = renderString(
+	'CurrentPageNumber',
+	() => '{CurrentPage}'
+)
+export const NextPageURL = renderString('NextPageURL', () => '{NextPage}')
+export const PageNumber = renderString('PageNumber')
+export const SubmitLabel = renderString('SubmitLabel')
+export const TotalPages = renderString('TotalPages')
+export const URL = renderString('URL')
+
 export { default as JumpPagination } from './JumpPagination'
-export { default as NextPage } from './NextPage'
-export { default as NextPageURL } from './NextPageURL'
-export { default as PageNumber } from './PageNumber'
-export { default as Pagination } from './Pagination'
-export { default as PreviousPage } from './PreviousPage'
-export { default as SubmissionsEnabled } from './SubmissionsEnabled'
-export { default as SubmitLabel } from './SubmitLabel'
-export { default as TotalPages } from './TotalPages'
