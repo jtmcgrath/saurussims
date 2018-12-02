@@ -8,8 +8,9 @@ import * as Photo from './photo'
 import * as Photoset from './photoset'
 import * as Quote from './quote'
 import * as Text from './text'
+import * as Video from './video'
 
-export { Audio, Chat, Link, Panorama, Photo, Photoset, Quote, Text }
+export { Audio, Chat, Link, Panorama, Photo, Photoset, Quote, Text, Video }
 
 export const IfAnswer = renderBlock('Answer')
 export const IfAudio = renderBlock('Audio')
