@@ -1,12 +1,12 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
-export const AskEnabled = renderBlock('AskEnabled')
-export const CurrentPage = renderBlock('CurrentPage')
-export const JumpPage = renderBlock('JumpPage')
-export const NextPage = renderBlock('NextPage')
-export const Pagination = renderBlock('Pagination')
-export const PreviousPage = renderBlock('PreviousPage')
-export const SubmissionsEnabled = renderBlock('SubmissionsEnabled')
+export const IfAskEnabled = renderBlock('AskEnabled')
+export const IfCurrentPage = renderBlock('CurrentPage')
+export const IfJumpPage = renderBlock('JumpPage')
+export const IfNextPage = renderBlock('NextPage')
+export const IfPagination = renderBlock('Pagination')
+export const IfPreviousPage = renderBlock('PreviousPage')
+export const IfSubmissionsEnabled = renderBlock('SubmissionsEnabled')
 
 export const AskLabel = renderString('AskLabel')
 export const CurrentPageNumber = renderString(

@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Appearance, Avatar, PermalinkPage } from '~/tumblr'
+import { Appearance, Avatar, IfPermalinkPage } from '~/tumblr'
 
 const App = (props: {}) => (
 	<div>
-		<PermalinkPage>
+		<IfPermalinkPage>
 			<Appearance.TitleFont />
 			<Avatar />
 			<Avatar size="30" />
 			<pre>{JSON.stringify(props, null, 2)}</pre>
-		</PermalinkPage>
+		</IfPermalinkPage>
 	</div>
 )
 

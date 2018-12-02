@@ -1,18 +1,22 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
-export const Answer = renderBlock('Answer')
-export const Audio = renderBlock('Audio')
-export const Chat = renderBlock('Chat')
-export const Even = renderBlock('Even')
-export const Link = renderBlock('Link')
-export const More = renderBlock('More')
-export const Odd = renderBlock('Odd')
-export const Panorama = renderBlock('Panorama')
-export const Photo = renderBlock('Photo')
-export const Photoset = renderBlock('Photoset')
-export const Quote = renderBlock('Quote')
-export const Text = renderBlock('Text')
-export const Video = renderBlock('Video')
+import * as Text from './Text'
+
+export { Text }
+
+export const IfAnswer = renderBlock('Answer')
+export const IfAudio = renderBlock('Audio')
+export const IfChat = renderBlock('Chat')
+export const IfEven = renderBlock('Even')
+export const IfLink = renderBlock('Link')
+export const IfMore = renderBlock('More')
+export const IfOdd = renderBlock('Odd')
+export const IfPanorama = renderBlock('Panorama')
+export const IfPhoto = renderBlock('Photo')
+export const IfPhotoset = renderBlock('Photoset')
+export const IfQuote = renderBlock('Quote')
+export const IfText = renderBlock('Text')
+export const IfVideo = renderBlock('Video')
 
 export const EmbedURL = renderString('EmbedURL')
 export const Permalink = renderString('Permalink')

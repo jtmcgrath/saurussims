@@ -1,4 +1,7 @@
-import { renderBlock } from '~/tumblr/helpers'
+import { renderBlock, renderString } from '~/tumblr/helpers'
 
-export const HasPages = renderBlock('HasPages')
-export const Pages = renderBlock('Pages')
+export const IfHasPages = renderBlock('HasPages')
+export const IfPages = renderBlock('Pages')
+
+export const URL = renderString('URL')
+export const Label = renderString('Label')

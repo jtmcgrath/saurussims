@@ -1,13 +1,9 @@
-import { renderBlock, renderString } from '~/tumblr/helpers'
+import { renderString, renderToggle } from '~/tumblr/helpers'
 
-export const HideAvatar = renderBlock('HideAvatar')
-export const HideDescription = renderBlock('HideDescription')
-export const HideHeaderImage = renderBlock('HideHeaderImage')
-export const HideTitle = renderBlock('HideTitle')
-export const ShowAvatar = renderBlock('ShowAvatar')
-export const ShowDescription = renderBlock('ShowDescription')
-export const ShowHeaderImage = renderBlock('ShowHeaderImage')
-export const ShowTitle = renderBlock('ShowTitle')
+export const IfAvatar = renderToggle('Avatar')
+export const IfDescription = renderToggle('Description')
+export const IfHeaderImage = renderToggle('HeaderImage')
+export const IfTitle = renderToggle('Title')
 
 export const AccentColor = renderString('AccentColor')
 export const AvatarShape = renderString('AvatarShape')
