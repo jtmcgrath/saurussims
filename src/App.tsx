@@ -1,16 +1,14 @@
 import React from 'react'
 
-import { Appearance, Avatar, IfPermalinkPage } from '~/tumblr'
+import { Head, Menu } from '~/saurussims'
 
-const App = (props: {}) => (
-	<div>
-		<IfPermalinkPage>
-			<Appearance.TitleFont />
-			<Avatar />
-			<Avatar size="30" />
-			<pre>{JSON.stringify(props, null, 2)}</pre>
-		</IfPermalinkPage>
-	</div>
+const App = () => (
+	<html>
+		<Head />
+		<body>
+			<Menu />
+		</body>
+	</html>
 )
 
 export default App
