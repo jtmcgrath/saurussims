@@ -7,11 +7,14 @@ import * as Reblogs from './reblogs'
 
 export { Appearance, Navigation, Pages, Posts, Reblogs, Tumblr }
 
+export const Hidden = Tumblr.Hidden
+export const IfDescription = Tumblr.IfDescription
 export const IfHomePage = Tumblr.IfHomePage
 export const IfIndexPage = Tumblr.IfIndexPage
 export const IfPermalinkPage = Tumblr.IfPermalinkPage
 export const IfPostSummary = Tumblr.IfPostSummary
 export const IfPostTitle = Tumblr.IfPostTitle
+export const IfTagPage = Tumblr.IfTagPage
 
 export const Avatar = Tumblr.Avatar
 export const BlogURL = Tumblr.BlogURL

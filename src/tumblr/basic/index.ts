@@ -1,10 +1,13 @@
 import { renderBlock, renderString } from '~/tumblr/helpers'
 
+export const Hidden = renderBlock('Hidden')
+export const IfDescription = renderBlock('Description')
 export const IfHomePage = renderBlock('HomePage')
 export const IfIndexPage = renderBlock('IndexPage')
 export const IfPermalinkPage = renderBlock('PermalinkPage')
 export const IfPostSummary = renderBlock('PostSummary')
 export const IfPostTitle = renderBlock('PostTitle')
+export const IfTagPage = renderBlock('TagPage')
 
 export const BlogURL = renderString('BlogURL')
 export const CopyrightYears = renderString('CopyrightYears')
