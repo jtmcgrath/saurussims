@@ -4,8 +4,9 @@ import * as Navigation from './navigation'
 import * as Pages from './pages'
 import * as Posts from './posts'
 import * as Reblogs from './reblogs'
+import * as Settings from './settings'
 
-export { Appearance, Navigation, Pages, Posts, Reblogs, Tumblr }
+export { Appearance, Navigation, Pages, Posts, Reblogs, Settings, Tumblr }
 
 export const Hidden = Tumblr.Hidden
 export const IfDescription = Tumblr.IfDescription
