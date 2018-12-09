@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface RenderStringProps {
-	element?: 'img' | 'a'
+	element?: 'img' | 'a' | 'meta' | 'link'
 	asProp?: string
 	props?: object
 }
