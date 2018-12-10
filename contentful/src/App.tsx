@@ -1,6 +1,7 @@
 import React from 'react'
 import { Api } from './config/api'
 
+import './style.css'
 import { FetchData, Filters, ItemList } from './components'
 
 export interface AppProps {
