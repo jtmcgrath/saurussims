@@ -8105,6 +8105,11 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
+refract-rxjs@~4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/refract-rxjs/-/refract-rxjs-4.1.2.tgz#ba07a1868bf80bbb33f57089a19c2ffe5291efa3"
+  integrity sha512-2GdSmHleIV1OSSy+Q8yOyTIG1BRRkq2gKJK2eraYVsHwAqdInXqJVoe4YKFMWFqL1J1Mi8gd9F6aLrN+povWJg==
+
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-7.0.0.tgz#107405afcc4a190ec5ed450ecaa00ed0cafa7a4c"

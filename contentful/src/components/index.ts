@@ -1,4 +1,5 @@
 export * from './Download'
+export * from './FetchData'
 export * from './Filters'
 export * from './Item'
 export * from './ItemList'
