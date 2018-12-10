@@ -1,3 +1,4 @@
+import { createApi, Api } from './api'
 import { getApp } from './app'
 
 export type Root = Element | null
@@ -9,6 +10,7 @@ export type Variables = {
 }
 
 export interface Config {
+	api: Api
 	app: string
 }
 
@@ -19,8 +21,11 @@ export default async function createConfig(root: Root, variables: Variables) {
 		return false
 	}
 
+	const api = createApi(app, variables)
+
 	const config: Config = {
 		app,
+		api,
 	}
 
 	return config
