@@ -1,3 +1,7 @@
 import React from 'react'
 
-export const App: React.SFC<{}> = () => <p>Hello, world!</p>
+export interface AppProps {
+	app: string
+}
+
+export const App: React.SFC<AppProps> = () => <p>Hello, world!</p>

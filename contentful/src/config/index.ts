@@ -1,3 +1,5 @@
+import { getApp } from './app'
+
 export type Root = Element | null
 export type Variables = {
 	accessToken: string
@@ -6,14 +8,20 @@ export type Variables = {
 	spaceId: string
 }
 
-export interface Config {}
+export interface Config {
+	app: string
+}
 
 export default async function createConfig(root: Root, variables: Variables) {
-	if (!root) {
+	const app = getApp(root, variables)
+
+	if (!app) {
 		return false
 	}
 
-	const config: Config = {}
+	const config: Config = {
+		app,
+	}
 
 	return config
 }

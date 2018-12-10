@@ -9,6 +9,6 @@ const root = document.querySelector('article.permalink-page')
 
 createConfig(root, variables).then(config => {
 	if (config) {
-		ReactDOM.render(<App />, root)
+		ReactDOM.render(<App {...config} />, root)
 	}
 })
