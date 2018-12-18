@@ -1,6 +1,5 @@
 import createApi from './api'
-// import getApp from './app'
-const getApp = () => 'app'
+import getApp from './app'
 
 export default function createConfig(root, variables) {
 	const app = getApp(root, variables)
