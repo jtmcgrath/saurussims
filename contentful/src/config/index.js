@@ -1,4 +1,5 @@
 import createApi from './api'
+import createStore from './store'
 import getApp from './app'
 
 export default function createConfig(root, variables) {
@@ -9,9 +10,11 @@ export default function createConfig(root, variables) {
 	}
 
 	const api = createApi(app, variables)
+	const store = createStore(app)
 
 	return {
 		app,
 		api,
+		store,
 	}
 }
