@@ -1,5 +1,7 @@
+import loading from './loading'
+
 export default function createLayouts(contentRoot, navRoot, app) {
 	return {
-		renderSomething: () => `Something!`,
+		renderLoading: loading(contentRoot),
 	}
 }
