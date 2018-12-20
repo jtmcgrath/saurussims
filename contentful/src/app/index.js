@@ -1,3 +1,7 @@
+import createRoot from './createRoot'
+
 export default function buildApp(target, { api, app }) {
-    target.innerHTML = `Config includes: ${api}, ${app}`
+    const root = createRoot(target, 'contentful-main')
+
+    root.innerHTML = `Config includes: ${api}, ${app}`
 }
