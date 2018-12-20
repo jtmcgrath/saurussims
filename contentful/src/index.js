@@ -5,12 +5,13 @@ import variables from './variables'
 document.addEventListener('DOMContentLoaded', () => {
 	if (!window.saurussimsHasLoaded) {
 		window.saurussimsHasLoaded = true
-        const root = document.querySelector('article.permalink-page')
+		const header = document.querySelector('header.header')
+		const root = document.querySelector('article.permalink-page')
 
-        const config = createConfig(root, variables)
+		const config = createConfig(root, variables)
 
-        if (config) {
-            buildApp(root, config)
-        }
+		if (config) {
+			buildApp(root, header, config)
+		}
 	}
 })
