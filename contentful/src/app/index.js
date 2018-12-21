@@ -1,11 +1,26 @@
 import createRoot from './createRoot'
 import createLayouts from './layouts'
 
-export default function buildApp(target, header, { api, app }) {
+export default function buildApp(target, header, { api, app, store }) {
 	const root = createRoot(target, 'contentful-main')
 	const nav = createRoot(header, 'contentful-nav')
 
-	const { renderContent, renderError, renderLoading } = createLayouts(root, nav, app)
+	const {
+		renderContent,
+		renderError,
+		renderLoading,
+		renderNav,
+	} = createLayouts(root, nav, app)
 
-	renderContent({}, { items: [] })
+	const requestData = () => {
+		const state = store.get()
+
+		renderLoading()
+
+		api.fetch(state)
+			.then(res => renderContent(state, res))
+			.catch(err => renderError(state, err))
+	}
+
+	requestData()
 }
