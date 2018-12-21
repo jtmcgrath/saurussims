@@ -1,9 +1,11 @@
+import renderItem from './item'
+
 export default function renderContent(root, app) {
 	return (state, data) => {
 		const template = data.items.length
 			? `
                 <div class="item-list">
-                    <!-- render items here -->
+                    ${data.items.map(renderItem).join('')}
                 </div>
                 <!-- render pagination here -->
             `
