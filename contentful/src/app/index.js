@@ -15,6 +15,7 @@ export default function buildApp(target, header, { api, app, store }) {
 	const requestData = () => {
 		const state = store.get()
 
+		renderNav(state)
 		renderLoading()
 
 		api.fetch(state)
