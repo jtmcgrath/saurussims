@@ -1,4 +1,5 @@
 import renderItem from './item'
+import renderPagination from './pagination'
 
 export default function renderContent(root, app) {
 	return (state, data) => {
@@ -7,7 +8,7 @@ export default function renderContent(root, app) {
                 <div class="item-list">
                     ${data.items.map(renderItem).join('')}
                 </div>
-                <!-- render pagination here -->
+                ${renderPagination(data)}
             `
 			: `
                 <div class="error-message">
