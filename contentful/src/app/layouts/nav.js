@@ -1,6 +1,6 @@
 const renderIcon = icon => (icon ? `<span class="fas fa-${icon}"></span>` : '')
 
-const renderLink = (paths, label, keys, icons) => `
+const renderLink = (paths, label, keys, icon) => `
     <a class="filter-link${
 		paths.includes(keys)
 			? ' active'
