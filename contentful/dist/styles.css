@@ -1,0 +1,110 @@
+/* General Styles */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    max-width: 1950px;
+    margin: 0 auto;
+    min-width: 320px;
+    overflow-y: scroll;
+}
+
+body.permalink {
+    margin: 0 auto;
+    max-width: 1290px;
+}
+
+body,
+p,
+button {
+    font-family: "Alegreya Sans", Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+hr {
+    background: currentColor;
+    border: none;
+    height: 1px;
+}
+
+ul,
+p,
+figure,
+hr {
+    margin-bottom: 1em;
+}
+
+img {
+    height: auto !important;
+    max-width: 100%;
+    vertical-align: bottom;
+    width: 100%;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    line-height: 0;
+    padding: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+a,
+.hyperlink {
+    color: #919191;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+a.active {
+    text-decoration: none;
+    opacity: .7;
+}
+
+li {
+    margin: 0 0 .5em 1em;
+}
+
+nav ul,
+.menu ul {
+    list-style: none;
+}
+
+nav li,
+.menu li {
+    margin: 0;
+}
+
+blockquote {
+    border-left: 2px solid #5e6661;
+    margin: 15px 0;
+    padding-left: 18px;
+}
+
+blockquote:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
