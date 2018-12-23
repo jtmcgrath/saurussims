@@ -108,3 +108,34 @@ blockquote:last-child {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* Pagination */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: var(--column-spacing-half);
+}
+
+.pagination-list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto, var(--column-spacing);
+}
+
+.pagination-item {
+    cursor: pointer;
+    display: flex;
+    line-height: 48px;
+    margin: 0 4px;
+    padding: 0 12px;
+    text-decoration: none;
+}
+
+.pagination-item-active {
+    background: white;
+    border-radius: 6px;
+    line-height: 34px;
+    opacity: .5;
+}
