@@ -5,7 +5,9 @@ const requestState = ['download', 'page', 'tags']
 
 const getClosestTarget = element =>
 	element &&
-	(element.tagName === 'A' ? element : getClosestLink(element.parentElement))
+	(element.tagName === 'A'
+		? element
+		: getClosestTarget(element.parentElement))
 
 export default function buildApp(target, header, { api, app, store }) {
 	const root = createRoot(target, 'contentful-main')
