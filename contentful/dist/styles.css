@@ -363,3 +363,34 @@ blockquote:last-child {
     width: 100%;
     margin-bottom: 4px;
 }
+
+/* Other */
+.error-message {
+    padding: var(--column-spacing);
+    text-align: center;
+}
+
+.spinner {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: calc(var(--column-spacing) * 5) 0;
+	overflow: visible;
+	width: 100%;
+}
+
+.spinner::before {
+	animation: spin 0.7s linear infinite;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-bottom-color: rgba(145, 145, 145, 0.8);
+	border-radius: 50%;
+	content: '';
+	display: block;
+	height: 10vw;
+	min-height: calc(var(--column-spacing) * 6);
+	min-width: calc(var(--column-spacing) * 6);
+	max-height: var(--column-spacing);
+	max-width: var(--column-spacing);
+	width: 10vw;
+}
