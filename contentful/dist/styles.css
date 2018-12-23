@@ -139,3 +139,90 @@ blockquote:last-child {
     line-height: 34px;
     opacity: .5;
 }
+
+/* Main */
+.contentful-main {
+	width: 100%;
+}
+
+.item-list {
+	padding: 15px;
+	text-align: center;
+}
+
+.item {
+	display: inline-block;
+	margin: 15px;
+	position: relative;
+}
+
+.item a {
+	color: #919191;
+}
+
+.item:hover > a > h1,
+.item:hover > .download {
+	opacity: 1;
+}
+
+.item-link {
+	border: 6px solid white;
+	border-radius: 50%;
+	display: block;
+	height: 260px;
+	overflow: hidden;
+	position: relative;
+	width: 260px;
+}
+
+.sim .item-link {
+	max-height: 187px;
+	max-width: 187px;
+}
+
+.item img {
+	vertical-align: top;
+}
+
+.item h1 {
+	align-items: center;
+	background: rgba(255, 255, 255, 0.9);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	line-height: 1;
+	margin: 0;
+	opacity: 0;
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	transition: all 0.4s ease;
+}
+
+.item h1:only-child:not(:hover) {
+    background: transparent;
+    color: white;
+}
+
+.item h1:only-child,
+.item:hover h1 {
+	opacity: 1;
+}
+
+.item-actions {
+	bottom: 0;
+	left: 50%;
+	line-height: 44px;
+	opacity: 0;
+	padding: 0 22px;
+	position: absolute;
+	transform: translateX(-50%);
+	transition: opacity 0.4s ease;
+}
+
+.item:hover .item-actions {
+	opacity: 1;
+}
