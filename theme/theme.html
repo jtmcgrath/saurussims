@@ -1,7 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} -
+    {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+{block:Hidden}
+<meta name="image:Avatar Image" content="" />
+<meta name="color:Background" content="#c6c6c6" />
+<meta name="text:Avatar Width" content="200" />
+<meta name="text:Column Width" content="300" />
+<meta name="text:Column Spacing" content="30" />
+{/block:Hidden}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous" />
+
+<link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Amatic+SC" rel="stylesheet" type="text/css">
+
+<!-- Theme CSS -->
+<!-- Theme JS -->
+
 <style>
+:root {
+    --column-width: {text:Column Width}px;
+    --column-spacing: {text:Column Spacing}px;
+    --column-spacing-half: calc({text:Column Spacing}px / 2);
+}
+
+html { background: {color:Background}; }
+.branding-avatar { width: {text:Avatar Width}px; }
+
 {CustomCSS}
 </style>
 </head>
