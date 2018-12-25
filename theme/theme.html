@@ -44,7 +44,12 @@ html { background: {color:Background}; }
 </style>
 </head>
 
-<body>
+<body class="
+        {block:IndexPage} index-page{/block:IndexPage}
+        {block:PermalinkPage} permalink{/block:PermalinkPage}
+        {block:LikesPage} likes-page{/block:LikesPage}
+        {block:FollowingPage} following-page{/block:FollowingPage}
+        {block:SearchPage} search-page{/block:SearchPage}">
 
 </body>
 </html>
