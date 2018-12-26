@@ -182,7 +182,27 @@ html { background: {color:Background}; }
         </header>
         <div class="content">
             {block:IndexPage}
-            <!-- masonry grid -->
+            <div id="grid">
+                {block:Posts}
+                <article class="post {PostType} {TagsAsClasses}">
+                    <a href="{Permalink}" id="{PostID}" class="no-underline">
+                        <!-- text post -->
+                        <!-- photo post -->
+                        <!-- video post -->
+                        <!-- photoset post -->
+                        <!-- quote post -->
+                        <!-- link post -->
+                        <!-- answer post -->
+                        <!-- wcif post -->
+                        <!-- chat post -->
+                    </a>
+
+                    <ul class="menu post-actions">
+                        <!-- post actions -->
+                    </ul>
+                </article>
+                {/block:Posts}
+            </div>
             <nav class="pagination-wrapper">
                 <ul class="pagination-list">
                     {block:PreviousPage}
