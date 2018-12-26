@@ -181,11 +181,39 @@ html { background: {color:Background}; }
             </nav>
         </header>
         <div class="content">
-            <!-- for list pages... -->
-                <!-- masonry grid -->
-                <!-- pagination -->
-            <!-- for permalink pages... -->
-                <!-- article -->
+            {block:IndexPage}
+            <!-- masonry grid -->
+            <nav class="pagination-wrapper">
+                <ul class="pagination-list">
+                    {block:PreviousPage}
+                    <li>
+                        <a class="pagination-item" href="{PreviousPage}">Prev</a>
+                    </li>
+                    {/block:PreviousPage}
+                    {block:JumpPagination}
+                    <li>
+                        {block:CurrentPage}
+                        <span class="pagination-item pagination-item-active">{PageNumber}</span>
+                        {/block:CurrentPage}
+                        {block:JumpPage}
+                        <a class="pagination-item" href="{URL}">{PageNumber}</a>
+                        {/block:JumpPage}
+                    </li>
+                    {/block:JumpPagination}
+                    {block:NextPage}
+                    <li>
+                        <a class="pagination-item" href="{NextPage}">Next</a>
+                    </li>
+                    {/block:NextPage}
+                </ul>
+            </nav>
+            {/block:IndexPage}
+
+            {block:PermalinkPage}
+            {block:Posts}
+            <!-- article -->
+            {/block:Posts}
+            {/block:PermalinkPage}
         </div>
     </main>
 
