@@ -186,7 +186,14 @@ html { background: {color:Background}; }
                 {block:Posts}
                 <article class="post {PostType} {TagsAsClasses}">
                     <a href="{Permalink}" id="{PostID}" class="no-underline">
-                        <!-- text post -->
+                        {block:Text}
+                        <blockquote>
+                            {block:Title}<h2>{Title}</h2>{/block:Title}
+                            {PlaintextBody}
+                        </blockquote>
+                        <cite>{PostAuthorTitle}</cite>
+                        {/block:Text}
+
                         <!-- photo post -->
                         <!-- video post -->
                         <!-- photoset post -->
