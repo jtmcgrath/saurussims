@@ -52,7 +52,13 @@ html { background: {color:Background}; }
         {block:SearchPage} search-page{/block:SearchPage}">
     <main>
         <header class="header">
-            <!-- branding -->
+            <a href="/" class="branding">
+                <img class="branding-avatar" src="{image:Avatar Image}" alt="{Title}" />
+                <h1>{Title}</h1>
+                {block:Description}
+                <h4>{Description}</h4>
+                {/block:Description}
+            </a>
             <!-- nav menu -->
         </header>
         <div class="content">
