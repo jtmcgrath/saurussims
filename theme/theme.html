@@ -194,7 +194,10 @@ html { background: {color:Background}; }
                         <cite>{PostAuthorTitle}</cite>
                         {/block:Text}
 
-                        <!-- photo post -->
+                        {block:Photo}
+                        <img src="{PhotoURL-HighRes}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                        {/block:Photo}
+
                         <!-- video post -->
                         <!-- photoset post -->
                         <!-- quote post -->
