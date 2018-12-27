@@ -221,7 +221,13 @@ html { background: {color:Background}; }
                         {/block:Source}
                         {/block:Quote}
 
-                        <!-- link post -->
+                        {block:Link}
+                        {block:Thumbnail}
+                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
+                        {/block:Thumbnail}
+                        <h2>{Name}</h2>
+                        {/block:Link}
+
                         <!-- answer post -->
                         <!-- wcif post -->
                         <!-- chat post -->
