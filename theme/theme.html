@@ -198,7 +198,12 @@ html { background: {color:Background}; }
                         <img src="{PhotoURL-HighRes}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
                         {/block:Photo}
 
-                        <!-- video post -->
+                        {block:Video}
+                        {block:VideoThumbnail}
+                        <img src="{VideoThumbnailURL}" />
+                        {/block:VideoThumbnail}
+                        {/block:Video}
+
                         <!-- photoset post -->
                         <!-- quote post -->
                         <!-- link post -->
