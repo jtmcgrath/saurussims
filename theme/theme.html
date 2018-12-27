@@ -214,7 +214,13 @@ html { background: {color:Background}; }
                         </div>
                         {/block:Photoset}
 
-                        <!-- quote post -->
+                        {block:Quote}
+                        <blockquote class="right">{PlaintextQuote}</blockquote>
+                        {block:Source}
+                        <cite>{PlaintextSource}</cite>
+                        {/block:Source}
+                        {/block:Quote}
+
                         <!-- link post -->
                         <!-- answer post -->
                         <!-- wcif post -->
