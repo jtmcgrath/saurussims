@@ -204,7 +204,16 @@ html { background: {color:Background}; }
                         {/block:VideoThumbnail}
                         {/block:Video}
 
-                        <!-- photoset post -->
+                        {block:Photoset}
+                        <div class="photoset" data-layout="{PhotosetLayout}">
+                            {block:Photos}
+                            <div>
+                                <img alt="{PhotoAlt}" src="{PhotoURL-HighRes}" />
+                            </div>
+                            {/block:Photos}
+                        </div>
+                        {/block:Photoset}
+
                         <!-- quote post -->
                         <!-- link post -->
                         <!-- answer post -->
