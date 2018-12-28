@@ -316,7 +316,23 @@ html { background: {color:Background}; }
 
             {block:PermalinkPage}
             {block:Posts}
-            <!-- article -->
+            <article class="permalink-page {PostType} {TagsAsClasses} {block:Title}page-{URLEncodedTitle}{/block:Title}" id="{PostID}">
+                <div class="permalink-content">
+                    <!-- text post -->
+                    <!-- photo post -->
+                    <!-- video post -->
+                    <!-- photoset post -->
+                    <!-- quote post -->
+                    <!-- link post -->
+                    <!-- answer post -->
+                    <!-- chat post -->
+                </div>
+                <div class="permalink-meta permalink-padded-content">
+                    <!-- date -->
+                    <!-- tags -->
+                    <!-- actions -->
+                </div>
+            </article>
             {/block:Posts}
             {/block:PermalinkPage}
         </div>
