@@ -228,8 +228,17 @@ html { background: {color:Background}; }
                         <h2>{Name}</h2>
                         {/block:Link}
 
-                        <!-- answer post -->
-                        <!-- wcif post -->
+                        {block:Answer}
+                        <div class="wcif">
+                            {PlaintextAnswer}
+                        </div>
+
+                        <div class="standard">
+                            <blockquote class="left">{PlaintextQuestion}</blockquote>
+                            <cite>{PlaintextAsker}</cite>
+                        </div>
+                        {/block:Answer}
+
                         <!-- chat post -->
                     </a>
 
