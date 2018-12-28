@@ -239,7 +239,14 @@ html { background: {color:Background}; }
                         </div>
                         {/block:Answer}
 
-                        <!-- chat post -->
+                        {block:Chat}
+                        {block:Lines}
+                        <blockquote class="{Alt}">{PlaintextLine}</blockquote>
+                        {block:Label}
+                        <cite>{Label}</cite>
+                        {/block:Label}
+                        {/block:Lines}
+                        {/block:Chat}
                     </a>
 
                     <ul class="menu post-actions">
