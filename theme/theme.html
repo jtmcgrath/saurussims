@@ -328,7 +328,21 @@ html { background: {color:Background}; }
                     <cite>{PostAuthorTitle}</cite>
                     {/block:Text}
 
-                    <!-- photo post -->
+                    {block:Photo}
+                    <img
+                        src="{PhotoURL-HighRes}"
+                        alt="{PhotoAlt}"
+                        class="open-gallery"
+                        data-gallery="{PostID}"
+                        data-image="{PhotoURL-HighRes}"
+                    />
+                    {block:Caption}
+                    <div class="permalink-padded-content">
+                        {Caption}
+                    </div>
+                    {/block:Caption}
+                    {/block:Photo}
+
                     <!-- video post -->
                     <!-- photoset post -->
                     <!-- quote post -->
