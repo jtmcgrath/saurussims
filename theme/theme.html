@@ -392,7 +392,13 @@ html { background: {color:Background}; }
                     </a>
                     {/block:Link}
 
-                    <!-- answer post -->
+                    {block:Answer}
+                    <blockquote class="left">{Question}</blockquote>
+                    <cite>{Asker}</cite>
+                    <blockquote class="right">{Answer}</blockquote>
+                    <cite>{Title}</cite>
+                    {/block:Answer}
+
                     <!-- chat post -->
                 </div>
                 <div class="permalink-meta permalink-padded-content">
