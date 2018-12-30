@@ -371,7 +371,13 @@ html { background: {color:Background}; }
                     {/block:Caption}
                     {/block:Photoset}
 
-                    <!-- quote post -->
+                    {block:Quote}
+                    <blockquote class="right">{Quote}</blockquote>
+                    {block:Source}
+                    <cite>{Source}</cite>
+                    {/block:Source}
+                    {/block:Quote}
+
                     <!-- link post -->
                     <!-- answer post -->
                     <!-- chat post -->
