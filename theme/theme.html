@@ -399,7 +399,14 @@ html { background: {color:Background}; }
                     <cite>{Title}</cite>
                     {/block:Answer}
 
-                    <!-- chat post -->
+                    {block:Chat}
+                    {block:Lines}
+                    <blockquote class="{Alt}">{Line}</blockquote>
+                    {block:Label}
+                    <cite>{Label}</cite>
+                    {/block:Label}
+                    {/block:Lines}
+                    {/block:Chat}
                 </div>
                 <div class="permalink-meta permalink-padded-content">
                     <!-- date -->
