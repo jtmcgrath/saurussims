@@ -378,7 +378,20 @@ html { background: {color:Background}; }
                     {/block:Source}
                     {/block:Quote}
 
-                    <!-- link post -->
+                    {block:Link}
+                    <a href="{URL}" class="no-underline">
+                        {block:Thumbnail}
+                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
+                        {/block:Thumbnail}
+                        <div class="permalink-padded-content">
+                            <h2>{Name}</h2>
+                            {block:Description}
+                            {Description}
+                            {/block:Description}
+                        </div>
+                    </a>
+                    {/block:Link}
+
                     <!-- answer post -->
                     <!-- chat post -->
                 </div>
