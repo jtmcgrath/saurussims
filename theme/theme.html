@@ -409,7 +409,11 @@ html { background: {color:Background}; }
                     {/block:Chat}
                 </div>
                 <div class="permalink-meta permalink-padded-content">
-                    <!-- date -->
+                    <div class="permalink-meta-actions">
+                        {block:Date}
+                        {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
+                        {/block:Date}
+                    </div>
                     <!-- tags -->
                     <!-- actions -->
                 </div>
