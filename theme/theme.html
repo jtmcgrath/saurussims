@@ -414,7 +414,15 @@ html { background: {color:Background}; }
                         {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
                         {/block:Date}
                     </div>
-                    <!-- tags -->
+
+                    {block:HasTags}
+                    <p style="margin-top: 1em;">
+                        {block:Tags}
+                        <a href="{TagURL}">#{Tag}</a>&nbsp;
+                        {/block:Tags}
+                    </p>
+                    {/block:HasTags}
+
                     <!-- actions -->
                 </div>
             </article>
