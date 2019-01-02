@@ -232,6 +232,13 @@ blockquote:last-child {
     margin: 4px;
 }
 
+/* Content */
+.content {
+    padding-bottom: 48px;
+    position: relative;
+    z-index: 1;
+}
+
 /* Branding */
 .branding {
     display: block;
