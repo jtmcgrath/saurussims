@@ -142,6 +142,20 @@ blockquote:last-child {
     to { transform: rotate(360deg); }
 }
 
+/* Branding */
+.branding {
+    display: block;
+    padding: var(--column-spacing-half) var(--column-spacing-half) 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.branding-avatar {
+    margin-bottom: var(--column-spacing-half);
+    vertical-align: bottom;
+}
+
 /* Header */
 .header {
     position: relative;
@@ -237,20 +251,6 @@ blockquote:last-child {
     padding-bottom: 48px;
     position: relative;
     z-index: 1;
-}
-
-/* Branding */
-.branding {
-    display: block;
-    padding: var(--column-spacing-half) var(--column-spacing-half) 0;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-}
-
-.branding-avatar {
-    margin-bottom: var(--column-spacing-half);
-    vertical-align: bottom;
 }
 
 /* Pagination */
