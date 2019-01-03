@@ -321,6 +321,84 @@ blockquote:last-child {
     transform: translateX(-50%) translateY(-100%);
 }
 
+/* Quotes */
+.answer blockquote,
+.chat blockquote,
+.quote blockquote,
+.text blockquote {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    clear: both;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+.answer blockquote::after,
+.chat blockquote::after,
+.quote blockquote::after,
+.text blockquote::after {
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid white;
+    border-top: 5px solid white;
+    content: '';
+    position: absolute;
+    top: 100%;
+    z-index: -1;
+}
+
+.answer blockquote + cite,
+.chat blockquote + cite,
+.quote blockquote + cite,
+.text blockquote + cite {
+    margin: 15px;
+}
+
+.answer blockquote + blockquote,
+.chat blockquote + blockquote,
+.text blockquote + blockquote {
+    margin-top: 22px;
+}
+
+.answer .right::after,
+.chat .odd::after,
+.quote .right::after,
+.text blockquote::after {
+    right: 26px;
+    transform: rotate(11deg) translate(0px, -4px) scale(2);
+}
+
+.answer .right + cite,
+.chat .odd + cite,
+.quote .right + cite,
+.text blockquote + cite {
+    float: right;
+}
+
+.answer .left::after,
+.chat .even::after,
+.quote .left::after {
+    left: 26px;
+    transform: rotate(33deg) translate(0px, -4px) scale(2);
+}
+
+.answer .left + cite,
+.chat .even + cite,
+.quote .left + cite,
+.answer a.asker {
+    float: left;
+}
+
+.answer a + a.asker {
+    margin: var(--column-spacing-half)
+}
+
+cite:empty {
+    display: none;
+}
+
 /* Pagination */
 .pagination-wrapper {
     display: flex;
