@@ -399,6 +399,16 @@ cite:empty {
     display: none;
 }
 
+/* Ask Page */
+.permalink-page[id=''].text .permalink-content {
+    background: white;
+    padding: 6px;
+}
+
+.permalink-page[id=''].text cite {
+    display: none;
+}
+
 /* Pagination */
 .pagination-wrapper {
     display: flex;
