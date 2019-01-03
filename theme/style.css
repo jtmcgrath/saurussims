@@ -253,6 +253,74 @@ blockquote:last-child {
     z-index: 1;
 }
 
+/* Posts */
+.post,
+.permalink-content,
+.permalink-meta,
+.post.answer.wcif,
+.post.answer.gif {
+    background: white;
+    border-radius: 4px;
+    margin: 15px;
+    overflow: hidden;
+    padding: 6px;
+    position: relative;
+}
+
+.post.answer,
+.post.chat,
+.post.quote,
+.post.text {
+    margin-bottom: -15px;
+}
+
+.post.answer,
+.post.chat,
+.post.cutout,
+.post.quote,
+.post.text,
+.answer .permalink-content,
+.chat .permalink-content,
+.cutout .permalink-content,
+.quote .permalink-content,
+.text .permalink-content {
+    background: transparent;
+    padding: 0;
+}
+
+.post.answer .post-actions,
+.post.chat .post-actions,
+.post.quote .post-actions,
+.post.text .post-actions,
+.post.text.hide,
+.post.answer.gif .standard {
+    display: none;
+}
+
+.post.answer.gif .wcif,
+.post.answer.gif .wcif > figure {
+    display: block;
+}
+
+.post.answer.gif .wcif > figure {
+    margin: 0;
+}
+
+.post.cutout .post-actions {
+    border-radius: 6px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+.post:hover .post-actions {
+    transform: translateY(-100%);
+}
+
+.post.cutout:hover .post-actions {
+    transform: translateX(-50%) translateY(-100%);
+}
+
 /* Pagination */
 .pagination-wrapper {
     display: flex;
