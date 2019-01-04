@@ -409,6 +409,23 @@ cite:empty {
     display: none;
 }
 
+/* WCIF */
+.post.answer .wcif,
+.post.answer .wcif > *,
+.post.answer.wcif .standard,
+.post.answer .wcif > a > * {
+    display:  none;
+}
+
+.post.answer.wcif .wcif,
+.post.answer.wcif .wcif :first-child {
+    display: block;
+}
+
+.post.answer.wcif figure {
+    margin-bottom: 0;
+}
+
 /* Video */
 iframe {
     max-width: 100%;
@@ -483,23 +500,6 @@ iframe {
     #grid article {
         width: calc(((100% - 30px) / 3) - 30px);
     }
-}
-
-/* WCIF */
-.post.answer .wcif,
-.post.answer .wcif > *,
-.post.answer.wcif .standard,
-.post.answer .wcif > a > * {
-    display:  none;
-}
-
-.post.answer.wcif .wcif,
-.post.answer.wcif .wcif :first-child {
-    display: block;
-}
-
-.post.answer.wcif figure {
-    margin-bottom: 0;
 }
 
 /* Pagination */
