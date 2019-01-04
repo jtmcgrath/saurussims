@@ -409,6 +409,11 @@ cite:empty {
     display: none;
 }
 
+/* Video */
+iframe {
+    max-width: 100%;
+}
+
 /* WCIF */
 .post.answer .wcif,
 .post.answer .wcif > *,
