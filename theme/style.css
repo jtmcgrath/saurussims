@@ -552,6 +552,73 @@ iframe {
     opacity: .5;
 }
 
+/* Permalink Page */
+.permalink-page {
+    padding: 15px;
+    justify-content: center;
+}
+
+.page-Downloads .permalink-content,
+.page-Resources .permalink-content,
+.page-Sims .permalink-content,
+.permalink-page[id=''] .permalink-meta {
+    display: none;
+}
+
+.permalink-content {
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.permalink-meta-actions > * {
+    display: inline;
+    vertical-align: middle;
+}
+
+.permalink-meta .like-button-container {
+    cursor: pointer;
+    margin: 0 4px;
+    position: relative;
+}
+
+.permalink-meta svg {
+    height: 12px;
+    width: 12px;
+}
+
+.permalink-page figure img,
+.permalink-page .photoset:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.permalink-padded-content {
+    padding: 20px;
+}
+
+body.permalink .content {
+    margin: 0 auto;
+    max-width: calc(600px + var(--column-spacing) + var(--column-spacing));
+}
+
+@media (min-width: 800px) {
+    .permalink-page {
+        align-items: flex-start;
+        display: flex;
+    }
+
+    .permalink-content {
+        flex: 1 1 100%;
+    }
+
+    .permalink-meta {
+        flex: 0 0 320px;
+    }
+
+    body.permalink .content {
+        max-width: initial;
+    }
+}
+
 /* Main */
 .contentful-main {
 	width: 100%;
