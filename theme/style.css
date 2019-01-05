@@ -678,6 +678,79 @@ body.permalink .content {
     }
 }
 
+/* Gallery */
+.open-gallery {
+    cursor: pointer;
+}
+
+.gallery-wrapper,
+.gallery-wrapper > .gallery-close {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.gallery-wrapper,
+.gallery-wrapper > .gallery-close {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: var(--column-spacing-half);
+}
+
+.gallery-wrapper > .gallery-close {
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.gallery-content {
+    position: relative;
+    z-index: 4;
+}
+
+.gallery-image {
+    max-height: calc(100vh - var(--column-spacing) - var(--column-spacing));
+    width: auto !important;
+}
+
+.gallery-prev,
+.gallery-next {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+.gallery-prev {
+    left: 0;
+}
+
+.gallery-next {
+    right: 0;
+}
+
+.gallery-count,
+.gallery-content > .gallery-close {
+    color: white;
+    line-height: var(--column-spacing);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    z-index: 4;
+}
+
+.gallery-count {
+    top: 100%;
+}
+
+.gallery-content > .gallery-close {
+    bottom: 100%;
+}
+
 /* Main */
 .contentful-main {
 	width: 100%;
