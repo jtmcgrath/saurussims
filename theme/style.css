@@ -752,6 +752,11 @@ body.permalink .content {
 }
 
 /* Main */
+.contentful-root {
+	flex-direction: column;
+	justify-content: center;
+}
+
 .contentful-main {
 	width: 100%;
 }
