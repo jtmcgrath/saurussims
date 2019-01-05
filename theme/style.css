@@ -502,6 +502,25 @@ iframe {
     }
 }
 
+/* Photoset */
+.photoset-row {
+    align-items: flex-start;
+    display: flex;
+    font-size: 0;
+}
+
+.photoset-row + .photoset-row {
+    margin-top: 6px;
+}
+
+.photoset-row div {
+    flex: 1 1 100%;
+}
+
+.photoset-row div + div {
+    margin-left: 6px;
+}
+
 /* Pagination */
 .pagination-wrapper {
     display: flex;
