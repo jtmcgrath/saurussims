@@ -12,8 +12,7 @@ const getArg = (name, fallback) => {
 const section = getArg('--section', 'sims')
 
 const layouts = {
-	downloads: 'contentful',
-	sims: 'contentful',
+	default: 'contentful',
 }
 
 module.exports = {
@@ -26,7 +25,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'output/index.html'),
 			inject: false,
-			layout: layouts[section],
+			layout: layouts[section] || layouts.default,
 			section,
 			sectionTitle: capitalize(section),
 		}),

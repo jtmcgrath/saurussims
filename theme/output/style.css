@@ -791,6 +791,7 @@ body.permalink .content {
 	width: 260px;
 }
 
+.resource .item-link,
 .sim .item-link {
 	max-height: 187px;
 	max-width: 187px;

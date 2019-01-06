@@ -38,6 +38,12 @@ const transformDownload = assets => download => {
 	}
 }
 
+const transformResource = assets => resource => ({
+	type: 'resource',
+	...resource.fields,
+	image: assets[get(resource, 'fields', 'image', 'sys', 'id')],
+})
+
 const transformSim = assets => sim => ({
 	type: 'sim',
 	...sim.fields,
@@ -46,6 +52,7 @@ const transformSim = assets => sim => ({
 
 const transformers = {
 	download: transformDownload,
+	resource: transformResource,
 	sim: transformSim,
 }
 
@@ -54,7 +61,7 @@ export default function createTransformer(contentType) {
 		items && items.map(transformers[contentType](assets))
 
 	return ({
-		includes: { Asset: _assets } = {},
+		includes: { Asset: _assets = [] } = {},
 		items: _items,
 		limit,
 		skip,

@@ -36,6 +36,20 @@ const downloadsPage = {
 	],
 }
 
+const resourcesPage = {
+	contentType: 'resource',
+	className: 'page-Resources',
+	filters: [
+		{ label: 'All' },
+		{ label: 'Genetics', tags: ['genetics'] },
+		{ label: 'Eyes', tags: ['eyes'] },
+		{ label: 'Makeup', tags: ['make-up'] },
+		{ label: 'Poses', tags: ['poses'] },
+		{ label: 'Skin Details', tags: ['skin-details'] },
+		{ label: 'Mods', tags: ['mods'] },
+	],
+}
+
 const simsPage = {
 	contentType: 'sim',
 	className: 'page-Sims',
@@ -63,7 +77,7 @@ const simsPage = {
 
 export default {
 	accessToken: 'ACCESSTOKEN',
-	entryPoints: [downloadsPage, simsPage],
+	entryPoints: [downloadsPage, resourcesPage, simsPage],
 	spaceId: 'SPACEID',
 	itemsPerPage: 24,
 }
