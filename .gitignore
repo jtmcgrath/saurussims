@@ -23,3 +23,5 @@ yarn-error.log*
 
 variables.ts
 variables.js
+
+theme/output/main.js
