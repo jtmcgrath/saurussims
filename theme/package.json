@@ -11,6 +11,8 @@
 	},
 	"scripts": {
 		"start": "webpack-dev-server --inline --mode=development",
+		"start:downloads": "webpack-dev-server --inline --mode=development --section=downloads",
+		"start:sims": "webpack-dev-server --inline --mode=development --section=sims",
 		"build": "webpack --mode=production"
 	}
 }

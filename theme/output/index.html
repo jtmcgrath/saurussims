@@ -26,6 +26,7 @@
 	</head>
 
 	<body>
+		<%if (htmlWebpackPlugin.options.layout === 'contentful') { %>
 		<main>
 			<header class="header">
 				<nav class="header-nav">
@@ -33,11 +34,12 @@
 					<ul></ul>
 				</nav>
 			</header>
-			<article class="permalink-page text page-Sims" id="">
+			<article class="permalink-page text page-<%= htmlWebpackPlugin.options.sectionTitle %>" id="">
 				<div class="permalink-content"></div>
 				<div class="permalink-meta permalink-padded-content"></div>
 			</article>
 		</main>
+		<% } %>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>

@@ -1,6 +1,21 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
+
+const getArg = (name, fallback) => {
+	const value = process.argv.find(arg => arg.startsWith(name))
+
+	return value ? value.slice(name.length + 1) : fallback
+}
+
+const section = getArg('--section', 'sims')
+
+const layouts = {
+	downloads: 'contentful',
+	sims: 'contentful',
+}
+
 module.exports = {
 	entry: path.join(__dirname, 'src/index.js'),
 	output: {
@@ -11,6 +26,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'output/index.html'),
 			inject: false,
+			layout: layouts[section],
+			section,
+			sectionTitle: capitalize(section),
 		}),
 	],
 	devServer: {
