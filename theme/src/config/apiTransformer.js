@@ -11,7 +11,7 @@ export const get = (obj, ...paths) => {
 
 const calculatePagination = (limit, skip, total) => ({
 	current: skip / limit + 1,
-	pages: Array.from(Array(Math.ceil(total / limit)), (_, index) => index + 1),
+	pages: Array.from(Array(Math.ceil(total / limit)), (_, indwx) => indwx + 1),
 })
 
 const transformAssets = assets =>
@@ -34,7 +34,7 @@ const transformDownload = assets => download => {
 		type: 'download',
 		...download.fields,
 		...linkData,
-		image: assets[get(download, 'fields.image.sys.id')],
+		image: assets[get(download, 'fields', 'image', 'sys', 'id')],
 	}
 }
 
@@ -44,14 +44,14 @@ const transformSim = assets => sim => ({
 	image: assets[sim.fields.image.sys.id],
 })
 
+const transformers = {
+	download: transformDownload,
+	sim: transformSim,
+}
+
 export default function createTransformer(contentType) {
 	const transformItems = (assets, items) =>
-		items &&
-		items.map(
-			contentType === 'sim'
-				? transformSim(assets)
-				: transformDownload(assets)
-		)
+		items && items.map(transformers[contentType](assets))
 
 	return ({
 		includes: { Asset: _assets } = {},
