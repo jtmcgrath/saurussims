@@ -11,12 +11,12 @@
 	},
 	"scripts": {
 		"start": "webpack-dev-server --inline --mode=development",
-		"start:downloads": "webpack-dev-server --inline --mode=development --section=downloads",
-		"start:gallery": "webpack-dev-server --inline --mode=development --section=gallery",
-		"start:masonry": "webpack-dev-server --inline --mode=development --section=masonry",
-		"start:photoset": "webpack-dev-server --inline --mode=development --section=photoset",
-		"start:resources": "webpack-dev-server --inline --mode=development --section=resources",
-		"start:sims": "webpack-dev-server --inline --mode=development --section=sims",
+		"start:downloads": "yarn start --section=downloads",
+		"start:gallery": "yarn start --section=gallery",
+		"start:masonry": "yarn start --section=masonry",
+		"start:photoset": "yarn start --section=photoset",
+		"start:resources": "yarn start --section=resources",
+		"start:sims": "yarn start --section=sims",
 		"build": "webpack --mode=production"
 	}
 }
