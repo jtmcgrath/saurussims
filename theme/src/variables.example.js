@@ -1,38 +1,55 @@
 const downloadsPage = {
 	contentType: 'download',
 	className: 'page-Downloads',
-	filterByDownloads: true,
 	filters: [
-		{ label: 'Buy Mode', tags: ['objects'] },
 		{
 			label: 'Create A Sim',
-			category: 'group',
+			icon: 'child',
 			tags: ['cas'],
 			greedy: true,
 			filters: [
 				{
+					flat: true,
 					filters: [
 						{ label: 'All' },
-						{ label: 'Male', tags: ['male'] },
-						{ label: 'Female', tags: ['female'] },
-						{ label: 'Kids', tags: ['child', 'toddler'] },
+						{ label: 'Male', tags: ['male'], icon: 'mars' },
+						{ label: 'Female', tags: ['female'], icon: 'venus' },
+						{
+							label: 'Kids',
+							tags: ['child', 'toddler'],
+							icon: 'cubes',
+						},
 					],
 				},
 				{
+					flat: true,
 					filters: [
 						{ label: 'All' },
-						{ label: 'Clothes', tags: ['clothes'] },
-						{ label: 'Tops', tags: ['tops'] },
-						{ label: 'Bottoms', tags: ['bottoms'] },
-						{ label: 'Outfits', tags: ['outfits'] },
-						{ label: 'Accessories', tags: ['accessories'] },
-						{ label: 'Shoes', tags: ['shoes'] },
-						{ label: 'Hats', tags: ['hats'] },
-						{ label: 'Hair', tags: ['hair'] },
+						{
+							label: 'Clothes',
+							tags: ['clothes'],
+							icon: 'restroom',
+						},
+						{ label: 'Tops', tags: ['tops'], icon: 'tshirt' },
+						{ label: 'Bottoms', tags: ['bottoms'], icon: 'male' },
+						{ label: 'Outfits', tags: ['outfits'], icon: 'female' },
+						{
+							label: 'Accessories',
+							tags: ['accessories'],
+							icon: 'shopping-bag',
+						},
+						{
+							label: 'Shoes',
+							tags: ['shoes'],
+							icon: 'shoe-prints',
+						},
+						{ label: 'Hats', tags: ['hats'], icon: 'hat-wizard' },
+						{ label: 'Hair', tags: ['hair'], icon: 'cut' },
 					],
 				},
 			],
 		},
+		{ label: 'Buy Mode', tags: ['objects'], icon: 'couch' },
 	],
 }
 
@@ -53,23 +70,25 @@ const resourcesPage = {
 const simsPage = {
 	contentType: 'sim',
 	className: 'page-Sims',
+	filterByDownloads: true,
 	greedy: true,
 	filters: [
 		{
-			label: 'Gender',
+			flat: true,
 			filters: [
 				{ label: 'All' },
-				{ label: 'Male', tags: ['male'] },
-				{ label: 'Female', tags: ['female'] },
+				{ label: 'Male', tags: ['male'], icon: 'mars' },
+				{ label: 'Female', tags: ['female'], icon: 'venus' },
 			],
 		},
 		{
-			label: 'Type',
+			flat: true,
 			filters: [
-				{ label: 'Adults', tags: ['adult'] },
-				{ label: 'Kids', tags: ['child', 'toddler'] },
-				{ label: 'Animals', tags: ['animals'] },
-				{ label: 'Occult', tags: ['occult'] },
+				{ label: 'All' },
+				{ label: 'Adults', tags: ['adult'], icon: 'graduation-cap' },
+				{ label: 'Kids', tags: ['child', 'toddler'], icon: 'cubes' },
+				{ label: 'Animals', tags: ['animal'], icon: 'paw' },
+				{ label: 'Occult', tags: ['occult'], icon: 'ghost' },
 			],
 		},
 	],
