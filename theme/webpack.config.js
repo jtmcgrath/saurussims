@@ -14,6 +14,7 @@ const section = getArg('--section', 'sims')
 const layouts = {
 	default: 'contentful',
 	gallery: 'photoset',
+	masonry: 'masonry',
 	photoset: 'photoset',
 }
 

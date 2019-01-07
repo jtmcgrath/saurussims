@@ -26,9 +26,18 @@
 			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
 			crossorigin="anonymous"
 		/>
+
+		<script
+			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+			type="text/javascript"
+		></script>
+		<script
+			src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+			type="text/javascript"
+		></script>
 	</head>
 
-	<body>
+	<body class="index-page">
 		<%if (htmlWebpackPlugin.options.layout === 'contentful') { %>
 		<main>
 			<header class="header">
@@ -43,6 +52,7 @@
 			</article>
 		</main>
 		<% } %>
+
 		<%if (htmlWebpackPlugin.options.layout === 'photoset') { %>
 		<div style="max-width: 400px; margin: 0 auto;">
 			<article class="post">
@@ -106,6 +116,32 @@
 		</div>
 		<div id="gallery-root"></div>
 		<% } %>
+
+		<%if (htmlWebpackPlugin.options.layout === 'masonry') { %>
+		<main>
+			<div class="content">
+				<div id="grid">
+					<article class="post">Post 1</article>
+					<article class="post">Post 2<br /><br /><br /></article>
+					<article class="post">
+						Post 3<br /><br /><br /><br /><br /><br />
+					</article>
+					<article class="post">
+						Post 4<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+					</article>
+					<article class="post">Post 5</article>
+					<article class="post">Post 6<br /><br /><br /></article>
+					<article class="post">Post 7</article>
+					<article class="post">Post 8</article>
+					<article class="post">
+						Post 9<br /><br /><br /><br /><br />
+					</article>
+					<article class="post">Post 10<br /><br /></article>
+				</div>
+			</div>
+		</main>
+		<% } %>
+
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>

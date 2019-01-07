@@ -13,6 +13,7 @@
 		"start": "webpack-dev-server --inline --mode=development",
 		"start:downloads": "webpack-dev-server --inline --mode=development --section=downloads",
 		"start:gallery": "webpack-dev-server --inline --mode=development --section=gallery",
+		"start:masonry": "webpack-dev-server --inline --mode=development --section=masonry",
 		"start:photoset": "webpack-dev-server --inline --mode=development --section=photoset",
 		"start:resources": "webpack-dev-server --inline --mode=development --section=resources",
 		"start:sims": "webpack-dev-server --inline --mode=development --section=sims",
