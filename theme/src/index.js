@@ -1,3 +1,5 @@
+import './scripts'
+
 import buildApp from './app'
 import createConfig from './config'
 import variables from './variables'

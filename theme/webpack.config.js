@@ -13,6 +13,7 @@ const section = getArg('--section', 'sims')
 
 const layouts = {
 	default: 'contentful',
+	photoset: 'photoset',
 }
 
 module.exports = {

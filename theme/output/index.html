@@ -40,6 +40,20 @@
 			</article>
 		</main>
 		<% } %>
+		<%if (htmlWebpackPlugin.options.layout === 'photoset') { %>
+		<div style="max-width: 400px; margin: 0 auto;">
+			<article class="post">
+				<div class="photoset" data-layout="321">
+					<div><img alt="" src="http://placekitten.com/500/400" /></div>
+					<div><img alt="" src="http://placekitten.com/500/380" /></div>
+					<div><img alt="" src="http://placekitten.com/500/360" /></div>
+					<div><img alt="" src="http://placekitten.com/500/340" /></div>
+					<div><img alt="" src="http://placekitten.com/500/320" /></div>
+					<div><img alt="" src="http://placekitten.com/500/300" /></div>
+				</div>
+			</article>
+		</div>
+		<% } %>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
