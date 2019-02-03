@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} -
+    {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+{block:Hidden}
+<meta name="image:Avatar Image" content="" />
+<meta name="color:Background" content="#c6c6c6" />
+<meta name="text:Avatar Width" content="200" />
+<meta name="text:Column Width" content="300" />
+<meta name="text:Column Spacing" content="30" />
+{/block:Hidden}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous" />
+
+<link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Amatic+SC" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+<script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" type="text/javascript"></script>
+
+<link href="https://static.tumblr.com/or6bqm6/oukpkeq7s/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://static.tumblr.com/or6bqm6/RhHpkepc8/main.js" charset="utf-8"></script>
+
+<style>
+:root {
+    --column-width: {text:Column Width}px;
+    --column-spacing: {text:Column Spacing}px;
+    --column-spacing-half: calc({text:Column Spacing}px / 2);
+}
+
+html { background: {color:Background}; }
+.branding-avatar { width: {text:Avatar Width}px; }
+
+{CustomCSS}
+</style>
+</head>
+
+<body class="
+        {block:IndexPage} index-page{/block:IndexPage}
+        {block:PermalinkPage} permalink{/block:PermalinkPage}
+        {block:LikesPage} likes-page{/block:LikesPage}
+        {block:FollowingPage} following-page{/block:FollowingPage}
+        {block:SearchPage} search-page{/block:SearchPage}">
+    <main>
+        <header class="header">
+            <a href="/" class="branding">
+                <img class="branding-avatar" src="{image:Avatar Image}" alt="{Title}" />
+                <h1>{Title}</h1>
+                {block:Description}
+                <h4>{Description}</h4>
+                {/block:Description}
+            </a>
+            <input type="checkbox" id="menu-toggle" hidden />
+            <nav class="header-nav">
+                <ul class="menu menu-main">
+                    <li class="mobile-only menu-item">
+                        <label class="menu-item-link hyperlink" for="menu-toggle">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                            <span class="menu-item-text">Menu</span>
+                        </label>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Gift" icon="Gift" href="https://ko-fi.com/saurus" target="_blank">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                                <rect x="2" y="7" width="20" height="5"></rect>
+                                <line x1="12" y1="22" x2="12" y2="7"></line>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                            </svg>
+                            <span class="menu-item-text">Gift</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Ask" icon="Message" href="/ask-away">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            <span class="menu-item-text">Ask</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Follow" icon="Heart" href="https://www.tumblr.com/follow/saurussims">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span class="menu-item-text">Follow</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Home" icon="Home" href="/" class="active be a bf n o">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="menu-item-text">Home</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu menu-secondary">
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Downloads" icon="Download" href="/downloads">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span class="menu-item-text">Downloads</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Lookbooks" icon="Lookbook" href="/tagged/lookbook">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span class="menu-item-text">Lookbooks</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Sims" icon="Sim" href="/sims">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="menu-item-text">Sims</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="WCIF" icon="Search" href="/tagged/wcif">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <span class="menu-item-text">WCIF</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Resources" icon="Resources" href="/resources">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                            <span class="menu-item-text">Resources</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-item-link" name="Twitter" icon="Twitter" href="https://twitter.com/saurussims" target="_blank">
+                            <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+	                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                            <span class="menu-item-text">Twitter</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            {block:IndexPage}
+            <div id="grid">
+                {block:Posts}
+                <article class="post {PostType} {TagsAsClasses}">
+                    <a href="{Permalink}" id="{PostID}" class="no-underline">
+                        {block:Text}
+                        <blockquote>
+                            {block:Title}<h2>{Title}</h2>{/block:Title}
+                            {PlaintextBody}
+                        </blockquote>
+                        <cite>{PostAuthorTitle}</cite>
+                        {/block:Text}
+
+                        {block:Photo}
+                        <img src="{PhotoURL-HighRes}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                        {/block:Photo}
+
+                        {block:Video}
+                        {block:VideoThumbnail}
+                        <img src="{VideoThumbnailURL}" />
+                        {/block:VideoThumbnail}
+                        {/block:Video}
+
+                        {block:Photoset}
+                        <div class="photoset" data-layout="{PhotosetLayout}">
+                            {block:Photos}
+                            <div>
+                                <img alt="{PhotoAlt}" src="{PhotoURL-HighRes}" />
+                            </div>
+                            {/block:Photos}
+                        </div>
+                        {/block:Photoset}
+
+                        {block:Quote}
+                        <blockquote class="right">{PlaintextQuote}</blockquote>
+                        {block:Source}
+                        <cite>{PlaintextSource}</cite>
+                        {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                        {block:Thumbnail}
+                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
+                        {/block:Thumbnail}
+                        <h2>{Name}</h2>
+                        {/block:Link}
+
+                        {block:Answer}
+                        <div class="wcif">
+                            {PlaintextAnswer}
+                        </div>
+
+                        <div class="standard">
+                            <blockquote class="left">{PlaintextQuestion}</blockquote>
+                            <cite>{PlaintextAsker}</cite>
+                        </div>
+                        {/block:Answer}
+
+                        {block:Chat}
+                        {block:Lines}
+                        <blockquote class="{Alt}">{PlaintextLine}</blockquote>
+                        {block:Label}
+                        <cite>{Label}</cite>
+                        {/block:Label}
+                        {/block:Lines}
+                        {/block:Chat}
+                    </a>
+
+                    <ul class="menu post-actions">
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="{ReblogURL}">
+                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <polyline points="1 20 1 14 7 14"></polyline>
+                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                                </svg>
+                                <span class="menu-item-text">Reblog</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-item-link hyperlink">
+                                {LikeButton}
+                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                                <span class="menu-item-text">Like</span>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="{Permalink}">
+                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                    width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                                <span class="menu-item-text">View</span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+                {/block:Posts}
+            </div>
+            <nav class="pagination-wrapper">
+                <ul class="pagination-list">
+                    {block:PreviousPage}
+                    <li>
+                        <a class="pagination-item" href="{PreviousPage}">Prev</a>
+                    </li>
+                    {/block:PreviousPage}
+                    {block:JumpPagination}
+                    <li>
+                        {block:CurrentPage}
+                        <span class="pagination-item pagination-item-active">{PageNumber}</span>
+                        {/block:CurrentPage}
+                        {block:JumpPage}
+                        <a class="pagination-item" href="{URL}">{PageNumber}</a>
+                        {/block:JumpPage}
+                    </li>
+                    {/block:JumpPagination}
+                    {block:NextPage}
+                    <li>
+                        <a class="pagination-item" href="{NextPage}">Next</a>
+                    </li>
+                    {/block:NextPage}
+                </ul>
+            </nav>
+            {/block:IndexPage}
+
+            {block:PermalinkPage}
+            {block:Posts}
+            <article class="permalink-page {PostType} {TagsAsClasses} {block:Title}page-{URLEncodedTitle}{/block:Title}" id="{PostID}">
+                <div class="permalink-content">
+                    {block:Text}
+                    <blockquote>
+                        {block:Title}
+                        <h1>{Title}</h1>
+                        {/block:Title}
+                        {Body}
+                    </blockquote>
+                    <cite>{PostAuthorTitle}</cite>
+                    {/block:Text}
+
+                    {block:Photo}
+                    <img
+                        src="{PhotoURL-HighRes}"
+                        alt="{PhotoAlt}"
+                        class="open-gallery"
+                        data-gallery="{PostID}"
+                        data-image="{PhotoURL-HighRes}"
+                    />
+                    {block:Caption}
+                    <div class="permalink-padded-content">
+                        {Caption}
+                    </div>
+                    {/block:Caption}
+                    {/block:Photo}
+
+                    {block:Video}
+                    {VideoEmbed-700}
+                    {block:Caption}
+                    {Caption}
+                    {/block:Caption}
+                    {/block:Video}
+
+                    {block:Photoset}
+                    <div class="photoset" data-layout="{PhotosetLayout}">
+                        {block:Photos}
+                        <div>
+                            <img
+                                alt="{PhotoAlt}"
+                                src="{PhotoURL-HighRes}"
+                                class="open-gallery"
+                                data-gallery="{PostID}"
+                                data-image="{PhotoURL-HighRes}"
+                            />
+                        </div>
+                        {/block:Photos}
+                    </div>
+                    {block:Caption}
+                    <div class="permalink-padded-content">
+                        {Caption}
+                    </div>
+                    {/block:Caption}
+                    {/block:Photoset}
+
+                    {block:Quote}
+                    <blockquote class="right">{Quote}</blockquote>
+                    {block:Source}
+                    <cite>{Source}</cite>
+                    {/block:Source}
+                    {/block:Quote}
+
+                    {block:Link}
+                    <a href="{URL}" class="no-underline">
+                        {block:Thumbnail}
+                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
+                        {/block:Thumbnail}
+                        <div class="permalink-padded-content">
+                            <h2>{Name}</h2>
+                            {block:Description}
+                            {Description}
+                            {/block:Description}
+                        </div>
+                    </a>
+                    {/block:Link}
+
+                    {block:Answer}
+                    <blockquote class="left">{Question}</blockquote>
+                    <cite>{Asker}</cite>
+                    <blockquote class="right">{Answer}</blockquote>
+                    <cite>{Title}</cite>
+                    {/block:Answer}
+
+                    {block:Chat}
+                    {block:Lines}
+                    <blockquote class="{Alt}">{Line}</blockquote>
+                    {block:Label}
+                    <cite>{Label}</cite>
+                    {/block:Label}
+                    {/block:Lines}
+                    {/block:Chat}
+                </div>
+                <div class="permalink-meta permalink-padded-content">
+                    <div class="permalink-meta-actions">
+                        {block:Date}
+                        {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
+                        {/block:Date}
+                    </div>
+
+                    {block:HasTags}
+                    <p style="margin-top: 1em;">
+                        {block:Tags}
+                        <a href="{TagURL}">#{Tag}</a>&nbsp;
+                        {/block:Tags}
+                    </p>
+                    {/block:HasTags}
+
+                    <div class="permalink-meta-actions">
+                        <div class="like-button-container">
+                            {LikeButton}
+                            <svg class="like-button-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            {NoteCount}
+                        </div>
+                        <a href="{ReblogURL}">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <polyline points="1 20 1 14 7 14"></polyline>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                            Reblog
+                        </a>
+                        &nbsp;
+                        <a href="https://twitter.com/intent/tweet?text={URLEncodedTitle} {URLEncodedShortURL}">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        &nbsp;
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedShortURL}&picture={URLEncodedPhotoURL-HighRes}&caption={URLEncodedTitle}">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        &nbsp;
+                        <a href="http://pinterest.com/pin/create/button/?url={URLEncodedShortURL}&media={URLEncodedPhotoURL-HighRes}&description={URLEncodedTitle}">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {/block:Posts}
+            {/block:PermalinkPage}
+        </div>
+    </main>
+
+    <div id="gallery-root"></div>
+</body>
+</html>

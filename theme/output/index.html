@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contentful</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			:root {
+				--column-width: 320px;
+				--column-spacing: 30px;
+				--column-spacing-half: calc(30px / 2);
+				--background-color: lightgrey;
+			}
+
+			html {
+				background: var(--background-color);
+			}
+		</style>
+
+		<link
+			href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i|Amatic+SC:400,700"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+			integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+			crossorigin="anonymous"
+		/>
+
+		<script
+			src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+			type="text/javascript"
+		></script>
+		<script
+			src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+			type="text/javascript"
+		></script>
+	</head>
+
+	<body class="index-page">
+		<%if (htmlWebpackPlugin.options.layout === 'contentful') { %>
+		<main>
+			<header class="header">
+				<nav class="header-nav">
+					<ul></ul>
+					<ul></ul>
+				</nav>
+			</header>
+			<article id="" class="permalink-page text page-<%= htmlWebpackPlugin.options.sectionTitle %>">
+				<div class="permalink-content"></div>
+				<div class="permalink-meta permalink-padded-content"></div>
+			</article>
+		</main>
+		<% } %>
+
+		<%if (htmlWebpackPlugin.options.layout === 'photoset') { %>
+		<div style="max-width: 400px; margin: 0 auto;">
+			<article class="post">
+				<div class="photoset" data-layout="321">
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/400"
+							data-gallery="postid"
+							src="http://placekitten.com/500/400"
+						/>
+					</div>
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/380"
+							data-gallery="postid"
+							src="http://placekitten.com/500/380"
+						/>
+					</div>
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/360"
+							data-gallery="postid"
+							src="http://placekitten.com/500/360"
+						/>
+					</div>
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/340"
+							data-gallery="postid"
+							src="http://placekitten.com/500/340"
+						/>
+					</div>
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/320"
+							data-gallery="postid"
+							src="http://placekitten.com/500/320"
+						/>
+					</div>
+					<div>
+						<img
+							alt=""
+							class="open-gallery"
+							data-image="http://placekitten.com/500/300"
+							data-gallery="postid"
+							src="http://placekitten.com/500/300"
+						/>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div id="gallery-root"></div>
+		<% } %>
+
+		<%if (htmlWebpackPlugin.options.layout === 'masonry') { %>
+		<main>
+			<div class="content">
+				<div id="grid">
+					<article class="post">Post 1</article>
+					<article class="post">Post 2<br /><br /><br /></article>
+					<article class="post">
+						Post 3<br /><br /><br /><br /><br /><br />
+					</article>
+					<article class="post">
+						Post 4<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+					</article>
+					<article class="post">Post 5</article>
+					<article class="post">Post 6<br /><br /><br /></article>
+					<article class="post">Post 7</article>
+					<article class="post">Post 8</article>
+					<article class="post">
+						Post 9<br /><br /><br /><br /><br />
+					</article>
+					<article class="post">Post 10<br /><br /></article>
+				</div>
+			</div>
+		</main>
+		<% } %>
+
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
