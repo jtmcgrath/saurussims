@@ -57,7 +57,7 @@ const renderToggles = (...toggles) => {
 		if (render) {
 			const toggle = `
                 <a class="filter-link${
-					isActive ? 'active' : ''
+					isActive ? ' active' : ''
 				}" data-type="${type}" data-value="${!isActive}">
                     ${renderIcon(toggleIcons[type])}
                     ${toggleNames[type]}
