@@ -838,6 +838,7 @@ body.permalink .content {
 	position: absolute;
 	transform: translateX(-50%);
 	transition: opacity 0.4s ease;
+	white-space: nowrap;
 }
 
 .item:hover .item-actions {

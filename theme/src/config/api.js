@@ -13,12 +13,13 @@ export default function createApi(app, variables) {
 	const transformData = createTransformer(contentType)
 
 	return {
-		fetch: ({ download, tags = '', page }) =>
+		fetch: ({ download, imgur, tags = '', page }) =>
 			fetch(
 				getUrl(contentType, variables, [
 					contentType === 'download' && ['order', '-fields.order'],
 					tags && tags.length && ['fields.tags[all]', tags.join(',')],
 					download && ['fields.download[exists]', 'true'],
+					imgur && ['fields.imgur[exists]', 'true'],
 					['skip', (page - 1) * variables.itemsPerPage],
 				])
 			)

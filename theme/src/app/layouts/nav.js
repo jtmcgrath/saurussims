@@ -42,8 +42,47 @@ const renderGroup = (
     </li>
 `
 
-export default function renderNav(root, { filterByDownloads, filters }) {
-	return ({ download, paths }) => {
+const toggleIcons = {
+	download: 'download',
+	imgur: 'image',
+}
+
+const toggleNames = {
+	download: 'Download',
+	imgur: 'Imgur',
+}
+
+const renderToggles = (...toggles) => {
+	const itemsToRender = toggles.reduce((acc, [type, isActive, render]) => {
+		if (render) {
+			const toggle = `
+                <a class="filter-link${
+					isActive ? 'active' : ''
+				}" data-type="${type}" data-value="${!isActive}">
+                    ${renderIcon(toggleIcons[type])}
+                    ${toggleNames[type]}
+                </a>
+            `
+			acc.push(toggle)
+		}
+
+		return acc
+	}, [])
+
+	return itemsToRender.length
+		? `
+        <li class="filter-list flat">
+            ${itemsToRender.join('')}
+        </li>
+    `
+		: ''
+}
+
+export default function renderNav(
+	root,
+	{ filterByDownloads, filterByImgur, filters }
+) {
+	return ({ download, imgur, paths }) => {
 		const navToggle = `
             <a class="nav-toggle" data-toggle="nav-active">
                 ${renderIcon('tasks')}
@@ -51,23 +90,15 @@ export default function renderNav(root, { filterByDownloads, filters }) {
             </a>
 `
 
-		const downloadsToggle = filterByDownloads
-			? `
-            <li class="filter-list">
-                <a class="filter-link${
-					download ? 'active' : ''
-				}" data-type="download" data-value="${!download}">
-                    ${renderIcon('download')}
-                    Download
-                </a>
-            </li>
-`
-			: ''
+		const toggles = renderToggles(
+			['download', download, filterByDownloads],
+			['imgur', imgur, filterByImgur]
+		)
 
 		const template = `
             ${navToggle}
             <ul class="filter-root filter-list">
-                ${downloadsToggle}
+                ${toggles}
                 ${renderGroup(paths, '', filters)}
             </ul>
 

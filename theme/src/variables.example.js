@@ -71,6 +71,7 @@ const simsPage = {
 	contentType: 'sim',
 	className: 'page-Sims',
 	filterByDownloads: true,
+	filterByImgur: true,
 	greedy: true,
 	filters: [
 		{
