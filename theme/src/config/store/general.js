@@ -1,6 +1,7 @@
 export default function createGeneralStore(app) {
 	const state = {
 		download: false,
+		imgur: false,
 		page: 1,
 	}
 

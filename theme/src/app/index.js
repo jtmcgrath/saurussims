@@ -1,7 +1,7 @@
 import createRoot from './createRoot'
 import createLayouts from './layouts'
 
-const requestState = ['download', 'page', 'tags']
+const requestState = ['download', 'imgur', 'page', 'tags']
 
 const getClosestTarget = element =>
 	element &&
