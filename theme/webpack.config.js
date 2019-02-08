@@ -10,6 +10,7 @@ const getArg = (name, fallback) => {
 }
 
 const section = getArg('--section', 'sims')
+const isBuildingProduction = getArg('--mode', '') === 'production'
 
 const layouts = {
 	default: 'contentful',
@@ -24,15 +25,17 @@ module.exports = {
 		path: path.join(__dirname, 'output'),
 		filename: 'main.js',
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, 'output/index.html'),
-			inject: false,
-			layout: layouts[section] || layouts.default,
-			section,
-			sectionTitle: capitalize(section),
-		}),
-	],
+	plugins: isBuildingProduction
+		? []
+		: [
+				new HtmlWebpackPlugin({
+					template: path.join(__dirname, 'output/index.html'),
+					inject: false,
+					layout: layouts[section] || layouts.default,
+					section,
+					sectionTitle: capitalize(section),
+				}),
+		  ],
 	devServer: {
 		contentBase: path.join(__dirname, 'output'),
 	},
