@@ -52,37 +52,29 @@ const toggleNames = {
 	imgur: 'Imgur',
 }
 
-const renderToggles = (...toggles) => {
-	const itemsToRender = toggles.reduce((acc, [type, isActive, render]) => {
-		if (render) {
-			const toggle = `
-                <a class="filter-link${
-					isActive ? ' active' : ''
-				}" data-type="${type}" data-value="${!isActive}">
-                    ${renderIcon(toggleIcons[type])}
-                    ${toggleNames[type]}
-                </a>
-            `
-			acc.push(toggle)
-		}
-
-		return acc
-	}, [])
-
-	return itemsToRender.length
+const renderToggles = (toggles, state) => {
+	return toggles.length
 		? `
-        <li class="filter-list flat">
-            ${itemsToRender.join('')}
+		<li class="filter-list flat">
+			${toggles
+				.map(
+					type => `
+			<a class="filter-link${
+				state[type] ? ' active' : ''
+			}" data-type="${type}" data-value="${!state[type]}">
+				${renderIcon(toggleIcons[type])}
+				${toggleNames[type]}
+			</a>
+			`
+				)
+				.join('')}
         </li>
     `
 		: ''
 }
 
-export default function renderNav(
-	root,
-	{ filterByDownloads, filterByImgur, filters }
-) {
-	return ({ download, imgur, paths }) => {
+export default function renderNav(root, { filters, toggles = [] }) {
+	return ({ paths, ...state }) => {
 		const navToggle = `
             <a class="nav-toggle" data-toggle="nav-active">
                 ${renderIcon('tasks')}
@@ -90,15 +82,10 @@ export default function renderNav(
             </a>
 `
 
-		const toggles = renderToggles(
-			['download', download, filterByDownloads],
-			['imgur', imgur, filterByImgur]
-		)
-
 		const template = `
             ${navToggle}
             <ul class="filter-root filter-list">
-                ${toggles}
+                ${renderToggles(toggles, state)}
                 ${renderGroup(paths, '', filters)}
             </ul>
 

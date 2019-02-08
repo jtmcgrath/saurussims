@@ -70,8 +70,7 @@ const resourcesPage = {
 const simsPage = {
 	contentType: 'sim',
 	className: 'page-Sims',
-	filterByDownloads: true,
-	filterByImgur: true,
+	toggles: ['download', 'imgur'],
 	greedy: true,
 	filters: [
 		{
