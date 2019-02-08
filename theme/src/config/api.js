@@ -9,18 +9,19 @@ const getUrl = (app, { accessToken, itemsPerPage, spaceId }, query) =>
 	)}`
 
 export default function createApi(app, variables) {
-	const { contentType } = app
+	const { contentType, toggles = [] } = app
 	const transformData = createTransformer(contentType)
 
 	return {
-		fetch: ({ download, imgur, tags = '', page }) =>
+		fetch: ({ tags = '', page, ...state }) =>
 			fetch(
 				getUrl(contentType, variables, [
+					['skip', (page - 1) * variables.itemsPerPage],
 					contentType === 'download' && ['order', '-fields.order'],
 					tags && tags.length && ['fields.tags[all]', tags.join(',')],
-					download && ['fields.download[exists]', 'true'],
-					imgur && ['fields.imgur[exists]', 'true'],
-					['skip', (page - 1) * variables.itemsPerPage],
+					...toggles
+						.filter(toggle => state[toggle])
+						.map(toggle => [`fields.${toggle}[exists]`, 'true']),
 				])
 			)
 				.then(res => res.json())
