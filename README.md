@@ -26,6 +26,12 @@ The theme uses `webpack` to bundle JavaScript, and includes a simple `webpack-de
 
 -   Renders the `downloads` page, which pulls data from `Contentful`.
 
+#### Gallery
+
+`yarn start:gallery`
+
+-   Renders a photoset layout, with gallery functionality available when you click on the images.
+
 #### Masonry
 
 `yarn start:masonry`
@@ -36,7 +42,7 @@ The theme uses `webpack` to bundle JavaScript, and includes a simple `webpack-de
 
 `yarn start:photoset`
 
--   Renders a photoset layout.
+-   Renders a photoset layout, with gallery functionality available when you click on the images.
 
 #### Resources Page
 
