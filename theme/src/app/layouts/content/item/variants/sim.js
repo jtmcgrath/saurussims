@@ -48,7 +48,7 @@ const renderIcons = (download, imgur) => `
 export default function renderSim({ download, imgur, image, tagName, name }) {
 	return `
         <div class="item sim">
-            <a href=${
+            <a href="${
 				window.location.origin
 			}/tagged/${tagName}" class="item-link">
                 <img src="${image}" alt="${name}" />
