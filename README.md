@@ -20,41 +20,12 @@ _Note that you'll need to implement the correct data structure in Contentful for
 
 The theme uses `webpack` to bundle JavaScript, and includes a simple `webpack-dev-server` setup to make the development process fast. This includes multiple scripts for different sections of the theme:
 
-#### Downloads Page
-
-`yarn start:downloads`
-
--   Renders the `downloads` page, which pulls data from `Contentful`.
-
-#### Gallery
-
-`yarn start:gallery`
-
--   Renders a photoset layout, with gallery functionality available when you click on the images.
-
-#### Masonry
-
-`yarn start:masonry`
-
--   Renders an example of the masonry layout, to confirm that updates to other parts of the theme do not break the masonry integration.
-
-#### Photoset
-
-`yarn start:photoset`
-
--   Renders a photoset layout, with gallery functionality available when you click on the images.
-
-#### Resources Page
-
-`yarn start:resources`
-
--   Renders the `resources` page, which pulls data from `Contentful`.
-
-#### Sims Page
-
-`yarn start:sims`
-
--   Renders the `sims` page, which pulls data from `Contentful`.
+-   `yarn start:downloads` - Renders the `downloads` page, which pulls data from `Contentful`.
+-   `yarn start:gallery` - Renders a photoset layout, with gallery functionality available when you click on the images.
+-   `yarn start:masonry` - Renders an example of the masonry layout, to confirm that updates to other parts of the theme do not break the masonry integration.
+-   `yarn start:photoset` - Renders a photoset layout, with gallery functionality available when you click on the images.
+-   `yarn start:resources` - Renders the `resources` page, which pulls data from `Contentful`.
+-   `yarn start:sims` - Renders the `sims` page, which pulls data from `Contentful`.
 
 ## Deployment
 
