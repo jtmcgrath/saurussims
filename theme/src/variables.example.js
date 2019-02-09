@@ -1,6 +1,7 @@
 const downloadsPage = {
 	contentType: 'download',
 	className: 'page-Downloads',
+	tou: true,
 	filters: [
 		{
 			label: 'Create A Sim',
@@ -72,6 +73,7 @@ const simsPage = {
 	className: 'page-Sims',
 	toggles: ['download', 'imgur'],
 	greedy: true,
+	tou: true,
 	filters: [
 		{
 			flat: true,
