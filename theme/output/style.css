@@ -324,6 +324,15 @@ blockquote:last-child {
 	transform: translateX(-50%) translateY(-100%);
 }
 
+.post > a:empty {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
 /* Quotes */
 .answer blockquote,
 .chat blockquote,
