@@ -298,16 +298,18 @@ blockquote:last-child {
 .post.text.hide,
 .post.answer.gif .wcif,
 .post.answer.gif .standard,
-.gif-post + *,
-.gif-post > * {
+.post.answer:not(.gif) .gif-post,
+.post.answer:not(.gif) *,
+.post.answer.gif .gif-post + *,
+.post.answer.gif .gif-post > * {
 	display: none;
 }
 
-.gif-post > figure {
+.post.answer.gif .gif-post > figure {
 	display: block;
 }
 
-.gif-post > figure {
+.post.answer.gif .gif-post > figure {
 	margin: 0;
 }
 
