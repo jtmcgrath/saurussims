@@ -197,6 +197,11 @@ html { background: {color:Background}; }
             <div id="grid">
                 {block:Posts}
                 <article class="post {PostType} {TagsAsClasses}">
+                    {block:Answer}
+                    <a href="{Permalink}" id="{PostID}-gif" class="no-underline gif-post">
+                        {Answer}
+                    </a>
+                    {/block:Answer}
                     <a href="{Permalink}" id="{PostID}" class="no-underline">
                         {block:Text}
                         <blockquote>
