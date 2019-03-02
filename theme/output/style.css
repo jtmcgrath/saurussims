@@ -573,6 +573,9 @@ iframe {
 .page-Downloads .permalink-content,
 .page-Resources .permalink-content,
 .page-Sims .permalink-content,
+.page-Downloads .permalink-meta,
+.page-Resources .permalink-meta,
+.page-Sims .permalink-meta,
 .permalink-page[id=''] .permalink-meta {
 	display: none;
 }
