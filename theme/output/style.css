@@ -296,20 +296,16 @@ blockquote:last-child {
 .post.quote .post-actions,
 .post.text .post-actions,
 .post.text.hide,
-.post.answer.gif .wcif,
-.post.answer.gif .standard,
-.post.answer:not(.gif) .gif-post,
-.post.answer:not(.gif) *,
-.post.answer.gif .gif-post + *,
-.post.answer.gif .gif-post > * {
+.post.answer.gif .standard {
 	display: none;
 }
 
-.post.answer.gif .gif-post > figure {
+.post.answer.gif .wcif,
+.post.answer.gif .wcif > figure {
 	display: block;
 }
 
-.post.answer.gif .gif-post > figure {
+.post.answer.gif .wcif > figure {
 	margin: 0;
 }
 

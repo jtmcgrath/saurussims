@@ -197,11 +197,6 @@ html { background: {color:Background}; }
             <div id="grid">
                 {block:Posts}
                 <article class="post {PostType} {TagsAsClasses}">
-                    {block:Answer}
-                    <a href="{Permalink}" id="{PostID}-gif" class="no-underline gif-post">
-                        {Answer}
-                    </a>
-                    {/block:Answer}
                     <a href="{Permalink}" id="{PostID}" class="no-underline">
                         {block:Text}
                         <blockquote>
@@ -245,17 +240,6 @@ html { background: {color:Background}; }
                         <h2>{Name}</h2>
                         {/block:Link}
 
-                        {block:Answer}
-                        <div class="wcif">
-                           {Answer}
-                        </div>
-
-                        <div class="standard">
-                            <blockquote class="left">{PlaintextQuestion}</blockquote>
-                            <cite>{PlaintextAsker}</cite>
-                        </div>
-                        {/block:Answer}
-
                         {block:Chat}
                         {block:Lines}
                         <blockquote class="{Alt}">{PlaintextLine}</blockquote>
@@ -265,6 +249,17 @@ html { background: {color:Background}; }
                         {/block:Lines}
                         {/block:Chat}
                     </a>
+
+                    {block:Answer}
+                    <div class="wcif">
+                        {Answer}
+                    </div>
+
+                    <div class="standard">
+                        <blockquote class="left">{PlaintextQuestion}</blockquote>
+                        <cite>{PlaintextAsker}</cite>
+                    </div>
+                    {/block:Answer}
 
                     <ul class="menu post-actions">
                         <li class="menu-item">
