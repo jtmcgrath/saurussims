@@ -17,6 +17,8 @@
 {block:Hidden}
 <meta name="image:Avatar Image" content="" />
 <meta name="color:Background" content="#c6c6c6" />
+<meta name="text:Custom Description Part 1" content="I'm a custom content creator for the Sims 4." />
+<meta name="text:Custom Description Part 2" content="Sometimes I share edits and lookbooks too!" />
 <meta name="text:Avatar Width" content="200" />
 <meta name="text:Column Width" content="300" />
 <meta name="text:Column Spacing" content="30" />
@@ -58,9 +60,8 @@ html { background: {color:Background}; }
             <a href="/" class="branding">
                 <img class="branding-avatar" src="{image:Avatar Image}" alt="{Title}" />
                 <h1>{Title}</h1>
-                {block:Description}
-                <h4>{Description}</h4>
-                {/block:Description}
+                <h4>{text:Custom Description Part 1}</h4>
+                <h4>{text:Custom Description Part 2}</h4>
             </a>
             <input type="checkbox" id="menu-toggle" hidden />
             <nav class="header-nav">
