@@ -9,6 +9,7 @@ const downloadsPage = {
 			icon: 'child',
 			tags: ['cas'],
 			greedy: true,
+			retired: 'hide',
 			filters: [
 				{
 					flat: true,
@@ -51,7 +52,13 @@ const downloadsPage = {
 				},
 			],
 		},
-		{ label: 'Buy Mode', tags: ['objects'], icon: 'couch' },
+		{
+			label: 'Buy Mode',
+			icon: 'couch',
+			tags: ['objects'],
+			retired: 'hide',
+		},
+		{ label: 'Retired', retired: 'only', icon: 'calendar-times' },
 	],
 }
 
