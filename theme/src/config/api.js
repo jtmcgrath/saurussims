@@ -8,17 +8,23 @@ const getUrl = (app, { accessToken, itemsPerPage, spaceId }, query) =>
 		query
 	)}`
 
+const retiredOptions = {
+	only: ['fields.retired', 'true'],
+	hide: ['fields.retired[nin]', 'true'],
+}
+
 export default function createApi(app, variables) {
 	const { contentType, toggles = [] } = app
 	const transformData = createTransformer(contentType)
 
 	return {
-		fetch: ({ tags = '', page, ...state }) =>
+		fetch: ({ tags = '', page, retired, ...state }) =>
 			fetch(
 				getUrl(contentType, variables, [
 					['skip', (page - 1) * variables.itemsPerPage],
 					contentType === 'download' && ['order', '-fields.order'],
 					tags && tags.length && ['fields.tags[all]', tags.join(',')],
+					retired && retiredOptions[retired],
 					...toggles
 						.filter(toggle => state[toggle])
 						.map(toggle => [`fields.${toggle}[exists]`, 'true']),
