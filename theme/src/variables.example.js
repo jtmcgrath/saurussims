@@ -3,7 +3,7 @@ const downloadsPage = {
 	className: 'page-Downloads',
 	tou: true,
 	filters: [
-		{ label: 'All' },
+		{ label: 'All', retired: 'hide' },
 		{
 			label: 'Create A Sim',
 			icon: 'child',
