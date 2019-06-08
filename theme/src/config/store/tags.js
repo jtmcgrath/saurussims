@@ -15,11 +15,12 @@ const createStateSetter = state => changePath => {
 const getPath = (parent, current) =>
 	parent ? `${parent}.${current}` : `${current}`
 
-const getState = ({ filters, greedy, tags = [] } = {}, state, parent) => {
+const getState = ({ filters, greedy, tags = [], retired } = {}, state, parent) => {
 	if (!state) {
 		return {
 			paths: [parent],
 			tags: tags,
+			retired,
 		}
 	}
 
@@ -46,6 +47,7 @@ const getState = ({ filters, greedy, tags = [] } = {}, state, parent) => {
 	return {
 		paths: parent ? [parent, ...child.paths] : child.paths,
 		tags: tags ? [...tags, ...child.tags] : child.tags,
+		retired: child.retired || retired
 	}
 }
 
