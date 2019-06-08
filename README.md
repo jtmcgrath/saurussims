@@ -31,7 +31,7 @@ The theme uses `webpack` to bundle JavaScript, and includes a simple `webpack-de
 
 Build the project via `yarn build`, and then install just like any other Tumblr theme: copy/paste the `theme.html` into the Tumblr editor, upload the `style.css` and `main.js` files, and publish the theme.
 
-###### Tumblr Rejecting JavaScript File Uploads
+### Tumblr Rejecting JavaScript File Uploads
 
 Occasionally Tumblr rejects any JavaScript file uploads as "potentially malicious". The workaround for this is to link directly to a CDN-served version of the file via [jsdelivr](https://www.jsdelivr.com/). It's best to pin the requested version of the file to a specific commit - for example:
 
