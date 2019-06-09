@@ -1,7 +1,5 @@
+import { toQueryString } from '../utils'
 import createTransformer from './apiTransformer'
-
-const toQueryString = arr =>
-	arr.filter(Boolean).reduce((str, [key, val]) => `${str}&${key}=${val}`, '')
 
 const getUrl = (app, { accessToken, itemsPerPage, spaceId }, query) =>
 	`https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${accessToken}&content_type=${app}&limit=${itemsPerPage}${toQueryString(
