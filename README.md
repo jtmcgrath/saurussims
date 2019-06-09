@@ -14,7 +14,7 @@ If there's time in future, I'll be creating a theme generator, so that the devel
 
 Install dependencies by navigating to the `theme` directory and running `yarn`!
 
-Copy the `theme/src/variables.example.js` to a new file `theme/src/variables.js`. Enter your Contentful access token and space id into this new file.
+Copy the `theme/src/secrets.example.js` to a new file `theme/src/secrets.js`. Enter your Contentful access token and space id into this new file.
 
 _Note that you'll need to implement the correct data structure in Contentful for those features to work. If you'd like to do so, open an issue on the repo and I'll look into copying over the data structure so you can!_
 
@@ -29,14 +29,23 @@ The theme uses `webpack` to bundle JavaScript, and includes a simple `webpack-de
 
 ## Deployment
 
-Build the project via `yarn build`, and then install just like any other Tumblr theme: copy/paste the `theme.html` into the Tumblr editor, upload the `style.css` and `main.js` files, and publish the theme.
+Build the project via `yarn build`, and then install the files in `theme/output` just like any other Tumblr theme:
+
+-   Copy/paste the `theme.html` into the Tumblr editor.
+-   Upload the `style.css` and `main.js` files.
+-   Update the `link` and `script` tags to point to the uploaded css and js files.
+-   Click the `publish` button to publish the changes.
 
 ### Tumblr Rejecting JavaScript File Uploads
 
 Occasionally Tumblr rejects any JavaScript file uploads as "potentially malicious". The workaround for this is to link directly to a CDN-served version of the file via [jsdelivr](https://www.jsdelivr.com/). It's best to pin the requested version of the file to a specific commit - for example:
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jtmcgrath/saurussims@870a4caa3e90f8d419bcfdd74b909fd96997ded0/theme/output/main.js" charset="utf-8"></script>
+<script
+	type="text/javascript"
+	src="https://cdn.jsdelivr.net/gh/jtmcgrath/saurussims@870a4caa3e90f8d419bcfdd74b909fd96997ded0/theme/output/main.js"
+	charset="utf-8"
+></script>
 ```
 
 It's preferable to just upload the file to Tumblr and serve it from there when possible though!

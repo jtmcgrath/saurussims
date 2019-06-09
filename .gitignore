@@ -21,7 +21,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-variables.ts
-variables.js
+secrets.ts
+secrets.js
 
 # theme/output/main.js
