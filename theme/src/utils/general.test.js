@@ -1,4 +1,4 @@
-import { get } from './general'
+import { get, toQueryString } from './general'
 
 describe('get', () => {
 	let value
@@ -45,6 +45,48 @@ describe('get', () => {
 
 			value = get(test3, 'a', 1, 'b')
 			expect(value).toBe(undefined)
+		})
+	})
+})
+
+describe('toQueryString', () => {
+	it('should construct a query string', () => {
+		const includeKey2 = true
+		const keyValuePairs = [
+			['key1', 'value1'],
+			includeKey2 && ['key2', 'value2'],
+			['key3', 'value3'],
+		]
+
+		const queryString = toQueryString(keyValuePairs)
+
+		expect(queryString).toBe('&key1=value1&key2=value2&key3=value3')
+	})
+
+	describe('when falsy values are included', () => {
+		it('should not include the falsy values in the string', () => {
+			const includeKey2 = false
+			const keyValuePairs = [
+				null,
+				false,
+				['key1', 'value1'],
+				includeKey2 && ['key2', 'value2'],
+				['key3', 'value3'],
+				undefined,
+				['key4', 'value4'],
+			]
+
+			const queryString = toQueryString(keyValuePairs)
+
+			expect(queryString).toBe('&key1=value1&key3=value3&key4=value4')
+		})
+	})
+
+	describe('when incorrect values are included', () => {
+		it('should throw an error', () => {
+			expect(() => toQueryString([9])).toThrow()
+			expect(() => toQueryString([{ an: 'object' }])).toThrow()
+			expect(() => toQueryString(['string'])).toThrow()
 		})
 	})
 })
