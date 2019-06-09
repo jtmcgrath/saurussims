@@ -1,3 +1,5 @@
+import secrets from './secrets'
+
 const downloadsPage = {
 	contentType: 'download',
 	className: 'page-Downloads',
@@ -105,8 +107,7 @@ const simsPage = {
 }
 
 export default {
-	accessToken: 'ACCESSTOKEN',
+	...secrets,
 	entryPoints: [downloadsPage, resourcesPage, simsPage],
-	spaceId: 'SPACEID',
 	itemsPerPage: 24,
 }
