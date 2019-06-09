@@ -14,7 +14,7 @@ If there's time in future, I'll be creating a theme generator, so that the devel
 
 Install dependencies by navigating to the `theme` directory and running `yarn`!
 
-Copy the `theme/src/variables.example.js` to a new file `theme/src/variables.js`. Enter your Contentful access token and space id into this new file.
+Copy the `theme/src/secrets.example.js` to a new file `theme/src/secrets.js`. Enter your Contentful access token and space id into this new file.
 
 _Note that you'll need to implement the correct data structure in Contentful for those features to work. If you'd like to do so, open an issue on the repo and I'll look into copying over the data structure so you can!_
 
