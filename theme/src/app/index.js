@@ -1,13 +1,8 @@
 import createRoot from './createRoot'
 import createLayouts from './layouts'
+import { getClosestTarget } from '../utils'
 
 const requestState = ['download', 'imgur', 'page', 'tags']
-
-const getClosestTarget = element =>
-	element &&
-	(element.tagName === 'A'
-		? element
-		: getClosestTarget(element.parentElement))
 
 export default function buildApp(target, header, { api, app, store }) {
 	const root = createRoot(target, 'contentful-main')
