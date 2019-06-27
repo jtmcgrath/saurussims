@@ -51,7 +51,7 @@ export default function renderSim({ download, imgur, image, tagName, name }) {
             <a href="${
 				window.location.origin
 			}/tagged/${tagName}" class="item-link">
-                <img src="${image}" alt="${name}" />
+				${image ? `<img src="${image}" alt="${name}" />` : ''}
                 <h1>${name}</h1>
             </a>
             ${download || imgur ? renderIcons(download, imgur) : ''}
