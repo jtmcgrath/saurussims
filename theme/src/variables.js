@@ -60,6 +60,12 @@ const downloadsPage = {
 			tags: ['objects'],
 			retired: 'hide',
 		},
+		{
+			label: 'Mods',
+			icon: 'wrench',
+			tags: ['mods'],
+			retired: 'hide',
+		},
 		{ label: 'Retired', retired: 'only', icon: 'calendar-times' },
 	],
 }
