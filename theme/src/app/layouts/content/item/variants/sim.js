@@ -45,9 +45,9 @@ const renderIcons = (download, imgur) => `
 			</div>
 `
 
-export default function renderSim({ download, imgur, image, tagName, name }) {
+export default function renderSim({ download, imgur, image, tagName, tags, name }) {
 	return `
-        <div class="item sim">
+        <div class="item sim ${tags.join(' ')}">
             <a href="${
 				window.location.origin
 			}/tagged/${tagName}" class="item-link">
