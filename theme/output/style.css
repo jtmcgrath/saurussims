@@ -139,6 +139,45 @@ blockquote:last-child {
 	margin-bottom: 0;
 }
 
+blockquote > pre,
+.longpost blockquote > .plaintext {
+	display: none;
+}
+
+.longpost blockquote > pre {
+	display: block;
+    font-family: inherit;
+    max-height: 260px;
+    overflow: hidden;
+    position: relative;
+    white-space: pre-wrap;
+}
+
+.longpost blockquote > pre:before {
+    background: white;
+    background: -moz-linear-gradient(bottom,  white 0%, white 20%, transparent 100%);
+    background: -webkit-linear-gradient(bottom,  white 0%,white 20%,transpareent 100%);
+    background: linear-gradient(to top,  white 0%,white 20%,transparent 100%);
+    bottom: 0;
+    content:  '';
+    display: block;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='white',GradientType=0 );
+    height: 100px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.longpost blockquote > pre:after {
+	bottom: 0;
+    content:  'Read full post';
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
 @keyframes spin {
 	to {
 		transform: rotate(360deg);

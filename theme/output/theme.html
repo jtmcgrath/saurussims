@@ -202,7 +202,12 @@ html { background: {color:Background}; }
                         {block:Text}
                         <blockquote>
                             {block:Title}<h2>{Title}</h2>{/block:Title}
-                            {PlaintextBody}
+                            <div class="plaintext">
+                                {PlaintextBody}
+                            </div>
+                            <pre>
+                                {PlaintextBody}
+                            </pre>
                         </blockquote>
                         <cite>{PostAuthorTitle}</cite>
                         {/block:Text}
