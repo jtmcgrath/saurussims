@@ -43,7 +43,7 @@ Occasionally Tumblr rejects any JavaScript file uploads as "potentially maliciou
 ```html
 <script
 	type="text/javascript"
-	src="https://cdn.jsdelivr.net/gh/jtmcgrath/saurussims@870a4caa3e90f8d419bcfdd74b909fd96997ded0/theme/output/main.js"
+	src="https://cdn.jsdelivr.net/gh/thisRaptori/saurussims@870a4caa3e90f8d419bcfdd74b909fd96997ded0/theme/output/main.js"
 	charset="utf-8"
 ></script>
 ```
