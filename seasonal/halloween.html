@@ -1,0 +1,169 @@
+<script type="text/javascript">
+	document.addEventListener(
+		'DOMContentLoaded',
+		() => {
+			const createImage = ({ id, src, link }) => {
+				const image = document.createElement('img')
+				image.setAttribute('src', src)
+
+				if (link) {
+					const anchor = document.createElement('a')
+					anchor.setAttribute('id', id)
+					anchor.setAttribute('href', link)
+					anchor.setAttribute('target', '_blank')
+					anchor.appendChild(image)
+					document.body.appendChild(anchor)
+				} else {
+					image.setAttribute('id', id)
+					document.body.appendChild(image)
+				}
+			}
+
+			createImage({
+				id: 'pusheen',
+				src: 'https://i.imgur.com/HYqUJyS.gif',
+				link:
+					'https://saurussims.tumblr.com/private/188418294003/tumblr_qYquYyOwOuv38FLsu',
+			})
+			createImage({
+				id: 'stormy',
+				src: 'https://i.imgur.com/VPGgmDL.gif',
+			})
+			createImage({
+				id: 'ghost',
+				src: 'https://i.imgur.com/blX4G9U.gif',
+			})
+		},
+		false
+	)
+</script>
+
+<style type="text/css">
+	#pusheen,
+	#stormy,
+	#ghost {
+		position: fixed;
+		width: 170px;
+		z-index: 99999;
+	}
+
+	#pusheen {
+		animation: peek-upwards 20s ease infinite;
+		right: 0;
+		top: 100%;
+	}
+
+	@keyframes peek-upwards {
+		70% {
+			transform: translateY(0);
+		}
+		80% {
+			transform: translateY(-120px);
+		}
+		90% {
+			transform: translateY(-120px);
+		}
+	}
+
+	#stormy {
+		animation: zoom 60s ease infinite;
+		bottom: 0%;
+		left: 110%;
+	}
+
+	@keyframes zoom {
+		/* start in top right */
+		0% {
+			transform: translate(0, -70vh) rotate(-10deg);
+		}
+		/* transition down and left */
+		5% {
+			transform: translate(calc(-130vw - 170px), calc(20vw - 70vh))
+				rotate(-10deg);
+		}
+		/* flip and shift downwards */
+		25% {
+			transform: translate(calc(-130vw - 170px), calc(20vw - 40vh))
+				scale(-1, 1);
+		}
+		/* transition horizontal right */
+		30% {
+			transform: translate(0, calc(20vw - 40vh)) scale(-1, 1);
+		}
+		/* flip and move downwards */
+		45% {
+			transform: translate(0, -20vh) rotate(20deg);
+		}
+		/* transition up and left */
+		50% {
+			transform: translate(calc(-130vw - 170px), -70vh) rotate(40deg);
+		}
+		/* flip and move downwards */
+		70% {
+			transform: translate(calc(-130vw - 170px), -60vh) scale(-1, -1);
+		}
+		/* move down and right */
+		75% {
+			transform: translate(0, -50vh) scale(-1, -1);
+		}
+	}
+
+	#ghost {
+		animation: fade 100s ease infinite;
+		left: 100%;
+		opacity: 0;
+		top: 100%;
+	}
+
+	@keyframes fade {
+		30% {
+			opacity: 0;
+			top: 20%;
+			left: 25%;
+			transform: scale(-1, 1);
+		}
+		31% {
+			opacity: 1;
+		}
+		32% {
+			opacity: 0;
+			top: 20%;
+			left: 25%;
+			transform: scale(-1, 1);
+		}
+
+		70% {
+			opacity: 0;
+			top: 50%;
+			left: auto;
+			right: 10%;
+			transform: scale(1, 1);
+		}
+		71% {
+			opacity: 1;
+		}
+		72% {
+			opacity: 0;
+			top: 50%;
+			left: auto;
+			right: 10%;
+			transform: scale(1, 1);
+		}
+
+		97% {
+			opacity: 0;
+			top: 80%;
+			left: 10%;
+			transform: scale(-1, 1);
+		}
+		98% {
+			opacity: 1;
+		}
+		99% {
+			opacity: 0;
+			top: 80%;
+			left: 10%;
+			transform: scale(-1, 1);
+		}
+	}
+</style>
