@@ -572,6 +572,16 @@ iframe {
 	margin-left: 6px;
 }
 
+/* Photoset with only one image visible in main grid */
+#grid .feature-photo .photoset-row:not(:first-child),
+#grid .feature-photo .photoset-row > div:not(:first-child) {
+    display: none;
+}
+
+#grid .feature-photo .photoset-row > div:first-child {
+    width: 100%;
+}
+
 /* Pagination */
 .pagination-wrapper {
 	display: flex;
