@@ -1,0 +1,179 @@
+<link
+	href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Amatic+SC"
+	rel="stylesheet"
+	type="text/css"
+/>
+
+<div id="winterfest"></div>
+
+<style type="text/css">
+	#winterfest a {
+		display: inline-block;
+		height: 300px;
+		font-family: 'Amatic SC', Helvetica, sans-serif;
+		overflow: hidden;
+		position: relative;
+		width: 300px;
+	}
+
+	#winterfest a:after {
+		align-items: center;
+		background: inherit;
+		bottom: 0;
+		color: white;
+		content: attr(data-number);
+		display: flex;
+		font-size: 190px;
+		justify-content: center;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: 0.9s ease all;
+	}
+
+	#winterfest a.open:after {
+		transform: translate(-100%, -100%) rotate(-30deg);
+	}
+
+	#winterfest img {
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		width: 100%;
+	}
+
+	#winterfest .open img {
+		opacity: 1;
+	}
+</style>
+
+<script type="text/javascript">
+	function getClosestAnchor(root, element) {
+		if (element === root) return
+
+		return element.tagName === 'A'
+			? element
+			: getClosestAnchor(root, element.parentElement)
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const winterfest = document.getElementById('winterfest')
+		const open = JSON.parse(localStorage.getItem('winterfest')) || []
+
+		function createLink({ background, link, number, src }) {
+			const image = document.createElement('img')
+			const anchor = document.createElement('a')
+
+			image.setAttribute('src', src)
+			anchor.setAttribute('id', 'day-' + number)
+			anchor.dataset.number = number
+			anchor.setAttribute('style', 'background: ' + background)
+
+			if (link) {
+				anchor.setAttribute('href', link)
+				anchor.setAttribute('target', '_blank')
+			}
+
+			anchor.appendChild(image)
+			winterfest.appendChild(anchor)
+		}
+
+		createLink({
+			background: '#d1aa98',
+			link: '#t',
+			number: '9',
+			src: './cookies.gif',
+		})
+		createLink({
+			background: '#a9dbd7',
+			link: '#t',
+			number: '3',
+			src: './snowglobe.gif',
+		})
+		createLink({
+			background: '#ff93a3',
+			link: '#t',
+			number: '5',
+			src: './playing.gif',
+		})
+		createLink({
+			background: '#509e7c',
+			link: '#t',
+			number: '7',
+			src: './toys.gif',
+		})
+		createLink({
+			background: '#ace4d8',
+			link: '#t',
+			number: '2',
+			src: './tree.gif',
+		})
+		createLink({
+			background: '#f5c876',
+			link: '#t',
+			number: '12',
+			src: './wreath.gif',
+		})
+		createLink({
+			background: '#fbebdb',
+			link: '#t',
+			number: '4',
+			src: './factory.gif',
+		})
+		createLink({
+			background: '#9cf3e0',
+			link: '#t',
+			number: '8',
+			src: './unicorn.gif',
+		})
+		createLink({
+			background: '#82a4d8',
+			link: '#t',
+			number: '11',
+			src: './singing.gif',
+		})
+		createLink({
+			background: '#f7a170',
+			link: '#t',
+			number: '6',
+			src: './fire.gif',
+		})
+		createLink({
+			background: '#ac84c0',
+			link: '#t',
+			number: '1',
+			src: './cuddle.gif',
+		})
+		createLink({
+			background: '#d3c3b3',
+			link: '#t',
+			number: '10',
+			src: './aftermath.gif',
+		})
+
+		winterfest.addEventListener('click', event => {
+			const anchor = getClosestAnchor(winterfest, event.target)
+
+			if (
+				!anchor ||
+				!anchor.getAttribute('href') ||
+				anchor.getAttribute('href') === '#'
+			) {
+				event.preventDefault()
+				return
+			}
+
+			if (!anchor.classList.contains('open')) {
+				event.preventDefault()
+				anchor.classList.add('open')
+				open.push(anchor.getAttribute('id').replace('day-', ''))
+				localStorage.setItem('winterfest', JSON.stringify(open))
+			}
+		})
+
+		open.forEach(number => {
+			document.getElementById('day-' + number).classList.add('open')
+		})
+	})
+</script>
