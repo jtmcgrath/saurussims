@@ -271,7 +271,7 @@
 		const winterfest = document.getElementById('winterfest')
 		let open = JSON.parse(localStorage.getItem('winterfest')) || []
 
-		function createLink({ background, link, number, src, slot }) {
+		function createLink({ background, link = '#testing', number, src, slot }) {
 			const image = document.createElement('img')
 			const anchor = document.createElement('a')
 
@@ -293,174 +293,137 @@
 			winterfest.appendChild(anchor)
 		}
 
-		createLink({
-			background: '#ac84c0',
-			link: '#t',
-			number: '1',
-			slot: '24',
-			src: './sparkles.gif',
-		})
-		createLink({
-			background: '#ace4d8',
-			link: '#t',
-			number: '2',
-			slot: '23',
-			src: './star.gif',
-		})
-		createLink({
-			background: '#a9dbd7',
-			link: '#t',
-			number: '3',
-			slot: '22',
-			src: './sparkles.gif',
-		})
-		createLink({
-			background: '#fbebdb',
-			link: '#t',
-			number: '4',
-			slot: '21',
-			src: './heart.gif',
-		})
-		createLink({
-			background: '#ff93a3',
-			link: '#t',
-			number: '5',
-			slot: '20',
-			src: './star.gif',
-		})
-		createLink({
-			background: '#f7a170',
-			link: '#t',
-			number: '6',
-			slot: '19',
-			src: './sparkles.gif',
-		})
-		createLink({
-			background: '#509e7c',
-			link: '#t',
-			number: '7',
-			slot: '18',
-			src: './star.gif',
-		})
-		createLink({
-			background: '#9cf3e0',
-			link: '#t',
-			number: '8',
-			slot: '17',
-			src: './heart.gif',
-		})
-		createLink({
-			background: '#d1aa98',
-			link: '#t',
-			number: '9',
-			slot: '16',
-			src: './sparkles.gif',
-		})
-		createLink({
-			background: '#d3c3b3',
-			link: '#t',
-			number: '10',
-			slot: '15',
-			src: './heart.gif',
-		})
-		createLink({
-			background: '#82a4d8',
-			link: '#t',
-			number: '11',
-			slot: '14',
-			src: './playing.gif',
-		})
-		createLink({
-			background: '#f5c876',
-			link: '#t',
-			number: '12',
-			slot: '13',
-			src: './snowglobe.gif',
-		})
-		createLink({
-			background: '#ac84c0',
-			link: '#t',
-			number: '13',
-			slot: '12',
-			src: './fire.gif',
-		})
-		createLink({
-			background: '#ace4d8',
-			link: '#t',
-			number: '14',
-			slot: '11',
-			src: './factory.gif',
-		})
-		createLink({
-			background: '#a9dbd7',
-			link: '#t',
-			number: '15',
-			slot: '10',
-			src: './love.gif',
-		})
-		createLink({
-			background: '#ff93a3',
-			link: '#t',
-			number: '16',
-			slot: '9',
-			src: './stormy.gif',
-		})
-		createLink({
-			background: '#fbebdb',
-			link: '#t',
-			number: '17',
-			slot: '8',
-			src: './tree.gif',
-		})
-		createLink({
-			background: '#ac84c0',
-			link: '#t',
-			number: '18',
-			slot: '7',
-			src: './cuddle.gif',
-		})
-		createLink({
-			background: '#509e7c',
-			link: '#t',
-			number: '19',
-			slot: '6',
-			src: './toys.gif',
-		})
-		createLink({
-			background: '#9cf3e0',
-			link: '#t',
-			number: '20',
-			slot: '5',
-			src: './unicorn.gif',
-		})
-		createLink({
-			background: '#d1aa98',
-			link: '#t',
-			number: '21',
-			slot: '4',
-			src: './cookies.gif',
-		})
-		createLink({
-			background: '#d3c3b3',
-			link: '#t',
-			number: '22',
-			slot: '3',
-			src: './aftermath.gif',
-		})
-		createLink({
-			background: '#82a4d8',
-			link: '#t',
-			number: '23',
-			slot: '2',
-			src: './singing.gif',
-		})
-		createLink({
-			background: '#f5c876',
-			link: '#t',
-			number: '24',
-			slot: '1',
-			src: './wreath.gif',
-		})
+		const links = [
+			{
+				background: '#ac84c0',
+				link: undefined,
+				src: './sparkles.gif',
+			},
+			{
+				background: '#ace4d8',
+				link: undefined,
+				src: './star.gif',
+			},
+			{
+				background: '#a9dbd7',
+				link: undefined,
+				src: './sparkles.gif',
+			},
+			{
+				background: '#fbebdb',
+				link: undefined,
+				src: './heart.gif',
+			},
+			{
+				background: '#ff93a3',
+				link: undefined,
+				src: './star.gif',
+			},
+			{
+				background: '#f7a170',
+				link: undefined,
+				src: './sparkles.gif',
+			},
+			{
+				background: '#509e7c',
+				link: undefined,
+				src: './star.gif',
+			},
+			{
+				background: '#9cf3e0',
+				link: undefined,
+				src: './heart.gif',
+			},
+			{
+				background: '#d1aa98',
+				link: undefined,
+				src: './sparkles.gif',
+			},
+			{
+				background: '#d3c3b3',
+				link: undefined,
+				src: './heart.gif',
+			},
+			{
+				background: '#82a4d8',
+				link: undefined,
+				src: './playing.gif',
+			},
+			{
+				background: '#f5c876',
+				link: undefined,
+				src: './snowglobe.gif',
+			},
+			{
+				background: '#ac84c0',
+				link: undefined,
+				src: './fire.gif',
+			},
+			{
+				background: '#ace4d8',
+				link: undefined,
+				src: './factory.gif',
+			},
+			{
+				background: '#a9dbd7',
+				link: undefined,
+				src: './love.gif',
+			},
+			{
+				background: '#ff93a3',
+				link: undefined,
+				src: './stormy.gif',
+			},
+			{
+				background: '#fbebdb',
+				link: undefined,
+				src: './tree.gif',
+			},
+			{
+				background: '#ac84c0',
+				link: undefined,
+				src: './cuddle.gif',
+			},
+			{
+				background: '#509e7c',
+				link: undefined,
+				src: './toys.gif',
+			},
+			{
+				background: '#9cf3e0',
+				link: undefined,
+				src: './unicorn.gif',
+			},
+			{
+				background: '#d1aa98',
+				link: undefined,
+				src: './cookies.gif',
+			},
+			{
+				background: '#d3c3b3',
+				link: undefined,
+				src: './aftermath.gif',
+			},
+			{
+				background: '#82a4d8',
+				link: undefined,
+				src: './singing.gif',
+			},
+			{
+				background: '#f5c876',
+				link: undefined,
+				src: './wreath.gif',
+			},
+		]
+
+		links.forEach((item, index, array) =>
+			createLink(
+				Object.assign(item, {
+					number: index + 1,
+					slot: array.length - index,
+				})
+			)
+		)
 
 		winterfest.addEventListener('click', event => {
 			const anchor = getClosestAnchor(winterfest, event.target)
@@ -483,7 +446,7 @@
 				event.preventDefault()
 				anchor.classList.remove('open')
 				open = open.filter(
-					id => id === anchor.getAttribute('id').replace('day-', '')
+					id => id !== anchor.getAttribute('id').replace('day-', '')
 				)
 				localStorage.setItem('winterfest', JSON.stringify(open))
 			}
