@@ -7,13 +7,29 @@
 <div id="winterfest"></div>
 
 <style type="text/css">
-	#winterfest a {
-		display: inline-block;
-		height: 300px;
-		font-family: 'Amatic SC', Helvetica, sans-serif;
-		overflow: hidden;
+	html {
+		background: #c6c6c6;
+	}
+
+	#winterfest {
+		font-size: 10px;
+		height: 97em;
+		margin: 0 auto;
 		position: relative;
-		width: 300px;
+		width: 77em;
+	}
+
+	#winterfest a {
+		border: 3px solid white;
+		border-radius: 2px;
+		box-sizing: border-box;
+		display: inline-block;
+		font-family: 'Amatic SC', Helvetica, sans-serif;
+		left: 50%;
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	#winterfest a:after {
@@ -23,13 +39,207 @@
 		color: white;
 		content: attr(data-number);
 		display: flex;
-		font-size: 190px;
+		font-size: inherit;
 		justify-content: center;
 		left: 0;
 		position: absolute;
 		right: 0;
 		top: 0;
 		transition: 0.9s ease all;
+	}
+
+	#winterfest .slot-1,
+	#winterfest .slot-2 {
+		height: 25em;
+		width: 25em;
+	}
+
+	#winterfest .slot-1:after,
+	#winterfest .slot-2:after {
+		font-size: 12em;
+	}
+
+	#winterfest .slot-3,
+	#winterfest .slot-4,
+	#winterfest .slot-11,
+	#winterfest .slot-12,
+	#winterfest .slot-13,
+	#winterfest .slot-14 {
+		height: 19em;
+		width: 19em;
+	}
+
+	#winterfest .slot-3:after,
+	#winterfest .slot-4:after,
+	#winterfest .slot-11:after,
+	#winterfest .slot-12:after,
+	#winterfest .slot-13:after,
+	#winterfest .slot-14:after {
+		font-size: 11em;
+	}
+
+	#winterfest .slot-5,
+	#winterfest .slot-6 {
+		height: 15em;
+		width: 15em;
+	}
+
+	#winterfest .slot-5:after,
+	#winterfest .slot-6:after {
+		font-size: 9em;
+	}
+
+	#winterfest .slot-7,
+	#winterfest .slot-8 {
+		height: 13em;
+		width: 13em;
+	}
+
+	#winterfest .slot-7:after,
+	#winterfest .slot-8:after {
+		font-size: 8em;
+	}
+
+	#winterfest .slot-9,
+	#winterfest .slot-10 {
+		height: 11em;
+		width: 11em;
+	}
+
+	#winterfest .slot-9:after,
+	#winterfest .slot-10:after {
+		font-size: 7em;
+	}
+
+	#winterfest .slot-15,
+	#winterfest .slot-16,
+	#winterfest .slot-17,
+	#winterfest .slot-18,
+	#winterfest .slot-19,
+	#winterfest .slot-20 {
+		height: 9em;
+		width: 9em;
+	}
+
+	#winterfest .slot-15:after,
+	#winterfest .slot-16:after,
+	#winterfest .slot-17:after,
+	#winterfest .slot-18:after,
+	#winterfest .slot-19:after,
+	#winterfest .slot-20:after {
+		font-size: 6em;
+	}
+
+	#winterfest .slot-21,
+	#winterfest .slot-22,
+	#winterfest .slot-23,
+	#winterfest .slot-24 {
+		height: 5em;
+		width: 5em;
+	}
+
+	#winterfest .slot-21:after,
+	#winterfest .slot-22:after,
+	#winterfest .slot-23:after,
+	#winterfest .slot-24:after {
+		font-size: 3em;
+	}
+
+	#winterfest .slot-1 {
+		margin-left: -13em;
+		margin-top: 5em;
+	}
+	#winterfest .slot-2 {
+		margin-left: 13em;
+		margin-top: -5em;
+	}
+	#winterfest .slot-3 {
+		margin-left: -10em;
+		margin-top: -18em;
+	}
+	#winterfest .slot-4 {
+		margin-left: 10em;
+		margin-top: 18em;
+	}
+	#winterfest .slot-5 {
+		margin-left: 18em;
+		margin-top: 36em;
+	}
+	#winterfest .slot-6 {
+		margin-left: -18em;
+		margin-top: -36em;
+	}
+	#winterfest .slot-7 {
+		margin-left: -27em;
+		margin-top: -21em;
+	}
+	#winterfest .slot-8 {
+		margin-left: 27em;
+		margin-top: 21em;
+	}
+	#winterfest .slot-9 {
+		margin-left: -32em;
+		margin-top: 2em;
+	}
+	#winterfest .slot-10 {
+		margin-left: 32em;
+		margin-top: -2em;
+	}
+	#winterfest .slot-11 {
+		margin-left: -20em;
+		margin-top: 28em;
+	}
+	#winterfest .slot-12 {
+		margin-left: 20em;
+		margin-top: -28em;
+	}
+	#winterfest .slot-13 {
+		margin-left: 0;
+		margin-top: 38em;
+	}
+	#winterfest .slot-14 {
+		margin-left: 0;
+		margin-top: -38em;
+	}
+	#winterfest .slot-15 {
+		margin-left: 31em;
+		margin-top: 9em;
+	}
+	#winterfest .slot-16 {
+		margin-left: -31em;
+		margin-top: -9em;
+	}
+	#winterfest .slot-17 {
+		margin-left: -31em;
+		margin-top: 13em;
+	}
+	#winterfest .slot-18 {
+		margin-left: 31em;
+		margin-top: -13em;
+	}
+	#winterfest .slot-19 {
+		margin-left: 5em;
+		margin-top: -23em;
+	}
+	#winterfest .slot-20 {
+		margin-left: -5em;
+		margin-top: 23em;
+	}
+	#winterfest .slot-21 {
+		margin-left: -13em;
+		margin-top: 41em;
+	}
+	#winterfest .slot-22 {
+		margin-left: 13em;
+		margin-top: -41em;
+	}
+	#winterfest .slot-23 {
+		margin-left: -23em;
+		margin-top: -11em;
+	}
+	#winterfest .slot-24 {
+		margin-left: 23em;
+		margin-top: 11em;
 	}
 
 	#winterfest a.open:after {
@@ -59,9 +269,9 @@
 
 	document.addEventListener('DOMContentLoaded', () => {
 		const winterfest = document.getElementById('winterfest')
-		const open = JSON.parse(localStorage.getItem('winterfest')) || []
+		let open = JSON.parse(localStorage.getItem('winterfest')) || []
 
-		function createLink({ background, link, number, src }) {
+		function createLink({ background, link, number, src, slot }) {
 			const image = document.createElement('img')
 			const anchor = document.createElement('a')
 
@@ -75,81 +285,181 @@
 				anchor.setAttribute('target', '_blank')
 			}
 
+			if (slot) {
+				anchor.classList.add('slot-' + slot)
+			}
+
 			anchor.appendChild(image)
 			winterfest.appendChild(anchor)
 		}
 
 		createLink({
-			background: '#d1aa98',
+			background: '#ac84c0',
 			link: '#t',
-			number: '9',
-			src: './cookies.gif',
-		})
-		createLink({
-			background: '#a9dbd7',
-			link: '#t',
-			number: '3',
-			src: './snowglobe.gif',
-		})
-		createLink({
-			background: '#ff93a3',
-			link: '#t',
-			number: '5',
-			src: './playing.gif',
-		})
-		createLink({
-			background: '#509e7c',
-			link: '#t',
-			number: '7',
-			src: './toys.gif',
+			number: '1',
+			slot: '24',
+			src: './sparkles.gif',
 		})
 		createLink({
 			background: '#ace4d8',
 			link: '#t',
 			number: '2',
-			src: './tree.gif',
+			slot: '23',
+			src: './star.gif',
 		})
 		createLink({
-			background: '#f5c876',
+			background: '#a9dbd7',
 			link: '#t',
-			number: '12',
-			src: './wreath.gif',
+			number: '3',
+			slot: '22',
+			src: './sparkles.gif',
 		})
 		createLink({
 			background: '#fbebdb',
 			link: '#t',
 			number: '4',
-			src: './factory.gif',
+			slot: '21',
+			src: './heart.gif',
 		})
 		createLink({
-			background: '#9cf3e0',
+			background: '#ff93a3',
 			link: '#t',
-			number: '8',
-			src: './unicorn.gif',
-		})
-		createLink({
-			background: '#82a4d8',
-			link: '#t',
-			number: '11',
-			src: './singing.gif',
+			number: '5',
+			slot: '20',
+			src: './star.gif',
 		})
 		createLink({
 			background: '#f7a170',
 			link: '#t',
 			number: '6',
-			src: './fire.gif',
+			slot: '19',
+			src: './sparkles.gif',
 		})
 		createLink({
-			background: '#ac84c0',
+			background: '#509e7c',
 			link: '#t',
-			number: '1',
-			src: './cuddle.gif',
+			number: '7',
+			slot: '18',
+			src: './star.gif',
+		})
+		createLink({
+			background: '#9cf3e0',
+			link: '#t',
+			number: '8',
+			slot: '17',
+			src: './heart.gif',
+		})
+		createLink({
+			background: '#d1aa98',
+			link: '#t',
+			number: '9',
+			slot: '16',
+			src: './sparkles.gif',
 		})
 		createLink({
 			background: '#d3c3b3',
 			link: '#t',
 			number: '10',
+			slot: '15',
+			src: './heart.gif',
+		})
+		createLink({
+			background: '#82a4d8',
+			link: '#t',
+			number: '11',
+			slot: '14',
+			src: './playing.gif',
+		})
+		createLink({
+			background: '#f5c876',
+			link: '#t',
+			number: '12',
+			slot: '13',
+			src: './snowglobe.gif',
+		})
+		createLink({
+			background: '#ac84c0',
+			link: '#t',
+			number: '13',
+			slot: '12',
+			src: './fire.gif',
+		})
+		createLink({
+			background: '#ace4d8',
+			link: '#t',
+			number: '14',
+			slot: '11',
+			src: './factory.gif',
+		})
+		createLink({
+			background: '#a9dbd7',
+			link: '#t',
+			number: '15',
+			slot: '10',
+			src: './love.gif',
+		})
+		createLink({
+			background: '#ff93a3',
+			link: '#t',
+			number: '16',
+			slot: '9',
+			src: './stormy.gif',
+		})
+		createLink({
+			background: '#fbebdb',
+			link: '#t',
+			number: '17',
+			slot: '8',
+			src: './tree.gif',
+		})
+		createLink({
+			background: '#ac84c0',
+			link: '#t',
+			number: '18',
+			slot: '7',
+			src: './cuddle.gif',
+		})
+		createLink({
+			background: '#509e7c',
+			link: '#t',
+			number: '19',
+			slot: '6',
+			src: './toys.gif',
+		})
+		createLink({
+			background: '#9cf3e0',
+			link: '#t',
+			number: '20',
+			slot: '5',
+			src: './unicorn.gif',
+		})
+		createLink({
+			background: '#d1aa98',
+			link: '#t',
+			number: '21',
+			slot: '4',
+			src: './cookies.gif',
+		})
+		createLink({
+			background: '#d3c3b3',
+			link: '#t',
+			number: '22',
+			slot: '3',
 			src: './aftermath.gif',
+		})
+		createLink({
+			background: '#82a4d8',
+			link: '#t',
+			number: '23',
+			slot: '2',
+			src: './singing.gif',
+		})
+		createLink({
+			background: '#f5c876',
+			link: '#t',
+			number: '24',
+			slot: '1',
+			src: './wreath.gif',
 		})
 
 		winterfest.addEventListener('click', event => {
@@ -168,6 +478,13 @@
 				event.preventDefault()
 				anchor.classList.add('open')
 				open.push(anchor.getAttribute('id').replace('day-', ''))
+				localStorage.setItem('winterfest', JSON.stringify(open))
+			} else {
+				event.preventDefault()
+				anchor.classList.remove('open')
+				open = open.filter(
+					id => id === anchor.getAttribute('id').replace('day-', '')
+				)
 				localStorage.setItem('winterfest', JSON.stringify(open))
 			}
 		})
