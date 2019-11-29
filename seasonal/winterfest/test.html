@@ -275,6 +275,177 @@
 </style>
 
 <script type="text/javascript">
+	const links = [
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '1',
+			slot: '5',
+			src: './shooting-star.gif',
+		},
+		{
+			background: '#8ddec5',
+			link: undefined,
+			number: '2',
+			slot: '2',
+			src: './star.gif',
+		},
+		{
+			background: '#f7a170',
+			link: undefined,
+			number: '3',
+			slot: '13',
+			src: './fire.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '4',
+			slot: '10',
+			src: './yellow-candy.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '5',
+			slot: '16',
+			src: './stormy.gif',
+		},
+		{
+			background: '#d7c8df',
+			link: undefined,
+			number: '6',
+			slot: '6',
+			src: './pip.gif',
+		},
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '7',
+			slot: '15',
+			src: './love.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '8',
+			slot: '4',
+			src: './heart.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '9',
+			slot: '9',
+			src: './pink-candy.gif',
+		},
+		{
+			background: '#d7c0f5',
+			link: undefined,
+			number: '10',
+			slot: '21',
+			src: './cookies.gif',
+		},
+		{
+			background: '#ac84c0',
+			link: undefined,
+			number: '11',
+			slot: '18',
+			src: './cuddle.gif',
+		},
+		{
+			background: '#89ca8f',
+			link: undefined,
+			number: '12',
+			slot: '7',
+			src: './star.gif',
+		},
+		{
+			background: '#ffc9d1',
+			link: undefined,
+			number: '13',
+			slot: '14',
+			src: './factory.gif',
+		},
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '14',
+			slot: '11',
+			src: './snowglobe.gif',
+		},
+		{
+			background: '#ac84c0',
+			link: undefined,
+			number: '15',
+			slot: '1',
+			src: './sparkles.gif',
+		},
+		{
+			background: '#89ca8f',
+			link: undefined,
+			number: '16',
+			slot: '22',
+			src: './aftermath.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '17',
+			slot: '12',
+			src: './playing.gif',
+		},
+		{
+			background: '#509e7c',
+			link: undefined,
+			number: '18',
+			slot: '20',
+			src: './toys.gif',
+		},
+		{
+			background: '#9cf3e0',
+			link: undefined,
+			number: '19',
+			slot: '19',
+			src: './unicorn.gif',
+		},
+		{
+			background: '#ea96bf',
+			link: undefined,
+			number: '20',
+			slot: '8',
+			src: './heart.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '21',
+			slot: '23',
+			src: './singing.gif',
+		},
+		{
+			background: '#ed9ec4',
+			link: undefined,
+			number: '22',
+			slot: '17',
+			src: './tree.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '23',
+			slot: '3',
+			src: './sparkles.gif',
+		},
+		{
+			background: '#f5c876',
+			link: undefined,
+			number: '24',
+			slot: '24',
+			src: './wreath.gif',
+		},
+	]
+
 	function getClosestAnchor(root, element) {
 		if (element === root) return
 
@@ -283,11 +454,17 @@
 			: getClosestAnchor(root, element.parentElement)
 	}
 
+	function hasLink(anchor) {
+		if (!anchor) return false
+		const href = anchor.getAttribute('href')
+		return Boolean(href) && href !== '#'
+	}
+
 	document.addEventListener('DOMContentLoaded', () => {
 		const winterfest = document.getElementById('winterfest')
 		let open = JSON.parse(localStorage.getItem('winterfest')) || []
 
-		function createLink({ background, link = '#testing', number, src, slot }) {
+		links.forEach(({ background, link, number, src, slot }) => {
 			const image = document.createElement('img')
 			const anchor = document.createElement('a')
 
@@ -295,210 +472,22 @@
 			anchor.setAttribute('id', 'day-' + number)
 			anchor.dataset.number = number
 			anchor.setAttribute('style', 'background: ' + background)
+			anchor.classList.add('slot-' + slot)
 
 			if (link) {
 				anchor.setAttribute('href', link)
 				anchor.setAttribute('target', '_blank')
 			}
 
-			if (slot) {
-				anchor.classList.add('slot-' + slot)
-			}
-
 			anchor.appendChild(image)
 			winterfest.appendChild(anchor)
-		}
-
-		const links = [
-			{
-				background: '#a9dbd7',
-				link: undefined,
-				number: '1',
-				slot: '5',
-				src: './shooting-star.gif',
-			},
-			{
-				background: '#8ddec5',
-				link: undefined,
-				number: '2',
-				slot: '2',
-				src: './star.gif',
-			},
-			{
-				background: '#f7a170',
-				link: undefined,
-				number: '3',
-				slot: '13',
-				src: './fire.gif',
-			},
-			{
-				background: '#ff93a3',
-				link: undefined,
-				number: '4',
-				slot: '10',
-				src: './yellow-candy.gif',
-			},
-			{
-				background: '#ff93a3',
-				link: undefined,
-				number: '5',
-				slot: '16',
-				src: './stormy.gif',
-			},
-			{
-				background: '#d7c8df',
-				link: undefined,
-				number: '6',
-				slot: '6',
-				src: './pip.gif',
-			},
-			{
-				background: '#a9dbd7',
-				link: undefined,
-				number: '7',
-				slot: '15',
-				src: './love.gif',
-			},
-			{
-				background: '#82a4d8',
-				link: undefined,
-				number: '8',
-				slot: '4',
-				src: './heart.gif',
-			},
-			{
-				background: '#82a4d8',
-				link: undefined,
-				number: '9',
-				slot: '9',
-				src: './pink-candy.gif',
-			},
-			{
-				background: '#d7c0f5',
-				link: undefined,
-				number: '10',
-				slot: '21',
-				src: './cookies.gif',
-			},
-			{
-				background: '#ac84c0',
-				link: undefined,
-				number: '11',
-				slot: '18',
-				src: './cuddle.gif',
-			},
-			{
-				background: '#89ca8f',
-				link: undefined,
-				number: '12',
-				slot: '7',
-				src: './star.gif',
-			},
-			{
-				background: '#ffc9d1',
-				link: undefined,
-				number: '13',
-				slot: '14',
-				src: './factory.gif',
-			},
-			{
-				background: '#a9dbd7',
-				link: undefined,
-				number: '14',
-				slot: '11',
-				src: './snowglobe.gif',
-			},
-			{
-				background: '#ac84c0',
-				link: undefined,
-				number: '15',
-				slot: '1',
-				src: './sparkles.gif',
-			},
-			{
-				background: '#89ca8f',
-				link: undefined,
-				number: '16',
-				slot: '22',
-				src: './aftermath.gif',
-			},
-			{
-				background: '#ff93a3',
-				link: undefined,
-				number: '17',
-				slot: '12',
-				src: './playing.gif',
-			},
-			{
-				background: '#509e7c',
-				link: undefined,
-				number: '18',
-				slot: '20',
-				src: './toys.gif',
-			},
-			{
-				background: '#9cf3e0',
-				link: undefined,
-				number: '19',
-				slot: '19',
-				src: './unicorn.gif',
-			},
-			{
-				background: '#ea96bf',
-				link: undefined,
-				number: '20',
-				slot: '8',
-				src: './heart.gif',
-			},
-			{
-				background: '#82a4d8',
-				link: undefined,
-				number: '21',
-				slot: '23',
-				src: './singing.gif',
-			},
-			{
-				background: '#ed9ec4',
-				link: undefined,
-				number: '22',
-				slot: '17',
-				src: './tree.gif',
-			},
-			{
-				background: '#82a4d8',
-				link: undefined,
-				number: '23',
-				slot: '3',
-				src: './sparkles.gif',
-			},
-			{
-				background: '#f5c876',
-				link: undefined,
-				number: '24',
-				slot: '24',
-				src: './wreath.gif',
-			},
-		]
-
-		links.forEach(createLink)
-
-		let allLinksOpen = false
+		})
 
 		winterfest.addEventListener('click', event => {
 			const anchor = getClosestAnchor(winterfest, event.target)
 
-			if (
-				!anchor ||
-				!anchor.getAttribute('href') ||
-				anchor.getAttribute('href') === '#'
-			) {
+			if (!hasLink(anchor)) {
 				event.preventDefault()
-				links.forEach(({ number }) => {
-					document.getElementById('day-' + number).classList[
-						allLinksOpen ? 'remove' : 'add'
-					]('open')
-				})
-				allLinksOpen = !allLinksOpen
 				return
 			}
 
@@ -507,18 +496,14 @@
 				anchor.classList.add('open')
 				open.push(anchor.getAttribute('id').replace('day-', ''))
 				localStorage.setItem('winterfest', JSON.stringify(open))
-			} else {
-				event.preventDefault()
-				anchor.classList.remove('open')
-				open = open.filter(
-					id => id !== anchor.getAttribute('id').replace('day-', '')
-				)
-				localStorage.setItem('winterfest', JSON.stringify(open))
 			}
 		})
 
 		open.forEach(number => {
-			document.getElementById('day-' + number).classList.add('open')
+			const anchor = document.getElementById('day-' + number)
+			if (hasLink(anchor)) {
+				anchor.classList.add('open')
+			}
 		})
 	})
 </script>
