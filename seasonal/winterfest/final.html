@@ -2,27 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-{block:Description}
-<meta name="description" content="{MetaDescription}" />
-{/block:Description}
-<title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} -
-    {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+<meta name="description" content="Makes Custom Content for the Sims 4 Twitter // Patreon" />
+<title> Saurus</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" href="{Favicon}">
-<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-<link rel="alternate" type="application/rss+xml" href="{RSS}">
-
-{block:Hidden}
-<meta name="image:Avatar Image" content="" />
-<meta name="color:Background" content="#c6c6c6" />
-<meta name="text:Custom Description Part 1" content="I'm a custom content creator for the Sims 4." />
-<meta name="text:Custom Description Part 2" content="Sometimes I share edits and lookbooks too!" />
-<meta name="text:Avatar Width" content="200" />
-<meta name="text:Column Width" content="300" />
-<meta name="text:Column Spacing" content="30" />
-{/block:Hidden}
+<link rel="shortcut icon" href="https://66.media.tumblr.com/8c4e409d0845a2bec758bc5ec6007f0d/dc8793b44f848560-1e/s128x128u_c1/b18487775e354a2248d0e081fe49a47fe9486eed.pnj">
+<link rel="apple-touch-icon-precomposed" href="https://66.media.tumblr.com/8c4e409d0845a2bec758bc5ec6007f0d/dc8793b44f848560-1e/s128x128u_c1/b18487775e354a2248d0e081fe49a47fe9486eed.pnj">
+<link rel="alternate" type="application/rss+xml" href="https://www.saurussims.com/rss">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous" />
@@ -37,31 +24,321 @@
 
 <style>
 :root {
-    --column-width: {text:Column Width}px;
-    --column-spacing: {text:Column Spacing}px;
-    --column-spacing-half: calc({text:Column Spacing}px / 2);
+    --column-width: 300px;
+    --column-spacing: 30px;
+    --column-spacing-half: calc(30px / 2);
 }
 
-html { background: {color:Background}; }
-.branding-avatar { width: {text:Avatar Width}px; }
+html { background: #c6c6c6; }
+.branding-avatar { width: 200px; }
 
-{CustomCSS}
+.content {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+#winterfest {
+    font-size: 10px;
+    height: 97em;
+    margin: 20px auto;
+    position: relative;
+    width: 77em;
+}
+
+@media (min-width: 1000px) and (max-width: 1030px) {
+    #winterfest {
+        font-size: 8px;
+    }   
+}
+
+@media (min-width: 1031px) and (max-width: 1100px) {
+    #winterfest {
+        font-size: 9px;
+    }   
+}
+
+#winterfest a {
+    border: 3px solid white;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    font-family: 'Amatic SC', Helvetica, sans-serif;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#winterfest a:link {
+    cursor: pointer;
+}
+
+#winterfest a:after {
+    align-items: center;
+    background: inherit;
+    bottom: 0;
+    color: white;
+    content: attr(data-number);
+    display: flex;
+    font-size: inherit;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.9s ease all;
+}
+
+#winterfest #help {
+    margin-left: 35.5em;
+    margin-top: -45em;
+    width: 4em;
+    height: 5em;
+}
+#winterfest #help:after {
+    font-size: 4em;
+}
+
+#winterfest .slot-24,
+#winterfest .slot-23 {
+    height: 25em;
+    width: 25em;
+}
+
+#winterfest .slot-24:after,
+#winterfest .slot-23:after {
+    font-size: 12em;
+}
+
+#winterfest .slot-22,
+#winterfest .slot-21,
+#winterfest .slot-14,
+#winterfest .slot-13,
+#winterfest .slot-12,
+#winterfest .slot-11 {
+    height: 19em;
+    width: 19em;
+}
+
+#winterfest .slot-22:after,
+#winterfest .slot-21:after,
+#winterfest .slot-14:after,
+#winterfest .slot-13:after,
+#winterfest .slot-12:after,
+#winterfest .slot-11:after {
+    font-size: 11em;
+}
+
+#winterfest .slot-20,
+#winterfest .slot-19 {
+    height: 15em;
+    width: 15em;
+}
+
+#winterfest .slot-20:after,
+#winterfest .slot-19:after {
+    font-size: 9em;
+}
+
+#winterfest .slot-18,
+#winterfest .slot-17 {
+    height: 13em;
+    width: 13em;
+}
+
+#winterfest .slot-18:after,
+#winterfest .slot-17:after {
+    font-size: 8em;
+}
+
+#winterfest .slot-16,
+#winterfest .slot-15 {
+    height: 11em;
+    width: 11em;
+}
+
+#winterfest .slot-16:after,
+#winterfest .slot-15:after {
+    font-size: 7em;
+}
+
+#winterfest .slot-10,
+#winterfest .slot-9,
+#winterfest .slot-8,
+#winterfest .slot-7,
+#winterfest .slot-6,
+#winterfest .slot-5 {
+    height: 9em;
+    width: 9em;
+}
+
+#winterfest .slot-10:after,
+#winterfest .slot-9:after,
+#winterfest .slot-8:after,
+#winterfest .slot-7:after,
+#winterfest .slot-6:after,
+#winterfest .slot-5:after {
+    font-size: 6em;
+}
+
+#winterfest .slot-4,
+#winterfest .slot-3,
+#winterfest .slot-2,
+#winterfest .slot-1 {
+    height: 5em;
+    width: 5em;
+}
+
+#winterfest .slot-4:after,
+#winterfest .slot-3:after,
+#winterfest .slot-2:after,
+#winterfest .slot-1:after {
+    font-size: 3em;
+}
+
+#winterfest .slot-24 {
+    margin-left: -13em;
+    margin-top: 5em;
+}
+#winterfest .slot-23 {
+    margin-left: 13em;
+    margin-top: -5em;
+}
+#winterfest .slot-22 {
+    margin-left: -10em;
+    margin-top: -18em;
+}
+#winterfest .slot-21 {
+    margin-left: 10em;
+    margin-top: 18em;
+}
+#winterfest .slot-20 {
+    margin-left: -18em;
+    margin-top: -36em;
+}
+#winterfest .slot-19 {
+    margin-left: 18em;
+    margin-top: 36em;
+}
+#winterfest .slot-18 {
+    margin-left: -27em;
+    margin-top: -21em;
+}
+#winterfest .slot-17 {
+    margin-left: 27em;
+    margin-top: 21em;
+}
+#winterfest .slot-16 {
+    margin-left: -32em;
+    margin-top: 2em;
+}
+#winterfest .slot-15 {
+    margin-left: 32em;
+    margin-top: -2em;
+}
+#winterfest .slot-14 {
+    margin-left: -20em;
+    margin-top: 28em;
+}
+#winterfest .slot-13 {
+    margin-left: 20em;
+    margin-top: -28em;
+}
+#winterfest .slot-12 {
+    margin-left: 0;
+    margin-top: 38em;
+}
+#winterfest .slot-11 {
+    margin-left: 0;
+    margin-top: -38em;
+}
+#winterfest .slot-10 {
+    margin-left: 31em;
+    margin-top: 9em;
+}
+#winterfest .slot-9 {
+    margin-left: -31em;
+    margin-top: -9em;
+}
+#winterfest .slot-8 {
+    margin-left: -31em;
+    margin-top: 13em;
+}
+#winterfest .slot-7 {
+    margin-left: 31em;
+    margin-top: -13em;
+}
+#winterfest .slot-6 {
+    margin-left: 5em;
+    margin-top: -23em;
+}
+#winterfest .slot-5 {
+    margin-left: -5em;
+    margin-top: 23em;
+}
+#winterfest .slot-4 {
+    margin-left: -13em;
+    margin-top: 41em;
+}
+#winterfest .slot-3 {
+    margin-left: 13em;
+    margin-top: -41em;
+}
+#winterfest .slot-2 {
+    margin-left: -23em;
+    margin-top: -11em;
+}
+#winterfest .slot-1 {
+    margin-left: 23em;
+    margin-top: 11em;
+}
+
+#winterfest a.open:after {
+    transform: translate(-100%, -100%) rotate(-30deg);
+}
+
+#winterfest img {
+    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    width: 100%;
+}
+
+#winterfest .open img {
+    opacity: 1;
+}
+
+#winterfest #day-1,
+#winterfest #day-2,
+#winterfest #day-4,
+#winterfest #day-8,
+#winterfest #day-9,
+#winterfest #day-12,
+#winterfest #day-15,
+#winterfest #day-20,
+#winterfest #day-23 {
+    padding: 1em;
+}
+
+#winterfest #day-5,
+#winterfest #day-6,
+#winterfest #day-7 {
+    padding: .5em;
+}
 </style>
 </head>
 
-<body class="
-        {block:IndexPage} index-page{/block:IndexPage}
-        {block:PermalinkPage} permalink{/block:PermalinkPage}
-        {block:LikesPage} likes-page{/block:LikesPage}
-        {block:FollowingPage} following-page{/block:FollowingPage}
-        {block:SearchPage} search-page{/block:SearchPage}">
+<body>
     <main>
         <header class="header">
             <a href="/" class="branding">
-                <img class="branding-avatar" src="{image:Avatar Image}" alt="{Title}" />
-                <h1>{Title}</h1>
-                <h4>{text:Custom Description Part 1}</h4>
-                <h4>{text:Custom Description Part 2}</h4>
+                <img class="branding-avatar" src="https://static.tumblr.com/bd1158df78ae96b356c4a0453beec472/or6bqm6/OVuq04cum/tumblr_static_evstxf95r7woc4kwwc8gwwwk4.png" alt="Saurus" />
+                <h1>Saurus</h1>
+                <h4>I'm a custom content creator for the Sims 4.</h4>
+                <h4>Sometimes I share edits and lookbooks too!</h4>
             </a>
             <input type="checkbox" id="menu-toggle" hidden />
             <nav class="header-nav">
@@ -208,291 +485,270 @@ html { background: {color:Background}; }
             </nav>
         </header>
         <div class="content">
-            {block:IndexPage}
-            <div id="grid">
-                {block:Posts}
-                <article class="post {PostType} {TagsAsClasses}">
-                    <a href="{Permalink}" id="{PostID}" class="no-underline">
-                        {block:Text}
-                        <blockquote>
-                            {block:Title}<h2>{Title}</h2>{/block:Title}
-                            <div class="plaintext">
-                                {PlaintextBody}
-                            </div>
-                            <pre>
-                                {PlaintextBody}
-                            </pre>
-                        </blockquote>
-                        <cite>{PostAuthorTitle}</cite>
-                        {/block:Text}
-
-                        {block:Photo}
-                        <img src="{PhotoURL-HighRes}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
-                        {/block:Photo}
-
-                        {block:Video}
-                        {block:VideoThumbnail}
-                        <img src="{VideoThumbnailURL}" />
-                        {/block:VideoThumbnail}
-                        {/block:Video}
-
-                        {block:Photoset}
-                        <div class="photoset" data-layout="{PhotosetLayout}">
-                            {block:Photos}
-                            <div>
-                                <img alt="{PhotoAlt}" src="{PhotoURL-HighRes}" />
-                            </div>
-                            {/block:Photos}
-                        </div>
-                        {/block:Photoset}
-
-                        {block:Quote}
-                        <blockquote class="right">{PlaintextQuote}</blockquote>
-                        {block:Source}
-                        <cite>{PlaintextSource}</cite>
-                        {/block:Source}
-                        {/block:Quote}
-
-                        {block:Link}
-                        {block:Thumbnail}
-                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
-                        {/block:Thumbnail}
-                        <h2>{Name}</h2>
-                        {/block:Link}
-
-                        {block:Chat}
-                        {block:Lines}
-                        <blockquote class="{Alt}">{PlaintextLine}</blockquote>
-                        {block:Label}
-                        <cite>{Label}</cite>
-                        {/block:Label}
-                        {/block:Lines}
-                        {/block:Chat}
-                    </a>
-
-                    {block:Answer}
-                    <div class="wcif">
-                        {Answer}
-                    </div>
-
-                    <div class="standard">
-                        <blockquote class="left">{PlaintextQuestion}</blockquote>
-                        <cite>{PlaintextAsker}</cite>
-                    </div>
-                    {/block:Answer}
-
-                    <ul class="menu post-actions">
-                        <li class="menu-item">
-                            <a class="menu-item-link" href="{ReblogURL}">
-                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <polyline points="23 4 23 10 17 10"></polyline>
-                                    <polyline points="1 20 1 14 7 14"></polyline>
-                                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                                </svg>
-                                <span class="menu-item-text">Reblog</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <div class="menu-item-link hyperlink">
-                                {LikeButton}
-                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                </svg>
-                                <span class="menu-item-text">Like</span>
-                            </div>
-                        </li>
-                        <li class="menu-item">
-                            <a class="menu-item-link" href="{Permalink}">
-                                <svg class="menu-item-icon" fill="none" height="24" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                                <span class="menu-item-text">View</span>
-                            </a>
-                        </li>
-                    </ul>
-                </article>
-                {/block:Posts}
+            <div id="winterfest">
+                <a id="help" class="help" href="/" data-number="?" target="_blank"></a>
             </div>
-            <nav class="pagination-wrapper">
-                <ul class="pagination-list">
-                    {block:PreviousPage}
-                    <li>
-                        <a class="pagination-item" href="{PreviousPage}">Prev</a>
-                    </li>
-                    {/block:PreviousPage}
-                    {block:JumpPagination}
-                    <li>
-                        {block:CurrentPage}
-                        <span class="pagination-item pagination-item-active">{PageNumber}</span>
-                        {/block:CurrentPage}
-                        {block:JumpPage}
-                        <a class="pagination-item" href="{URL}">{PageNumber}</a>
-                        {/block:JumpPage}
-                    </li>
-                    {/block:JumpPagination}
-                    {block:NextPage}
-                    <li>
-                        <a class="pagination-item" href="{NextPage}">Next</a>
-                    </li>
-                    {/block:NextPage}
-                </ul>
-            </nav>
-            {/block:IndexPage}
-
-            {block:PermalinkPage}
-            {block:Posts}
-            <article class="permalink-page {PostType} {TagsAsClasses} {block:Title}page-{URLEncodedTitle}{/block:Title}" id="{PostID}">
-                <div class="permalink-content">
-                    {block:Text}
-                    <blockquote>
-                        {block:Title}
-                        <h1>{Title}</h1>
-                        {/block:Title}
-                        {Body}
-                    </blockquote>
-                    <cite>{PostAuthorTitle}</cite>
-                    {/block:Text}
-
-                    {block:Photo}
-                    <img
-                        src="{PhotoURL-HighRes}"
-                        alt="{PhotoAlt}"
-                        class="open-gallery"
-                        data-gallery="{PostID}"
-                        data-image="{PhotoURL-HighRes}"
-                    />
-                    {block:Caption}
-                    <div class="permalink-padded-content">
-                        {Caption}
-                    </div>
-                    {/block:Caption}
-                    {/block:Photo}
-
-                    {block:Video}
-                    {VideoEmbed-700}
-                    {block:Caption}
-                    {Caption}
-                    {/block:Caption}
-                    {/block:Video}
-
-                    {block:Photoset}
-                    <div class="photoset" data-layout="{PhotosetLayout}">
-                        {block:Photos}
-                        <div>
-                            <img
-                                alt="{PhotoAlt}"
-                                src="{PhotoURL-HighRes}"
-                                class="open-gallery"
-                                data-gallery="{PostID}"
-                                data-image="{PhotoURL-HighRes}"
-                            />
-                        </div>
-                        {/block:Photos}
-                    </div>
-                    {block:Caption}
-                    <div class="permalink-padded-content">
-                        {Caption}
-                    </div>
-                    {/block:Caption}
-                    {/block:Photoset}
-
-                    {block:Quote}
-                    <blockquote class="right">{Quote}</blockquote>
-                    {block:Source}
-                    <cite>{Source}</cite>
-                    {/block:Source}
-                    {/block:Quote}
-
-                    {block:Link}
-                    <a href="{URL}" class="no-underline">
-                        {block:Thumbnail}
-                        <img src="{Thumbnail-HighRes}" alt="{Name}" />
-                        {/block:Thumbnail}
-                        <div class="permalink-padded-content">
-                            <h2>{Name}</h2>
-                            {block:Description}
-                            {Description}
-                            {/block:Description}
-                        </div>
-                    </a>
-                    {/block:Link}
-
-                    {block:Answer}
-                    <blockquote class="left">{Question}</blockquote>
-                    <cite>{Asker}</cite>
-                    <blockquote class="right">{Answer}</blockquote>
-                    <cite>{Title}</cite>
-                    {/block:Answer}
-
-                    {block:Chat}
-                    {block:Lines}
-                    <blockquote class="{Alt}">{Line}</blockquote>
-                    {block:Label}
-                    <cite>{Label}</cite>
-                    {/block:Label}
-                    {/block:Lines}
-                    {/block:Chat}
-                </div>
-                <div class="permalink-meta permalink-padded-content">
-                    <div class="permalink-meta-actions">
-                        {block:Date}
-                        {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}
-                        {/block:Date}
-                    </div>
-
-                    {block:HasTags}
-                    <p style="margin-top: 1em;">
-                        {block:Tags}
-                        <a href="{TagURL}">#{Tag}</a>&nbsp;
-                        {/block:Tags}
-                    </p>
-                    {/block:HasTags}
-
-                    <div class="permalink-meta-actions">
-                        <div class="like-button-container">
-                            {LikeButton}
-                            <svg class="like-button-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                            </svg>
-                            {NoteCount}
-                        </div>
-                        <a href="{ReblogURL}">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <polyline points="23 4 23 10 17 10"></polyline>
-                                <polyline points="1 20 1 14 7 14"></polyline>
-                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                            </svg>
-                            Reblog
-                        </a>
-                        &nbsp;
-                        <a href="https://twitter.com/intent/tweet?text={URLEncodedTitle} {URLEncodedShortURL}">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        &nbsp;
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedShortURL}&picture={URLEncodedPhotoURL-HighRes}&caption={URLEncodedTitle}">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        &nbsp;
-                        <a href="http://pinterest.com/pin/create/button/?url={URLEncodedShortURL}&media={URLEncodedPhotoURL-HighRes}&description={URLEncodedTitle}">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            {/block:Posts}
-            {/block:PermalinkPage}
         </div>
     </main>
 
-    <div id="gallery-root"></div>
+
+<script type="text/javascript">
+	const links = [
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '1',
+			slot: '5',
+            // src: './shooting-star.gif',
+            src: 'https://i.imgur.com/VvVMtO2.gif',
+		},
+		{
+			background: '#8ddec5',
+			link: undefined,
+			number: '2',
+			slot: '2',
+            // src: './star.gif',
+            src: 'https://i.imgur.com/jymDzNZ.gif',
+		},
+		{
+			background: '#f7a170',
+			link: undefined,
+			number: '3',
+			slot: '13',
+            // src: './fire.gif',
+            src: 'https://i.imgur.com/vlsZ1EB.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '4',
+			slot: '10',
+            // src: './yellow-candy.gif',
+            src: 'https://i.imgur.com/3B2dRv2.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '5',
+			slot: '16',
+            // src: './stormy.gif',
+            src: 'https://i.imgur.com/LnCbpHW.gif',
+		},
+		{
+			background: '#d7c8df',
+			link: undefined,
+			number: '6',
+			slot: '6',
+            // src: './pip.gif',
+            src: 'https://i.imgur.com/ENa2GEv.gif'
+		},
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '7',
+			slot: '15',
+            // src: './love.gif',
+            src: 'https://i.imgur.com/18eg6Gc.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '8',
+			slot: '4',
+            // src: './heart.gif',
+            src: 'https://i.imgur.com/5btoW5g.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '9',
+			slot: '9',
+            // src: './pink-candy.gif',
+            src: 'https://i.imgur.com/aBv9xZJ.gif',
+		},
+		{
+			background: '#d7c0f5',
+			link: undefined,
+			number: '10',
+			slot: '21',
+            // src: './cookies.gif',
+            src: 'https://i.imgur.com/TFheMlI.gif',
+		},
+		{
+			background: '#ac84c0',
+			link: undefined,
+			number: '11',
+			slot: '18',
+            // src: './cuddle.gif',
+            src: 'https://i.imgur.com/kanpWOS.gif',
+		},
+		{
+			background: '#89ca8f',
+			link: undefined,
+			number: '12',
+			slot: '7',
+            // src: './star.gif',
+            src: 'https://i.imgur.com/jymDzNZ.gif',
+		},
+		{
+			background: '#ffc9d1',
+			link: undefined,
+			number: '13',
+			slot: '14',
+            // src: './factory.gif',
+            src: 'https://i.imgur.com/1QfilhZ.gif',
+		},
+		{
+			background: '#a9dbd7',
+			link: undefined,
+			number: '14',
+			slot: '11',
+            // src: './snowglobe.gif',
+            src: 'https://i.imgur.com/hj3aGiQ.gif',
+		},
+		{
+			background: '#ac84c0',
+			link: undefined,
+			number: '15',
+			slot: '1',
+            // src: './sparkles.gif',
+            src: 'https://i.imgur.com/8Dqk4pI.gif',
+		},
+		{
+			background: '#89ca8f',
+			link: undefined,
+			number: '16',
+			slot: '22',
+            // src: './aftermath.gif',
+            src: 'https://i.imgur.com/yW6acNs.gif',
+		},
+		{
+			background: '#ff93a3',
+			link: undefined,
+			number: '17',
+			slot: '12',
+            // src: './playing.gif',
+            src: 'https://i.imgur.com/EL6lK82.gif'
+		},
+		{
+			background: '#509e7c',
+			link: undefined,
+			number: '18',
+			slot: '20',
+            // src: './toys.gif',
+            src: 'https://i.imgur.com/SWzKbDS.gif',
+		},
+		{
+			background: '#9cf3e0',
+			link: undefined,
+			number: '19',
+			slot: '19',
+            // src: './unicorn.gif',
+            src: 'https://i.imgur.com/SaLcMKu.gif',
+		},
+		{
+			background: '#ea96bf',
+			link: undefined,
+			number: '20',
+			slot: '8',
+            // src: './heart.gif',
+            src: 'https://i.imgur.com/5btoW5g.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '21',
+			slot: '23',
+            // src: './singing.gif',
+            src: 'https://i.imgur.com/u8E6A2b.gif',
+		},
+		{
+			background: '#ed9ec4',
+			link: undefined,
+			number: '22',
+			slot: '17',
+            // src: './tree.gif',
+            src: 'https://i.imgur.com/1dutr3T.gif',
+		},
+		{
+			background: '#82a4d8',
+			link: undefined,
+			number: '23',
+			slot: '3',
+            // src: './sparkles.gif',
+            src: 'https://i.imgur.com/8Dqk4pI.gif',
+		},
+		{
+			background: '#f5c876',
+			link: undefined,
+			number: '24',
+			slot: '24',
+            // src: './wreath.gif',
+            src: 'https://i.imgur.com/YX98HeL.gif',
+		},
+	]
+
+	function getClosestAnchor(root, element) {
+		if (element === root) return
+
+		return element.tagName === 'A'
+			? element
+			: getClosestAnchor(root, element.parentElement)
+	}
+
+	function hasLink(anchor) {
+		if (!anchor) return false
+		const href = anchor.getAttribute('href')
+		return Boolean(href) && href !== '#'
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const winterfest = document.getElementById('winterfest')
+		let open = JSON.parse(localStorage.getItem('winterfest')) || []
+
+		links.forEach(({ background, link, number, src, slot }) => {
+			const image = document.createElement('img')
+			const anchor = document.createElement('a')
+
+			image.setAttribute('src', src)
+			anchor.setAttribute('id', 'day-' + number)
+			anchor.dataset.number = number
+			anchor.setAttribute('style', 'background: ' + background)
+			anchor.classList.add('slot-' + slot)
+
+			if (link) {
+				anchor.setAttribute('href', link)
+				anchor.setAttribute('target', '_blank')
+			}
+
+			anchor.appendChild(image)
+			winterfest.appendChild(anchor)
+		})
+
+		winterfest.addEventListener('click', event => {
+			const anchor = getClosestAnchor(winterfest, event.target)
+
+			if (!hasLink(anchor)) {
+				event.preventDefault()
+				return
+			}
+
+			if (!anchor.classList.contains('open') && !anchor.classList.contains('help')) {
+				event.preventDefault()
+				anchor.classList.add('open')
+				open.push(anchor.getAttribute('id').replace('day-', ''))
+				localStorage.setItem('winterfest', JSON.stringify(open))
+			}
+		})
+
+		open.forEach(number => {
+			const anchor = document.getElementById('day-' + number)
+			if (hasLink(anchor)) {
+				anchor.classList.add('open')
+			}
+		})
+	})
+</script>
+
 </body>
 </html>
