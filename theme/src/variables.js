@@ -19,11 +19,8 @@ const downloadsPage = {
 						{ label: 'All' },
 						{ label: 'Male', tags: ['male'], icon: 'mars' },
 						{ label: 'Female', tags: ['female'], icon: 'venus' },
-						{
-							label: 'Kids',
-							tags: ['child', 'toddler'],
-							icon: 'cubes',
-						},
+						{ label: 'Child', tags: ['child'], icon: 'cubes' },
+						{ label: 'Toddler', tags: ['toddler'], icon: 'baby' },
 					],
 				},
 				{
