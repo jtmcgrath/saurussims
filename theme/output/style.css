@@ -622,9 +622,11 @@ iframe {
 .page-Downloads .permalink-content,
 .page-Resources .permalink-content,
 .page-Sims .permalink-content,
+.page-More .permalink-content,
 .page-Downloads .permalink-meta,
 .page-Resources .permalink-meta,
 .page-Sims .permalink-meta,
+.page-More .permalink-meta,
 .permalink-page[id=''] .permalink-meta {
 	display: none;
 }
@@ -853,6 +855,16 @@ body.permalink .content {
 	overflow: hidden;
 	position: relative;
 	width: 260px;
+}
+
+.item.link {
+	width: 100%;
+}
+
+.link .item-link {
+	border-radius: 0;
+	height: 100px;
+	width: calc(100% - 30px);
 }
 
 .resource .item-link,

@@ -18,6 +18,7 @@
 		"start:downloads": "yarn start --section=downloads",
 		"start:gallery": "yarn start --section=gallery",
 		"start:masonry": "yarn start --section=masonry",
+		"start:more": "yarn start --section=more",
 		"start:photoset": "yarn start --section=photoset",
 		"start:resources": "yarn start --section=resources",
 		"start:sims": "yarn start --section=sims",

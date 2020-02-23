@@ -1,4 +1,4 @@
-import { get } from '../utils'
+import { get } from '../../../utils'
 
 const calculatePagination = (limit, skip, total) => ({
 	current: skip / limit + 1,

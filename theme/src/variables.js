@@ -3,6 +3,7 @@ import secrets from './secrets'
 const downloadsPage = {
 	contentType: 'download',
 	className: 'page-Downloads',
+	dataSource: 'contentful',
 	tou: true,
 	filters: [
 		{ label: 'All', retired: 'hide' },
@@ -70,6 +71,7 @@ const downloadsPage = {
 const resourcesPage = {
 	contentType: 'resource',
 	className: 'page-Resources',
+	dataSource: 'contentful',
 	filters: [
 		{ label: 'All' },
 		{ label: 'Genetics', tags: ['genetics'] },
@@ -84,6 +86,7 @@ const resourcesPage = {
 const simsPage = {
 	contentType: 'sim',
 	className: 'page-Sims',
+	dataSource: 'contentful',
 	toggles: ['download', 'imgur'],
 	greedy: true,
 	tou: true,
@@ -109,8 +112,14 @@ const simsPage = {
 	],
 }
 
+const morePage = {
+	className: 'page-More',
+	dataSource: 'local',
+	items: window.saurusMenuItems,
+}
+
 export default {
 	...secrets,
-	entryPoints: [downloadsPage, resourcesPage, simsPage],
+	entryPoints: [downloadsPage, resourcesPage, simsPage, morePage],
 	itemsPerPage: 24,
 }

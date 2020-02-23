@@ -8,7 +8,7 @@ export default function renderContent(root, app) {
                 <div class="item-list">
                     ${data.items.map(renderItem).join('')}
                 </div>
-                ${renderPagination(data)}
+                ${data.pagination ? renderPagination(data) : ''}
             `
 			: `
                 <div class="error-message">

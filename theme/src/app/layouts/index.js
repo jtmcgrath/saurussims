@@ -1,13 +1,20 @@
-import content from './content'
-import error from './error'
-import loading from './loading'
-import nav from './nav'
+import createContentLayout from './content'
+import createErrorLayout from './error'
+import createLoadingLayout from './loading'
+import createNavLayout from './nav'
 
-export default function createLayouts(contentRoot, navRoot, app) {
+export {
+	createContentLayout,
+	createErrorLayout,
+	createLoadingLayout,
+	createNavLayout,
+}
+
+export function createLayouts(contentRoot, navRoot, app) {
 	return {
-		renderContent: content(contentRoot, app),
-		renderError: error(contentRoot),
-		renderLoading: loading(contentRoot),
-		renderNav: nav(navRoot, app),
+		renderContent: createContentLayout(contentRoot, app),
+		renderError: createErrorLayout(contentRoot),
+		renderLoading: createLoadingLayout(contentRoot),
+		renderNav: createNavLayout(navRoot, app),
 	}
 }
