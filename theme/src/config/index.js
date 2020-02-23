@@ -1,6 +1,5 @@
-import createApi from './api'
-import createStore from './store'
 import getApp from './app'
+import * as variants from './variants'
 
 export default function createConfig(root, variables) {
 	const app = getApp(root, variables)
@@ -9,12 +8,5 @@ export default function createConfig(root, variables) {
 		return false
 	}
 
-	const api = createApi(app, variables)
-	const store = createStore(app)
-
-	return {
-		app,
-		api,
-		store,
-	}
+	return variants[app.dataSource](app, variables)
 }

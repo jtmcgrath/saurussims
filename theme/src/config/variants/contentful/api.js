@@ -1,4 +1,4 @@
-import { toQueryString } from '../utils'
+import { toQueryString } from '../../../utils'
 import createTransformer from './apiTransformer'
 
 const getUrl = (app, { accessToken, itemsPerPage, spaceId }, query) =>
