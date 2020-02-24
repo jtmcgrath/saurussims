@@ -115,7 +115,11 @@ const simsPage = {
 const morePage = {
 	className: 'page-More',
 	dataSource: 'local',
-	items: window.saurusMenuItems,
+	items: [
+		{ type: 'resource', link: 'https://www.saurussims.com/sims', title: 'Sims', color: '#f7c3d2' },
+		{ type: 'resource', link: 'https://www.saurussims.com/tagged/wcif', title: 'WCIF', color: '#9681b6' },
+		{ type: 'resource', link: 'https://www.saurussims.com/resources', title: 'Resources', color: '#79bcd1' },
+	],
 }
 
 export default {
