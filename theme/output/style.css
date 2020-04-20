@@ -1113,3 +1113,10 @@ body.permalink .content {
 	max-width: var(--column-spacing);
 	width: 10vw;
 }
+
+/* Footer */
+
+footer {
+	padding: 0 0 30px;
+	text-align: center;
+}

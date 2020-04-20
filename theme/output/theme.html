@@ -8,6 +8,9 @@
 <title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} -
     {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
 
+<script data-ad-client="ca-pub-5417807230834691" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="shortcut icon" href="{Favicon}">
@@ -477,9 +480,41 @@ html { background: {color:Background}; }
             </article>
             {/block:Posts}
             {/block:PermalinkPage}
+
+            <footer>
+                <a href="/cookie-policy">Cookie Policy</a> •
+                <a href="/privacy-policy">Privacy Policy</a> •
+                <a href="#" id="changePreferences">Change Preferences</a>
+            </footer>
         </div>
     </main>
 
     <div id="gallery-root"></div>
+
+
+<!-- Cookie Consent by https://www.PrivacyPolicies.com -->
+<script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.0.0/cookie-consent.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"SaurusSims","cookies_policy_url":"https://www.saurussims.com/cookies-policy"});
+});
+</script>
+
+<!-- Google Analytics -->
+<script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=UA-153605649-1"></script>
+<script type="text/plain" cookie-consent="tracking">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153605649-1');
+</script>
+<!-- end of Google Analytics-->
+
+<noscript><a href="https://www.PrivacyPolicies.com/cookie-consent/">Cookie Consent by Privacy Policies Generator</a></noscript>
+<!-- End Cookie Consent -->
+
+
+
 </body>
 </html>
