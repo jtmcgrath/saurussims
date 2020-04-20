@@ -1115,8 +1115,28 @@ body.permalink .content {
 }
 
 /* Footer */
-
 footer {
 	padding: 0 0 30px;
 	text-align: center;
+}
+
+/* Cookie Consent */
+html .cc_css_reboot {
+	padding: 16px !important;
+}
+
+html .cc_css_reboot > div > div {
+	display: flex;
+}
+
+html .cc_css_reboot .cc_dialog_headline {
+	font-size: 16px;
+}
+
+html .cc_css_reboot p.cc_dialog_text {
+	font-size: 12px;
+}
+
+.cc_css_reboot + main .header {
+    top: 200px;
 }

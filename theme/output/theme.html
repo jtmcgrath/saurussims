@@ -502,7 +502,14 @@ html { background: {color:Background}; }
 <script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.0.0/cookie-consent.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
-    cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"light","language":"en","website_name":"SaurusSims","cookies_policy_url":"https://www.saurussims.com/cookies-policy"});
+    cookieconsent.run({
+        "notice_banner_type":"headline",
+        "consent_type":"express",
+        "palette":"light",
+        "language":"en",
+        "change_preferences_selector":"changePreferences",
+        "website_name":"Saurus Sims",
+        "cookies_policy_url":"https://www.saurussims.com/cookie-policy"});
 });
 </script>
 
