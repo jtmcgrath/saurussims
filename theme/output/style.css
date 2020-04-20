@@ -1136,7 +1136,3 @@ html .cc_css_reboot .cc_dialog_headline {
 html .cc_css_reboot p.cc_dialog_text {
 	font-size: 12px;
 }
-
-.cc_css_reboot + main .header {
-    top: 200px;
-}
