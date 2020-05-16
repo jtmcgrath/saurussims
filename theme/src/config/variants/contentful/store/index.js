@@ -51,7 +51,7 @@ export default function createStore(app) {
 	})
 
 	const setQuery = string => {
-		const query = string.substr(1).split('&').reduce(reduceQuery, {})
+		const query = decodeURIComponent(string).substr(1).split('&').reduce(reduceQuery, {})
 
 		for (const type in query) {
 			switch (type) {
