@@ -116,6 +116,9 @@ const morePage = {
 	className: 'page-More',
 	dataSource: 'local',
 	items: [
+		{ type: 'resource', link: 'https://www.saurussims.com/tagged/lookbook', title: 'Lookbooks', color: '#78a4d3'},
+		{ type: 'resource', link: 'https://ko-fi.com/saurus', title: 'Ko-fi', color: '#f3c55a'},
+		{ type: 'resource', link: 'https://www.saurussims.com/ask-away', title: 'Message', color: '#78d2ae'},
 		{ type: 'resource', link: 'https://www.saurussims.com/sims', title: 'Sims', color: '#f7c3d2' },
 		{ type: 'resource', link: 'https://www.saurussims.com/tagged/wcif', title: 'WCIF', color: '#9681b6' },
 		{ type: 'resource', link: 'https://www.saurussims.com/resources', title: 'Resources', color: '#79bcd1' },
