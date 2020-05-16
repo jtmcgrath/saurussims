@@ -33,6 +33,7 @@ export default function buildContentfulApp({ api, app, store }, target, header) 
 
 		if (type && value) {
 			store.set(type, value)
+			history.pushState('', '', `${window.location.pathname}?${store.getQuery()}`)
 
 			if (requestState.includes(type)) {
 				requestData()
@@ -49,6 +50,11 @@ export default function buildContentfulApp({ api, app, store }, target, header) 
 
 	root.addEventListener('click', handleClick)
 	nav.addEventListener('click', handleClick)
+
+	window.onpopstate = () => {
+		store.setQuery(window.location.search)
+		requestData()
+	}
 
 	requestData()
 }
