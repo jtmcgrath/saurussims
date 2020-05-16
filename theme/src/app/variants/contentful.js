@@ -7,6 +7,7 @@ const requestState = ['download', 'imgur', 'page', 'tags']
 export default function buildContentfulApp({ api, app, store }, target, header) {
 	const root = createRoot(target, 'contentful-main')
 	const nav = createRoot(header, 'contentful-nav')
+	nav.classList.add('active')
 
 	const {
 		renderContent,
