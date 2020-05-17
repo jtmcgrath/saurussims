@@ -32,6 +32,11 @@ const reduceQuery = (acc, cur) => {
 	return acc;
 }
 
+const defaultQuery = {
+	page: 1,
+	tags: '',
+}
+
 export default function createStore(app) {
 	const general = createGeneralStore(app)
 	const tags = createTagsStore(app)
@@ -53,7 +58,11 @@ export default function createStore(app) {
 	const setQuery = string => {
 		const query = decodeURIComponent(string).substr(1).split('&').reduce(reduceQuery, {})
 
-		for (const type in query) {
+		for (const type in defaultQuery) {
+			if (!query[type]) {
+				return defaultQuery[type] || false
+			}
+
 			switch (type) {
 				case 'tags':
 					query.tags.forEach(tag => tags.set(app.paths[tag]))
@@ -67,7 +76,7 @@ export default function createStore(app) {
 
 	const getQuery = () => {
 		const query = []
-		const {paths, ...state} = getState()
+		const {paths, retired, ...state} = getState()
 
 		for (const key in state) {
 			const value = state[key]
