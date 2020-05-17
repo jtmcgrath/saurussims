@@ -593,6 +593,7 @@ iframe {
 .pagination-list {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	margin: 0 auto, var(--column-spacing);
 }
